@@ -1,0 +1,26 @@
+CREATE TABLE IF NOT EXISTS employee(
+    id INT AUTO_INCREMENT,
+    firstName VARCHAR(30) NOT NULL,
+    lastName VARCHAR(30) NOT NULL,
+    email VARCHAR(30) NOT NULL UNIQUE,
+    password VARCHAR(30) NOT NULL,
+    PRIMARY KEY (id)
+)
+
+CREATE TABLE IF NOT EXISTS publicUser(
+    id INT AUTO_INCREMENT,
+    firstName VARCHAR(30) NOT NULL,
+    lastName VARCHAR(30) NOT NULL,
+    email VARCHAR(30) NOT NULL UNIQUE,
+    password VARCHAR(30) NOT NULL,
+    PRIMARY KEY (id)
+)
+
+CREATE TABLE IF NOT EXISTS athlete(
+    id INT AUTO_INCREMENT,
+    firstName VARCHAR(30) NOT NULL,
+    lastName VARCHAR(30) NOT NULL,
+    email VARCHAR(30) NOT NULL UNIQUE,
+    password VARCHAR(30) NOT NULL,
+    PRIMARY KEY (id)
+)
