@@ -12,7 +12,8 @@
       <li><a href="#"> Events</a></li>
       <li><a href="#"> Athletes</a></li>
       <!--Note: Create a drop down menu here that will box group login/register-->
-      <li><a href="login.php"> Login</a></li>
-      <li><a href="register.php"> Register</a></li>
+      <li><a href="loginPage.php"> Login</a></li>
+      <li><a href="registerPage.php"> Register</a></li>
+      <li><a href="logout.php"> Logout</a></li>
      </ul>
   </nav>
