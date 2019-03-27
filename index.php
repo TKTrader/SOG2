@@ -1,15 +1,8 @@
-<html>
-
-<head>
- <title>SOG</title>
- <link rel="stylesheet" type="text/css" href="style2Home.css">
-</head>
-
-<body>
+<?php
+require 'header.php';
+?>
   <nav>
-    <div class="logo">
-      <h4>Summer Olympic Games</h4>
-    </div>
+    <div class="logo"><h4>Summer Olympic Games</h4></div>
      <ul class="menu">
       <li><a href="index.html"> Home</a></li>
       <li><a href="#"> Events</a></li>
