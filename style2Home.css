@@ -1,47 +1,52 @@
-body{
-    margin: 0;
-    padding: 0;
-    background: black no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+body {
+  margin: 0;
+  padding: 0;
+  background: white no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-header{
-    height: 100%;
-    background-size: cover;
-    background-position: center;
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background: transparent;
 }
 
-.nav-bar{
-    background: transparent;
-    height: 60px;
+.logo{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 22px;
+  width: 70%;
+  margin-left: 2vh;
 }
-
 
 .menu{
-    float: right;
-    list-style: none;
-    margin: 20px;
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 20px;
 }
 
-.menu li{
-    display: inline-block;
-    margin: 10px 5px;
+.menu li {
+  display: inline-block;
+  margin: 10px 10px;
 }
 
-.menu li a{
-    text-decoration: none;
-    color: white;
-    padding: 5px 10px;
-    font-family: sans-serif;
-    letter-spacing: 2px;
-    border: 1px solid white;
+.menu li a {
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  border: 1px solid black;
 }
 
-.menu li a:hover{
-    background: red;
-    transition: .4s;
-    color: #000;
+.menu li a:hover {
+  background: rgb(199, 199, 199);
+  transition: .4s;
+  color: #000;
 }
