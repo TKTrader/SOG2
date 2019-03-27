@@ -7,6 +7,6 @@ require 'header.php';
   <input type="text" name="" placeholder="First Name" />
   <input type="text" name="" placeholder="Last Name" />
   <input type="email" name="" placeholder="E-mail" />
-  <input type="text" name="" placeholder="Password" />
+  <input type="password" name="" placeholder="Password" />
   <input type="submit" name="" value="Submit" />
 </form>
