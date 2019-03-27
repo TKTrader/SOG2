@@ -50,3 +50,58 @@ nav {
   transition: .4s;
   color: #000;
 }
+
+/*************Login/Reg CSS*/
+/*Modified  but based off: https://www.youtube.com/watch?v=HV7DtH3J2PU*/
+.logContainer{
+  width: 300px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  text-align: center;
+  border: 3px solid rgb(189, 189, 189);
+}
+.logContainer h1{
+  letter-spacing: 3px;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.logContainer input[type="text"],.logContainer input[type="email"], .logContainer input[type="password"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid rgb(189, 189, 189);
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: black;
+  transition: 0.25s;
+}
+
+.logContainer input[type="text"]:focus,.logContainer input[type="email"]:focus, .logContainer input [type="password"]:focus{
+  width: 280px;
+  border-color: rgb(153, 193, 221);
+}
+
+.logContainer input[type="submit"]{
+  border:0;
+  background: none;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid rgb(189, 189, 189);
+  padding: 14px 40px;
+  outline: none;
+  color: black;
+  transition: 0.25s;
+}
+
+.logContainer input[type="submit"]:hover{
+  background: rgb(189, 189, 189);
+}
