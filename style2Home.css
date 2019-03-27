@@ -71,7 +71,7 @@ nav {
   font-weight: 500;
 }
 
-.logContainer input[type="text"],.logContainer input[type="email"], .logContainer input[type="password"]{
+.logContainer input[type="text"],.logContainer input[type="email"],.logContainer input[type="password"]{
   border:0;
   background: none;
   display: block;
@@ -85,7 +85,7 @@ nav {
   transition: 0.25s;
 }
 
-.logContainer input[type="text"]:focus,.logContainer input[type="email"]:focus, .logContainer input [type="password"]:focus{
+.logContainer input[type="text"]:focus,.logContainer input[type="email"]:focus,.logContainer input[type="password"]:focus{
   width: 280px;
   border-color: rgb(153, 193, 221);
 }
