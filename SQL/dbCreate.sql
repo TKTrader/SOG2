@@ -45,12 +45,12 @@ CREATE TABLE IF NOT EXISTS athlete(
 
 CREATE TABLE IF NOT EXISTS event(
     id INT AUTO_INCREMENT,
-    name VARCHAR(30) NOT NULL,
+    name VARCHAR(50) NOT NULL,
     date DATE NOT NULL, # dummy (note: had to remove (30) to get to work)
-    time  TIME NOT NULL UNIQUE, # dummy   Need to prevent conflict. UNIQUE? Does each event start in 30 minute increments?(note: had to remove (6) to get to work)
+    time  TIME NOT NULL,
     location VARCHAR(30) NOT NULL,
     eventType VARCHAR(15) NOT NULL, #(Competition/award/autograph??)
-    category VARCHAR (30) NOT NULL, #(Category of event, Race, Swimming, Bike, etc)
+    category VARCHAR (30) NOT NULL,
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
@@ -79,13 +79,42 @@ CREATE TABLE IF NOT EXISTS ticketOrder(
 #___________example data inserts for tables
 INSERT INTO event (name, date, time, location, eventType, category)
 VALUES(
-    'test',
-    '2017-03-28',
+  'Individual (olympic round 70M) MEN',
+    '2016-03-28',
     '12:00:00',
-    'NJ',
+    'Arena 1',
     'competition',
-    'Swimming'
+    'Archery'
     );
+
+INSERT INTO event (name, date, time, location, eventType, category)
+VALUES(
+    'Individual (olympic round 70M) WOMEN',
+    '2016-03-28',
+    '12:00:00',
+    'Arena 2',
+    'competition',
+    'Archery'
+    );
+INSERT INTO event (name, date, time, location, eventType, category)
+VALUES(
+    'Team (olympic round 70M) MEN',
+    '2016-03-31',
+    '12:00:00',
+    'Arena 1',
+    'competition',
+    'Archery'
+    );
+INSERT INTO event (name, date, time, location, eventType, category)
+VALUES(
+    'Team (olympic round 70M) WOMEN',
+    '2016-03-31',
+    '12:00:00',
+    'Arena 2',
+    'competition',
+    'Archery'
+    );
+
 
 /*Categories
 Archery
