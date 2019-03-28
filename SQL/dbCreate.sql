@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS ticketOrder(
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
-#___________example data inserts for vegetables
+#___________example data inserts for tables
 INSERT INTO eventinfo (name, date, time, location, eventType, category)
 VALUES(
     'test',
