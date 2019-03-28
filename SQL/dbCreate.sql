@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS athlete(
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
-CREATE TABLE IF NOT EXISTS eventInfo( #event is a reserved word
+CREATE TABLE IF NOT EXISTS event(
     id INT AUTO_INCREMENT,
     name VARCHAR(30) NOT NULL,
     date DATE NOT NULL, # dummy (note: had to remove (30) to get to work)
