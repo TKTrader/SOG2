@@ -75,3 +75,14 @@ CREATE TABLE IF NOT EXISTS ticketOrder(
     customerID INT, #  all users need to be represented in single table I think !!!! need unique IDs
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
+
+#___________example data inserts for vegetables
+INSERT INTO eventinfo (name, date, time, location, eventType, category)
+VALUES(
+    'test',
+    '2017-03-28',
+    '12:00:00',
+    'NJ',
+    'competition',
+    'Swimming'
+    );
