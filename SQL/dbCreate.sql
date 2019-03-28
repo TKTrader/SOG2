@@ -43,13 +43,14 @@ CREATE TABLE IF NOT EXISTS athlete(
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
-CREATE TABLE IF NOT EXISTS event(
+CREATE TABLE IF NOT EXISTS eventInfo( #event is a reserved word
     id INT AUTO_INCREMENT,
     name VARCHAR(30) NOT NULL,
-    date DATE(30) NOT NULL, # dummy
-    time  TIME(6) NOT NULL UNIQUE, # dummy   Need to prevent conflict. UNIQUE? Does each event start in 30 minute increments?
+    date DATE NOT NULL, # dummy (note: had to remove (30) to get to work)
+    time  TIME NOT NULL UNIQUE, # dummy   Need to prevent conflict. UNIQUE? Does each event start in 30 minute increments?(note: had to remove (6) to get to work)
     location VARCHAR(30) NOT NULL,
-    eventType VARCHAR(10) NOT NULL, (competition/award/autograph??)
+    eventType VARCHAR(15) NOT NULL, #(Competition/award/autograph??)
+    category VARCHAR (30) NOT NULL, #(Category of event, Race, Swimming, Bike, etc)
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
