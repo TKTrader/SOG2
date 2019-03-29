@@ -5,12 +5,12 @@
 
 CREATE DATABASE IF NOT EXISTS SOGSdb;
 
-CREATE TABLE IF NOT EXISTS user(
+CREATE TABLE IF NOT EXISTS user( #FYI changed user to users
     id INT AUTO_INCREMENT,
     firstName VARCHAR(30) NOT NULL,
     lastName VARCHAR(30) NOT NULL,
     email VARCHAR(30) NOT NULL UNIQUE,
-    pwd VARCHAR(64) NOT NULL,
+    password VARCHAR(64) NOT NULL, #FYI changed pwd to password
     access VARCHAR(1), # A:Athlete, Employee:E, PublicUser:P
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS employee(
     id INT AUTO_INCREMENT,
     phone VARCHAR(14),  # how to represent?
     PRIMARY KEY (id)
-) ENGINE=InnoDB;   # we need to check if this is default storage engine on XAMP, I was just writing this by hand
+) ENGINE=InnoDB; # we need to check if this is default storage engine on XAMP, I was just writing this by hand
 
 CREATE TABLE IF NOT EXISTS publicUser(
     id INT AUTO_INCREMENT,
@@ -37,14 +37,14 @@ CREATE TABLE IF NOT EXISTS athlete(
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
-CREATE TABLE IF NOT EXISTS olympicEvent(
+CREATE TABLE IF NOT EXISTS olympicEvent( #removed all the evt
     id INT AUTO_INCREMENT,
-    evtName VARCHAR(50) NOT NULL,
-    evtDate DATE NOT NULL, # dummy
-    evtTime  TIME NOT NULL,
-    evtLocation VARCHAR(30) NOT NULL,
-    evtType VARCHAR(5) NOT NULL, #(comp/award/autog),
-    evtCategory VARCHAR(30) NOT NULL, # archery, etc
+    name VARCHAR(50) NOT NULL,
+    date DATE NOT NULL,
+    time  TIME NOT NULL,
+    location VARCHAR(30) NOT NULL,
+    eventType VARCHAR(15) NOT NULL, #(comp/award/autog),
+    category VARCHAR (30) NOT NULL, # archery, etc
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
@@ -75,52 +75,197 @@ CREATE TABLE IF NOT EXISTS ticketOrder(
 ) ENGINE=InnoDB;
 
 #___________example data inserts for tables
-INSERT INTO event (name, date, time, location, eventType, category)
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
 VALUES(
   'Individual (olympic round 70M) MEN',
-    '2016-03-28',
+    '2016-08-03',
     '12:00:00',
     'Arena 1',
     'competition',
     'Archery'
     );
 
-INSERT INTO event (name, date, time, location, eventType, category)
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
 VALUES(
     'Individual (olympic round 70M) WOMEN',
-    '2016-03-28',
+    '2016-08-03',
     '12:00:00',
     'Arena 2',
     'competition',
     'Archery'
     );
-INSERT INTO event (name, date, time, location, eventType, category)
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
 VALUES(
     'Team (olympic round 70M) MEN',
-    '2016-03-31',
+    '2016-08-04',
     '12:00:00',
     'Arena 1',
     'competition',
     'Archery'
     );
-INSERT INTO event (name, date, time, location, eventType, category)
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
 VALUES(
     'Team (olympic round 70M) WOMEN',
-    '2016-03-31',
+    '2016-08-04',
     '12:00:00',
     'Arena 2',
     'competition',
     'Archery'
     );
-INSERT INTO event (name, date, time, location, eventType, category)
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
 VALUES(
     'Duet',
-    '2016-03-31',
+    '2016-08-05',
     '3:00:00',
     'Arena 3',
     'competition',
     'Artistic Swimming'
     );
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
+VALUES(
+    'TEAM',
+    '2016-08-06',
+    '3:00:00',
+    'Arena 4',
+    'competition',
+    'Artistic Swimming'
+    );
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
+VALUES(
+    '10000M MEN',
+    '2016-08-07',
+    '1:00:00',
+    'Arena 1',
+    'competition',
+    'Athletics'
+    );
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
+VALUES(
+    '100M MEN',
+    '2016-08-08',
+    '2:00:00',
+    'Arena 2',
+    'competition',
+    'Athletics'
+    );
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
+VALUES(
+    '110M HURDLES MEN',
+    '2016-08-09',
+    '5:00:00',
+    'Arena 3',
+    'competition',
+    'Athletics'
+    );
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
+VALUES(
+    '1500M MEN',
+    '2016-08-10',
+    '6:00:00',
+    'Arena 4',
+    'competition',
+    'Athletics'
+    );
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
+VALUES(
+    '200M MEN',
+    '2016-08-11',
+    '7:00:00',
+    'Arena 5',
+    'competition',
+    'Athletics'
+    );
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
+VALUES(
+    '20KM RACE WALK MEN',
+    '2016-08-12',
+    '8:00:00',
+    'Arena 1',
+    'competition',
+    'Athletics'
+  );
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
+VALUES(
+    '3000M STEEPLECHASE MEN',
+    '2016-08-13',
+    '9:00:00',
+    'Arena 2',
+    'competition',
+    'Athletics'
+  );
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
+VALUES(
+    '400M HURDLES MEN',
+    '2016-08-14',
+    '10:00:00',
+    'Arena 3',
+    'competition',
+    'Athletics'
+  );
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
+VALUES(
+    '400M MEN',
+    '2016-08-15',
+    '11:00:00',
+    'Arena 4',
+    'competition',
+    'Athletics'
+  );
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
+VALUES(
+    '4X100M RELAY MEN',
+    '2016-08-16',
+    '12:00:00',
+    'Arena 5',
+    'competition',
+    'Athletics'
+  );
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
+VALUES(
+    '4X400M RELAY MEN',
+    '2016-08-17',
+    '1:00:00',
+    'Arena 1',
+    'competition',
+    'Athletics'
+  );
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
+VALUES(
+    '5000M MEN',
+    '2016-08-18',
+    '2:00:00',
+    'Arena 2',
+    'competition',
+    'Athletics'
+  );
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
+VALUES(
+    '50KM RACE WALK MEN',
+    '2016-08-19',
+    '3:00:00',
+    'Arena 3',
+    'competition',
+    'Athletics'
+  );
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
+VALUES(
+    '800M MEN',
+    '2016-08-20',
+    '4:00:00',
+    'Arena 4',
+    'competition',
+    'Athletics'
+  );
+INSERT INTO olympicEvent (name, date, time, location, eventType, category)
+VALUES(
+    'DECATHLON MEN',
+    '2016-08-21',
+    '5:00:00',
+    'Arena 5',
+    'competition',
+    'Athletics'
+  );
+
 
 /*Categories
 Archery
