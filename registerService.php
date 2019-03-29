@@ -15,14 +15,14 @@ $password = mysqli_real_escape_string($mysqli, password_hash($_POST['password'],
  * $duplicatecheck will store the results of the row where the email is found
  * if (rows in duplicate check is > 0, it found a result. Meaning email is alrdy registered)
  */
-$duplicatecheck = $mysqli->query("SELECT * FROM users WHERE email='$email'") or die($mysqli->error());
+$duplicatecheck = $mysqli->query("SELECT * FROM user WHERE email='$email'") or die($mysqli->error());
 if ($duplicatecheck->num_rows > 0) {
     $_SESSION['message'] = 'E-mail already exists!';
     header("location: error.php");
 }
 //Store session vars into db
 else {
-    $store_session_vars = "INSERT INTO  users (firstName, lastName, email, password) "
+    $store_session_vars = "INSERT INTO  user (firstName, lastName, email, password) "
   ."VALUES('$first_name','$last_name','$email','$password')";
     if ($mysqli->query($store_session_vars)) {
         $_SESSION['logged_in'] = true;

@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS ticketOrder(
     eventID VARCHAR(30) NOT NULL,
     totalPrice, decimal(5,4) NOT NULL,
     purchaseTimeStamp TIMESTAMP(),
-    customerID INT, # foreign  
+    customerID INT, # foreign
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
