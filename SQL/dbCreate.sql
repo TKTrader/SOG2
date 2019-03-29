@@ -114,7 +114,15 @@ VALUES(
     'competition',
     'Archery'
     );
-
+INSERT INTO event (name, date, time, location, eventType, category)
+VALUES(
+    'Duet',
+    '2016-03-31',
+    '3:00:00',
+    'Arena 3',
+    'competition',
+    'Artistic Swimming'
+    );
 
 /*Categories
 Archery
