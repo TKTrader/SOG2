@@ -109,10 +109,16 @@ nav {
 /*Events CSS*/
 .grid_container{
   position: relative;
-  top: 10%;
-  left: 15%;
+  top: 15%;
+  left: 50%;
   max-width: 130vh;
+  transform: translate(-50%, -15%);
 }
+
+.grid_container > span{
+  text-align: center;
+}
+
 .grid {
     display: grid;
     grid-template-columns: minmax(20px, 30px) 1fr 3fr 1fr 1fr 1fr;
@@ -138,4 +144,9 @@ nav {
     padding: 8px 4px;
     border-left: 1px solid rgb(150, 150, 150);
     border-bottom: 1px solid rgb(150, 150, 150);
+}
+
+.loadView_Container{
+  position: relative;
+  position: below;
 }
