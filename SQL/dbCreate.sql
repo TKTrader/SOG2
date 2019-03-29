@@ -1,7 +1,3 @@
-# Need to create user table for passwords with access level
-# then 3 secondary tables using foreign key with 3 types of users? (id as foreignkey)
-# since all have different attributes
-# do we need same for events?  1 event table?  and then 3 sub events? or all in one db
 # event schedule needs to be searchable for conflict (award ceremony cant conflict with competition)
 # maybe autograph separate since it Can conflict?
 # assuming users registering with email, like last project, but we could add user name if those guys want to build it
@@ -9,70 +5,72 @@
 
 CREATE DATABASE IF NOT EXISTS SOGSdb;
 
-CREATE TABLE IF NOT EXISTS employee(
+CREATE TABLE IF NOT EXISTS user(
     id INT AUTO_INCREMENT,
     firstName VARCHAR(30) NOT NULL,
     lastName VARCHAR(30) NOT NULL,
     email VARCHAR(30) NOT NULL UNIQUE,
-    password VARCHAR(64) NOT NULL, # covers SHA-256
-    access VARCHAR(1), # A, E, P? dummy  (Athlete/Employee/PublicUser)
+    pwd VARCHAR(64) NOT NULL,
+    access VARCHAR(1), # A:Athlete, Employee:E, PublicUser:P
+    PRIMARY KEY (id)
+) ENGINE=InnoDB;
+
+# Fields done, needs foreign key
+CREATE TABLE IF NOT EXISTS employee(
+    id INT AUTO_INCREMENT,
     phone VARCHAR(14),  # how to represent?
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;   # we need to check if this is default storage engine on XAMP, I was just writing this by hand
 
 CREATE TABLE IF NOT EXISTS publicUser(
     id INT AUTO_INCREMENT,
-    firstName VARCHAR(30) NOT NULL,
-    lastName VARCHAR(30) NOT NULL,
-    email VARCHAR(30) NOT NULL UNIQUE,
-    password VARCHAR(64) NOT NULL,
-    access VARCHAR(1), # A, E, P? dummy
+    phone VARCHAR(14),
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS athlete(
     id INT AUTO_INCREMENT,
-    firstName VARCHAR(30) NOT NULL,
-    lastName VARCHAR(30) NOT NULL,
-    email VARCHAR(30) NOT NULL UNIQUE,
-    password VARCHAR(64) NOT NULL,
-    access VARCHAR(1), # A, E, P? dummy
     country VARCHAR(30) NOT NULL,
     height VARCHAR(5) NOT NULL,
-    weight INT(3) NOT NULL,  # HOW TO REPRESENT EVENTS? NEED ANOTHER TABLE
+    wgt FLOAT(3,1) NOT NULL,
+    DOB VARCHAR(8), # need date representation
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
-CREATE TABLE IF NOT EXISTS event(
+CREATE TABLE IF NOT EXISTS olympicEvent(
     id INT AUTO_INCREMENT,
-    name VARCHAR(50) NOT NULL,
-    date DATE NOT NULL, # dummy (note: had to remove (30) to get to work)
-    time  TIME NOT NULL,
-    location VARCHAR(30) NOT NULL,
-    eventType VARCHAR(15) NOT NULL, #(Competition/award/autograph??)
-    category VARCHAR (30) NOT NULL,
+    evtName VARCHAR(50) NOT NULL,
+    evtDate DATE NOT NULL, # dummy
+    evtTime  TIME NOT NULL,
+    evtLocation VARCHAR(30) NOT NULL,
+    evtType VARCHAR(5) NOT NULL, #(comp/award/autog),
+    evtCategory VARCHAR(30) NOT NULL, # archery, etc
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
+# table to match athletes to their events
+CREATE TABLE IF NOT EXISTS athleteEvent(
+    id INT, # foreign
+    eventID INT, #foreign
+    placement INT(3)  # athlete rank in event
+) ENGINE=InnoDB;
+
+# "class" for tickets, employee modifies this table
 CREATE TABLE IF NOT EXISTS ticket(
     id INT AUTO_INCREMENT,
-    eventName VARCHAR(30) NOT NULL,
-    date DATE(30) NOT NULL, # dummy
-    time  TIME(6) NOT NULL, # dummy  How to represent?
-    location VARCHAR(30) NOT NULL,
-    price, CURRENCY(5) NOT NULL,  # Dummy, need currency type
+    eventID VARCHAR(30) NOT NULL, # foreign key
+    tickPrice, decimal(5,4) NOT NULL,  # could include price in event
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
+# actual tickets purchased
 CREATE TABLE IF NOT EXISTS ticketOrder(
     id INT AUTO_INCREMENT,
-    eventName VARCHAR(30) NOT NULL,
-    date DATE(30) NOT NULL, # dummy
-    time  TIME(6) NOT NULL, # dummy
-    location VARCHAR(30) NOT NULL,
-    price, CURRENCY(5) NOT NULL,  # Dummy, need currency type,
-    purchaseTimeStamp TIMESTAMP(),  #dummy, need data type here
-    customerID INT, #  all users need to be represented in single table I think !!!! need unique IDs
+    numTicks INT NOT NULL,
+    eventID VARCHAR(30) NOT NULL,
+    totalPrice, decimal(5,4) NOT NULL,
+    purchaseTimeStamp TIMESTAMP(),
+    customerID INT, # foreign  
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
