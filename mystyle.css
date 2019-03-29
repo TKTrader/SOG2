@@ -86,7 +86,7 @@ nav {
 }
 
 .logContainer input[type="text"]:focus,.logContainer input[type="email"]:focus,.logContainer input[type="password"]:focus{
-  width: 280px;
+  width: 215px;
   border-color: rgb(153, 193, 221);
 }
 
@@ -122,6 +122,19 @@ nav {
 }
 
 .grid > span {
+    padding: 8px 4px;
+    border-left: 1px solid rgb(150, 150, 150);
+    border-bottom: 1px solid rgb(150, 150, 150);
+}
+/*Schedule CSS*/
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    border-top: 1px solid rgb(150, 150, 150);
+    border-right: 1px solid rgb(150, 150, 150);
+    text-align: center;
+}
+.grid2 > span {
     padding: 8px 4px;
     border-left: 1px solid rgb(150, 150, 150);
     border-bottom: 1px solid rgb(150, 150, 150);
