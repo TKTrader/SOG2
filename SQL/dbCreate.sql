@@ -9,42 +9,43 @@ CREATE TABLE IF NOT EXISTS users(
     email VARCHAR(30) NOT NULL UNIQUE,
     password VARCHAR(64) NOT NULL,
     access VARCHAR(1), # A:Athlete, Employee:E, PublicUser:P
+    phone VARCHAR(24),
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
-# Fields done, needs foreign key
-CREATE TABLE IF NOT EXISTS employee(
+-- # Fields done, needs foreign key
+-- CREATE TABLE IF NOT EXISTS employee(
+--     id INT,
+--     phone VARCHAR(14),
+--     PRIMARY KEY (id),
+--     FOREIGN KEY (id) REFERENCES users(id)
+-- ) ENGINE=InnoDB;
+
+-- CREATE TABLE IF NOT EXISTS publicUser(
+--     id INT,
+--     phone VARCHAR(14),
+--     PRIMARY KEY (id),
+--     FOREIGN KEY (id) REFERENCES users(id)
+-- ) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS athletes(
     id INT,
-    phone VARCHAR(14),  # how to represent?
-    PRIMARY KEY (id),
-    FOREIGN KEY (id) REFERENCES users(id)
-) ENGINE=InnoDB;
-
-CREATE TABLE IF NOT EXISTS publicUser(
-    id INT AUTO_INCREMENT,
-    phone VARCHAR(14),
-    PRIMARY KEY (id),
-    FOREIGN KEY (id) REFERENCES users(id)
-) ENGINE=InnoDB;
-
-CREATE TABLE IF NOT EXISTS athlete(
-    id INT AUTO_INCREMENT,
     country VARCHAR(30) NOT NULL,
     height VARCHAR(5) NOT NULL,
     wgt FLOAT(4,1) NOT NULL,
-    DOB VARCHAR(8), # need date representation
+    DOB DATE, # YYYY-MM-DD
     FOREIGN KEY (id) REFERENCES users(id),
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS olympicEvent(
     id INT AUTO_INCREMENT,
-    evtName VARCHAR(50) NOT NULL,
-    evtDate DATE NOT NULL, # dummy
-    evtTime  TIME NOT NULL,
-    evtLocation VARCHAR(30) NOT NULL,
-    evtType VARCHAR(5) NOT NULL, #(comp/award/autog),
-    evtCategory VARCHAR(30) NOT NULL, # archery, etc
+    name VARCHAR(50) NOT NULL,
+    date DATE NOT NULL, # dummy
+    time  TIME NOT NULL,
+    location VARCHAR(30) NOT NULL,
+    type VARCHAR(5) NOT NULL, #(comp/award/autog),
+    category VARCHAR(30) NOT NULL, # archery, etc
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
