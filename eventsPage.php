@@ -12,7 +12,7 @@ require 'header.php';
     <span>Location</span>
     <?php
       //Select everything from event table
-      $sql ="SELECT * FROM event";
+      $sql ="SELECT * FROM olympicEvent";
 
       //counter
       $counter = 1;

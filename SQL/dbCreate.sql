@@ -1,39 +1,39 @@
-# event schedule needs to be searchable for conflict (award ceremony cant conflict with competition)
-# maybe autograph separate since it Can conflict?
-# assuming users registering with email, like last project, but we could add user name if those guys want to build it
-# on front end
+# Need to add foreign keys to db creation
 
 CREATE DATABASE IF NOT EXISTS SOGSdb;
 
-CREATE TABLE IF NOT EXISTS user(
+CREATE TABLE IF NOT EXISTS allUsers(
     id INT AUTO_INCREMENT,
     firstName VARCHAR(30) NOT NULL,
     lastName VARCHAR(30) NOT NULL,
     email VARCHAR(30) NOT NULL UNIQUE,
-    pwd VARCHAR(64) NOT NULL,
+    password VARCHAR(64) NOT NULL,
     access VARCHAR(1), # A:Athlete, Employee:E, PublicUser:P
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
 # Fields done, needs foreign key
 CREATE TABLE IF NOT EXISTS employee(
-    id INT AUTO_INCREMENT,
+    id INT,
     phone VARCHAR(14),  # how to represent?
-    PRIMARY KEY (id)
-) ENGINE=InnoDB;   # we need to check if this is default storage engine on XAMP, I was just writing this by hand
+    PRIMARY KEY (id),
+    FOREIGN KEY (id) REFERENCES allUsers(id)
+) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS publicUser(
     id INT AUTO_INCREMENT,
     phone VARCHAR(14),
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    FOREIGN KEY (id) REFERENCES allUsers(id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS athlete(
     id INT AUTO_INCREMENT,
     country VARCHAR(30) NOT NULL,
     height VARCHAR(5) NOT NULL,
-    wgt FLOAT(3,1) NOT NULL,
+    wgt FLOAT(4,1) NOT NULL,
     DOB VARCHAR(8), # need date representation
+    FOREIGN KEY (id) REFERENCES allUsers(id),
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS athleteEvent(
 CREATE TABLE IF NOT EXISTS ticket(
     id INT AUTO_INCREMENT,
     eventID VARCHAR(30) NOT NULL, # foreign key
-    tickPrice, decimal(5,4) NOT NULL,  # could include price in event
+    tickPrice DECIMAL(5,4) NOT NULL,  # could include price in event
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
@@ -68,59 +68,12 @@ CREATE TABLE IF NOT EXISTS ticketOrder(
     id INT AUTO_INCREMENT,
     numTicks INT NOT NULL,
     eventID VARCHAR(30) NOT NULL,
-    totalPrice, decimal(5,4) NOT NULL,
-    purchaseTimeStamp TIMESTAMP(),
+    totalPrice DECIMAL(5,4) NOT NULL,
+    purchaseTimeStamp TIMESTAMP,
     customerID INT, # foreign  
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
-#___________example data inserts for tables
-INSERT INTO event (name, date, time, location, eventType, category)
-VALUES(
-  'Individual (olympic round 70M) MEN',
-    '2016-03-28',
-    '12:00:00',
-    'Arena 1',
-    'competition',
-    'Archery'
-    );
-
-INSERT INTO event (name, date, time, location, eventType, category)
-VALUES(
-    'Individual (olympic round 70M) WOMEN',
-    '2016-03-28',
-    '12:00:00',
-    'Arena 2',
-    'competition',
-    'Archery'
-    );
-INSERT INTO event (name, date, time, location, eventType, category)
-VALUES(
-    'Team (olympic round 70M) MEN',
-    '2016-03-31',
-    '12:00:00',
-    'Arena 1',
-    'competition',
-    'Archery'
-    );
-INSERT INTO event (name, date, time, location, eventType, category)
-VALUES(
-    'Team (olympic round 70M) WOMEN',
-    '2016-03-31',
-    '12:00:00',
-    'Arena 2',
-    'competition',
-    'Archery'
-    );
-INSERT INTO event (name, date, time, location, eventType, category)
-VALUES(
-    'Duet',
-    '2016-03-31',
-    '3:00:00',
-    'Arena 3',
-    'competition',
-    'Artistic Swimming'
-    );
 
 /*Categories
 Archery
