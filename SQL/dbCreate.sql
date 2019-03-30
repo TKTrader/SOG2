@@ -2,7 +2,7 @@
 
 CREATE DATABASE IF NOT EXISTS SOGSdb;
 
-CREATE TABLE IF NOT EXISTS allUsers(
+CREATE TABLE IF NOT EXISTS users(
     id INT AUTO_INCREMENT,
     firstName VARCHAR(30) NOT NULL,
     lastName VARCHAR(30) NOT NULL,
@@ -17,14 +17,14 @@ CREATE TABLE IF NOT EXISTS employee(
     id INT,
     phone VARCHAR(14),  # how to represent?
     PRIMARY KEY (id),
-    FOREIGN KEY (id) REFERENCES allUsers(id)
+    FOREIGN KEY (id) REFERENCES users(id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS publicUser(
     id INT AUTO_INCREMENT,
     phone VARCHAR(14),
     PRIMARY KEY (id),
-    FOREIGN KEY (id) REFERENCES allUsers(id)
+    FOREIGN KEY (id) REFERENCES users(id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS athlete(
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS athlete(
     height VARCHAR(5) NOT NULL,
     wgt FLOAT(4,1) NOT NULL,
     DOB VARCHAR(8), # need date representation
-    FOREIGN KEY (id) REFERENCES allUsers(id),
+    FOREIGN KEY (id) REFERENCES users(id),
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
