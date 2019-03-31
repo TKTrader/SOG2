@@ -8,7 +8,8 @@ CREATE TABLE IF NOT EXISTS users(
     lastName VARCHAR(30) NOT NULL,
     email VARCHAR(30) NOT NULL UNIQUE,
     password VARCHAR(64) NOT NULL,
-    access VARCHAR(1), # A:Athlete, Employee:E, PublicUser:P
+    access VARCHAR(1) DEFAULT 'A', # A:Athlete, Employee:E, PublicUser:P
+    check(access in ('A', 'E', 'P')),
     phone VARCHAR(24),
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
@@ -41,19 +42,23 @@ CREATE TABLE IF NOT EXISTS athletes(
 CREATE TABLE IF NOT EXISTS olympicEvent(
     id INT AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
-    date DATE NOT NULL, # dummy
+    date DATE NOT NULL,
     time  TIME NOT NULL,
     location VARCHAR(30) NOT NULL,
     type VARCHAR(5) NOT NULL, #(comp/award/autog),
+    check(type in ('comp', 'award', 'autog')),
     category VARCHAR(30) NOT NULL, # archery, etc
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
 # table to match athletes to their events
 CREATE TABLE IF NOT EXISTS athleteEvent(
-    id INT, # foreign
-    eventID INT, #foreign
-    placement INT(3)  # athlete rank in event
+    id INT AUTO_INCREMENT,
+    athleteID INT NOT NULL, # foreign
+    eventID INT NOT NULL, #foreign
+    placement INT(3),  # athlete rank in event
+    PRIMARY KEY (id),
+    FOREIGN KEY (athleteID) REFERENCES athletes(id),
 ) ENGINE=InnoDB;
 
 # "class" for tickets, employee modifies this table
@@ -64,14 +69,14 @@ CREATE TABLE IF NOT EXISTS ticket(
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
-# actual tickets purchased
+# actual tickets purchased.  Do we need column for total or calculate separately?
 CREATE TABLE IF NOT EXISTS ticketOrder(
     id INT AUTO_INCREMENT,
     numTicks INT NOT NULL,
     eventID VARCHAR(30) NOT NULL,
-    totalPrice DECIMAL(5,4) NOT NULL,
-    purchaseTimeStamp TIMESTAMP,
-    customerID INT, # foreign  
+    price DECIMAL(5,4) NOT NULL,
+    purchaseTimeStamp TIMESTAMP NOT NULL,
+    customerID INT NOT NULL, # foreign  
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 

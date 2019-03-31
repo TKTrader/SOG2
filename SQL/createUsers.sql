@@ -35,7 +35,7 @@ VALUES(
 INSERT INTO SOGSdb.users(firstName, lastName, email, password, access, phone)
 VALUES(
   'Athena',
-    'Warrrior',
+    'Warrior',
     'athlete3@sogs.com',
     '9d8s0d98fs09d8fs9dnj3nekj3nksdn',
     'A',

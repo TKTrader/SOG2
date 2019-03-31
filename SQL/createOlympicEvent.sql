@@ -1,47 +1,70 @@
-#___________example data inserts for tables
-INSERT INTO event (name, date, time, location, eventType, category)
+-- Dummy data for Olympic Events table
+
+-- CREATE TABLE IF NOT EXISTS olympicEvent(
+--     id INT AUTO_INCREMENT,
+--     name VARCHAR(50) NOT NULL,
+--     date DATE NOT NULL, # dummy
+--     time  TIME NOT NULL,
+--     location VARCHAR(30) NOT NULL,
+--     type VARCHAR(5) NOT NULL, #(comp/award/autog),
+--     category VARCHAR(30) NOT NULL, # archery, etc
+--     PRIMARY KEY (id)
+-- ) ENGINE=InnoDB;
+
+-- Time and date format are modified in SELECT statements, not in database storage
+
+INSERT INTO olympicEvent(name, date, time, location, type, category)
 VALUES(
   'Individual (olympic round 70M) MEN',
     '2016-03-28',
     '12:00:00',
     'Arena 1',
-    'competition',
+    'comp',
     'Archery'
     );
 
-INSERT INTO event (name, date, time, location, eventType, category)
+INSERT INTO olympicEvent(name, date, time, location, type, category)
 VALUES(
     'Individual (olympic round 70M) WOMEN',
     '2016-03-28',
     '12:00:00',
     'Arena 2',
-    'competition',
+    'comp',
     'Archery'
     );
-INSERT INTO event (name, date, time, location, eventType, category)
+INSERT INTO olympicEvent(name, date, time, location, type, category)
 VALUES(
-    'Team (olympic round 70M) MEN',
+    '10M Platform WOMEN',
     '2016-03-31',
-    '12:00:00',
+    '1:00:00',
     'Arena 1',
-    'competition',
-    'Archery'
+    'comp',
+    'Diving'
     );
-INSERT INTO event (name, date, time, location, eventType, category)
+INSERT INTO olympicEvent(name, date, time, location, type, category)
 VALUES(
-    'Team (olympic round 70M) WOMEN',
+    'Singles Men Badminton',
     '2016-03-31',
     '12:00:00',
     'Arena 2',
-    'competition',
-    'Archery'
+    'comp',
+    'Badminton'
     );
-INSERT INTO event (name, date, time, location, eventType, category)
+INSERT INTO olympicEvent(name, date, time, location, type, category)
 VALUES(
-    'Duet',
+    'C-1 1000M (CANOE SINGLE) MEN',
     '2016-03-31',
-    '3:00:00',
+    '2:00:00',
     'Arena 3',
-    'competition',
-    'Artistic Swimming'
+    'comp',
+    'Canoe Sprint'
+    );
+INSERT INTO olympicEvent(name, date, time, location, type, category)
+VALUES(
+    'Team Mixed',
+    '2016-03-29',
+    '12:00:00',
+    'Arena 1',
+    'comp',
+    'Equestrian Jumping'
     );
