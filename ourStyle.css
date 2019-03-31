@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: white no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background: transparent;
+}
+
+.logo{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 22px;
+  width: 70%;
+  margin-left: 2vh;
+}
+
+.menu{
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 20px;
+}
+
+.menu li {
+  display: inline-block;
+  margin: 10px 10px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  border: 1px solid black;
+}
+
+.menu li a:hover {
+  background: rgb(199, 199, 199);
+  transition: .4s;
+  color: #000;
+}
+
+/*Login/Reg CSS*/
+/*Modified  but based off: https://www.youtube.com/watch?v=HV7DtH3J2PU*/
+.logContainer{
+  width: 300px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  text-align: center;
+  border: 3px solid rgb(189, 189, 189);
+}
+.logContainer h1{
+  letter-spacing: 3px;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.logContainer input[type="text"],.logContainer input[type="email"],.logContainer input[type="password"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid rgb(189, 189, 189);
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: black;
+  transition: 0.25s;
+}
+
+.logContainer input[type="text"]:focus,.logContainer input[type="email"]:focus,.logContainer input[type="password"]:focus{
+  width: 215px;
+  border-color: rgb(153, 193, 221);
+}
+
+.logContainer input[type="submit"]{
+  border:0;
+  background: none;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid rgb(189, 189, 189);
+  padding: 14px 40px;
+  outline: none;
+  color: black;
+  transition: 0.25s;
+}
+
+.logContainer input[type="submit"]:hover{
+  background: rgb(189, 189, 189);
+}
+
+/*Events CSS*/
+.grid_container{
+  position: relative;
+  top: 15%;
+  left: 50%;
+  max-width: 130vh;
+  transform: translate(-50%, -15%);
+}
+
+.grid_container > span{
+  text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: minmax(20px, 30px) 1fr 3fr 1fr 1fr 1fr;
+    border-top: 1px solid rgb(150, 150, 150);
+    border-right: 1px solid rgb(150, 150, 150);
+    text-align: center;
+}
+
+.grid > span {
+    padding: 8px 4px;
+    border-left: 1px solid rgb(150, 150, 150);
+    border-bottom: 1px solid rgb(150, 150, 150);
+}
+/*Schedule CSS*/
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    border-top: 1px solid rgb(150, 150, 150);
+    border-right: 1px solid rgb(150, 150, 150);
+    text-align: center;
+}
+.grid2 > span {
+    padding: 8px 4px;
+    border-left: 1px solid rgb(150, 150, 150);
+    border-bottom: 1px solid rgb(150, 150, 150);
+}
+
+.loadView_Container{
+  position: relative;
+  position: below;
+}
