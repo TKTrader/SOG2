@@ -9,7 +9,6 @@ $first_name = mysqli_real_escape_string($mysqli, $_POST['firstname']);
 $last_name = mysqli_real_escape_string($mysqli, $_POST['lastname']);
 $email = mysqli_real_escape_string($mysqli, $_POST['email']);
 $password = mysqli_real_escape_string($mysqli, password_hash($_POST['password'], PASSWORD_BCRYPT));
-$access = 'P';
 
 /* Duplicate check point
  * Check if duplicate by querying db if stored e-mail in users table == to posted $email value being registered
@@ -23,8 +22,8 @@ if ($duplicatecheck->num_rows > 0) {
 }
 //Store session vars into db
 else {
-    $store_session_vars = "INSERT INTO  users (firstName, lastName, email, password, access) "
-  ."VALUES('$first_name','$last_name','$email','$password', '$access')";
+    $store_session_vars = "INSERT INTO  users (firstName, lastName, email, password, access)"
+  ."VALUES('$first_name','$last_name','$email','$password')";
     if ($mysqli->query($store_session_vars)) {
         $_SESSION['logged_in'] = true;
         header("location: index.php");
