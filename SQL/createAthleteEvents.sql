@@ -10,7 +10,7 @@ INSERT INTO athleteEvent(athleteID, eventID, placement)
 VALUES(
     "1",
     "4", # male badminton
-    "76"
+    "20"
     );
 
 INSERT INTO athleteEvent(athleteID, eventID, placement)
@@ -115,5 +115,5 @@ INSERT INTO athleteEvent(athleteID, eventID, placement)
 VALUES(
     "6",
     "6", # equestrian
-    "6"
+    "666"
     );

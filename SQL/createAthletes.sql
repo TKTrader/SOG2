@@ -10,7 +10,7 @@
 --     PRIMARY KEY (id)
 -- ) ENGINE=InnoDB;
 
-INSERT INTO SOGSdb.athletes(id, country, height, wgt, DOB)
+INSERT INTO athletes(id, country, height, wgt, DOB)
 VALUES(
     "1",
     "Venezuela",
@@ -19,7 +19,7 @@ VALUES(
     "1998-06-30"
     );
 
-INSERT INTO SOGSdb.athletes(id, country, height, wgt, DOB)
+INSERT INTO athletes(id, country, height, wgt, DOB)
 VALUES(
     "2",
     "France",
@@ -28,7 +28,7 @@ VALUES(
     '1997-02-07'
     );
 
-INSERT INTO SOGSdb.athletes(id, country, height, wgt, DOB)
+INSERT INTO athletes(id, country, height, wgt, DOB)
 VALUES(
     '3',
     'Greece',
@@ -37,7 +37,7 @@ VALUES(
     '1587-12-12'
     );
 
-INSERT INTO SOGSdb.athletes(id, country, height, wgt, DOB)
+INSERT INTO athletes(id, country, height, wgt, DOB)
 VALUES(
     '4',
     'Nigeria',
@@ -46,7 +46,7 @@ VALUES(
     '2000-08-26'
     );
 
-INSERT INTO SOGSdb.athletes(id, country, height, wgt, DOB)
+INSERT INTO athletes(id, country, height, wgt, DOB)
 VALUES(
     '5',
     'China',
@@ -55,11 +55,11 @@ VALUES(
     '1997-03-12'
     );
 
-INSERT INTO SOGSdb.athletes(id, country, height, wgt, DOB)
+INSERT INTO athletes(id, country, height, wgt, DOB)
 VALUES(
     '6',
     'Germany',
     concat('7',char(39),'5',char(34)),
     '250.0',
-    '1347-06-06'
+    '0666-06-06'
     );
