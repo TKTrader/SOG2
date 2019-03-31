@@ -9,7 +9,7 @@ $first_name = mysqli_real_escape_string($mysqli, $_POST['firstname']);
 $last_name = mysqli_real_escape_string($mysqli, $_POST['lastname']);
 $email = mysqli_real_escape_string($mysqli, $_POST['email']);
 $password = mysqli_real_escape_string($mysqli, password_hash($_POST['password'], PASSWORD_BCRYPT));
-$access = 'A';
+$access = 'P';
 
 /* Duplicate check point
  * Check if duplicate by querying db if stored e-mail in users table == to posted $email value being registered

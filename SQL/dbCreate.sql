@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS users(
     lastName VARCHAR(30) NOT NULL,
     email VARCHAR(30) NOT NULL UNIQUE,
     password VARCHAR(64) NOT NULL,
-    access VARCHAR(1) DEFAULT 'A', # A:Athlete, Employee:E, PublicUser:P
+    access VARCHAR(1) DEFAULT 'P', # A:Athlete, Employee:E, PublicUser:P
     phone VARCHAR(24),
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
