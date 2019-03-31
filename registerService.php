@@ -16,7 +16,7 @@ $access = 'P';
  * $duplicatecheck will store the results of the row where the email is found
  * if (rows in duplicate check is > 0, it found a result. Meaning email is alrdy registered)
  */
-$duplicatecheck = $mysqli->query("SELECT * FROM users WHERE email='$email'") or die($mysqli->error());
+$duplicatecheck = $mysqli->query("SELECT * FROM user WHERE email='$email'") or die($mysqli->error());
 if ($duplicatecheck->num_rows > 0) {
     $_SESSION['message'] = 'E-mail already exists!';
     header("location: error.php");

@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS athletes(
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
-CREATE TABLE IF NOT EXISTS olympicEvent(
+CREATE TABLE IF NOT EXISTS olympicEvent( #removed all the evt
     id INT AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
     date DATE NOT NULL,
