@@ -3,7 +3,7 @@
 require 'db_connection.php';
 session_start();
 $email = mysqli_real_escape_string($mysqli, $_POST['email']);
-$result = $mysqli->query("SELECT * FROM user WHERE email='$email'");
+$result = $mysqli->query("SELECT * FROM users WHERE email='$email'");
 //Check if e-mail is in db
 if ($result->num_rows == 0) {
     $_SESSION['message'] = 'E-mail does not exist!';

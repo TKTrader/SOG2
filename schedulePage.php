@@ -1,11 +1,6 @@
 <?php
 require 'header.php';
 ?>
-Here we need to create a sort of "calendar" like view but smaller, Olympics only last like 18 Days. Similar to http://www.espn.com/olympics/summer/2016/schedule/_/date/20160817
-<br />
-When you click on a date with scheduled events it will load below.
-Maybe need to shrink calendar
-add css to make dates with events stand out.
 <div class="grid_container">
   <span><h4>August 2016</h4></span>
   <form class = "Calendar action" action="schedulePage.php" method="post">
@@ -53,7 +48,7 @@ add css to make dates with events stand out.
       echo "<span>Time</span>";
       echo "<span>Location</span>";
       if (isset($_POST['3'])) {
-        $query1 = "SELECT * FROM olympicEvent WHERE date = '2016-08-03' ";
+        $query1 = "SELECT * FROM olympicevent WHERE date = '2016-08-03' ";
         $run_query1 = mysqli_query($mysqli, $query1);
         $checkquery = mysqli_num_rows($run_query1);
         if ($checkquery>0){

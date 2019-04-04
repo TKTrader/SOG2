@@ -119,6 +119,7 @@ nav {
   text-align: center;
 }
 
+/*Events CSS (also in schedule)*/
 .grid {
     display: grid;
     grid-template-columns: minmax(20px, 30px) 1fr 3fr 1fr 1fr 1fr;
@@ -148,5 +149,5 @@ nav {
 
 .loadView_Container{
   position: relative;
-  position: below;
+/*  position: below;*/
 }

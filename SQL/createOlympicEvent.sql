@@ -152,43 +152,43 @@ VALUES(
     '0.00'
     );
 
-INSERT INTO olympicEvent (name, date, time, location, eventType, category,ticketPrice)
+INSERT INTO olympicEvent (name, date, time, location, type, category,ticketPrice)
 VALUES(
     '5000M MEN',
     '2016-08-18',
     '02:00:00',
     'Arena 2',
-    'competition',
+    'comp',
     'Athletics',
     '20.00'
   );
-INSERT INTO olympicEvent (name, date, time, location, eventType, category,ticketPrice)
+INSERT INTO olympicEvent (name, date, time, location, type, category,ticketPrice)
 VALUES(
     '50KM RACE WALK MEN',
     '2016-08-19',
     '03:00:00',
     'Arena 3',
-    'competition',
+    'comp',
     'Athletics',
     '20.00'
   );
-INSERT INTO olympicEvent (name, date, time, location, eventType, category,ticketPrice)
+INSERT INTO olympicEvent (name, date, time, location, type, category,ticketPrice)
 VALUES(
     '800M MEN',
     '2016-08-20',
     '04:00:00',
     'Arena 4',
-    'competition',
+    'comp',
     'Athletics',
     '20.00'
   );
-INSERT INTO olympicEvent (name, date, time, location, eventType, category,ticketPrice)
+INSERT INTO olympicEvent (name, date, time, location, type, category,ticketPrice)
 VALUES(
     'DECATHLON MEN',
     '2016-08-21',
     '05:00:00',
     'Arena 5',
-    'competition',
+    'comp',
     'Athletics',
     '20.00'
   );
@@ -422,18 +422,18 @@ INDIVIDUAL ALL-ROUND MEN
 PARALLEL BARS MEN
 POMMEL HORSE MEN
 RINGS MEN
-TEAM COMPETITION MEN
+TEAM  MEN
 VAULT MEN
 BEAM WOMEN
 FLOOR EXERCISES WOMEN
 INDIVIDUAL ALL-ROUND WOMEN
-TEAM COMPETITION WOMEN
+TEAM  WOMEN
 UNEVEN BARS WOMEN
 VAULT WOMEN
 
 ____________Gymnastics Rhythmic
-GROUP ALL-AROUND COMPETITION
-INDIVIDUAL ALL-ROUND COMPETITION
+GROUP ALL-AROUND
+INDIVIDUAL ALL-ROUND
 
 ____________Handball
 12 TEAM TOURNAMENT MEN
@@ -464,8 +464,8 @@ MARATHON - 10 KM MEN
 MARATHON - 10 KM WOMEN
 
 ____________Modern Pentathlon
-INDIVIDUAL COMPETITION MEN
-INDIVIDUAL COMPETITION WOMEN
+INDIVIDUAL  MEN
+INDIVIDUAL  WOMEN
 
 ____________Rowing
 COXLESS PAIR (2-) MEN
@@ -576,8 +576,8 @@ SINGLES WOMEN
 DOUBLES MIXED
 
 ____________Trampoline
-INDIVIDUAL COMPETITION MEN
-INDIVIDUAL COMPETITION WOMEN
+INDIVIDUAL  MEN
+INDIVIDUAL  WOMEN
 
 ____________Triathlon
 INDIVIDUAL MEN
