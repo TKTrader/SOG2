@@ -1,5 +1,29 @@
 <?php
 require 'header.php';
+//If user is logged on
+$isLogged = isset($_SESSION['email']);
+if ($isLogged == true){
+
+  //store session email in variable
+  $email = $_SESSION['email'];
+
+  //Query to pull access from users email
+  $query1 = "SELECT access FROM users WHERE email='$email'";
+
+  //Store obj result in var
+  $run_query1 = mysqli_query($mysqli, $query1);
+
+  //fetch results from obj
+  $result = mysqli_fetch_assoc($run_query1);
+
+  //If user is employee
+  if ($result['access'] == 'E'){
+    echo "Welcome ".$_SESSION['first_name']." ".$_SESSION['last_name'];
+    echo "<form action = 'employeeView.php'>";
+    echo "<button type='submit' name='ManageEvents'>Manage Events</button>";
+    echo "</form>";
+  }
+}
 ?>
 
 <div class="grid_container">
