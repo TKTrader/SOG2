@@ -18,7 +18,7 @@ $password = mysqli_real_escape_string($mysqli, password_hash($_POST['password'],
 $duplicatecheck = $mysqli->query("SELECT * FROM users WHERE email='$email'") or die($mysqli->error());
 if ($duplicatecheck->num_rows > 0) {
     $_SESSION['message'] = 'E-mail already exists!';
-    header("location: error.php");
+    header("location: Controllers/error.php");
 }
 //Store session vars into db
 else {
@@ -29,6 +29,6 @@ else {
         header("location: index.php");
     } else {
         $_SESSION['message'] = 'Something went wrong storing sessions vars...';
-        header("location: error.php");
+        header("location: Controllers/error.php");
     }
 }
