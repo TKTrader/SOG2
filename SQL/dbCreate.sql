@@ -1,4 +1,4 @@
-# Constraints on data can be added to INSERT statements, 
+# Constraints on data can be added to INSERT statements,
 # otherwise in table itself, only on numeric values or length of string
 # https://mariadb.com/kb/en/library/constraint/
 
@@ -87,5 +87,25 @@ CREATE TABLE IF NOT EXISTS ticketOrder(
     ticketPrice DECIMAL(5,2) NOT NULL, # from events table
     orderTimeStamp TIMESTAMP NOT NULL,
     customerID INT NOT NULL, # from users table
+    PRIMARY KEY (id)
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS eventList(
+    id INT AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    category VARCHAR(50) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB;
+
+#Reason for category being first is so the lest is alphabetically organized instead of numerically
+CREATE TABLE IF NOT EXISTS categoryList(
+    category VARCHAR(50) NOT NULL UNIQUE,
+    id INT AUTO_INCREMENT,
+    PRIMARY KEY (category)
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS typeList(
+    id INT AUTO_INCREMENT,
+    type VARCHAR(5) NOT NULL, #(comp/award/autog),
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;

@@ -1,7 +1,7 @@
 <?php
 require 'header.php';
 ?>
-<div class="grid_container">
+<div class="grid_container2">
   <span><h4>August 2016</h4></span>
   <form class = "Calendar action" action="schedulePage.php" method="post">
   <div class="grid2">
@@ -40,7 +40,7 @@ require 'header.php';
     /*idea: another way to implement this might be to load info into an array
       then pull from that array....maybe?*/
     if ($_SERVER['REQUEST_METHOD']=='POST') {
-      echo "<div class=grid>";
+      echo "<div class=grid3>";
       echo "<span>#</span>";
       echo "<span>Category</span>";
       echo "<span>Name</span>";

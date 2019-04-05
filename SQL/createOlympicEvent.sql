@@ -212,7 +212,7 @@ Equestrian Dressage
 Equestrian Eventing
 Equestrian Jumping
 Fencing
-Footbal
+Football
 Golf
 Gymnastics Artistic
 Gymnastics Rhythmic
@@ -606,7 +606,7 @@ ____________WeightLifting
 58KG WOMEN
 63KG WOMEN
 69KG WOMEN
-75KG WOME
+75KG WOMEN
 
 ____________Wrestling Freestyle
 - 55KG MEN
