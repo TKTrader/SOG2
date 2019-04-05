@@ -157,3 +157,14 @@ VALUES(
     'P',
     '(987)694-5678'
     );
+
+#Test user password is test
+INSERT INTO users(firstName, lastName, email, password, access, phone)
+VALUES(
+    'Demo',
+    'User',
+    'demouser@sogs.com',
+    '$2y$10$5.SNhaC2QKIaYtmJXCJjL.F2dL0WVq4L5L.7mj5yOgP/cVD2sBPry',
+    'E',
+    '(201)336-4455'
+    );
