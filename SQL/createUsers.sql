@@ -11,6 +11,8 @@
 --     PRIMARY KEY (id)
 -- ) ENGINE=InnoDB;
 
+# All passwords are "test" 
+
 # Athletes
 # ------------------------------------------------
 INSERT INTO users(firstName, lastName, email, password, access, phone)
@@ -18,7 +20,7 @@ VALUES(
   'Nicolas',
     'Maduro',
     'athlete1@sogs.com',
-    'jj998slkjasd09a8',
+    '$2y$10$5ld.DVEncVaaDLI8ViH3xecaA7letUf7XGLrnI9FFsC9dGpNFzJUW',
     'A',
     '(666)867-5329'
     );
@@ -28,7 +30,7 @@ VALUES(
   'Mathilda',
     'Viegger-Klemp',
     'athlete2@sogs.com',
-    'jj998sasdasdasdasd9a8',
+    '$2y$10$AxjXdkqz4QlIFSgHLihaDupk/MVO6YeCNYL5tumCrsUEOEmOWJq1y',
     'A',
     '(973)555-5555'
     );
@@ -38,7 +40,7 @@ VALUES(
   'Athena',
     'Warrior',
     'athlete3@sogs.com',
-    '9d8s0d98fs09d8fs9dnj3nekj3nksdn',
+    '$2y$10$kPduDF3/Dg0EpP6t/o6CKOcBapvHBk3JVcVAJOn2fGa05mHANktWq',
     'A',
     '(909)656-9848'
     );
@@ -48,7 +50,7 @@ VALUES(
   'Henri',
     'Matisse',
     'athlete4@sogs.com',
-    'd98fs09d8fs9dnj3nekj3nksdn',
+    '$2y$10$MfWF6jIUc6Hqm06Ux9ekh.s/QdtBjVI953VDFaIm6pIzOYe/rsNf.',
     'A',
     '(909)678-9848'
     );
@@ -58,7 +60,7 @@ VALUES(
   'Tai',
     'Beast',
     'athlete5@sogs.com',
-    '8fs9dnj3nekj3nksdn',
+    '$2y$10$KL1AzOZg1BLH63ah4IATvOJDwFmq4Csl6ORtYm3dsPv.2caP3A6LW',
     'A',
     '(987)656-9848'
     );
@@ -68,7 +70,7 @@ VALUES(
   'Black',
     'Death',
     'athlete6@sogs.com',
-    '9d8sasdad09d8fs9dnj3nekj3nksdn',
+    '$2y$10$ed3fWUUvOuFCXVopO4Cd5ONaOaEPKw5ZCPKFlyVOt.7SX/U67DMKO',
     'A',
     '(666)666-6666'
     );
@@ -91,7 +93,7 @@ VALUES(
     'Mary',
     'Smith',
     'employee1@sogs.com',
-    '9d8s0d98fs0asdasasadsdnj3nekj3nksdn',
+    '$2y$10$lvKoBZrdEpgFa19UYiS2E.jMJPT34VqqM5VV3GJm4/.mo7WnYbqpy',
     'E',
     '(800)656-5678 x567'
     );
@@ -101,7 +103,7 @@ VALUES(
     'VJ',
     'Sriwisnathnan',
     'employee2@sogs.com',
-    '9d8s0d98fs0asdafhjhjj3fdnj3nekj3nksdn',
+    '$2y$10$3y5txuqVlSMULmzLe/Z3aeT3P4IG1lu4keOemnM5XbWD3HZDkVU4q',
     'E',
     '(800)656-5678 x566'
     );
@@ -111,7 +113,7 @@ VALUES(
     'Joao',
     'Gilberto',
     'employee3@sogs.com',
-    '9d8s0d98fs0asdasasadsdnj3neasasdkj3nksdn',
+    '$2y$10$cxnZfdYMy4BY9d8VDLOfQ.TcBf/M3doiwbv7QOkMVsFDBVT9TWLX2',
     'E',
     '(800)656-5678 x567'
     );
@@ -121,7 +123,7 @@ VALUES(
     'Admin',
     'Admin',
     'admin1@sogs.com',
-    'd98fs0asdasasadsdnj3nekj3nksdn',
+    '$2y$10$OkKoiw73HVQaGiyhjyV29u/v0Gn1LAsOAPvsb8.JF4QohhRNrlP6O',
     'E',
     '(800)656-5678 x000'
     );
@@ -133,7 +135,7 @@ VALUES(
     'Jorge',
     'Public',
     'public1@brazil.com',
-    '9d8s0d98fs0asdasaasdj3nksdn',
+    '$2y$10$Uz7ndgsfREEfvURytSMgTur0RxGYDnLgqoyVK2jET0zVIJdfbNyVi',
     'P',
     '(617)852-1706'
     );
@@ -143,7 +145,7 @@ VALUES(
     'Elis',
     'Regina',
     'public2@brazil.com',
-    '9d8s0d9asdasd8fs0asdasaasdj3sdfnksdn',
+    '$2y$10$T4KiEeUHqhSJgHcf9NtXye5SNwiHsSdVFAHvHCOkYLXCD/tMCt0Sq',
     'P',
     '(508)852-4394'
     );
@@ -153,7 +155,7 @@ VALUES(
     'Toninho',
     'Horta',
     'public3@brazil.com',
-    'ashj1asdasd8fs0asdasaasdj3sdfnksdn',
+    '$2y$10$pGPKaqK8o0szrkGawk0ok.UQc39KzYLi7IOJZriQ.Y1vnnyARqahu',
     'P',
     '(987)694-5678'
     );
@@ -164,7 +166,7 @@ VALUES(
     'Demo',
     'User',
     'demouser@sogs.com',
-    '$2y$10$5.SNhaC2QKIaYtmJXCJjL.F2dL0WVq4L5L.7mj5yOgP/cVD2sBPry',
+    '$2y$10$Fq4bjLZInv.TRZDWq7WkF.GcyVzIzDMS9WRUgm0AULtqv4Msiqkxu',
     'E',
     '(201)336-4455'
     );
