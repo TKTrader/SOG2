@@ -1,12 +1,28 @@
 <?php
 require 'header.php';
 ?>
-Here we need to create a sort of "calendar" like view but smaller, Olympics only last like 18 Days. Similar to http://www.espn.com/olympics/summer/2016/schedule/_/date/20160817
-<br />
-When you click on a date with scheduled events it will load below.
-Maybe need to shrink calendar
-add css to make dates with events stand out.
-<div class="grid_container">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">Summer Olympic Games</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="eventsPage.php">Events</a>
+      <a class="nav-item nav-link active" href="schedulePage.php">Schedule</a>
+      <a class="nav-item nav-link" href="athletePage.php">Athletes</a>
+      <a class="nav-item nav-link" href="registerPage.php">Register</a>
+      <a class="nav-item nav-link" href="loginPage.php">Login</a>
+      <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
+    </div>
+  </div>
+</nav>
+</body>
+</html>
+
+<div class="grid_container2">
   <span><h4>August 2016</h4></span>
   <form class = "Calendar action" action="schedulePage.php" method="post">
   <div class="grid2">
@@ -45,7 +61,7 @@ add css to make dates with events stand out.
     /*idea: another way to implement this might be to load info into an array
       then pull from that array....maybe?*/
     if ($_SERVER['REQUEST_METHOD']=='POST') {
-      echo "<div class=grid>";
+      echo "<div class=grid3>";
       echo "<span>#</span>";
       echo "<span>Category</span>";
       echo "<span>Name</span>";
@@ -53,7 +69,7 @@ add css to make dates with events stand out.
       echo "<span>Time</span>";
       echo "<span>Location</span>";
       if (isset($_POST['3'])) {
-        $query1 = "SELECT * FROM olympicEvent WHERE date = '2016-08-03' ";
+        $query1 = "SELECT * FROM olympicevent WHERE date = '2016-08-03' ";
         $run_query1 = mysqli_query($mysqli, $query1);
         $checkquery = mysqli_num_rows($run_query1);
         if ($checkquery>0){

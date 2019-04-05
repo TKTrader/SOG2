@@ -75,74 +75,96 @@ VALUES(
 
 # Employees
 # ------------------------------------------------
+#Dont delete Demo User, pw: test
 INSERT INTO users(firstName, lastName, email, password, access, phone)
 VALUES(
-  'Mary',
+    'Demo',
+    'User',
+    'demouser@sogs.com',
+    '$2y$10$5.SNhaC2QKIaYtmJXCJjL.F2dL0WVq4L5L.7mj5yOgP/cVD2sBPry',
+    'E',
+    '(973)111-1111'
+    );
+
+INSERT INTO users(firstName, lastName, email, password, access, phone)
+VALUES(
+    'Mary',
     'Smith',
     'employee1@sogs.com',
     '9d8s0d98fs0asdasasadsdnj3nekj3nksdn',
     'E',
     '(800)656-5678 x567'
-    );    
+    );
 
 INSERT INTO users(firstName, lastName, email, password, access, phone)
 VALUES(
-  'VJ',
+    'VJ',
     'Sriwisnathnan',
     'employee2@sogs.com',
     '9d8s0d98fs0asdafhjhjj3fdnj3nekj3nksdn',
     'E',
     '(800)656-5678 x566'
-    ); 
+    );
 
 INSERT INTO users(firstName, lastName, email, password, access, phone)
 VALUES(
-  'Joao',
+    'Joao',
     'Gilberto',
     'employee3@sogs.com',
     '9d8s0d98fs0asdasasadsdnj3neasasdkj3nksdn',
     'E',
     '(800)656-5678 x567'
-    );  
+    );
 
 INSERT INTO users(firstName, lastName, email, password, access, phone)
 VALUES(
-  'Admin',
+    'Admin',
     'Admin',
     'admin1@sogs.com',
     'd98fs0asdasasadsdnj3nekj3nksdn',
     'E',
     '(800)656-5678 x000'
-    );  
+    );
 
 # Public
 # ------------------------------------------------
 INSERT INTO users(firstName, lastName, email, password, access, phone)
 VALUES(
-  'Jorge',
+    'Jorge',
     'Public',
     'public1@brazil.com',
     '9d8s0d98fs0asdasaasdj3nksdn',
     'P',
     '(617)852-1706'
-    );  
+    );
 
 INSERT INTO users(firstName, lastName, email, password, access, phone)
 VALUES(
-  'Elis',
+    'Elis',
     'Regina',
     'public2@brazil.com',
     '9d8s0d9asdasd8fs0asdasaasdj3sdfnksdn',
     'P',
     '(508)852-4394'
-    );  
+    );
 
 INSERT INTO users(firstName, lastName, email, password, access, phone)
 VALUES(
-  'Toninho',
+    'Toninho',
     'Horta',
     'public3@brazil.com',
     'ashj1asdasd8fs0asdasaasdj3sdfnksdn',
     'P',
     '(987)694-5678'
-    );  
+    );
+
+#Test user password is test
+INSERT INTO users(firstName, lastName, email, password, access, phone)
+VALUES(
+    'Demo',
+    'User',
+    'demouser@sogs.com',
+    '$2y$10$5.SNhaC2QKIaYtmJXCJjL.F2dL0WVq4L5L.7mj5yOgP/cVD2sBPry',
+    'E',
+    '(201)336-4455'
+    );
