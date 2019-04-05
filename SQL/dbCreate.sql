@@ -8,7 +8,7 @@
 # example:  delete athlete should also delete athleteEvents where athlete is participating
 # example 2:  we delete an athlete in users table;  also should cascade so child row is deleted in athletes table
 
-CREATE DATABASE IF NOT EXISTS SOGSdb;
+CREATE DATABASE IF NOT EXISTS SOGS;
 
 CREATE TABLE IF NOT EXISTS users(
     id INT AUTO_INCREMENT,
