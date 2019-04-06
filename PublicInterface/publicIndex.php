@@ -6,12 +6,12 @@ require 'publicHeader.php';
 1) Align Logout button all the way to the right?
 2) Assess what pages we need:  create/modify or combine into one? 
 3) Why is navbar changing size outside of dashboard?
-4) Fix font display of Title
 5) Links are suggested only
+7) unable to get navbar-brand centered properly or white (need to add to CSS I think)
 6) color is suggested only-->
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #005ce6;">
-  <a class="navbar-brand navbar-dark">Summer Olympic Games</a>
+<a class="navbar-brand navbar-dark"><span class="h2"><p class="font-weight-bold">Summer Olympic Games</p></span></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
