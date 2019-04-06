@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       //require 'loginService.php';
       //require 'Controllers/loginService.php';
       include __DIR__.'/Controllers/loginService.php';  // TK needed this line for DB to function
-      //include '/Controllers/loginService.php';
+      //include '/Controllers/loginService.php';  // Dan used this line
     }
 }
 ?>

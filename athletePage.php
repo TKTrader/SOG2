@@ -19,5 +19,4 @@ require "header.php";
     </div>
   </div>
 </nav>
-</body>
-</html>
+
