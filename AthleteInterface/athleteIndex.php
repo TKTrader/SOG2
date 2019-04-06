@@ -3,8 +3,10 @@ require 'athleteHeader.php';
 ?>
 
 <!-- TODO:
-Align Logout button all the way to the right
-Assess what pages we need:  create/modify or combine into one? -->
+1) Align Logout button all the way to the right?
+2) Assess what pages we need:  create/modify or combine into one? 
+3) Why is navbar changing size outside of dashboard?
+4) Fix font display of Title-->
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #cc0000;">
   <a class="navbar-brand navbar-dark">Summer Olympic Games</a>
@@ -14,9 +16,9 @@ Assess what pages we need:  create/modify or combine into one? -->
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="employeeIndex.php">Dashboard<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link active" href="addAthletes.php">Schedule Autograph Session</a>
-      <a class="nav-item nav-link active" href="modifySchedule.php">Reserve Tickets</a>
-      <a class="nav-item nav-link active" href="addTickets.php">View Schedule</a>
+      <a class="nav-item nav-link active" href=".php">Schedule Autograph Session</a>
+      <a class="nav-item nav-link active" href=".php">Reserve Tickets</a>
+      <a class="nav-item nav-link active" href=".php">View Schedule</a>
       <a class="nav-item nav-link active" href="logout.php"> Logout</a></li>
     </div>
   </div>
