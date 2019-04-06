@@ -161,12 +161,12 @@ VALUES(
     );
 
 #Test user password is test
-INSERT INTO users(firstName, lastName, email, password, access, phone)
-VALUES(
-    'Demo',
-    'User',
-    'demouser@sogs.com',
-    '$2y$10$Fq4bjLZInv.TRZDWq7WkF.GcyVzIzDMS9WRUgm0AULtqv4Msiqkxu',
-    'E',
-    '(201)336-4455'
-    );
+-- INSERT INTO users(firstName, lastName, email, password, access, phone)
+-- VALUES(
+--     'Demo',
+--     'User',
+--     'demouser@sogs.com',
+--     '$2y$10$Fq4bjLZInv.TRZDWq7WkF.GcyVzIzDMS9WRUgm0AULtqv4Msiqkxu',
+--     'E',
+--     '(201)336-4455'
+--     );

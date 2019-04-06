@@ -97,11 +97,12 @@ CREATE TABLE IF NOT EXISTS eventList(
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
+// categoryList not working; primary key had to be id, since auto-incremented
 #Reason for category being first is so the lest is alphabetically organized instead of numerically
 CREATE TABLE IF NOT EXISTS categoryList(
     category VARCHAR(50) NOT NULL UNIQUE,
     id INT AUTO_INCREMENT,
-    PRIMARY KEY (category)
+    PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS typeList(

@@ -21,4 +21,7 @@ require 'header.php';
   </div>
 </nav>
 </body>
+<body>
+  <p>HOME PAGE</p>
+</body>
 </html>

@@ -1,12 +1,12 @@
 <?php
-require 'employeeHeader.php';
+require 'publicHeader.php';
 ?>
 
 <!-- TODO:
 Align Logout button all the way to the right
 Assess what pages we need:  create/modify or combine into one? -->
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #009900;">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #005ce6;">
   <a class="navbar-brand navbar-dark">Summer Olympic Games</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -14,15 +14,15 @@ Assess what pages we need:  create/modify or combine into one? -->
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="employeeIndex.php">Dashboard<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link active" href="addAthletes.php">Add Athletes</a>
-      <a class="nav-item nav-link active" href="modifySchedule.php">Modify Schedule</a>
-      <a class="nav-item nav-link active" href="modifyTickets.php">Add/Modify Tickets</a>
+      <a class="nav-item nav-link active" href="addAthletes.php">Purchase Tickets</a>
+      <a class="nav-item nav-link active" href="modifySchedule.php">View Orders</a>
+      <a class="nav-item nav-link active" href="addTickets.php">View Schedule</a>
       <a class="nav-item nav-link active" href="logout.php"> Logout</a></li>
     </div>
   </div>
 </nav>
 
-
+   
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,13 +33,11 @@ Assess what pages we need:  create/modify or combine into one? -->
 <body>
 <div class="container">
   <div class="jumbotron">
-    <h1>Employee Dashboard</h1>
+    <h1>Public Dashboard</h1>     
         <h2>Select an action:</h2>
-        <a class="btn btn-primary btn-lg btn-block" href="addAthletes.php" style="background-color: #009900;">Add Athlete</button>
-        <a class="btn btn-primary btn-lg btn-block" href="modifySchedule.php" style="background-color: #009900;">Modify Schedule</button>
-          <!--NOTE:Add tickets link is broen-->
-        <a class="btn btn-primary btn-lg btn-block" href="modifySchedule.php" style="background-color: #009900;">Add Tickets</button>
-        <a class="btn btn-primary btn-lg btn-block" href="modifyTickets.php" style="background-color: #009900;">Modify Tickets</button>
+        <a class="btn btn-primary btn-lg btn-block" href="addAthletes.php" style="background-color: #005ce6;">Purchase Tickets</button>
+        <a class="btn btn-primary btn-lg btn-block" href="modifySchedule.php" style="background-color: #005ce6;">View Orders</button>
+        <a class="btn btn-primary btn-lg btn-block" href="modifySchedule.php" style="background-color: #005ce6;">View Schedule</button>
     <!-- </div>
 </div> -->
 <!-- Above  div close is creating GUI issues, not sure why? -->
