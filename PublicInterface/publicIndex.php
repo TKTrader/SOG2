@@ -3,20 +3,24 @@ require 'publicHeader.php';
 ?>
 
 <!-- TODO:
-Align Logout button all the way to the right
-Assess what pages we need:  create/modify or combine into one? -->
+1) Align Logout button all the way to the right?
+2) Assess what pages we need:  create/modify or combine into one? 
+3) Why is navbar changing size outside of dashboard?
+5) Links are suggested only
+7) unable to get navbar-brand centered properly or white (need to add to CSS I think)
+6) color is suggested only-->
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #005ce6;">
-  <a class="navbar-brand navbar-dark">Summer Olympic Games</a>
+<a class="navbar-brand navbar-dark"><span class="h2"><p class="font-weight-bold">Summer Olympic Games</p></span></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="employeeIndex.php">Dashboard<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link active" href="addAthletes.php">Purchase Tickets</a>
-      <a class="nav-item nav-link active" href="modifySchedule.php">View Orders</a>
-      <a class="nav-item nav-link active" href="addTickets.php">View Schedule</a>
+      <a class="nav-item nav-link active" href=".php">Purchase Tickets</a>
+      <a class="nav-item nav-link active" href=".php">View Orders</a>
+      <a class="nav-item nav-link active" href=".php">View Schedule</a>
       <a class="nav-item nav-link active" href="logout.php"> Logout</a></li>
     </div>
   </div>

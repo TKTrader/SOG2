@@ -12,7 +12,7 @@ require 'employeeHeader.php';
       <a class="nav-item nav-link active" href="employeeIndex.php">Dashboard<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link active" href="addAthletes.php">Add Athletes</a>
       <a class="nav-item nav-link active" href="modifySchedule.php">Modify Schedule</a>
-      <a class="nav-item nav-link active" href="modifyTickets.php">Add/Modify Tickets</a>
+      <a class="nav-item nav-link active" href="modifyTickets.php">Modify Tickets</a>
       <a class="nav-item nav-link active" href="logout.php"> Logout</a></li>
     </div>
   </div>
