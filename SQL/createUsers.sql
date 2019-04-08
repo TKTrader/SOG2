@@ -70,7 +70,7 @@ VALUES(
   'Black',
     'Death',
     'athlete6@sogs.com',
-    '$2y$10$ed3fWUUvOuFCXVopO4Cd5ONaOaEPKw5ZCPKFlyVOt.7SX/U67DMKO',
+    '$2y$10$x0dUFzrPUVi9dhdh480iN.fV96V0AkhVazNQcD0LPU1UtXoDqN7au',
     'A',
     '(666)666-6666'
     );
@@ -161,12 +161,12 @@ VALUES(
     );
 
 #Test user password is test
--- INSERT INTO users(firstName, lastName, email, password, access, phone)
--- VALUES(
---     'Demo',
---     'User',
---     'demouser@sogs.com',
---     '$2y$10$Fq4bjLZInv.TRZDWq7WkF.GcyVzIzDMS9WRUgm0AULtqv4Msiqkxu',
---     'E',
---     '(201)336-4455'
---     );
+INSERT INTO users(firstName, lastName, email, password, access, phone)
+VALUES(
+    'Demo',
+    'User',
+    'demouser@sogs.com',
+    '$2y$10$Fq4bjLZInv.TRZDWq7WkF.GcyVzIzDMS9WRUgm0AULtqv4Msiqkxu',
+    'E',
+    '(201)336-4455'
+    );
