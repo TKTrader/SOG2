@@ -1,3 +1,7 @@
+#home-page-header {
+  background-image: url("assets/olympic-rings-home.jpg") !important;
+}
+
 body {
   margin: 0;
   padding: 0;

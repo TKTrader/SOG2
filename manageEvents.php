@@ -1,5 +1,5 @@
 <?php
-require 'header.php';
+require 'static/header.php';
 require 'Controllers/checkAccess.php';
 
 //If person trying to access page is not authorized, boot them.
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   }
 }
 ?>
-
+<?php require 'static/nav.php'; ?>
 <form class = "eventContainer" action="manageEvents.php" method="post">
   <h4>Add An Event</h4>
   <input type="text" name="name" placeholder="Event Name" required/>
@@ -51,11 +51,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   <input type="submit" name="category" />
 </form>
 
-
-
-
-
-
 <!--
 <select>
   <?php
@@ -69,3 +64,4 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   ?>
 </select>
 -->
+<?php require 'static/footer.php'; ?>

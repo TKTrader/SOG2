@@ -1,5 +1,5 @@
 <?php
-require 'header.php';
+require 'static/header.php';
 
 /* IS THIS THE CORRECT SYNTAX TO SHOW DIFFERENT LOGINS? */
 if ($_SESSION['access'] == 'A'){
@@ -19,9 +19,11 @@ if ($_SESSION['access'] == 'A'){
 ?>
 
 <html>
+    <?php require 'static/nav.php'; ?>
     <body>
-        <?php require 'ticketCard.php' ?>
+        <?php require 'eventCard.php' ?>
     </body>
+    <?php require 'static/footer.php'; ?>
 </html>
 
 <!--
