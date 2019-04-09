@@ -1,19 +1,19 @@
 <?php
-require 'static/header.php';
-require 'Controllers/checkAccess.php';
+require '../components/header.php';
+require '../controllers/checkAccess.php';
 $thisPage="Events";
 ?>
 <?php
 //check user is employee
 if ($access == 'E'){
     echo "Welcome ".$_SESSION['first_name']." ".$_SESSION['last_name'];
-    echo "<form action = 'manageEvents.php'>";
+    echo "<form action = '../controllers/manageEvents.php'>";
     echo "<button type='submit' name='ManageEvents'>Manage Events</button>";
     echo "</form>";
 }
  ?>
  <body>
-<?php require 'static/nav.php'; ?>
+<?php require '../components/nav.php'; ?>
 <div class="grid_container">
   <div class="grid">
     <span><strong># </strong></span>
@@ -45,7 +45,7 @@ if ($access == 'E'){
      ?>
   </div>
 </div>
-<?php require 'static/footer.php'; ?>
+<?php require '../components/footer.php'; ?>
 </body>
 
 <!--TEMP OLD DATA

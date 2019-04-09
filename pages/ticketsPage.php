@@ -1,14 +1,14 @@
 <?php
-require 'static/header.php';
+require '../components/header.php';
 $thisPage="Tickets";
 
-/* IS THIS THE CORRECT SYNTAX TO SHOW DIFFERENT LOGINS? */
+/* IS THIS THE CORRECT SYNTAX TO SHOW DIFFERENT LOGINS?
 if ($_SESSION['access'] == 'A'){
-    /* request for free tickets */
+    // request for free tickets
     //header("Location: ./AthleteInterface/athleteIndex.php");
     exit();
 } else if ($_SESSION['access'] == 'E'){
-     /* request for free tickets */
+     // request for free tickets
     //header("Location: ./EmployeeInterface/employeeIndex.php");
     exit();
 } else if ($_SESSION['access'] == 'P'){
@@ -16,15 +16,15 @@ if ($_SESSION['access'] == 'A'){
     exit();
 } else {
     //header("location: Controllers/error.php");
-}
+}*/
 ?>
 
 <html>
-    <?php require 'static/nav.php'; ?>
+    <?php require '../components/nav.php'; ?>
     <body>
-        <?php require 'eventCard.php' ?>
+        <?php require '../components/eventCard.php' ?>
     </body>
-    <?php require 'static/footer.php'; ?>
+    <?php require '../components/footer.php'; ?>
 </html>
 
 <!--

@@ -1,5 +1,6 @@
-#home-page-header {
-  background-image: url("assets/olympic-rings-home.jpg") !important;
+.jumbotron {
+  background-image: url("../assets/mario-sonic-bg.jpg");
+  background-size: cover;
 }
 
 #currentpage a {

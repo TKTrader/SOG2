@@ -1,8 +1,8 @@
 <?php
-require 'static/header.php';
+require '../components/header.php';
 $thisPage="Schedule";
 ?>
-<?php require 'static/nav.php'; ?>
+<?php require '../components/nav.php'; ?>
 <div class="grid_container2">
   <span><h4>August 2016</h4></span>
   <form class = "Calendar action" action="schedulePage.php" method="post">
@@ -415,4 +415,4 @@ $thisPage="Schedule";
     ?>
   </div>
 </div>
-<?php require 'static/footer.php'; ?>
+<?php require '../components/footer.php'; ?>

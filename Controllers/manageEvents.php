@@ -1,5 +1,5 @@
 <?php
-require 'static/header.php';
+require 'components/header.php';
 require 'Controllers/checkAccess.php';
 
 //If person trying to access page is not authorized, boot them.

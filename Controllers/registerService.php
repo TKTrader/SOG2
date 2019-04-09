@@ -26,7 +26,7 @@ else {
   ."VALUES('$first_name','$last_name','$email','$password')";
     if ($mysqli->query($store_session_vars)) {
         $_SESSION['logged_in'] = true;
-        header("location: index.php");
+        header("location: ../index.php");
     } else {
         $_SESSION['message'] = 'Something went wrong storing sessions vars...';
         header("location: Controllers/error.php");

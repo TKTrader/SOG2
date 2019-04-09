@@ -1,6 +1,6 @@
 <?php
 //odd bug where i need to refresh db connection & session start.
-require 'Server/db_connection.php';
+require '../server/db_connection.php';
 //session_start(); Might not need this
 $email = mysqli_real_escape_string($mysqli, $_POST['email']);
 $result = $mysqli->query("SELECT * FROM users WHERE email='$email'");
