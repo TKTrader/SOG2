@@ -8,7 +8,7 @@
 # example:  delete athlete should also delete athleteEvents where athlete is participating
 # example 2:  we delete an athlete in users table;  also should cascade so child row is deleted in athletes table
 
-CREATE DATABASE IF NOT EXISTS SOGSdb;
+CREATE DATABASE IF NOT EXISTS SOGS;
 
 CREATE TABLE IF NOT EXISTS users(
     id INT AUTO_INCREMENT,
@@ -97,11 +97,12 @@ CREATE TABLE IF NOT EXISTS eventList(
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
+// categoryList not working; primary key had to be id, since auto-incremented
 #Reason for category being first is so the lest is alphabetically organized instead of numerically
 CREATE TABLE IF NOT EXISTS categoryList(
     category VARCHAR(50) NOT NULL UNIQUE,
     id INT AUTO_INCREMENT,
-    PRIMARY KEY (category)
+    PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS typeList(

@@ -18,7 +18,20 @@ else {
         $_SESSION['email'] = $user_email['email'];
         $_SESSION['logged_in'] = true;
         $_SESSION['access'] = $user_email['access'];
-        header("location: index.php");
+        if ($_SESSION['access'] == 'A'){
+            header("Location: ./AthleteInterface/athleteIndex.php");
+            exit();
+        }else if ($_SESSION['access'] == 'E'){
+            header("Location: ./EmployeeInterface/employeeIndex.php");
+            exit();
+        }else if ($_SESSION['access'] == 'P'){
+            header("Location: ./PublicInterface/publicIndex.php");
+            exit();
+        }else {
+              ($_SESSION['message'] = "Wrong password, try again!");
+            header("location: Controllers/error.php");
+        } 
+        // header("location: index.php");
     }
     //________________Passwords DO NOT match__________________
     else {
