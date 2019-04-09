@@ -1,6 +1,7 @@
 <?php
 //require 'db_connection.php'; //Added this to header.php, shouldn't need this but leaving in case someothing breaks.
 require 'static/header.php';
+$thisPage="Register";
 //If form is post, it'll call itself and run the php code at top w/ method POST.
 if ($_SERVER['REQUEST_METHOD']=='POST') {
     if (isset($_POST['register'])) {

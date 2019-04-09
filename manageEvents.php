@@ -29,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   }
 }
 ?>
-<?php require 'static/nav.php'; ?>
 <form class = "eventContainer" action="manageEvents.php" method="post">
   <h4>Add An Event</h4>
   <input type="text" name="name" placeholder="Event Name" required/>
@@ -64,4 +63,3 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   ?>
 </select>
 -->
-<?php require 'static/footer.php'; ?>

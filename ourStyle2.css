@@ -2,6 +2,11 @@
   background-image: url("assets/olympic-rings-home.jpg") !important;
 }
 
+#currentpage a {
+  font-weight: bold;
+  color: #333;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -20,7 +25,7 @@ nav {
   background: transparent;
 }
 
-.logo{
+.logo {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 22px;
@@ -28,7 +33,7 @@ nav {
   margin-left: 2vh;
 }
 
-.menu{
+.menu {
   display: flex;
   justify-content: flex-end;
   list-style: none;
@@ -51,13 +56,13 @@ nav {
 
 .menu li a:hover {
   background: rgb(199, 199, 199);
-  transition: .4s;
+  transition: 0.4s;
   color: #000;
 }
 
 /*Login/Reg CSS*/
 /*Modified  but based off: https://www.youtube.com/watch?v=HV7DtH3J2PU*/
-.logContainer{
+.logContainer {
   width: 300px;
   padding: 40px;
   position: absolute;
@@ -68,15 +73,17 @@ nav {
   text-align: center;
   border: 3px solid rgb(189, 189, 189);
 }
-.logContainer h1{
+.logContainer h1 {
   letter-spacing: 3px;
   color: black;
   text-transform: uppercase;
   font-weight: 500;
 }
 
-.logContainer input[type="text"],.logContainer input[type="email"],.logContainer input[type="password"]{
-  border:0;
+.logContainer input[type="text"],
+.logContainer input[type="email"],
+.logContainer input[type="password"] {
+  border: 0;
   background: none;
   display: block;
   margin: 20px auto;
@@ -89,13 +96,15 @@ nav {
   transition: 0.25s;
 }
 
-.logContainer input[type="text"]:focus,.logContainer input[type="email"]:focus,.logContainer input[type="password"]:focus{
+.logContainer input[type="text"]:focus,
+.logContainer input[type="email"]:focus,
+.logContainer input[type="password"]:focus {
   width: 215px;
   border-color: rgb(153, 193, 221);
 }
 
-.logContainer input[type="submit"]{
-  border:0;
+.logContainer input[type="submit"] {
+  border: 0;
   background: none;
   margin: 20px auto;
   text-align: center;
@@ -106,12 +115,12 @@ nav {
   transition: 0.25s;
 }
 
-.logContainer input[type="submit"]:hover{
+.logContainer input[type="submit"]:hover {
   background: rgb(189, 189, 189);
 }
 
 /*Events CSS*/
-.grid_container{
+.grid_container {
   position: relative;
   top: 5%;
   left: 50%;
@@ -119,27 +128,27 @@ nav {
   transform: translate(-50%);
 }
 
-.grid_container > span{
+.grid_container > span {
   text-align: center;
 }
 
 /*Events CSS (also in schedule)*/
 .grid {
-    display: grid;
-    /*grid-template-columns: minmax(20px, 30px) 1fr 3fr 1fr 1fr 1fr; */
-    grid-template-columns: minmax(20px, 40px) 2fr 3fr;
-    border-top: 1px solid rgb(150, 150, 150);
-    border-right: 1px solid rgb(150, 150, 150);
-    text-align: center;
+  display: grid;
+  /*grid-template-columns: minmax(20px, 30px) 1fr 3fr 1fr 1fr 1fr; */
+  grid-template-columns: minmax(20px, 40px) 2fr 3fr;
+  border-top: 1px solid rgb(150, 150, 150);
+  border-right: 1px solid rgb(150, 150, 150);
+  text-align: center;
 }
 
 .grid > span {
-    padding: 8px 4px;
-    border-left: 1px solid rgb(150, 150, 150);
-    border-bottom: 1px solid rgb(150, 150, 150);
+  padding: 8px 4px;
+  border-left: 1px solid rgb(150, 150, 150);
+  border-bottom: 1px solid rgb(150, 150, 150);
 }
 /*Schedule CSS*/
-.grid_container2{
+.grid_container2 {
   position: relative;
   top: 15%;
   left: 50%;
@@ -147,36 +156,36 @@ nav {
   transform: translate(-50%);
 }
 
-.grid_container2 > span{
+.grid_container2 > span {
   text-align: center;
 }
 .grid2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    border-top: 1px solid rgb(150, 150, 150);
-    border-right: 1px solid rgb(150, 150, 150);
-    text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  border-top: 1px solid rgb(150, 150, 150);
+  border-right: 1px solid rgb(150, 150, 150);
+  text-align: center;
 }
 .grid2 > span {
-    padding: 8px 4px;
-    border-left: 1px solid rgb(150, 150, 150);
-    border-bottom: 1px solid rgb(150, 150, 150);
+  padding: 8px 4px;
+  border-left: 1px solid rgb(150, 150, 150);
+  border-bottom: 1px solid rgb(150, 150, 150);
 }
 
 .grid3 {
-    display: grid;
-    grid-template-columns: minmax(20px, 40px) 1fr 2fr 1fr 1fr 1fr;
-    border-top: 1px solid rgb(150, 150, 150);
-    border-right: 1px solid rgb(150, 150, 150);
-    text-align: center;
+  display: grid;
+  grid-template-columns: minmax(20px, 40px) 1fr 2fr 1fr 1fr 1fr;
+  border-top: 1px solid rgb(150, 150, 150);
+  border-right: 1px solid rgb(150, 150, 150);
+  text-align: center;
 }
 .grid3 > span {
-    padding: 8px 4px;
-    border-left: 1px solid rgb(150, 150, 150);
-    border-bottom: 1px solid rgb(150, 150, 150);
+  padding: 8px 4px;
+  border-left: 1px solid rgb(150, 150, 150);
+  border-bottom: 1px solid rgb(150, 150, 150);
 }
 
-.loadView_Container{
+.loadView_Container {
   position: relative;
-/*  position: below;*/
+  /*  position: below;*/
 }

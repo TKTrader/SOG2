@@ -1,6 +1,7 @@
 <?php
-require 'static/header.php';;
+require 'static/header.php';
 require 'Controllers/checkAccess.php';
+$thisPage="Events";
 ?>
 <?php
 //check user is employee
@@ -44,7 +45,6 @@ if ($access == 'E'){
      ?>
   </div>
 </div>
-
 <?php require 'static/footer.php'; ?>
 </body>
 

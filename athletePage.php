@@ -1,4 +1,4 @@
-<?php require 'static/header.php'; ?>
+<?php require 'static/header.php'; $thisPage="Athlete"; ?>
 
 <html>
   <body>

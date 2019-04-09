@@ -1,5 +1,6 @@
 <?php
 require 'static/header.php';
+$thisPage="Login";
 //If form is post, it'll call itself and run the php code at top w/ method POST.
 if ($_SERVER['REQUEST_METHOD']=='POST') {
     if (isset($_POST['login'])) {

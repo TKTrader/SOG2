@@ -1,5 +1,6 @@
 <?php
 require 'static/header.php';
+$thisPage="Tickets";
 
 /* IS THIS THE CORRECT SYNTAX TO SHOW DIFFERENT LOGINS? */
 if ($_SESSION['access'] == 'A'){

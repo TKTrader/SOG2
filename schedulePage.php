@@ -1,5 +1,6 @@
 <?php
 require 'static/header.php';
+$thisPage="Schedule";
 ?>
 <?php require 'static/nav.php'; ?>
 <div class="grid_container2">

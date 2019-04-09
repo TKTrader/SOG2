@@ -4,14 +4,14 @@
     <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-    <a class="nav-item nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a>
-    <a class="nav-item nav-link" href="eventsPage.php">Events</a>
-    <a class="nav-item nav-link" href="schedulePage.php">Schedule</a>
-    <a class="nav-item nav-link" href="athletePage.php">Athletes</a>
-    <a class="nav-item nav-link" href="registerPage.php">Register</a>
-    <a class="nav-item nav-link" href="loginPage.php">Login</a>
-    <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
-    </div>
+        <ul class="navbar-nav">
+            <li <?php if ($thisPage=="Home") echo " id=\"currentpage\""; ?>><a class="nav-item nav-link active" href="index.php">Home</span></a></li>
+            <li <?php if ($thisPage=="Events") echo " id=\"currentpage\""; ?>><a class="nav-item nav-link" href="eventsPage.php">Events</a></li>
+            <li <?php if ($thisPage=="Schedule") echo " id=\"currentpage\""; ?>><a class="nav-item nav-link" href="schedulePage.php">Schedule</a></li>
+            <li <?php if ($thisPage=="Athlete") echo " id=\"currentpage\""; ?>><a class="nav-item nav-link" href="athletePage.php">Athletes</a></li>
+            <li <?php if ($thisPage=="Register") echo " id=\"currentpage\""; ?>><a class="nav-item nav-link" href="registerPage.php">Register</a></li>
+            <li <?php if ($thisPage=="Login") echo " id=\"currentpage\""; ?>><a class="nav-item nav-link" href="loginPage.php">Login</a></li>
+            <li><a class="nav-item nav-link" href="logout.php"> Logout</a></li>
+        </ul>
     </div>
 </nav>

@@ -1,4 +1,4 @@
-<?php require 'static/header.php'; ?>
+<?php require 'static/header.php'; $thisPage="Home"; ?>
 
 <html>
   <?php require 'static/nav.php'; ?>
