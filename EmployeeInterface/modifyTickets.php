@@ -3,7 +3,7 @@ require 'employeeHeader.php';
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #009900;">
-  <a class="navbar-brand navbar-dark">Summer Olympic Games</a>
+  <a class="navbar-brand navbar-dark"><font color="white">Summer Olympic Games</font></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
