@@ -1,5 +1,6 @@
 <?php
 require 'header.php';
+require 'Controllers/checkAccess.php';
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,6 +22,16 @@ require 'header.php';
 </nav>
 </body>
 </html>
+
+<?php
+//check user is employee
+if ($access == 'E'){
+    echo "ID: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
+    echo "<form action = 'manageSchedule.php'>";
+    echo "<button type='submit' name='manageSchedule'>Manage Schedule</button>";
+    echo "</form>";
+}
+?>
 
 <div class="grid_container2">
   <span><h4>August 2016</h4></span>
