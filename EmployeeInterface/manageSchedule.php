@@ -22,9 +22,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       echo "event: ".$event_SELECTED." <br /> category: ".$category_SELECTED." <br /> date: ".$date_SELECTED.
       "<br /> time: ".$time_SELECTED."<br /> location: ".$location_SELECTED.
       "<br /> type: ".$type_SELECTED."<br />price: ".$price_SELECTED;
-      //echo $event_SELETED;
 
-      //$insertQuery1 = "INSERT INTO olympicEvent(name, 'date', 'time', location, type, category, ticketPrice) VALUES (test2, test2, 2016-08-05, 10:00:00, Arena Test, comp, 20.00)";
       $insertQuery1 = "INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice)"
       ."VALUES ('$event_SELECTED', '$date_SELECTED', '$time_SELECTED', '$location_SELECTED',  '$type_SELECTED', '$category_SELECTED',  '$price_SELECTED')";
 
