@@ -59,6 +59,21 @@ CREATE TABLE IF NOT EXISTS olympicEvent( #removed all the evt
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
+CREATE TABLE IF NOT EXISTS updatedEvent( #removed all the evt
+    id INT AUTO_INCREMENT,
+    olympicEventID INT NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    date DATE NOT NULL,
+    time  TIME NOT NULL,
+    location VARCHAR(30) NOT NULL,
+    type VARCHAR(5) NOT NULL, #(comp/award/autog),
+    -- check(type in ('comp', 'award', 'autog')),
+    category VARCHAR(30) NOT NULL, # archery, etc
+    ticketPrice DECIMAL(5,2),
+    PRIMARY KEY (id),
+    FOREIGN KEY (olympicEventID) REFERENCES olympicEvent(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
 # table to match athletes to their events
 CREATE TABLE IF NOT EXISTS athleteEvent(
     id INT AUTO_INCREMENT,
