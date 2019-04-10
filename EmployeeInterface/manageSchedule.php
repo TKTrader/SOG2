@@ -18,7 +18,7 @@ if ($access != 'E'){
     <div class="navbar-nav">
       <a class="nav-item nav-link" href="employeeIndex.php">Dashboard<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="addAthletes.php">Add Athletes</a>
-      <a class="nav-item nav-link active" href="manageSchedule.php">Modify Schedule</a>
+      <a class="nav-item nav-link active" href="manageSchedule.php">Manage Schedule</a>
       <a class="nav-item nav-link" href="modifyTickets.php">Modify Tickets</a>
       <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
     </div>
@@ -37,10 +37,10 @@ echo "<br />"
 <div id="tog" style="display:none;" >
 <!--heres the logic for the schedule--->
 
-<div class = "scheduleContainer">
+<div class = "EUI_scheduleContainer">
 <form class = "schedule" action="manageSchedule.php" method="post">
   <h4>Add to Schedule</h4>
-    <div class = "grid5">
+    <div class = "grid4">
     <span><strong>Event Name</strong></span>
     <span><strong>Date</strong></span>
     <span><strong>Time</strong></span>

@@ -177,6 +177,31 @@ nav {
 /*  position: below;*/
 }
 
+/* Employee Interface Schedule CSS*/
+.EUI_scheduleContainer{
+  position: relative;
+  top: 15%;
+  left: 50%;
+  max-width: 120vh;
+  transform: translate(-50%);
+}
+.EUI_scheduleContainer > span{
+  text-align: center;
+}
+.EUI_scheduleContainer h4{
+  text-align: center;
+}
+.grid4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+.grid4 > span {
+    padding: 8px 4px;
+}
+
+
+
 .athletePage_container table{
     width: 100%;
 }
