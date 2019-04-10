@@ -91,9 +91,9 @@ CREATE TABLE IF NOT EXISTS ticketOrder(
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS eventList(
-    id INT AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
     category VARCHAR(50) NOT NULL,
+    id INT AUTO_INCREMENT,
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
@@ -106,7 +106,13 @@ CREATE TABLE IF NOT EXISTS categoryList(
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS typeList(
-    id INT AUTO_INCREMENT,
     type VARCHAR(5) NOT NULL, #(comp/award/autog),
+    id INT AUTO_INCREMENT,
     PRIMARY KEY (id)
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS arenaList(
+  name VARCHAR(15) NOT NULL, #Arena1, Arena2, Arena3
+  id INT AUTO_INCREMENT,
+  PRIMARY KEY (id)
 ) ENGINE=InnoDB;

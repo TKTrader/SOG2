@@ -50,22 +50,3 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   <input type="text" name="categoryName" placeholder="Category Name" required/>
   <input type="submit" name="category" />
 </form>
-
-
-
-
-
-
-<!--
-<select>
-  <?php
-  //DROP DOWN events
-  $query = "SELECT name FROM eventlist";
-  $result = mysqli_query($mysqli, $query);
-  while ($row = mysqli_fetch_assoc($result)) {
-    //<option value="volvo">Volvo</option>
-    echo "<option value=".$row['name'].">".$row['name']."</option>";
-  }
-  ?>
-</select>
--->
