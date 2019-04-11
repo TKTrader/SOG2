@@ -55,7 +55,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
 <body>
 <input type="submit" onclick="toggle_visibility('tog');" value="Add to Schedule"/>
-<div id="tog" style="display:none;" >
+<!--<div id="tog" style="display:none;" >-->
+<div id="tog" >
 
 <div class = "EUI_scheduleContainer">
   <form class = "schedule" action="manageSchedule.php" method="post" accept-charset="utf-8">
