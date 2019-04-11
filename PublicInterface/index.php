@@ -1,27 +1,28 @@
 <?php
-require 'athleteHeader.php';
+require 'publicHeader.php';
 ?>
 
 <!-- TODO:
 1) Align Logout button all the way to the right?
 2) Assess what pages we need:  create/modify or combine into one? 
 3) Why is navbar changing size outside of dashboard?
+5) Links are suggested only
 7) unable to get navbar-brand centered properly or white (need to add to CSS I think)
-4) Fix font display of Title-->
+6) color is suggested only-->
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #ff1a1a;">
-    <a class="navbar-brand navbar-dark"><span class="h2"><p class="font-weight-bold">Summer Olympic Games</p></span></a>
-  <!-- <a class="navbar-brand navbar-dark">Summer Olympic Games</a> -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #005ce6;">
+<!-- <a class="navbar-brand navbar-dark"><span class="h2"><p class="font-weight-bold">Summer Olympic Games</p></span></a> -->
+<a class="navbar-brand navbar-dark"><font color="white">Summer Olympic Games</font></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="employeeIndex.php">Dashboard<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link active" href=".php">Autographs</a>
-      <a class="nav-item nav-link active" href=".php">Tickets</a>
-      <a class="nav-item nav-link active" href=".php">Schedule</a>
-      <a class="nav-item nav-link active" href="logout.php"> Logout</a></li>
+      <a class="nav-item nav-link active" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href=".php">Purchase Tickets</a>
+      <a class="nav-item nav-link" href=".php">View Orders</a>
+      <a class="nav-item nav-link" href=".php">View Schedule</a>
+      <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
     </div>
   </div>
 </nav>
@@ -37,11 +38,11 @@ require 'athleteHeader.php';
 <body>
 <div class="container">
   <div class="jumbotron">
-    <h1>Athlete Dashboard</h1>     
+    <h1>Public Dashboard</h1>     
         <h2>Select an action:</h2>
-        <a class="btn btn-primary btn-lg btn-block" href="addAthletes.php" style="background-color: #ff1a1a;">Reserve Tickets</button>
-        <a class="btn btn-primary btn-lg btn-block" href="modifySchedule.php" style="background-color: #ff1a1a;">Schedule Autograph Session</button>
-        <a class="btn btn-primary btn-lg btn-block" href="modifySchedule.php" style="background-color: #ff1a1a;">View Schedule</button>
+        <a class="btn btn-primary btn-lg btn-block" href="addAthletes.php" style="background-color: #005ce6;">Purchase Tickets</button>
+        <a class="btn btn-primary btn-lg btn-block" href="modifySchedule.php" style="background-color: #005ce6;">View Orders</button>
+        <a class="btn btn-primary btn-lg btn-block" href="modifySchedule.php" style="background-color: #005ce6;">View Schedule</button>
     <!-- </div>
 </div> -->
 <!-- Above  div close is creating GUI issues, not sure why? -->
