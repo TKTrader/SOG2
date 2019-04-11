@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 <div id="tog" style="display:none;" >
 
 <div class = "EUI_scheduleContainer">
-  <form class = "schedule" action="manageSchedule.php" method="post">
+  <form class = "schedule" action="manageSchedule.php" method="post" accept-charset="utf-8">
     <h4>Add to Schedule</h4>
       <div class = "grid4">
       <span><strong>Event Name</strong></span>
@@ -71,10 +71,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <!--Drop Down bars below-->
       <select name="event">
         <?php
+        $mysqli->set_charset("utf8");
         $query = "SELECT name FROM eventlist";
         $result = mysqli_query($mysqli, $query);
         while ($row = mysqli_fetch_assoc($result)) {
-            echo "<option value=".$row['name'].">".$row['name']."</option>";
+            //echo "<option value=".$row['name'].">".$row['name']."</option>"; //Can have bug with long strings with spaces
+            $value = $row['name'];
+            echo "<option value='$value'>$value</option>";
         }
         ?>
       </select>
@@ -83,7 +86,9 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         $query = "SELECT category FROM categorylist";
         $result = mysqli_query($mysqli, $query);
         while ($row = mysqli_fetch_assoc($result)) {
-            echo "<option value=".$row['category'].">".$row['category']."</option>";
+            //echo "<option value=".$row['category'].">".$row['category']."</option>"; //OLD
+            $value = $row['category'];
+            echo "<option value='$value'>$value</option>";
         }
         ?>
       </select>
