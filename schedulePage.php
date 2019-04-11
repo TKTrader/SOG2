@@ -26,13 +26,13 @@ require 'header.php';
   <span><h4>August 2016</h4></span>
   <form class = "Calendar action" action="schedulePage.php" method="post">
   <div class="grid2">
-    <span>Sunday</span>
-    <span>Monday</span>
-    <span>Tuesday</span>
-    <span>Wednesday</span>
-    <span>Thursday</span>
-    <span>Friday</span>
-    <span>Saturday</span>
+    <span><strong>Sunday</strong></span>
+    <span><strong>Monday</strong></span>
+    <span><strong>Tuesday</strong></span>
+    <span><strong>Wednesday</strong></span>
+    <span><strong>Thursday</strong></span>
+    <span><strong>Friday</strong></span>
+    <span><strong>Saturday</strong></span>
     <span></span>
     <span>1</span>
     <span>2</span>

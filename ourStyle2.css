@@ -184,6 +184,7 @@ nav {
   left: 50%;
   max-width: 120vh;
   transform: translate(-50%);
+  margin-right: 0px;
 }
 .EUI_scheduleContainer > span{
   text-align: center;
@@ -201,7 +202,7 @@ nav {
 }
 
 
-
+/*Noob not commeting his code section*/
 .athletePage_container table{
     width: 100%;
 }
