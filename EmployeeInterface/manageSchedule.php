@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       echo "event: ".$event_SELECTED." <br /> category: ".$category_SELECTED." <br /> date: ".$date_SELECTED.
       "<br /> time: ".$time_SELECTED."<br /> location: ".$location_SELECTED.
       "<br /> type: ".$type_SELECTED."<br />price: ".$price_SELECTED;
-
+      $mysqli->set_charset("utf8");
       $insertQuery1 = "INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice)"
       ."VALUES ('$event_SELECTED', '$date_SELECTED', '$time_SELECTED', '$location_SELECTED',  '$type_SELECTED', '$category_SELECTED',  '$price_SELECTED')";
 
@@ -94,33 +94,39 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         ?>
       </select>
       <select name = "date">
-        <option value="2016-08-03">2016-08-03<option>
-        <option value="2016-08-03">2016-08-04<option>
-        <option value="2016-08-03">2016-08-05<option>
-        <option value="2016-08-03">2016-08-06<option>
-        <option value="2016-08-03">2016-08-07<option>
-        <option value="2016-08-03">2016-08-08<option>
-        <option value="2016-08-03">2016-08-09<option>
-        <option value="2016-08-03">2016-08-10<option>
-        <option value="2016-08-03">2016-08-11<option>
-        <option value="2016-08-03">2016-08-12<option>
-        <option value="2016-08-03">2016-08-13<option>
-        <option value="2016-08-03">2016-08-14<option>
-        <option value="2016-08-03">2016-08-15<option>
-        <option value="2016-08-03">2016-08-16<option>
-        <option value="2016-08-03">2016-08-17<option>
-        <option value="2016-08-03">2016-08-18<option>
+        <option value="2016-08-03">03/08/2016</option>
+        <option value="2016-08-03">04/08/2016</option>
+        <option value="2016-08-03">05/08/2016</option>
+        <option value="2016-08-03">06/08/2016</option>
+        <option value="2016-08-03">07/08/2016</option>
+        <option value="2016-08-03">08/08/2016</option>
+        <option value="2016-08-03">09/08/2016</option>
+        <option value="2016-08-03">10/08/2016</option>
+        <option value="2016-08-03">11/08/2016</option>
+        <option value="2016-08-03">12/08/2016</option>
+        <option value="2016-08-03">13/08/2016</option>
+        <option value="2016-08-03">14/08/2016</option>
+        <option value="2016-08-03">15/08/2016</option>
+        <option value="2016-08-03">16/08/2016</option>
+        <option value="2016-08-03">17/08/2016</option>
+        <option value="2016-08-03">18/08/2016</option>
       </select>
       <select name="time">
+        <option  value="08:00:00">8:00AM</option>
+        <option  value="09:00:00">9:00AM</option>
         <option  value="10:00:00">10:00AM</option>
         <option  value="10:30:00">10:30AM</option>
         <option  value="11:00:00">11:30AM</option>
         <option  value="11:30:00">11:30AM</option>
         <option  value="12:00:00">12:00PM</option>
-        <option  value="12:00:00">12:00PM</option>
-        <option  value="12:00:00">12:00PM</option>
-        <option  value="12:00:00">12:00PM</option>
-        <option  value="12:00:00">12:00PM</option>
+        <option  value="13:00:00">1:00PM</option>
+        <option  value="14:00:00">2:00PM</option>
+        <option  value="15:00:00">3:00PM</option>
+        <option  value="16:00:00">4:00PM</option>
+        <option  value="17:00:00">5:00PM</option>
+        <option  value="18:00:00">6:00PM</option>
+        <option  value="19:00:00">7:00PM</option>
+        <option  value="20:00:00">8:00PM</option>
       </select>
       <select name="location">
         <?php
