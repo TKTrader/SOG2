@@ -1,5 +1,6 @@
 <?php
 require 'header.php';
+$mysqli->set_charset("utf8");
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -62,12 +63,12 @@ require 'header.php';
       then pull from that array....maybe?*/
     if ($_SERVER['REQUEST_METHOD']=='POST') {
       echo "<div class=grid3>";
-      echo "<span>#</span>";
-      echo "<span>Category</span>";
-      echo "<span>Name</span>";
-      echo "<span>Date</span>";
-      echo "<span>Time</span>";
-      echo "<span>Location</span>";
+      echo "<span><strong>#</strong></span>";
+      echo "<span><strong>Category</strong></span>";
+      echo "<span><strong>Name</strong></span>";
+      echo "<span><strong>Date</strong></span>";
+      echo "<span><strong>Time</strong></span>";
+      echo "<span><strong>Location</strong></span>";
       if (isset($_POST['3'])) {
         $query1 = "SELECT * FROM olympicevent WHERE date = '2016-08-03' ";
         $run_query1 = mysqli_query($mysqli, $query1);
