@@ -1,7 +1,5 @@
-<?php
-require '../components/header.php';
-$thisPage="Schedule";
-?>
+<?php require '../components/header.php'; $thisPage="Schedule"; ?>
+
 <?php require '../components/nav.php'; ?>
 <div class="grid_container2">
   <span><h4>August 2016</h4></span>
@@ -20,7 +18,6 @@ $thisPage="Schedule";
     <?php
       $eventCounter = 3;
       $dayCounter = 22;
-
       while ($eventCounter < 22){
         echo "<span><input type=submit value=".$eventCounter." name=".$eventCounter." /></span>";
         $eventCounter++;
