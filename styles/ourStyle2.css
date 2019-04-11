@@ -190,3 +190,60 @@ nav {
   position: relative;
   /*  position: below;*/
 }
+
+/* Employee Interface Schedule CSS*/
+.EUI_scheduleContainer{
+  position: relative;
+  top: 15%;
+  left: 50%;
+  max-width: 120vh;
+  transform: translate(-50%);
+}
+.EUI_scheduleContainer > span{
+  text-align: center;
+}
+.EUI_scheduleContainer h4{
+  text-align: center;
+}
+.grid4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+.grid4 > span {
+    padding: 8px 4px;
+}
+
+
+
+.athletePage_container table{
+    width: 100%;
+}
+
+.athletePage_container td{
+    background-color: beige;
+    height: 10em;
+    width: 12em;
+}
+
+.athletePage_container h3{
+    margin-top: 2em;
+    text-align: center;
+}
+
+.athletePage_container img{
+    position: relative;
+    height: 80%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.athletePage_container p{
+    margin-bottom: 2em;
+}
+
+/*PublicInterface */
+.navbar-brand_navbar-dark {
+    color: white;
+}

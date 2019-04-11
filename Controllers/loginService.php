@@ -19,13 +19,13 @@ else {
         $_SESSION['logged_in'] = true;
         $_SESSION['access'] = $user_email['access'];
         if ($_SESSION['access'] == 'A'){
-            header("Location: ./AthleteInterface/athleteIndex.php");
+            header("Location: ./AthleteInterface/index.php");
             exit();
         }else if ($_SESSION['access'] == 'E'){
-            header("Location: ./EmployeeInterface/employeeIndex.php");
+            header("Location: ./EmployeeInterface/index.php");
             exit();
         }else if ($_SESSION['access'] == 'P'){
-            header("Location: ./PublicInterface/publicIndex.php");
+            header("Location: ./PublicInterface/index.php");
             exit();
         }else {
               ($_SESSION['message'] = "Wrong password, try again!");
