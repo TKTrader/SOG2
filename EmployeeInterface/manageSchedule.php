@@ -1,35 +1,35 @@
 <?php
-require 'employeeHeader.php';
-require '../Controllers/checkAccess.php';
+  require 'employeeHeader.php';
+  require '../Controllers/checkAccess.php';
 
-//Kick anyone not an employee out
-if ($access != 'E') {
-    $_SESSION['message'] = 'Invalid Access';
-    header("location: error.php");
-}
-
-if ($_SERVER['REQUEST_METHOD']=='POST') {
-  if (isset($_POST['AddtoSchedule_button'])) {
-
-    //Storing all posted inputs into php vars
-      $event_SELECTED = mysqli_real_escape_string($mysqli, $_POST['event']);
-      $category_SELECTED = mysqli_real_escape_string($mysqli, $_POST['category']);
-      $date_SELECTED = mysqli_real_escape_string($mysqli, $_POST['date']);
-      $time_SELECTED = mysqli_real_escape_string($mysqli, $_POST['time']);
-      $location_SELECTED = mysqli_real_escape_string($mysqli, $_POST['location']);
-      $type_SELECTED = mysqli_real_escape_string($mysqli, $_POST['type']);
-      $price_SELECTED = mysqli_real_escape_string($mysqli, $_POST['price']);
-      //CODE BELOW IS TO SEE VALUES INSERTED, REMOVE LATER
-/*      echo "event: ".$event_SELECTED." <br /> category: ".$category_SELECTED." <br /> date: ".$date_SELECTED.
-      "<br /> time: ".$time_SELECTED."<br /> location: ".$location_SELECTED.
-      "<br /> type: ".$type_SELECTED."<br />price: ".$price_SELECTED;*/
-      $mysqli->set_charset("utf8");
-      $insertQuery1 = "INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice)"
-      ."VALUES ('$event_SELECTED', '$date_SELECTED', '$time_SELECTED', '$location_SELECTED',  '$type_SELECTED', '$category_SELECTED',  '$price_SELECTED')";
-
-      mysqli_query($mysqli, $insertQuery1);
+  //Kick anyone not an employee out
+  if ($access != 'E') {
+      $_SESSION['message'] = 'Invalid Access';
+      header("location: error.php");
   }
-}
+
+  if ($_SERVER['REQUEST_METHOD']=='POST') {
+    if (isset($_POST['AddtoSchedule_button'])) {
+
+      //Storing all posted inputs into php vars
+        $event_SELECTED = mysqli_real_escape_string($mysqli, $_POST['event']);
+        $category_SELECTED = mysqli_real_escape_string($mysqli, $_POST['category']);
+        $date_SELECTED = mysqli_real_escape_string($mysqli, $_POST['date']);
+        $time_SELECTED = mysqli_real_escape_string($mysqli, $_POST['time']);
+        $location_SELECTED = mysqli_real_escape_string($mysqli, $_POST['location']);
+        $type_SELECTED = mysqli_real_escape_string($mysqli, $_POST['type']);
+        $price_SELECTED = mysqli_real_escape_string($mysqli, $_POST['price']);
+        //CODE BELOW IS TO SEE VALUES INSERTED, REMOVE LATER
+        /*echo "event: ".$event_SELECTED." <br /> category: ".$category_SELECTED." <br /> date: ".$date_SELECTED.
+        "<br /> time: ".$time_SELECTED."<br /> location: ".$location_SELECTED.
+        "<br /> type: ".$type_SELECTED."<br />price: ".$price_SELECTED;*/
+        $mysqli->set_charset("utf8");
+        $insertQuery1 = "INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice)"
+        ."VALUES ('$event_SELECTED', '$date_SELECTED', '$time_SELECTED', '$location_SELECTED',  '$type_SELECTED', '$category_SELECTED',  '$price_SELECTED')";
+
+        mysqli_query($mysqli, $insertQuery1);
+    }
+  }
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #009900;">
@@ -53,7 +53,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 ?>
 
 <body>
-
   <!--FUNCTIONALITY BUTTONS-->
   <input type="submit" onclick="toggle_visibility('tog');" value="Add"/>
   <input type="submit" onclick="toggle_visibility('tog2');" value="Delete"/>
@@ -63,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   <div id="tog" style="display:none;" >
     <div class = "EUI_scheduleContainer">
       <form class = "schedule" action="manageSchedule.php" method="post" accept-charset="utf-8">
-        <h4>Add</h4>
+        <h4>ADD</h4>
           <div class = "grid4">
             <span><strong>Event Name</strong></span>
             <span><strong>Category</strong></span>
@@ -74,7 +73,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             <span><strong>Price</strong></span>
 
             <!--Drop Down bars below-->
-            <select name="event">
+            <select class="form-control" name="event" required >
+              <option value="" selected disabled hidden></option>
               <?php
               $mysqli->set_charset("utf8");
               $query = "SELECT name FROM eventlist";
@@ -86,7 +86,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
               }
               ?>
             </select>
-            <select name="category">
+            <select class="form-control" name="category">
+              <option value="" selected disabled hidden></option>
               <?php
               $query = "SELECT category FROM categorylist";
               $result = mysqli_query($mysqli, $query);
@@ -97,28 +98,30 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
               }
               ?>
             </select>
-            <select name = "date">
-              <option value="2016-08-03">08/03/2016</option>
-              <option value="2016-08-04">08/04/2016</option>
-              <option value="2016-08-05">08/05/2016</option>
-              <option value="2016-08-06">08/06/2016</option>
-              <option value="2016-08-07">08/07/2016</option>
-              <option value="2016-08-08">08/08/2016</option>
-              <option value="2016-08-09">08/09/2016</option>
-              <option value="2016-08-10">08/10/2016</option>
-              <option value="2016-08-11">08/11/2016</option>
-              <option value="2016-08-12">08/12/2016</option>
-              <option value="2016-08-13">08/13/2016</option>
-              <option value="2016-08-14">08/14/2016</option>
-              <option value="2016-08-15">08/15/2016</option>
-              <option value="2016-08-16">08/16/2016</option>
-              <option value="2016-08-17">08/17/2016</option>
-              <option value="2016-08-18">08/18/2016</option>
-              <option value="2016-08-19">08/19/2016</option>
-              <option value="2016-08-20">08/20/2016</option>
-              <option value="2016-08-21">08/21/2016</option>
+            <select class="form-control" name ="date" required>
+              <option value="" selected disabled hidden></option>
+              <option value="2016-08-03">2016-08-03</option>
+              <option value="2016-08-04">2016-08-04</option>
+              <option value="2016-08-05">2016-08-05</option>
+              <option value="2016-08-06">2016-08-06</option>
+              <option value="2016-08-07">2016-08-07</option>
+              <option value="2016-08-08">2016-08-08</option>
+              <option value="2016-08-09">2016-08-09</option>
+              <option value="2016-08-10">2016-08-10</option>
+              <option value="2016-08-11">2016-08-11</option>
+              <option value="2016-08-12">2016-08-12</option>
+              <option value="2016-08-13">2016-08-13</option>
+              <option value="2016-08-14">2016-08-14</option>
+              <option value="2016-08-15">2016-08-15</option>
+              <option value="2016-08-16">2016-08-16</option>
+              <option value="2016-08-17">2016-08-17</option>
+              <option value="2016-08-18">2016-08-18</option>
+              <option value="2016-08-19">2016-08-19</option>
+              <option value="2016-08-20">2016-08-20</option>
+              <option value="2016-08-21">2016-08-21</option>
             </select>
-            <select name="time">
+            <select class="form-control" name="time" required>
+              <option value="" selected disabled hidden></option>
               <option  value="08:00:00">8:00AM</option>
               <option  value="09:00:00">9:00AM</option>
               <option  value="10:00:00">10:00AM</option>
@@ -135,7 +138,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
               <option  value="19:00:00">7:00PM</option>
               <option  value="20:00:00">8:00PM</option>
             </select>
-            <select name="location">
+            <select class="form-control" name="location">
+              <option value="" selected disabled hidden></option>
               <?php
               $query = "SELECT name FROM arenalist";
               $result = mysqli_query($mysqli, $query);
@@ -145,7 +149,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
               }
               ?>
             </select>
-            <select name="type">
+            <select class="form-control" name="type">
+              <option value="" selected disabled hidden></option>
               <?php
               $query = "SELECT type FROM typelist";
               $result = mysqli_query($mysqli, $query);
@@ -155,26 +160,27 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
               }
               ?>
             </select>
-            <input type="text" name="price" placeholder="Price" required/>
+            <input type="text" class="form-control" name="price" placeholder="Price" required/>
           </div>
-        <input type="submit"  name="AddtoSchedule_button" />
+        <button type="submit" name="AddtoSchedule_button" class="btn btn-success">Submit</button>
       </form>
       <hr>
     </div>
   </div>
 
+  <!--DELETE SECTION-->
   <div id="tog2" style="display:none;" >
-    <!--DELETE SECTION-->
     <div class = "EUI_scheduleContainer">
       <form class = "schedule" action="manageSchedule.php" method="post" accept-charset="utf-8">
-        <h4>Delete</h4>
+        <h4>DELETE</h4>
           <div class = "grid6">
             <span><strong>Event Name</strong></span>
             <span><strong>Date</strong></span>
             <span><strong>Time</strong></span>
 
             <!--Drop Down bars below-->
-            <select name="event">
+            <select class="form-control" name="event" required >
+              <option value="" selected disabled hidden></option>
               <?php
               $mysqli->set_charset("utf8");
               $query = "SELECT name FROM eventlist";
@@ -186,28 +192,30 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
               }
               ?>
             </select>
-            <select name = "date">
-              <option value="2016-08-03">08/03/2016</option>
-              <option value="2016-08-04">08/04/2016</option>
-              <option value="2016-08-05">08/05/2016</option>
-              <option value="2016-08-06">08/06/2016</option>
-              <option value="2016-08-07">08/07/2016</option>
-              <option value="2016-08-08">08/08/2016</option>
-              <option value="2016-08-09">08/09/2016</option>
-              <option value="2016-08-10">08/10/2016</option>
-              <option value="2016-08-11">08/11/2016</option>
-              <option value="2016-08-12">08/12/2016</option>
-              <option value="2016-08-13">08/13/2016</option>
-              <option value="2016-08-14">08/14/2016</option>
-              <option value="2016-08-15">08/15/2016</option>
-              <option value="2016-08-16">08/16/2016</option>
-              <option value="2016-08-17">08/17/2016</option>
-              <option value="2016-08-18">08/18/2016</option>
-              <option value="2016-08-19">08/19/2016</option>
-              <option value="2016-08-20">08/20/2016</option>
-              <option value="2016-08-21">08/21/2016</option>
+            <select class="form-control" name ="date" required>
+              <option value="" selected disabled hidden></option>
+              <option value="2016-08-03">2016-08-03</option>
+              <option value="2016-08-04">2016-08-04</option>
+              <option value="2016-08-05">2016-08-05</option>
+              <option value="2016-08-06">2016-08-06</option>
+              <option value="2016-08-07">2016-08-07</option>
+              <option value="2016-08-08">2016-08-08</option>
+              <option value="2016-08-09">2016-08-09</option>
+              <option value="2016-08-10">2016-08-10</option>
+              <option value="2016-08-11">2016-08-11</option>
+              <option value="2016-08-12">2016-08-12</option>
+              <option value="2016-08-13">2016-08-13</option>
+              <option value="2016-08-14">2016-08-14</option>
+              <option value="2016-08-15">2016-08-15</option>
+              <option value="2016-08-16">2016-08-16</option>
+              <option value="2016-08-17">2016-08-17</option>
+              <option value="2016-08-18">2016-08-18</option>
+              <option value="2016-08-19">2016-08-19</option>
+              <option value="2016-08-20">2016-08-20</option>
+              <option value="2016-08-21">2016-08-21</option>
             </select>
-            <select name="time">
+            <select class="form-control" name="time" required>
+              <option value="" selected disabled hidden></option>
               <option  value="08:00:00">8:00AM</option>
               <option  value="09:00:00">9:00AM</option>
               <option  value="10:00:00">10:00AM</option>
@@ -225,15 +233,120 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
               <option  value="20:00:00">8:00PM</option>
             </select>
           </div>
-        <input type="submit"  name="AddtoSchedule_button" />
+        <button type="submit" name="AddtoSchedule_button" class="btn btn-danger">Submit</button>
       </form>
       <hr>
     </div>
   </div>
 
+  <!--MODIFY SECTION-->
   <div id="tog3" style="display:none;" >
-    <!--MODIFY SECTION-->
-    Modify Section
+    <div class = "EUI_scheduleContainer">
+      <form class = "schedule" action="manageSchedule.php" method="post" accept-charset="utf-8">
+        <h4>MODIFY</h4>
+          <div class = "grid4">
+            <span><strong>Event Name</strong></span>
+            <span><strong>Category</strong></span>
+            <span><strong>Date</strong></span>
+            <span><strong>Time</strong></span>
+            <span><strong>Location</strong></span>
+            <span><strong>Type</strong></span>
+            <span><strong>Price</strong></span>
+
+            <!--Drop Down bars below-->
+            <select class="form-control" name="event" required >
+              <option value="" selected disabled hidden></option>
+              <?php
+              $mysqli->set_charset("utf8");
+              $query = "SELECT name FROM eventlist";
+              $result = mysqli_query($mysqli, $query);
+              while ($row = mysqli_fetch_assoc($result)) {
+                  //echo "<option value=".$row['name'].">".$row['name']."</option>"; //Can have bug with long strings with spaces
+                  $value = $row['name'];
+                  echo "<option value='$value'>$value</option>";
+              }
+              ?>
+            </select>
+            <select class="form-control" name="category">
+              <option value="" selected disabled hidden></option>
+              <?php
+              $query = "SELECT category FROM categorylist";
+              $result = mysqli_query($mysqli, $query);
+              while ($row = mysqli_fetch_assoc($result)) {
+                  //echo "<option value=".$row['category'].">".$row['category']."</option>"; //OLD
+                  $value = $row['category'];
+                  echo "<option value='$value'>$value</option>";
+              }
+              ?>
+            </select>
+            <select class="form-control" name ="date" required>
+              <option value="" selected disabled hidden></option>
+              <option value="2016-08-03">2016-08-03</option>
+              <option value="2016-08-04">2016-08-04</option>
+              <option value="2016-08-05">2016-08-05</option>
+              <option value="2016-08-06">2016-08-06</option>
+              <option value="2016-08-07">2016-08-07</option>
+              <option value="2016-08-08">2016-08-08</option>
+              <option value="2016-08-09">2016-08-09</option>
+              <option value="2016-08-10">2016-08-10</option>
+              <option value="2016-08-11">2016-08-11</option>
+              <option value="2016-08-12">2016-08-12</option>
+              <option value="2016-08-13">2016-08-13</option>
+              <option value="2016-08-14">2016-08-14</option>
+              <option value="2016-08-15">2016-08-15</option>
+              <option value="2016-08-16">2016-08-16</option>
+              <option value="2016-08-17">2016-08-17</option>
+              <option value="2016-08-18">2016-08-18</option>
+              <option value="2016-08-19">2016-08-19</option>
+              <option value="2016-08-20">2016-08-20</option>
+              <option value="2016-08-21">2016-08-21</option>
+            </select>
+            <select class="form-control" name="time" required>
+              <option value="" selected disabled hidden></option>
+              <option  value="08:00:00">8:00AM</option>
+              <option  value="09:00:00">9:00AM</option>
+              <option  value="10:00:00">10:00AM</option>
+              <option  value="10:30:00">10:30AM</option>
+              <option  value="11:00:00">11:30AM</option>
+              <option  value="11:30:00">11:30AM</option>
+              <option  value="12:00:00">12:00PM</option>
+              <option  value="13:00:00">1:00PM</option>
+              <option  value="14:00:00">2:00PM</option>
+              <option  value="15:00:00">3:00PM</option>
+              <option  value="16:00:00">4:00PM</option>
+              <option  value="17:00:00">5:00PM</option>
+              <option  value="18:00:00">6:00PM</option>
+              <option  value="19:00:00">7:00PM</option>
+              <option  value="20:00:00">8:00PM</option>
+            </select>
+            <select class="form-control" name="location">
+              <option value="" selected disabled hidden></option>
+              <?php
+              $query = "SELECT name FROM arenalist";
+              $result = mysqli_query($mysqli, $query);
+              while ($row = mysqli_fetch_assoc($result)) {
+                  $value = $row['name'];
+                  echo "<option value='$value'>$value</option>";
+              }
+              ?>
+            </select>
+            <select class="form-control" name="type">
+              <option value="" selected disabled hidden></option>
+              <?php
+              $query = "SELECT type FROM typelist";
+              $result = mysqli_query($mysqli, $query);
+              while ($row = mysqli_fetch_assoc($result)) {
+                  $value = $row['type'];
+                  echo "<option value='$value'>$value</option>";
+              }
+              ?>
+            </select>
+            <input type="text" class="form-control" name="price" placeholder="Price" required/>
+          </div>
+        <input type="submit"  name="AddtoSchedule_button" />
+      </form>
+      <hr>
+    </div>
   </div>
 
   <div class="grid_container5">
@@ -267,7 +380,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         <span></span>
         <span></span>
         <span></span>
-      </div> <!--grid2-->
+      </div> <!--grid5-->
     </form>
 
     <div class="loadView_Container">
