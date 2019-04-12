@@ -211,6 +211,7 @@ nav {
 
 .grid_container5 > span{
   text-align: center;
+  vertical-align: middle;
 }
 .grid5 {
     display: grid;
@@ -218,6 +219,7 @@ nav {
     border-top: 1px solid rgb(150, 150, 150);
     border-right: 1px solid rgb(150, 150, 150);
     text-align: center;
+    vertical-align: middle;
 }
 .grid5 > span {
     padding: 8px 4px;

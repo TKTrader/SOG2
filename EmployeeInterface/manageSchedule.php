@@ -39,7 +39,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="employeeIndex.php">Dashboard<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="addAthletes.php">Add Athletes</a>
       <a class="nav-item nav-link active" href="manageSchedule.php">Manage Schedule</a>
       <a class="nav-item nav-link" href="modifyTickets.php">Modify Tickets</a>
@@ -98,46 +98,8 @@
               }
               ?>
             </select>
-            <select class="form-control" name ="date" required>
-              <option value="" selected disabled hidden></option>
-              <option value="2016-08-03">2016-08-03</option>
-              <option value="2016-08-04">2016-08-04</option>
-              <option value="2016-08-05">2016-08-05</option>
-              <option value="2016-08-06">2016-08-06</option>
-              <option value="2016-08-07">2016-08-07</option>
-              <option value="2016-08-08">2016-08-08</option>
-              <option value="2016-08-09">2016-08-09</option>
-              <option value="2016-08-10">2016-08-10</option>
-              <option value="2016-08-11">2016-08-11</option>
-              <option value="2016-08-12">2016-08-12</option>
-              <option value="2016-08-13">2016-08-13</option>
-              <option value="2016-08-14">2016-08-14</option>
-              <option value="2016-08-15">2016-08-15</option>
-              <option value="2016-08-16">2016-08-16</option>
-              <option value="2016-08-17">2016-08-17</option>
-              <option value="2016-08-18">2016-08-18</option>
-              <option value="2016-08-19">2016-08-19</option>
-              <option value="2016-08-20">2016-08-20</option>
-              <option value="2016-08-21">2016-08-21</option>
-            </select>
-            <select class="form-control" name="time" required>
-              <option value="" selected disabled hidden></option>
-              <option  value="08:00:00">8:00AM</option>
-              <option  value="09:00:00">9:00AM</option>
-              <option  value="10:00:00">10:00AM</option>
-              <option  value="10:30:00">10:30AM</option>
-              <option  value="11:00:00">11:30AM</option>
-              <option  value="11:30:00">11:30AM</option>
-              <option  value="12:00:00">12:00PM</option>
-              <option  value="13:00:00">1:00PM</option>
-              <option  value="14:00:00">2:00PM</option>
-              <option  value="15:00:00">3:00PM</option>
-              <option  value="16:00:00">4:00PM</option>
-              <option  value="17:00:00">5:00PM</option>
-              <option  value="18:00:00">6:00PM</option>
-              <option  value="19:00:00">7:00PM</option>
-              <option  value="20:00:00">8:00PM</option>
-            </select>
+            <input class="form-control" type="date" value="2016-08-03" name="date">
+            <input class="form-control" type="time" value="12:00:00" name="time">
             <select class="form-control" name="location">
               <option value="" selected disabled hidden></option>
               <?php
@@ -162,7 +124,7 @@
             </select>
             <input type="text" class="form-control" name="price" placeholder="Price" required/>
           </div>
-        <button type="submit" name="AddtoSchedule_button" class="btn btn-success">Submit</button>
+        <button type="submit" name="AddtoSchedule_button" class="btn btn-success">Add</button>
       </form>
       <hr>
     </div>
@@ -192,48 +154,10 @@
               }
               ?>
             </select>
-            <select class="form-control" name ="date" required>
-              <option value="" selected disabled hidden></option>
-              <option value="2016-08-03">2016-08-03</option>
-              <option value="2016-08-04">2016-08-04</option>
-              <option value="2016-08-05">2016-08-05</option>
-              <option value="2016-08-06">2016-08-06</option>
-              <option value="2016-08-07">2016-08-07</option>
-              <option value="2016-08-08">2016-08-08</option>
-              <option value="2016-08-09">2016-08-09</option>
-              <option value="2016-08-10">2016-08-10</option>
-              <option value="2016-08-11">2016-08-11</option>
-              <option value="2016-08-12">2016-08-12</option>
-              <option value="2016-08-13">2016-08-13</option>
-              <option value="2016-08-14">2016-08-14</option>
-              <option value="2016-08-15">2016-08-15</option>
-              <option value="2016-08-16">2016-08-16</option>
-              <option value="2016-08-17">2016-08-17</option>
-              <option value="2016-08-18">2016-08-18</option>
-              <option value="2016-08-19">2016-08-19</option>
-              <option value="2016-08-20">2016-08-20</option>
-              <option value="2016-08-21">2016-08-21</option>
-            </select>
-            <select class="form-control" name="time" required>
-              <option value="" selected disabled hidden></option>
-              <option  value="08:00:00">8:00AM</option>
-              <option  value="09:00:00">9:00AM</option>
-              <option  value="10:00:00">10:00AM</option>
-              <option  value="10:30:00">10:30AM</option>
-              <option  value="11:00:00">11:30AM</option>
-              <option  value="11:30:00">11:30AM</option>
-              <option  value="12:00:00">12:00PM</option>
-              <option  value="13:00:00">1:00PM</option>
-              <option  value="14:00:00">2:00PM</option>
-              <option  value="15:00:00">3:00PM</option>
-              <option  value="16:00:00">4:00PM</option>
-              <option  value="17:00:00">5:00PM</option>
-              <option  value="18:00:00">6:00PM</option>
-              <option  value="19:00:00">7:00PM</option>
-              <option  value="20:00:00">8:00PM</option>
-            </select>
+            <input class="form-control" type="date" value="2016-08-03" name="date">
+            <input class="form-control" type="time" value="12:00:00" name="time">
           </div>
-        <button type="submit" name="AddtoSchedule_button" class="btn btn-danger">Submit</button>
+        <button type="submit" name="AddtoSchedule_button" class="btn btn-danger">Delete</button>
       </form>
       <hr>
     </div>
@@ -279,46 +203,8 @@
               }
               ?>
             </select>
-            <select class="form-control" name ="date" required>
-              <option value="" selected disabled hidden></option>
-              <option value="2016-08-03">2016-08-03</option>
-              <option value="2016-08-04">2016-08-04</option>
-              <option value="2016-08-05">2016-08-05</option>
-              <option value="2016-08-06">2016-08-06</option>
-              <option value="2016-08-07">2016-08-07</option>
-              <option value="2016-08-08">2016-08-08</option>
-              <option value="2016-08-09">2016-08-09</option>
-              <option value="2016-08-10">2016-08-10</option>
-              <option value="2016-08-11">2016-08-11</option>
-              <option value="2016-08-12">2016-08-12</option>
-              <option value="2016-08-13">2016-08-13</option>
-              <option value="2016-08-14">2016-08-14</option>
-              <option value="2016-08-15">2016-08-15</option>
-              <option value="2016-08-16">2016-08-16</option>
-              <option value="2016-08-17">2016-08-17</option>
-              <option value="2016-08-18">2016-08-18</option>
-              <option value="2016-08-19">2016-08-19</option>
-              <option value="2016-08-20">2016-08-20</option>
-              <option value="2016-08-21">2016-08-21</option>
-            </select>
-            <select class="form-control" name="time" required>
-              <option value="" selected disabled hidden></option>
-              <option  value="08:00:00">8:00AM</option>
-              <option  value="09:00:00">9:00AM</option>
-              <option  value="10:00:00">10:00AM</option>
-              <option  value="10:30:00">10:30AM</option>
-              <option  value="11:00:00">11:30AM</option>
-              <option  value="11:30:00">11:30AM</option>
-              <option  value="12:00:00">12:00PM</option>
-              <option  value="13:00:00">1:00PM</option>
-              <option  value="14:00:00">2:00PM</option>
-              <option  value="15:00:00">3:00PM</option>
-              <option  value="16:00:00">4:00PM</option>
-              <option  value="17:00:00">5:00PM</option>
-              <option  value="18:00:00">6:00PM</option>
-              <option  value="19:00:00">7:00PM</option>
-              <option  value="20:00:00">8:00PM</option>
-            </select>
+            <input class="form-control" type="date" value="2016-08-03" name="date">
+            <input class="form-control" type="time" value="12:00:00" name="time">
             <select class="form-control" name="location">
               <option value="" selected disabled hidden></option>
               <?php
@@ -343,12 +229,13 @@
             </select>
             <input type="text" class="form-control" name="price" placeholder="Price" required/>
           </div>
-        <input type="submit"  name="AddtoSchedule_button" />
+        <button type="submit" name="AddtoSchedule_button" class="btn btn-primary">Modify</button>
       </form>
       <hr>
     </div>
   </div>
 
+  <!--CALENDAR SECTION-->
   <div class="grid_container5">
     <span><h4>August 2016</h4></span>
     <form action="">
@@ -361,19 +248,20 @@
         <span><strong>Friday</strong></span>
         <span><strong>Saturday</strong></span>
         <span></span>
-        <span>1</span>
-        <span>2</span>
+        <span><button type="button" class="btn btn-link" disabled>1</button></span>
+        <span><button type="button" class="btn btn-link" disabled>2</button></span>
         <?php
           $eventCounter = 3;
           $dayCounter = 22;
           $date = "2016-08-";
           while ($eventCounter < 22){
             $completeDate = $date."".$eventCounter;
-            echo "<span><input type=button value=".$eventCounter." onclick=loadEvents(\"$completeDate\")></span>";
+            echo "<span><button  type='button' onclick='loadEvents(\"$completeDate\")' class='btn btn-link' value=".$eventCounter.">$eventCounter</button></span>";
             $eventCounter++;
           }
           while ($dayCounter < 32){
-            echo "<span>".$dayCounter."</span>";
+            /*echo "<span>".$dayCounter."</span>";*/
+            echo "<span><button type='button' class='btn btn-link' disabled>".$dayCounter."</button></span>";
             $dayCounter++;
           }
         ?>
