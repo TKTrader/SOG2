@@ -201,6 +201,38 @@ nav {
     padding: 8px 4px;
 }
 
+/*Schedule CSS under Employee Interface*/
+.grid_container5{
+  position: relative;
+  left: 50%;
+  max-width: 120vh;
+  transform: translate(-50%);
+}
+
+.grid_container5 > span{
+  text-align: center;
+}
+.grid5 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    border-top: 1px solid rgb(150, 150, 150);
+    border-right: 1px solid rgb(150, 150, 150);
+    text-align: center;
+}
+.grid5 > span {
+    padding: 8px 4px;
+    border-left: 1px solid rgb(150, 150, 150);
+    border-bottom: 1px solid rgb(150, 150, 150);
+}
+
+.grid6 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+.grid6 > span {
+    padding: 8px 4px;
+}
 
 /*Noob not commeting his code section*/
 .athletePage_container table{
