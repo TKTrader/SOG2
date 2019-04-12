@@ -1,6 +1,7 @@
 <?php
 require 'header.php';
 require 'Controllers/checkAccess.php';
+$mysqli->set_charset("utf8");
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

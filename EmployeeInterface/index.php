@@ -19,7 +19,7 @@ require 'employeeHeader.php';
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="employeeIndex.php">Dashboard<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="addAthletes.php">Add Athletes</a>
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
       <a class="nav-item nav-link" href="modifyTickets.php">Modify Tickets</a>
