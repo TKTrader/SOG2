@@ -1,5 +1,12 @@
 <?php
 require 'employeeHeader.php';
+require '../Controllers/checkAccess.php';
+
+//Kick anyone not an employee out
+if ($access != 'E') {
+    $_SESSION['message'] = 'Invalid Access';
+    header("location: error.php");
+}
 ?>
 
 <!-- TODO:
@@ -20,9 +27,9 @@ require 'employeeHeader.php';
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="addAthletes.php">Add Athletes</a>
+      <a class="nav-item nav-link" href="manageAthletes.php">Manage Athletes</a>
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
-      <a class="nav-item nav-link" href="modifyTickets.php">Modify Tickets</a>
+      <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
       <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
     </div>
   </div>
@@ -41,12 +48,11 @@ require 'employeeHeader.php';
   <div class="jumbotron">
     <h1>Employee Dashboard</h1>
         <h2>Select an action:</h2>
-        <a class="btn btn-primary btn-lg btn-block" href="addAthletes.php" style="background-color: #009900;">Add Athlete</button>
-        <a class="btn btn-primary btn-lg btn-block" href="modifySchedule.php" style="background-color: #009900;">Modify Schedule</button>
-        <a class="btn btn-primary btn-lg btn-block" href="manageSchedule.php" style="background-color: #009900;">Add Tickets</button>
-        <a class="btn btn-primary btn-lg btn-block" href="modifyTickets.php" style="background-color: #009900;">Modify Tickets</button>-->
-<!--     </div>
-</div>-->
+        <a class="btn btn-primary btn-lg btn-block" href="manageAthletes.php" style="background-color: #009900;">Manage Athletes</button>
+        <a class="btn btn-primary btn-lg btn-block" href="manageSchedule.php" style="background-color: #009900;">Manage Schedule</button>
+        <a class="btn btn-primary btn-lg btn-block" href="manageTickets.php" style="background-color: #009900;">Manage Tickets</button>
+    <!-- </div>
+</div> -->
 <!-- Above  div close is creating GUI issues, not sure why? -->
 <!--The problem is in the style sheet-->
 </body>

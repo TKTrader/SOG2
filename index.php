@@ -20,7 +20,7 @@ require 'header.php';
     </div>
   </div>
 </nav>
-</body>
+
 <body>
   <p>HOME PAGE</p>
 </body>
