@@ -54,9 +54,9 @@
 
 <body>
   <!--FUNCTIONALITY BUTTONS-->
-  <input type="submit" onclick="toggle_visibility('tog');" value="Add"/>
-  <input type="submit" onclick="toggle_visibility('tog2');" value="Delete"/>
-  <input type="submit" onclick="toggle_visibility('tog3');" value="Modify"/>
+  <button type="button" onclick="toggle_visibility('tog');" class="btn btn-outline-success btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Add</button>
+  <button type="button" onclick="toggle_visibility('tog2');" class="btn btn-outline-danger btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Delete</button>
+  <button type="button" onclick="toggle_visibility('tog3');" class="btn btn-outline-primary btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Modify</button>
 
   <!--ADD SECTION-->
   <div id="tog" style="display:none;" >
@@ -124,7 +124,7 @@
             </select>
             <input type="text" class="form-control" name="price" placeholder="Price" required/>
           </div>
-        <button type="submit" name="AddtoSchedule_button" class="btn btn-success">Add</button>
+        <button type="submit" name="AddtoSchedule_button" class="btn btn-success btn-block btn-sm">Submit</button>
       </form>
       <hr>
     </div>
@@ -157,7 +157,7 @@
             <input class="form-control" type="date" value="2016-08-03" name="date">
             <input class="form-control" type="time" value="12:00:00" name="time">
           </div>
-        <button type="submit" name="AddtoSchedule_button" class="btn btn-danger">Delete</button>
+        <button type="submit" name="AddtoSchedule_button" class="btn btn-danger btn-block btn-sm">Submit</button>
       </form>
       <hr>
     </div>
@@ -229,7 +229,7 @@
             </select>
             <input type="text" class="form-control" name="price" placeholder="Price" required/>
           </div>
-        <button type="submit" name="AddtoSchedule_button" class="btn btn-primary">Modify</button>
+        <button type="submit" name="AddtoSchedule_button" class="btn btn-primary btn-block btn-sm">Submit</button>
       </form>
       <hr>
     </div>
