@@ -1,5 +1,6 @@
 <?php
 require 'header.php';
+$mysqli->set_charset("utf8");
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -26,13 +27,13 @@ require 'header.php';
   <span><h4>August 2016</h4></span>
   <form class = "Calendar action" action="schedulePage.php" method="post">
   <div class="grid2">
-    <span>Sunday</span>
-    <span>Monday</span>
-    <span>Tuesday</span>
-    <span>Wednesday</span>
-    <span>Thursday</span>
-    <span>Friday</span>
-    <span>Saturday</span>
+    <span><strong>Sunday</strong></span>
+    <span><strong>Monday</strong></span>
+    <span><strong>Tuesday</strong></span>
+    <span><strong>Wednesday</strong></span>
+    <span><strong>Thursday</strong></span>
+    <span><strong>Friday</strong></span>
+    <span><strong>Saturday</strong></span>
     <span></span>
     <span>1</span>
     <span>2</span>
@@ -62,12 +63,12 @@ require 'header.php';
       then pull from that array....maybe?*/
     if ($_SERVER['REQUEST_METHOD']=='POST') {
       echo "<div class=grid3>";
-      echo "<span>#</span>";
-      echo "<span>Category</span>";
-      echo "<span>Name</span>";
-      echo "<span>Date</span>";
-      echo "<span>Time</span>";
-      echo "<span>Location</span>";
+      echo "<span><strong>#</strong></span>";
+      echo "<span><strong>Category</strong></span>";
+      echo "<span><strong>Name</strong></span>";
+      echo "<span><strong>Date</strong></span>";
+      echo "<span><strong>Time</strong></span>";
+      echo "<span><strong>Location</strong></span>";
       if (isset($_POST['3'])) {
         $query1 = "SELECT * FROM olympicevent WHERE date = '2016-08-03' ";
         $run_query1 = mysqli_query($mysqli, $query1);
