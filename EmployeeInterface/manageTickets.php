@@ -25,6 +25,11 @@ if ($access != 'E') {
   </div>
 </nav>
 
+<!-- Add Employee ID -->
+<?php
+  echo "ID: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
+?>
+
 <body>
   <p>MODIFY TICKETS PAGE</p>
 </body>
