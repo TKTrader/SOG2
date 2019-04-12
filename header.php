@@ -16,7 +16,6 @@
  <!-- OLD TEMP BACK UP CODE
  <link rel="stylesheet" type="text/css" href="style2Home.css">
 </head>
-git push 
 <body>
   <nav>
     <div class="logo"><h4>Summer Olympic Games</h4></div>

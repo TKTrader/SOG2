@@ -24,6 +24,11 @@ if ($access != 'E') {
   </div>
 </nav>
 
+<!-- Add Employee ID -->
+<?php
+  echo "ID: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
+?>
+
 <body>
 <p style="text-align:center"><b><h2>Register New Athlete</h2></b></p>
 <div class="container">
