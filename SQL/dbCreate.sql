@@ -95,8 +95,8 @@ CREATE TABLE IF NOT EXISTS eventList(
 ) ENGINE=InnoDB
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-// categoryList not working; primary key had to be id, since auto-incremented
-#Reason for category being first is so the lest is alphabetically organized instead of numerically
+-- // categoryList not working; primary key had to be id, since auto-incremented
+-- #Reason for category being first is so the list is alphabetically organized instead of numerically
 CREATE TABLE IF NOT EXISTS categoryList(
     category VARCHAR(50) NOT NULL UNIQUE,
     id INT AUTO_INCREMENT,
@@ -122,6 +122,13 @@ CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 CREATE TABLE IF NOT EXISTS eventList2(
     name VARCHAR(50) NOT NULL,
     category VARCHAR(50) NOT NULL,
+    id INT AUTO_INCREMENT,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB
+CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS countryList(
+    name VARCHAR(50) NOT NULL,
     id INT AUTO_INCREMENT,
     PRIMARY KEY (id)
 ) ENGINE=InnoDB
