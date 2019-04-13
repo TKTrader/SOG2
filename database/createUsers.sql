@@ -11,7 +11,7 @@
 --     PRIMARY KEY (id)
 -- ) ENGINE=InnoDB;
 
-# All passwords are "test" 
+# All passwords are "test"
 
 # Athletes
 # ------------------------------------------------
@@ -158,15 +158,4 @@ VALUES(
     '$2y$10$pGPKaqK8o0szrkGawk0ok.UQc39KzYLi7IOJZriQ.Y1vnnyARqahu',
     'P',
     '(987)694-5678'
-    );
-
-#Test user password is test
-INSERT INTO users(firstName, lastName, email, password, access, phone)
-VALUES(
-    'Demo',
-    'User',
-    'demouser@sogs.com',
-    '$2y$10$Fq4bjLZInv.TRZDWq7WkF.GcyVzIzDMS9WRUgm0AULtqv4Msiqkxu',
-    'E',
-    '(201)336-4455'
     );

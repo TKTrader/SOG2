@@ -1,5 +1,12 @@
 <?php
 require 'publicHeader.php';
+require '../Controllers/checkAccess.php';
+
+//Kick anyone not an employee out
+if ($access != 'P') {
+    $_SESSION['message'] = 'Invalid Access';
+    header("location: error.php");
+}
 ?>
 
 <!-- TODO:
@@ -36,6 +43,12 @@ require 'publicHeader.php';
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+<!-- Add Public Name -->
+<?php
+  echo "Name: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
+?>
+
 <div class="container">
   <div class="jumbotron">
     <h1>Public Dashboard</h1>     

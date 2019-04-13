@@ -1,5 +1,12 @@
 <?php
 require 'employeeHeader.php';
+require '../Controllers/checkAccess.php';
+
+//Kick anyone not an employee out
+if ($access != 'E') {
+    $_SESSION['message'] = 'Invalid Access';
+    header("location: error.php");
+}
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #009900;">
@@ -9,15 +16,20 @@ require 'employeeHeader.php';
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="employeeIndex.php">Dashboard<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link active" href="addAthletes.php">Add Athletes</a>
+      <a class="nav-item nav-link" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="manageAthletes.php">Manage Athletes</a>
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
-      <a class="nav-item nav-link" href="modifyTickets.php">Modify Tickets</a>
+      <a class="nav-item nav-link active" href="manageTickets.php">Manage Tickets</a>
       <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
     </div>
   </div>
 </nav>
 
+<!-- Add Employee ID -->
+<?php
+  echo "ID: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
+?>
+
 <body>
-  <p>ADD ATHLETES PAGE</p>
+  <p>MODIFY TICKETS PAGE</p>
 </body>

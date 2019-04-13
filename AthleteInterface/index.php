@@ -1,5 +1,12 @@
 <?php
 require 'athleteHeader.php';
+require '../Controllers/checkAccess.php';
+
+//Kick anyone not an employee out
+if ($access != 'A') {
+    $_SESSION['message'] = 'Invalid Access';
+    header("location: error.php");
+}
 ?>
 
 <!-- TODO:
@@ -34,6 +41,12 @@ require 'athleteHeader.php';
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
+
+<!-- Add Athlete Name -->
+<?php
+  echo "Name: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
+?>
+
 <body>
 <div class="container">
   <div class="jumbotron">
