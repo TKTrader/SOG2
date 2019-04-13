@@ -1,5 +1,5 @@
 <?php
-require '../Server/db_connection.php';
+require '../server/db_connection.php';
 $mysqli->set_charset("utf8");
 if ($_SERVER['REQUEST_METHOD']=='POST') {
   echo "<div class=grid3>";

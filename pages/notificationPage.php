@@ -1,4 +1,4 @@
-<?php require '../components/header.php'; $thisPage="Notification"; ?>
+<?php $thisPage="Notification"; ?>
 
 <html>
   <body>

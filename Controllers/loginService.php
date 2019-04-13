@@ -7,7 +7,7 @@ $result = $mysqli->query("SELECT * FROM users WHERE email='$email'");
 //Check if e-mail is in db
 if ($result->num_rows == 0) {
     $_SESSION['message'] = 'E-mail does not exist!';
-    header("location: Controllers/error.php");
+    header("location: ../controllers/error.php");
 }
 //__________________User found, check pw_______________________
 else {
@@ -19,24 +19,24 @@ else {
         $_SESSION['logged_in'] = true;
         $_SESSION['access'] = $user_email['access'];
         if ($_SESSION['access'] == 'A'){
-            header("Location: ./AthleteInterface/index.php");
+            header("Location: ../AthleteInterface/index.php");
             exit();
         }else if ($_SESSION['access'] == 'E'){
-            header("Location: ./EmployeeInterface/index.php");
+            header("Location: ./../EmployeeInterface/index.php");
             exit();
         }else if ($_SESSION['access'] == 'P'){
-            header("Location: ./PublicInterface/index.php");
+            header("Location: ./../PublicInterface/index.php");
             exit();
         }else {
               ($_SESSION['message'] = "Wrong password, try again!");
-            header("location: Controllers/error.php");
+            header("location: ../controllers/error.php");
         } 
-        // header("location: index.php");
+        // header("location: ../index.php");
     }
     //________________Passwords DO NOT match__________________
     else {
         $_SESSION['message'] = "Wrong password, try again!";
-        header("location: Controllers/error.php");
+        header("location: ../controllers/error.php");
     }
 }
 ?>
