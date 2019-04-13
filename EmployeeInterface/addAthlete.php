@@ -50,7 +50,18 @@ if ($access != 'E') {
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="country">Country</label>
-        <input type="text" class="form-control" id="country" aria-describedby="emailHelp" placeholder="Enter country">
+          <select class="form-control" name="event" required >
+            <option value="" selected disabled hidden></option>
+            <?php
+            $mysqli->set_charset("utf8");
+            $query = "SELECT name FROM countryList";
+            $result = mysqli_query($mysqli, $query);
+            while ($row = mysqli_fetch_assoc($result)) {
+              $value = $row['name'];
+              echo "<option value='$value'>$value</option>";
+            }
+            ?>
+          </select>
       </div>
       <div class="form-group col-md-6">
         <label for="dob">Date of Birth</label>
@@ -93,10 +104,11 @@ if ($access != 'E') {
         </select>
       </div>
     </div>
-
+    <div class="form-row">
     <div class="form-group col-md-3">
       <label for="weight">Weight</label>
       <input type="number" class="form-control" id="weight" aria-describedby="emailHelp" placeholder="Enter weight in pounds">
+    </div>
     </div>
     <div class="form-group">
       <label for="password">Password</label>
@@ -106,7 +118,8 @@ if ($access != 'E') {
   </form>
 </div>
 <div class="container">
-  <div class="jumbotron">
+  <div class="jumbotron" style="background-color:#d6f5d6;">
+  <p><b><h3>Navigate:</h3></b></p>
     <a class="btn btn-primary btn-lg btn-block" href="modifyAthlete.php" style="background-color: #0099ff;">Modify Athlete</button>
     <a class="btn btn-primary btn-lg btn-block" href="deleteAthlete.php" style="background-color: #ff0000;">Delete Athlete</button>
     <!-- </div>

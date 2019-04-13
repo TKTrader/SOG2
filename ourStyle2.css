@@ -236,6 +236,11 @@ nav {
     padding: 8px 4px;
 }
 
+/* row space */
+.spacer10 {
+  height: 10px;
+}
+
 /*Noob not commeting his code section*/
 .athletePage_container table{
     width: 100%;
