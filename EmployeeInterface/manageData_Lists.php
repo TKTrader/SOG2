@@ -16,37 +16,65 @@
       $name = mysqli_real_escape_string($mysqli, $_POST['event_Name']);
       $category = mysqli_real_escape_string($mysqli, $_POST['category']);
 
-      $insertquery1 = "INSERT INTO eventlist(name, category)
-      VALUES ('$name', '$category')";
-      mysqli_query($mysqli, $insertquery1);
+      //query to insert event
+      $newEvent = "INSERT INTO eventlist(name, category) VALUES ('$name', '$category')";
+      mysqli_query($mysqli, $newEvent);
     }
     else if (isset($_POST['event_delete'])) {
-      //logic
+      //Store posted var
+      $rowid = mysqli_real_escape_string($mysqli, $_POST['event_Id']);
+
+      //query to delete
+      $deleteEvent = "DELETE FROM eventlist WHERE id = '$rowid'";
+      mysqli_query($mysqli, $deleteEvent);
     }
     else if (isset($_POST['category_add'])) {
 
       //store posted values in vars
-      $newCategory = mysqli_real_escape_string($mysqli, $_POST['categoryName']);
+      $newCategory = mysqli_real_escape_string($mysqli, $_POST['category_Name']);
 
-      $insertquery2 = "INSERT INTO categorylist(category)
-      VALUES ('$newCategory')";
-      mysqli_query($mysqli, $insertquery2);
-      //echo $newCategory;
+      $insertCategory = "INSERT INTO categorylist(category) VALUES ('$newCategory')";
+      mysqli_query($mysqli, $insertCategory);
     }
     else if (isset($_POST['category_delete'])) {
-      //logic
+      //Store posted vars
+      $rowid = mysqli_real_escape_string($mysqli, $_POST['category_Id']);
+
+      //query to delete from table
+      $deleteCategory = "DELETE FROM categorylist WHERE id = '$rowid'";
+      mysqli_query($mysqli, $deleteCategory);
     }
     else if (isset($_POST['type_add'])) {
-      //logic
+      //store posted values to vars
+      $typeName = mysqli_real_escape_string($mysqli, $_POST['type_Name']);
+
+      //query to insert
+      $newType = "INSERT INTO typelist(type) VALUES ('$typeName')";
+      mysqli_query($mysqli, $newType);
     }
     else if (isset($_POST['type_delete'])) {
-      //logic
+      //store posted values into vars
+      $rowid = mysqli_real_escape_string($mysqli, $_POST['type_Id']);
+
+      //queery to delete the row from db table
+      $deleteType = "DELETE FROM typelist WHERE id = '$rowid'";
+      mysqli_query($mysqli, $deleteType);
     }
     else if (isset($_POST['country_add'])) {
-      //logic
+      //Store posted values to vars
+      $countryName = mysqli_real_escape_string($mysqli, $_POST['country_Name']);
+
+      //Query to insert new country
+      $newCountry = "INSERT INTO countrylist(name) VALUES ('$countryName')";
+      mysqli_query($mysqli, $newCountry);
     }
     else if (isset($_POST['country_delete'])) {
-      //logic
+      //Store posted values into vars
+      $rowid = mysqli_real_escape_string($mysqli, $_POST['country_Id']);
+
+      //query to remove country
+      $deleteCountry = "DELETE FROM countrylist WHERE id = '$rowid'";
+      mysqli_query($mysqli, $deleteCountry);
     }
   }
 ?>
