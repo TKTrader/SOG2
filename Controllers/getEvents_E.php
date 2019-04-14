@@ -18,8 +18,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   $run_query1 = mysqli_query($mysqli, $query);
   $checkquery = mysqli_num_rows($run_query1);
   if ($checkquery>0){
-    //counter
-    $counter = 1;
       //fetch association array and store in $row
       while ($row = mysqli_fetch_assoc($run_query1)){
         $time = $row['time'];
