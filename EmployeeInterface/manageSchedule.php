@@ -35,9 +35,29 @@
       $event_SELECTED = mysqli_real_escape_string($mysqli, $_POST['event']);
       $date_SELECTED = mysqli_real_escape_string($mysqli, $_POST['date']);
       $time_SELECTED = mysqli_real_escape_string($mysqli, $_POST['time']);
-      $deleteQuery1 = "DELETE FROM olympicevent WHERE name = '$event_SELECTED' AND date = '$date_SELECTED' AND time = '$time_SELECTED'";
+      $deleteQuery1 = "DELETE FROM olympicEvent WHERE name = '$event_SELECTED' AND date = '$date_SELECTED' AND time = '$time_SELECTED'";
       mysqli_query($mysqli, $deleteQuery1);
+    }else if (isset($_POST['ModifytoSchedule_button'])){
 
+      //Storing all posted inputs into php vars
+      $row_SELECTED = mysqli_real_escape_string($mysqli, $_POST['id']);
+      $event_SELECTED = mysqli_real_escape_string($mysqli, $_POST['event']);
+      $category_SELECTED = mysqli_real_escape_string($mysqli, $_POST['category']);
+      $date_SELECTED = mysqli_real_escape_string($mysqli, $_POST['date']);
+      $time_SELECTED = mysqli_real_escape_string($mysqli, $_POST['time']);
+      $location_SELECTED = mysqli_real_escape_string($mysqli, $_POST['location']);
+      $type_SELECTED = mysqli_real_escape_string($mysqli, $_POST['type']);
+      $price_SELECTED = mysqli_real_escape_string($mysqli, $_POST['price']);
+      $modifyQuery1 = "UPDATE olympicEvent
+      SET name = '$event_SELECTED',
+      date = '$date_SELECTED',
+      time = '$time_SELECTED',
+      location = '$location_SELECTED',
+      type = '$type_SELECTED',
+      category = '$category_SELECTED',
+      ticketPrice = '$price_SELECTED'
+      WHERE id = '$row_SELECTED'";
+      mysqli_query($mysqli, $modifyQuery1);
     }
   }
 ?>
@@ -179,7 +199,8 @@
     <div class = "EUI_scheduleContainer">
       <form class = "schedule" action="manageSchedule.php" method="post" accept-charset="utf-8">
         <h4>MODIFY</h4>
-          <div class = "grid4">
+          <div class = "grid7">
+            <span><strong>Row Key</strong></span>
             <span><strong>Event Name</strong></span>
             <span><strong>Category</strong></span>
             <span><strong>Date</strong></span>
@@ -189,6 +210,7 @@
             <span><strong>Price</strong></span>
 
             <!--Drop Down bars below-->
+            <input class="form-control" type="text" name="id" placeholder="#" required>
             <select class="form-control" name="event" required >
               <option value="" selected disabled hidden></option>
               <?php
@@ -240,7 +262,7 @@
             </select>
             <input type="text" class="form-control" name="price" placeholder="Price" required/>
           </div>
-        <button type="submit" name="AddtoSchedule_button" class="btn btn-primary btn-block btn-sm">Submit</button>
+        <button type="submit" name="ModifytoSchedule_button" class="btn btn-primary btn-block btn-sm">Submit</button>
       </form>
       <hr>
     </div>

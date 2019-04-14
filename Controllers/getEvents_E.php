@@ -27,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         echo "<span>".$row['date']."</span>";
         echo "<span>".(date('h:i A', strtotime($row['time'])))."</span>";
         echo "<span>".$row['location']."</span>";
-        $counter++;
       }
   }
 }

@@ -179,6 +179,7 @@ nav {
 .EUI_scheduleContainer h4{
   text-align: center;
 }
+/*Used in manageSchedule.php*/
 .grid4 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -222,6 +223,16 @@ nav {
 .grid6 > span {
     padding: 8px 4px;
 }
+/*Used in manageSchedule under modify section*/
+.grid7 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+.grid7 > span {
+    padding: 8px 4px;
+}
+
 
 /* row space */
 .spacer10 {
