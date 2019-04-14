@@ -28,7 +28,7 @@ if ($access != 'A') {
       <a class="nav-item nav-link" href=".php">Autographs</a>
       <a class="nav-item nav-link" href=".php">Tickets</a>
       <a class="nav-item nav-link" href=".php">Schedule</a>
-      <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
+      <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
     </div>
   </div>
 </nav>
