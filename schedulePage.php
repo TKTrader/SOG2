@@ -79,7 +79,7 @@ $mysqli->set_charset("utf8");
       }
     };
     //Send the request off to a file on the server, Notice that a parameter (q) is added to the URL (with the content of the dropdown list)
-    xhttp.open("POST", "./EmployeeInterface/getEvents.php?q="+number, true);
+    xhttp.open("POST", "./Controllers/getEvents.php?q="+number, true);
     xhttp.send();
   }
 </script>

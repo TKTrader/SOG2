@@ -312,7 +312,7 @@
       }
     };
     //Send the request off to a file on the server, Notice that a parameter (q) is added to the URL (with the content of the dropdown list)
-    xhttp.open("POST", "getEvents.php?q="+number, true);
+    xhttp.open("POST", "../Controllers/getEvents_E.php?q="+number, true);
     xhttp.send();
   }
 </script>
