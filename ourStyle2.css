@@ -109,17 +109,14 @@ nav {
 /*Events CSS*/
 .grid_container{
   position: relative;
-  top: 5%;
+  top: 5vh;
   left: 50%;
   max-width: 70vh;
   transform: translate(-50%);
 }
-
 .grid_container > span{
   text-align: center;
 }
-
-/*Events CSS (also in schedule)*/
 .grid {
     display: grid;
     /*grid-template-columns: minmax(20px, 30px) 1fr 3fr 1fr 1fr 1fr; */
@@ -128,21 +125,20 @@ nav {
     border-right: 1px solid rgb(150, 150, 150);
     text-align: center;
 }
-
 .grid > span {
     padding: 8px 4px;
     border-left: 1px solid rgb(150, 150, 150);
     border-bottom: 1px solid rgb(150, 150, 150);
 }
+
 /*Schedule CSS*/
 .grid_container2{
   position: relative;
-  top: 15%;
+  top: 10vh;
   left: 50%;
   max-width: 120vh;
   transform: translate(-50%);
 }
-
 .grid_container2 > span{
   text-align: center;
 }
@@ -170,11 +166,6 @@ nav {
     padding: 8px 4px;
     border-left: 1px solid rgb(150, 150, 150);
     border-bottom: 1px solid rgb(150, 150, 150);
-}
-
-.loadView_Container{
-  position: relative;
-/*  position: below;*/
 }
 
 /* Employee Interface Schedule CSS*/

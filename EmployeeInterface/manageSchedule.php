@@ -2,6 +2,8 @@
   require 'employeeHeader.php';
   require '../Controllers/checkAccess.php';
 
+  $mysqli->set_charset("utf8");
+
   //Kick anyone not an employee out
   if ($access != 'E') {
       $_SESSION['message'] = 'Invalid Access';
@@ -23,11 +25,19 @@
         /*echo "event: ".$event_SELECTED." <br /> category: ".$category_SELECTED." <br /> date: ".$date_SELECTED.
         "<br /> time: ".$time_SELECTED."<br /> location: ".$location_SELECTED.
         "<br /> type: ".$type_SELECTED."<br />price: ".$price_SELECTED;*/
-        $mysqli->set_charset("utf8");
         $insertQuery1 = "INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice)"
         ."VALUES ('$event_SELECTED', '$date_SELECTED', '$time_SELECTED', '$location_SELECTED',  '$type_SELECTED', '$category_SELECTED',  '$price_SELECTED')";
 
         mysqli_query($mysqli, $insertQuery1);
+    }else if(isset($_POST['DeletetoSchedule_button'])){
+
+      //Store posted vars
+      $event_SELECTED = mysqli_real_escape_string($mysqli, $_POST['event']);
+      $date_SELECTED = mysqli_real_escape_string($mysqli, $_POST['date']);
+      $time_SELECTED = mysqli_real_escape_string($mysqli, $_POST['time']);
+      $deleteQuery1 = "DELETE FROM olympicevent WHERE name = '$event_SELECTED' AND date = '$date_SELECTED' AND time = '$time_SELECTED'";
+      mysqli_query($mysqli, $deleteQuery1);
+
     }
   }
 ?>
@@ -43,6 +53,7 @@
       <a class="nav-item nav-link" href="manageAthletes.php">Manage Athletes</a>
       <a class="nav-item nav-link active" href="manageSchedule.php">Manage Schedule</a>
       <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
+      <a class="nav-item nav-link" href="manageData_Lists.php">Managa Data Lists</a>
       <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
     </div>
   </div>
@@ -157,7 +168,7 @@
             <input class="form-control" type="date" value="2016-08-03" name="date">
             <input class="form-control" type="time" value="12:00:00" name="time">
           </div>
-        <button type="submit" name="AddtoSchedule_button" class="btn btn-danger btn-block btn-sm">Submit</button>
+        <button type="submit" name="DeletetoSchedule_button" class="btn btn-danger btn-block btn-sm">Submit</button>
       </form>
       <hr>
     </div>
@@ -271,24 +282,19 @@
       </div> <!--grid5-->
     </form>
 
-    <div class="loadView_Container">
-      <hr>
-      <div id="loadhere"></div>
-    </div>
+    <div id="loadhere"></div>
   </div>
 </body>
 
-<script type="text/javascript">
-    function toggle_visibility(id) {
-       var e = document.getElementById(id);
-       if(e.style.display == 'block')
-          e.style.display = 'none';
-       else
-          e.style.display = 'block';
-    }
-</script>
-
 <script>
+  function toggle_visibility(id) {
+     var e = document.getElementById(id);
+     if(e.style.display == 'block')
+        e.style.display = 'none';
+     else
+        e.style.display = 'block';
+  }
+
   function loadEvents(number) {
 
     //document.getElementById("demo").innerHTML = number; //This loads the correct value, value is being received.
