@@ -29,7 +29,7 @@ if ($access != 'P') {
       <a class="nav-item nav-link" href=".php">Purchase Tickets</a>
       <a class="nav-item nav-link" href=".php">View Orders</a>
       <a class="nav-item nav-link" href=".php">View Schedule</a>
-      <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
+      <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
     </div>
   </div>
 </nav>
