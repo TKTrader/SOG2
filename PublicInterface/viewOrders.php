@@ -11,6 +11,9 @@ if ($access != 'P') {
 
 <html>
     <body>
-        test
+        <h2>Orders</h2>
+        <?php
+        
+        ?>
     </body>
 </html>

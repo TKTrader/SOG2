@@ -1,21 +1,5 @@
 <?php
-// Depending on the access, the price and text will be different
-// if it's an athlete, it'll say request ticket while if it's public, it'll say buy ticket (as well w/ prices)
-/*
-if ($_SESSION['access'] == 'A'){
-    // request for free tickets
-    //header("Location: ./AthleteInterface/athleteIndex.php");
-    exit();
-} else if ($_SESSION['access'] == 'E'){
-     // request for free tickets
-    //header("Location: ./EmployeeInterface/employeeIndex.php");
-    exit();
-} else if ($_SESSION['access'] == 'P'){
-    //header("Location: ./PublicInterface/publicIndex.php");
-    exit();
-} else {
-    //header("location: Controllers/error.php");
-}*/
+
 ?>
 
 <div class="col-md-4">

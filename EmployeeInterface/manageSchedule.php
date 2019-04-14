@@ -3,7 +3,6 @@ $thisPage="ManageSchedule";
 require 'components/employeeNav.php';
   require '../Controllers/checkAccess.php';
 
-  //Kick anyone not an employee out
   if ($access != 'E') {
       $_SESSION['message'] = 'Invalid Access';
       header("location: ../controllers/error.php");
