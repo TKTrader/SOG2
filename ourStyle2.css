@@ -232,6 +232,40 @@ nav {
 .grid7 > span {
     padding: 8px 4px;
 }
+/*Used in manageData_Lists*/
+/* Employee Interface Schedule CSS*/
+.EUI_datalistContainer{
+  position: relative;
+  top: 15%;
+  left: 50%;
+  max-width: 120vh;
+  transform: translate(-50%);
+  margin-right: 0px;
+}
+.EUI_datalistContainer > span{
+  text-align: center;
+}
+.EUI_datalistContainer h4{
+  text-align: center;
+}
+.grid8 {
+    display: grid;
+    grid-template-columns: minmax(40px, 60px) 1fr 1fr minmax(60px, 80px);
+    text-align: center;
+    grid-gap: 10px;
+}
+.grid8 > span {
+    padding: 8px 4px;
+}
+.grid9 {
+    display: grid;
+    grid-template-columns: minmax(40px, 60px) 1fr minmax(60px, 80px) 1fr;
+    text-align: center;
+    grid-gap: 10px;
+}
+.grid9 > span {
+    padding: 8px 4px;
+}
 
 
 /* row space */

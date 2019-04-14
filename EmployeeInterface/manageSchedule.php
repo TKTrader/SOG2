@@ -91,6 +91,7 @@
   </div>
 </nav>
 
+<!--Display ID-->
 <?php
   echo "ID: ".$_SESSION['first_name']." ".$_SESSION['last_name']."<br />Select Action:";
 ?>
