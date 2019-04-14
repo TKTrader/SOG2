@@ -57,9 +57,9 @@ nav {
   width: 300px;
   padding: 40px;
   position: absolute;
-  top: 50%;
+  top: 25%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
   background: white;
   text-align: center;
   border: 3px solid rgb(189, 189, 189);
@@ -70,7 +70,6 @@ nav {
   text-transform: uppercase;
   font-weight: 500;
 }
-
 .logContainer input[type="text"],.logContainer input[type="email"],.logContainer input[type="password"]{
   border:0;
   background: none;
@@ -84,12 +83,10 @@ nav {
   color: black;
   transition: 0.25s;
 }
-
 .logContainer input[type="text"]:focus,.logContainer input[type="email"]:focus,.logContainer input[type="password"]:focus{
   width: 215px;
   border-color: rgb(153, 193, 221);
 }
-
 .logContainer input[type="submit"]{
   border:0;
   background: none;
@@ -101,7 +98,6 @@ nav {
   color: black;
   transition: 0.25s;
 }
-
 .logContainer input[type="submit"]:hover{
   background: rgb(189, 189, 189);
 }
@@ -183,6 +179,7 @@ nav {
 .EUI_scheduleContainer h4{
   text-align: center;
 }
+/*Used in manageSchedule.php*/
 .grid4 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -226,6 +223,50 @@ nav {
 .grid6 > span {
     padding: 8px 4px;
 }
+/*Used in manageSchedule under modify section*/
+.grid7 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+.grid7 > span {
+    padding: 8px 4px;
+}
+/*Used in manageData_Lists*/
+/* Employee Interface Schedule CSS*/
+.EUI_datalistContainer{
+  position: relative;
+  top: 15%;
+  left: 50%;
+  max-width: 120vh;
+  transform: translate(-50%);
+  margin-right: 0px;
+}
+.EUI_datalistContainer > span{
+  text-align: center;
+}
+.EUI_datalistContainer h4{
+  text-align: center;
+}
+.grid8 {
+    display: grid;
+    grid-template-columns: minmax(40px, 60px) 1fr 1fr minmax(60px, 80px);
+    text-align: center;
+    grid-gap: 10px;
+}
+.grid8 > span {
+    padding: 8px 4px;
+}
+.grid9 {
+    display: grid;
+    grid-template-columns: minmax(40px, 60px) 1fr minmax(60px, 80px) 1fr;
+    text-align: center;
+    grid-gap: 10px;
+}
+.grid9 > span {
+    padding: 8px 4px;
+}
+
 
 /* row space */
 .spacer10 {

@@ -1,5 +1,5 @@
 <?php
-// This page is used by manageSchedule & Schedule Page to load db olympicEvents Table.
+// This page is used by manageSchedule to load db olympicEvents Table.
 require '../Server/db_connection.php';
 $mysqli->set_charset("utf8");
 if ($_SERVER['REQUEST_METHOD']=='POST') {
@@ -18,18 +18,15 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   $run_query1 = mysqli_query($mysqli, $query);
   $checkquery = mysqli_num_rows($run_query1);
   if ($checkquery>0){
-    //counter
-    $counter = 1;
       //fetch association array and store in $row
       while ($row = mysqli_fetch_assoc($run_query1)){
         $time = $row['time'];
-        echo "<span>".$counter."</span>";
+        echo "<span>".$row['id']."</span>";
         echo "<span>".$row['category']."</span>";
         echo "<span>".$row['name']."</span>";
         echo "<span>".$row['date']."</span>";
         echo "<span>".(date('h:i A', strtotime($row['time'])))."</span>";
         echo "<span>".$row['location']."</span>";
-        $counter++;
       }
   }
 }

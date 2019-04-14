@@ -91,7 +91,8 @@ CREATE TABLE IF NOT EXISTS eventList(
     name VARCHAR(50) NOT NULL,
     category VARCHAR(50) NOT NULL,
     id INT AUTO_INCREMENT,
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    FOREIGN KEY (category) REFERENCES categoryList(category)
 ) ENGINE=InnoDB
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
