@@ -21,7 +21,7 @@ if ($access != 'E') {
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
       <a class="nav-item nav-link active" href="manageTickets.php">Manage Tickets</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Managa Data Lists</a>
-      <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
+      <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
     </div>
   </div>
 </nav>
