@@ -48,16 +48,28 @@
       $location_SELECTED = mysqli_real_escape_string($mysqli, $_POST['location']);
       $type_SELECTED = mysqli_real_escape_string($mysqli, $_POST['type']);
       $price_SELECTED = mysqli_real_escape_string($mysqli, $_POST['price']);
-      $modifyQuery1 = "UPDATE olympicEvent
-      SET name = '$event_SELECTED',
-      date = '$date_SELECTED',
-      time = '$time_SELECTED',
-      location = '$location_SELECTED',
-      type = '$type_SELECTED',
-      category = '$category_SELECTED',
-      ticketPrice = '$price_SELECTED'
-      WHERE id = '$row_SELECTED'";
-      mysqli_query($mysqli, $modifyQuery1);
+
+      //Search to make sure there is a query 1st
+      $search_it_exists = "SELECT id FROM olympicEvent WHERE id = '$row_SELECTED'";
+      $run_query1 = mysqli_query($mysqli, $search_it_exists);
+      $checkquery = mysqli_num_rows($run_query1);
+      if ($checkquery > 0){
+
+        //Update query
+        $modifyQuery1 = "UPDATE olympicEvent
+        SET name = '$event_SELECTED',
+        date = '$date_SELECTED',
+        time = '$time_SELECTED',
+        location = '$location_SELECTED',
+        type = '$type_SELECTED',
+        category = '$category_SELECTED',
+        ticketPrice = '$price_SELECTED'
+        WHERE id = '$row_SELECTED'";
+
+        mysqli_query($mysqli, $modifyQuery1);
+      } else {
+        echo "<script>alert('No results found')</script>";
+      }
     }
   }
 ?>
@@ -210,7 +222,7 @@
             <span><strong>Price</strong></span>
 
             <!--Drop Down bars below-->
-            <input class="form-control" type="text" name="id" placeholder="#" required>
+            <input class="form-control" type="text" name="id"placeholder="#" required>
             <select class="form-control" name="event" required >
               <option value="" selected disabled hidden></option>
               <?php
@@ -224,7 +236,7 @@
               }
               ?>
             </select>
-            <select class="form-control" name="category">
+            <select class="form-control" name="category" required>
               <option value="" selected disabled hidden></option>
               <?php
               $query = "SELECT category FROM categorylist";
@@ -236,9 +248,9 @@
               }
               ?>
             </select>
-            <input class="form-control" type="date" value="2016-08-03" name="date">
-            <input class="form-control" type="time" value="12:00:00" name="time">
-            <select class="form-control" name="location">
+            <input class="form-control" type="date" value="2016-08-03" name="date" required>
+            <input class="form-control" type="time" value="12:00:00" name="time" required>
+            <select class="form-control" name="location" required>
               <option value="" selected disabled hidden></option>
               <?php
               $query = "SELECT name FROM arenalist";
@@ -249,7 +261,7 @@
               }
               ?>
             </select>
-            <select class="form-control" name="type">
+            <select class="form-control" name="type" required>
               <option value="" selected disabled hidden></option>
               <?php
               $query = "SELECT type FROM typelist";
@@ -316,10 +328,7 @@
      else
         e.style.display = 'block';
   }
-
   function loadEvents(number) {
-
-    //document.getElementById("demo").innerHTML = number; //This loads the correct value, value is being received.
 
     //create Var
     var xhttp;
