@@ -1,5 +1,5 @@
 <?php
-// This page is used by manageSchedule & Schedule Page to load db olympicEvents Table.
+// This page is used by Schedule Page to load db olympicEvents Table.
 require '../Server/db_connection.php';
 $mysqli->set_charset("utf8");
 if ($_SERVER['REQUEST_METHOD']=='POST') {
