@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 <!-- Add Employee ID -->
 <div class="container">
 <?php
-  echo "ID: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
+  echo "Employee ID: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
 ?>
 </div>
 
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         }
         ?>
     </select>
-    <button type="submit" Name="submitButton" class="btn btn-primary">Submit</button>
+    <button type="submit" Name="submitButton" class="btn btn-primary">Display Info</button>
     </div>
     <?php
         if ( isset( $_POST['displayButton'] ) ) { 
@@ -68,26 +68,31 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         ?>
     </div>
 </div>
+
+<!-- Create php here to display athlete info -->
+
 <body>
 <div class="container">
 <p><b><h2>Modify Fields Below:</h2></b></p>
 </div>
+
+<!-- Form info -->
 <div class="container">
-  <form>
+  <form class="athlete has-success" action="modifyAthlete.php" method="post">
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="firstNameInput">First Name</label>
-        <input type="text" class="form-control" id="firstNameInput" aria-describedby="emailHelp" placeholder="Enter first name">
+        <input type="text" class="form-control" name ="firstName" id="firstNameInput" placeholder="Enter first name" required>
       </div>
       <div class="form-group col-md-6">
         <label for="lastNameInput">Last Name</label>
-        <input type="text" class="form-control" id="lastNameInput" aria-describedby="emailHelp" placeholder="Enter last name">
+        <input type="text" class="form-control" name="lastName" id="lastNameInput" placeholder="Enter last name" required>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="country">Country</label>
-          <select class="form-control" name="event" required >
+          <select class="form-control" name="country" required >
             <option value="" selected disabled hidden></option>
             <?php
             $mysqli->set_charset("utf8");
@@ -102,59 +107,34 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       </div>
       <div class="form-group col-md-6">
         <label for="dob">Date of Birth</label>
-        <input type="date" class="form-control" id="dob" aria-describedby="emailHelp" placeholder="Enter date of birth">
-        <small id="dob" class="form-text text-muted">YYYY-MM-DD</small>
+        <input type="date" class="form-control" name ="dob" id="dob" value="2000-01-01" placeholder="Enter date of birth">
+        <small id="dob" class="form-text text-muted">MM-DD-YYYY</small>
       </div>
     </div>
-    <label for="exampleInputEmail1">Height</label>
-    <div class="form-row">
-      <div class="input-group col-md-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect1">Feet</label>
-        </div>
-        <select class="custom-select" id="inputGroupSelect1">
-          <option selected>select...</option>
-          <option value="1">4'</option>
-          <option value="2">5'</option>
-          <option value="3">6'</option>
-          <option value="3">7'</option>
-        </select>
-      </div>
-      <div class="input-group col-md-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect2">Inches</label>
-        </div>
-        <select class="custom-select" id="inputGroupSelect2">
-          <option selected>select...</option>
-          <option value="1">0"</option>
-          <option value="2">1"</option>
-          <option value="3">2"</option>
-          <option value="3">3"</option>
-          <option value="4">4"</option>
-          <option value="5">5"</option>
-          <option value="6">6"</option>
-          <option value="7">7"</option>
-          <option value="8">8"</option>
-          <option value="9">9"</option>
-          <option value="10">10"</option>
-          <option value="11">11"</option>
-        </select>
-      </div>
+      <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="height">Height: feet</label>
+      <input type="number" class="form-control" name="heightFeet" id="heightFeet" placeholder="Feet">
+    </div>\
+    <div class="form-group col-md-2">
+      <label for="height">inches</label>
+      <input type="number" class="form-control" name="heightInch" id="heightInch" placeholder="Inches">
     </div>
-    <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-2">
       <label for="weight">Weight</label>
-      <input type="number" class="form-control" id="weight" aria-describedby="emailHelp" placeholder="Enter weight in pounds">
+      <input type="number" class="form-control" name="weight" id="weight" placeholder="pounds">
     </div>
-    <div class="form-group col-md-6" >
+    <div class="form-group col-md-5">
       <label for="password">Password</label>
-      <input type="password" class="form-control" id="password" placeholder="Password">
+      <input type="password" class="form-control" name="pwd" id="password" placeholder="Password" required>
     </div>
     </div>
-    <button type="submit" Name="submitAthleteButton" class="btn btn-primary">Submit</button>
+    <button type="submit" name="modifyAthleteButton" class="btn btn-primary">Submit</button>
   </form>
 </div>
 
+
+<!-- Lower Navigation Panel -->
 <div class="container">
   <div class="jumbotron" style="background-color:#ffffff;">
   <p><b><h3>Navigate:</h3></b></p>

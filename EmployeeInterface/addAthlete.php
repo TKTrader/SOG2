@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   }
 }
 ?>
-
+<!-- navbar -->
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #009900;">
   <a class="navbar-brand navbar-dark"><font color="white">Summer Olympic Games</font></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,13 +72,14 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   </div>
 </nav>
 
-<!-- Add Employee ID -->
+<!-- Employee ID Confirmation-->
 <div class="container">
 <?php
-  echo "ID: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
+  echo "Employee ID: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
 ?>
 </div>
 
+<!-- main page -->
 <body>
 <div class="container">
 <p style="text-align:center"><b><h2>Register New Athlete</h2></b></p>
@@ -138,6 +139,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     <button type="submit" name="addAthleteButton" class="btn btn-primary">Submit</button>
   </form>
 </div>
+
+<!-- Lower Navigation Panel -->
 <div class="container">
   <div class="jumbotron" style="background-color:#ffffff;">
   <p><b><h3>Navigate:</h3></b></p>
@@ -145,6 +148,4 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     <a class="btn btn-primary btn-lg btn-block" href="deleteAthlete.php" style="background-color: #ff0000;">Delete Athlete</button>
     <!-- </div>
 </div> -->
-<!-- Above  div close is creating GUI issues, not sure why? -->
-<!--The problem is in the style sheet-->
 </body>
