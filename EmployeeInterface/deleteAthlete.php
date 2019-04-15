@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       $access = "A";
 
       // delete Athlete from user table
-      $deleteAthleteDB = "DELETE FROM users WHERE id=('$id')";
+      $deleteAthleteDB = "DELETE FROM users WHERE id='$id' AND firstName='$firstName' AND lastName='$lastName'";
       //   // check fields
         echo "firstName: ".$firstName." <br /> lastName: ".$lastName." id: ".$id;
       mysqli_query($mysqli, $deleteAthleteDB);
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     <div class="jumbotron" style="background-color:#ffffff;">
     <p><b><h2>Delete Athlete</h2></b></p>
 
-    <!-- athlete lookup function -->
+    <!-- display existing athletes lookup function -->
     <p><b><h3>Select Athlete to Delete</h3></b></p>
     <select class="form-control" name="displayAthleteNames" required >
       <option value="" selected disabled hidden></option>
