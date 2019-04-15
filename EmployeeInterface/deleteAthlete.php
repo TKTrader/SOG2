@@ -2,6 +2,7 @@
 require 'employeeHeader.php';
 require '../Controllers/checkAccess.php';
 
+// Check User access
 if ($access != 'E') {
     $_SESSION['message'] = 'Invalid Access';
     header("location: ../Controllers/error.php");
@@ -35,7 +36,7 @@ if ($access != 'E') {
 <div class="container">
     <div class="jumbotron">
     <p><b><h2>Select Athlete to Delete</h2></b></p>
-    <select class="form-control" name="event" required >
+    <select class="form-control" name="displayAthleteNames" required >
         <option value="" selected disabled hidden></option>
         <?php
         $mysqli->set_charset("utf8");
