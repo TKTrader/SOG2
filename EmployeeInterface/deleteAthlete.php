@@ -7,8 +7,25 @@ if ($access != 'E') {
     $_SESSION['message'] = 'Invalid Access';
     header("location: ../Controllers/error.php");
 }
-?>
 
+// Delete selected user from database
+if ($_SERVER['REQUEST_METHOD']=='POST') {
+  if (isset($_POST['deleteAthleteButton'])) {
+    // Store form variables with security to prevent SQL injection
+      $firstName = mysqli_real_escape_string($mysqli, $_POST['firstName']);
+      $lastName = mysqli_real_escape_string($mysqli, $_POST['lastName']);
+      $id = mysqli_real_escape_string($mysqli, $_POST['id']);
+      $access = "A";
+
+      // delete Athlete from user table
+      $deleteAthleteDB = "DELETE FROM users WHERE id=('$id')";
+      //   // check fields
+        echo "firstName: ".$firstName." <br /> lastName: ".$lastName." id: ".$id;
+      mysqli_query($mysqli, $deleteAthleteDB);
+  }
+}
+?>
+<!-- Navbar -->
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #009900;">
   <a class="navbar-brand navbar-dark"><font color="white">Summer Olympic Games</font></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,33 +46,86 @@ if ($access != 'E') {
 <!-- Add Employee ID -->
 <div class="container">
 <?php
-  echo "ID: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
+  echo "Employee ID: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
 ?>
 </div>
 
-<div class="container">
-    <div class="jumbotron">
-    <p><b><h2>Select Athlete to Delete</h2></b></p>
-    <select class="form-control" name="displayAthleteNames" required >
-        <option value="" selected disabled hidden></option>
-        <?php
-        $mysqli->set_charset("utf8");
-        $query = "SELECT concat(firstName,' ',lastName) fullName FROM users WHERE access='A'";
-        $result = mysqli_query($mysqli, $query);
-        while ($row = mysqli_fetch_assoc($result)) {
-            $value = $row['fullName'];
-            echo "<option value='$value'>$value</option>";
-        }
-        ?>
-    </select>
-    <div class="row form-group mt-3">
-    <button type="submit" class="btn btn-primary" style="background-color: #ff0000;">Delete</button>
-    </div>
-</div>
-
+<!-- Dashboard -->
 <body>
 <div class="container">
-  <div class="jumbotron" style="background-color:#d6f5d6;">
+<form class="athlete has-success" action="deleteAthlete.php" method="post">
+    <div class="jumbotron" style="background-color:#ffffff;">
+    <p><b><h2>Delete Athlete</h2></b></p>
+
+    <!-- athlete lookup function -->
+    <p><b><h3>Select Athlete to Delete</h3></b></p>
+    <select class="form-control" name="displayAthleteNames" required >
+      <option value="" selected disabled hidden></option>
+      <?php
+      $mysqli->set_charset("utf8");
+      $query = "SELECT concat('id ',id,': ',firstName,' ',lastName) displayAthlete FROM users WHERE access='A'";
+      $result = mysqli_query($mysqli, $query);
+      while ($row = mysqli_fetch_assoc($result)) {
+        $value = $row['displayAthlete'];
+        echo "<option value='$value'>$value</option>";
+      }
+      ?>
+    </select>
+
+    <p><b><h3>Verify correct fields below and submit to delete</h3></b></p>
+
+    <!-- id dropdown -->
+    <div class="form-row">
+    <select class="form-control col-md-2" name="id" required >
+      <option value="" selected disabled hidden></option>
+      <?php
+      $mysqli->set_charset("utf8");
+      $query = "SELECT id FROM users WHERE access='A'";
+      $result = mysqli_query($mysqli, $query);
+      while ($row = mysqli_fetch_assoc($result)) {
+          $value = $row['id'];
+          echo "<option value='$value'>$value</option>";
+      }
+      ?>
+    </select>
+
+    <!-- first name dropdown -->
+    <select class="form-control col-md-5" name="firstName" required >
+      <option value="" selected disabled hidden></option>
+      <?php
+      $mysqli->set_charset("utf8");
+      $query = "SELECT firstName FROM users WHERE access='A'";
+      $result = mysqli_query($mysqli, $query);
+      while ($row = mysqli_fetch_assoc($result)) {
+          $value = $row['firstName'];
+          echo "<option value='$value'>$value</option>";
+      }
+      ?>
+    </select>
+
+    <!-- last name dropdown -->
+    <select class="form-control col-md-5" name="lastName" required >
+      <option value="" selected disabled hidden></option>
+      <?php
+      $mysqli->set_charset("utf8");
+      $query = "SELECT lastName FROM users WHERE access='A'";
+      $result = mysqli_query($mysqli, $query);
+      while ($row = mysqli_fetch_assoc($result)) {
+          $value = $row['lastName'];
+          echo "<option value='$value'>$value</option>";
+      }
+      ?>
+    </select>
+    </div>
+
+    <!-- Delete Button -->
+    <button type="submit" name="deleteAthleteButton" class="btn btn-primary" style="background-color: #ff0000;">Delete</button>
+    </form>
+</div>
+
+<!-- Lower Navigation Panel -->
+<div class="container">
+  <div class="jumbotron" style="background-color:#ffffff;">
   <p><b><h3>Navigate:</h3></b></p>
         <a class="btn btn-primary btn-lg btn-block" href="addAthlete.php" style="background-color: #009900;">Register New Athlete</button>
         <a class="btn btn-primary btn-lg btn-block" href="modifyAthlete.php" style="background-color: #0099ff;">Modify Athlete</button>
