@@ -12,5 +12,8 @@ session_destroy();
 <body>
   <p>You are now logged out</p>
   <a href="index.php"><button class="button button-block"/>Home</button></a>
+  <div class="text-center">
+    <img src="./assets/rio-2016-logo.png" class="rounded" alt="...">
+  </div>
 </body>
 </html>

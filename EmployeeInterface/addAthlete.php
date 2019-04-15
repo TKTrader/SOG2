@@ -2,9 +2,55 @@
 require 'employeeHeader.php';
 require '../Controllers/checkAccess.php';
 
+// Check User access
 if ($access != 'E') {
     $_SESSION['message'] = 'Invalid Access';
     header("location: error.php");
+}
+
+// Enter athlete into database
+if ($_SERVER['REQUEST_METHOD']=='POST') {
+  if (isset($_POST['addAthleteButton'])) {
+    // Store form variables with security to prevent SQL injection
+      $firstName = mysqli_real_escape_string($mysqli, $_POST['firstName']);
+      $lastName = mysqli_real_escape_string($mysqli, $_POST['lastName']);
+      $country = mysqli_real_escape_string($mysqli, $_POST['country']);
+      $dateOfBirth = mysqli_real_escape_string($mysqli, $_POST['dob']);
+      $heightFeet = mysqli_real_escape_string($mysqli, $_POST['heightFeet']);
+      $heightInch = mysqli_real_escape_string($mysqli, $_POST['heightInch']);
+      $weight = mysqli_real_escape_string($mysqli, $_POST['weight']);
+      $pwd = mysqli_real_escape_string($mysqli, password_hash($_POST['pwd'], PASSWORD_BCRYPT));
+      $email = $firstName.$lastName."@sogs.com";
+      $access = "A";
+      $height = $heightFeet."'".$heightInch;
+
+      // Check if user already exists
+      $check = $mysqli->query("SELECT * FROM users WHERE email='$email'") or die($mysqli->error());
+      if ($check->num_rows > 0) {
+        echo "Athlete already exists";
+        mysqli_free_result($check);
+      }
+      // insert Athlete info into user table
+      $insertAthleteDB = "INSERT INTO users(firstName, lastName, email, password, access)"."VALUES ('$firstName', '$lastName', '$email', '$pwd',  '$access')";
+      //   // check output (comment out)
+      //   echo "firstName: ".$firstName." <br /> lastName: ".$lastName." <br /> country: ".$country.
+      //   "<br /> DOB: ".$dateOfBirth."<br /> height: ".$height.
+      //   "<br /> weight: ".$weight."<br />password: ".$pwd."<br/> email: ".$email;
+      mysqli_query($mysqli, $insertAthleteDB);
+
+      // insert secondary Athlete info into athletes table   
+      $insertAthleteDB2 = "INSERT INTO athletes(id, country, heightFeet, heightInch, wgt, DOB)"
+      ."VALUES ((SELECT id FROM users WHERE users.firstName='$firstName' AND users.lastName='$lastName'), '$country', '$heightFeet','$heightInch', '$weight',  '$dateOfBirth')";
+      // echo "$insertAthleteDB2";
+      // echo "id: ".$id." <br /> country: ".$country."<br /> height: ".$height."<br /> weight: ".$weight."<br />DOB: ".$dateOfBirth;
+      $result= mysqli_query($mysqli, $insertAthleteDB2);
+      if (!$result) {
+        $_SESSION['message'] = 'Database Input Error';
+        header("location: athleteError.php");
+      } else {
+        echo "SUCCESS!!";
+      }
+  }
 }
 ?>
 
@@ -19,7 +65,8 @@ if ($access != 'E') {
       <a class="nav-item nav-link active" href="manageAthletes.php">Manage Athletes</a>
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
       <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
-      <a class="nav-item nav-link" href="manageData_Lists.php">Managa Data Lists</a>
+      <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
+      <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
       <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
     </div>
   </div>
@@ -37,21 +84,21 @@ if ($access != 'E') {
 <p style="text-align:center"><b><h2>Register New Athlete</h2></b></p>
 </div>
 <div class="container">
-  <form>
+  <form class="athlete has-success" action="addAthlete.php" method="post">
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="firstNameInput">First Name</label>
-        <input type="text" class="form-control" id="firstNameInput" aria-describedby="emailHelp" placeholder="Enter first name">
+        <input type="text" class="form-control" name ="firstName" id="firstNameInput" placeholder="Enter first name" required>
       </div>
       <div class="form-group col-md-6">
         <label for="lastNameInput">Last Name</label>
-        <input type="text" class="form-control" id="lastNameInput" aria-describedby="emailHelp" placeholder="Enter last name">
+        <input type="text" class="form-control" name="lastName" id="lastNameInput" placeholder="Enter last name" required>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="country">Country</label>
-          <select class="form-control" name="event" required >
+          <select class="form-control" name="country" required >
             <option value="" selected disabled hidden></option>
             <?php
             $mysqli->set_charset("utf8");
@@ -66,60 +113,33 @@ if ($access != 'E') {
       </div>
       <div class="form-group col-md-6">
         <label for="dob">Date of Birth</label>
-        <input type="date" class="form-control" id="dob" aria-describedby="emailHelp" placeholder="Enter date of birth">
-        <small id="dob" class="form-text text-muted">YYYY-MM-DD</small>
+        <input type="date" class="form-control" name ="dob" id="dob" value="2000-01-01" placeholder="Enter date of birth">
+        <small id="dob" class="form-text text-muted">MM-DD-YYYY</small>
       </div>
     </div>
-    <label for="exampleInputEmail1">Height</label>
-    <div class="form-row">
-      <div class="input-group col-md-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">Feet</label>
-        </div>
-        <select class="custom-select" id="inputGroupSelect01">
-          <option selected>select...</option>
-          <option value="1">4'</option>
-          <option value="2">5'</option>
-          <option value="3">6'</option>
-          <option value="3">7'</option>
-        </select>
-      </div>
-      <div class="input-group col-md-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01">Inches</label>
-        </div>
-        <select class="custom-select" id="inputGroupSelect01">
-          <option selected>select...</option>
-          <option value="1">0"</option>
-          <option value="2">1"</option>
-          <option value="3">2"</option>
-          <option value="3">3"</option>
-          <option value="4">4"</option>
-          <option value="5">5"</option>
-          <option value="6">6"</option>
-          <option value="7">7"</option>
-          <option value="8">8"</option>
-          <option value="9">9"</option>
-          <option value="10">10"</option>
-          <option value="11">11"</option>
-        </select>
-      </div>
+      <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="height">Height: feet</label>
+      <input type="number" class="form-control" name="heightFeet" id="heightFeet" placeholder="Feet">
+    </div>\
+    <div class="form-group col-md-2">
+      <label for="height">inches</label>
+      <input type="number" class="form-control" name="heightInch" id="heightInch" placeholder="Inches">
     </div>
-    <div class="form-row">
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-2">
       <label for="weight">Weight</label>
-      <input type="number" class="form-control" id="weight" aria-describedby="emailHelp" placeholder="Enter weight in pounds">
+      <input type="number" class="form-control" name="weight" id="weight" placeholder="pounds">
     </div>
-    </div>
-    <div class="form-group">
+    <div class="form-group col-md-5">
       <label for="password">Password</label>
-      <input type="password" class="form-control" id="password" placeholder="Password">
+      <input type="password" class="form-control" name="pwd" id="password" placeholder="Password" required>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <button type="submit" name="addAthleteButton" class="btn btn-primary">Submit</button>
   </form>
 </div>
 <div class="container">
-  <div class="jumbotron" style="background-color:#d6f5d6;">
+  <div class="jumbotron" style="background-color:#ffffff;">
   <p><b><h3>Navigate:</h3></b></p>
     <a class="btn btn-primary btn-lg btn-block" href="modifyAthlete.php" style="background-color: #0099ff;">Modify Athlete</button>
     <a class="btn btn-primary btn-lg btn-block" href="deleteAthlete.php" style="background-color: #ff0000;">Delete Athlete</button>

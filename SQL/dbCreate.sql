@@ -25,8 +25,9 @@ CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 CREATE TABLE IF NOT EXISTS athletes(
     id INT,
     country VARCHAR(30) NOT NULL,
-    height VARCHAR(5) NOT NULL,
-    wgt FLOAT(4,1) NOT NULL,
+    heightFeet INT(1),
+    heightInch INT(2),
+    wgt FLOAT(4,1),
     DOB DATE, # YYYY-MM-DD
     FOREIGN KEY (id) REFERENCES users(id) ON DELETE CASCADE,
     PRIMARY KEY (id)

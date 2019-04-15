@@ -48,7 +48,7 @@ if ($access != 'E') {
 
 <body>
 <div class="container">
-  <div class="jumbotron">
+  <div class="jumbotron" style="background-color:#d6f5d6;">
     <h1><strong>Employee Dashboard</strong></h1>
         <h2>Select an action:</h2>
         <a class="btn btn-primary btn-lg btn-block" href="manageAthletes.php" style="background-color: #009900;">Manage Athletes</button>
