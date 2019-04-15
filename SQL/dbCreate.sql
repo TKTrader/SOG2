@@ -2,12 +2,6 @@
 # otherwise in table itself, only on numeric values or length of string
 # https://mariadb.com/kb/en/library/constraint/
 
-# To do:
-
-# may need to add ON UPDATE CASCADE  etc clauses to some foreign keys so they update with other tables
-# example:  delete athlete should also delete athleteEvents where athlete is participating
-# example 2:  we delete an athlete in users table;  also should cascade so child row is deleted in athletes table
-
 CREATE DATABASE IF NOT EXISTS SOGS;
 
 CREATE TABLE IF NOT EXISTS users(
@@ -34,7 +28,7 @@ CREATE TABLE IF NOT EXISTS athletes(
 ) ENGINE=InnoDB
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-CREATE TABLE IF NOT EXISTS olympicEvent( #removed all the evt
+CREATE TABLE IF NOT EXISTS olympicEvent( 
     id INT AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
     date DATE NOT NULL,
@@ -48,7 +42,7 @@ CREATE TABLE IF NOT EXISTS olympicEvent( #removed all the evt
 ) ENGINE=InnoDB
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-CREATE TABLE IF NOT EXISTS updatedEvent( #removed all the evt
+CREATE TABLE IF NOT EXISTS updatedEvent( 
     id INT AUTO_INCREMENT,
     olympicEventID INT NOT NULL,
     name VARCHAR(50) NOT NULL,
@@ -137,30 +131,3 @@ CREATE TABLE IF NOT EXISTS countryList(
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --https://dba.stackexchange.com/questions/76788/create-a-mysql-database-with-charset-utf-8
-
-
-
-
--- # Fields done, needs foreign key
--- CREATE TABLE IF NOT EXISTS employee(
---     id INT,
---     phone VARCHAR(14),
---     PRIMARY KEY (id),
---     FOREIGN KEY (id) REFERENCES users(id)
--- ) ENGINE=InnoDB;
-
--- CREATE TABLE IF NOT EXISTS publicUser(
---     id INT,
---     phone VARCHAR(14),
---     PRIMARY KEY (id),
---     FOREIGN KEY (id) REFERENCES users(id)
--- ) ENGINE=InnoDB;
-
-
--- # "class" for tickets, employee modifies this table
--- CREATE TABLE IF NOT EXISTS ticket(
---     id INT AUTO_INCREMENT,
---     eventID VARCHAR(30) NOT NULL, # foreign key
---     tickPrice DECIMAL(5,4) NOT NULL,  # could include price in event
---     PRIMARY KEY (id)
--- ) ENGINE=InnoDB;
