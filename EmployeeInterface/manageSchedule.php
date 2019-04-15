@@ -7,7 +7,7 @@
   //Kick anyone not an employee out
   if ($access != 'E') {
       $_SESSION['message'] = 'Invalid Access';
-      header("location: error.php");
+      header("location: ../Controllers/error.php");
   }
 
   if ($_SERVER['REQUEST_METHOD']=='POST') {

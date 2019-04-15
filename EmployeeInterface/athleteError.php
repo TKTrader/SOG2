@@ -1,7 +1,11 @@
 <?php
   require 'employeeHeader.php';
   require '../Controllers/checkAccess.php';
-  //use before redirecting here: $_SESSION['message'] = 'Something went wrong storing sessions vars...';
+  //Kick anyone not an employee out
+if ($access != 'E') {
+    $_SESSION['message'] = 'Invalid Access';
+    header("location: ../Controllers/error.php");
+}
  ?>
 
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #009900;">

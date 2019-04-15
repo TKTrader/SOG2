@@ -5,7 +5,7 @@ require '../Controllers/checkAccess.php';
 // Check User access
 if ($access != 'E') {
     $_SESSION['message'] = 'Invalid Access';
-    header("location: error.php");
+    header("location: ../Controllers/error.php");
 }
 ?>
 

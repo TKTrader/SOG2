@@ -5,7 +5,7 @@ require '../Controllers/checkAccess.php';
 //Kick anyone not an employee out
 if ($access != 'A') {
     $_SESSION['message'] = 'Invalid Access';
-    header("location: error.php");
+    header("location: ../Controllers/error.php");
 }
 ?>
 
