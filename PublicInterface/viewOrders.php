@@ -13,7 +13,10 @@ if ($access != 'P') {
     <body>
         <h2>Orders</h2>
         <?php
-        
+        /*
+        get customer ID
+        pull all ticket orders from ticketorder table only with that customer ID
+        */
         ?>
     </body>
 </html>

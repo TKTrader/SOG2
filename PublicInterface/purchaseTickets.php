@@ -28,7 +28,7 @@ if ($access != 'P') {
                     <td> <font face="Arial">Ticket Price</font> </td>
                 </tr>';
 
-                $value = 0;
+                $value = 1;
                 if ($result = $mysqli->query($query)) {
                     while ($row = $result->fetch_assoc()) {
                         $id = $row["id"];
@@ -41,15 +41,15 @@ if ($access != 'P') {
                         $ticketPrice = $row["ticketPrice"]; 
 
                         echo '<tr value='.$value.'> 
-                                <td>'.$id.'</td> 
-                                <td>'.$eventName.'</td> 
-                                <td>'.$date.'</td> 
-                                <td>'.$time.'</td> 
-                                <td>'.$location.'</td> 
-                                <td>'.$type.'</td> 
-                                <td>'.$category.'</td> 
-                                <td>'.$ticketPrice.'</td>
-                                <td><button type=\'button\' class=\'btn\' data-toggle="modal" data-target="#purchaseModal"value='.$value.'>Buy Ticket</button></td>
+                                <td value='.$value.'>'.$id.'</td> 
+                                <td value='.$value.'>'.$eventName.'</td> 
+                                <td value='.$value.'>'.$date.'</td> 
+                                <td value='.$value.'>'.$time.'</td> 
+                                <td value='.$value.'>'.$location.'</td> 
+                                <td value='.$value.'>'.$type.'</td> 
+                                <td value='.$value.'>'.$category.'</td> 
+                                <td value='.$value.'>'.$ticketPrice.'</td>
+                                <td><button type=\'button\' class=\'btn\' data-toggle="modal" data-target="#purchaseModal" value='.$value.'>Buy Ticket</button></td>
                             </tr>';
                         $value++;
                     }
@@ -57,12 +57,19 @@ if ($access != 'P') {
             ?>
         </div>
         
+        <script>
+            /*
+                when button is clicked, needs to obtain the value from button
+                using that value, get the values of event name and ticketprice
+            */
+        </script>
+
         <!-- PURCHASE MODAL -->
         <div id="purchaseModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Event: ???</h4>
+                        <h4 class="modal-title">Event: ??? </h4>
                         <button type="button" class="close" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                     </div>
 
@@ -201,7 +208,7 @@ if ($access != 'P') {
                                     </div>
 
                                     <hr class="mb-4">
-                                    <button class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#successModal">Confirm Purchase</button>
+                                    <button class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#successModal">Confirm Purchase of ???</button>
                                 </form>
                             </div>
                         </div>
