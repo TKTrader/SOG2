@@ -64,6 +64,17 @@ if ($access != 'P') {
             */
         </script>
 
+        <?php
+        /*
+            // trying to query current user's id
+
+            $query = mysql_query("SELECT id FROM users WHERE $access ='".$_SESSION['message']."'");
+            
+            $row=mysql_fetch_assoc($query);
+            
+            echo $row['id'];*/
+        ?>
+
         <!-- PURCHASE MODAL -->
         <div id="purchaseModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
