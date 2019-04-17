@@ -49,7 +49,7 @@ INSERT INTO users(firstName, lastName, email, password, access, phone)
 VALUES(
   'Henri',
     'Matisse',
-    'athlete4@sogs.com',
+    'HenriMatisse@sogs.com',
     '$2y$10$MfWF6jIUc6Hqm06Ux9ekh.s/QdtBjVI953VDFaIm6pIzOYe/rsNf.',
     'A',
     '(909)678-9848'
@@ -59,7 +59,7 @@ INSERT INTO users(firstName, lastName, email, password, access, phone)
 VALUES(
   'Tai',
     'Beast',
-    'athlete5@sogs.com',
+    'TaiBeast@sogs.com',
     '$2y$10$KL1AzOZg1BLH63ah4IATvOJDwFmq4Csl6ORtYm3dsPv.2caP3A6LW',
     'A',
     '(987)656-9848'
@@ -69,7 +69,7 @@ INSERT INTO users(firstName, lastName, email, password, access, phone)
 VALUES(
   'Black',
     'Death',
-    'athlete6@sogs.com',
+    'BlackDeath@sogs.com',
     '$2y$10$x0dUFzrPUVi9dhdh480iN.fV96V0AkhVazNQcD0LPU1UtXoDqN7au',
     'A',
     '(666)666-6666'
