@@ -100,11 +100,6 @@
   </span>
 </nav>
 
-<!--Display ID-->
-<?php
-  echo "ID: ".$_SESSION['first_name']." ".$_SESSION['last_name']."<br /> Choose a list:";
-?>
-
 <body>
   <!--FUNCTIONALITY BUTTONS-->
   <button type="button" onclick="toggle_visibility('tog1');" class="btn btn-outline-info btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Event</button>

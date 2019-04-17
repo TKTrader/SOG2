@@ -39,11 +39,6 @@ if ($access != 'P') {
 </head>
 <body>
 
-<!-- Add Public Name -->
-<?php
-  echo "Name: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
-?>
-
 <div class="container">
   <div class="jumbotron">
     <h1>Public Dashboard</h1>     

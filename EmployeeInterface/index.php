@@ -30,13 +30,6 @@ if ($access != 'E') {
   </span>
 </nav>
 
-<!-- Add Employee ID -->
-<div class="container">
-<?php
-  echo "ID: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
-?>
-</div>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

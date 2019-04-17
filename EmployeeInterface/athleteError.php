@@ -20,17 +20,19 @@ if ($access != 'E') {
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
       <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
-      <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
       <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
     </div>
   </div>
+  <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
+  <span class="navbar-text">
+      <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
+  </span>
 </nav>
 
 <div class="form">
 <div class="container">
   <h1>Error</h1>
   <?php echo $_SESSION['message']; ?>
-  <!-- <a href="index.php"><button class="button button-block">Back to Employee Dashboard</button></a> -->
   <div class="jumbotron" style="background-color:#ffffff;">
   <p><b><h3>Navigate:</h3></b></p>
     <a class="btn btn-primary btn-lg btn-block" href="addAthlete.php" style="background-color: #009900;">Register New Athlete</button>
