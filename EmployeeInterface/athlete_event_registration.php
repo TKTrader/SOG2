@@ -1,12 +1,6 @@
 <?php
-require 'employeeHeader.php';
-require '../Controllers/checkAccess.php';
-
-//Kick anyone not an employee out
-if ($access != 'E') {
-    $_SESSION['message'] = 'Invalid Access';
-    header("location: ../Controllers/error.php");
-}
+  require 'employeeHeader.php';
+  require '../Controllers/checkAccess.php';
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #009900;">
@@ -19,18 +13,15 @@ if ($access != 'E') {
       <a class="nav-item nav-link" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="manageAthletes.php">Manage Athletes</a>
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
-      <a class="nav-item nav-link active" href="manageTickets.php">Manage Tickets</a>
-      <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
+      <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
+      <a class="nav-item nav-link active" href="manageData_Lists.php">Managa Data Lists</a>
       <a class="nav-item nav-link" href="athlete_event_registration.php">Athlete Event Registration</a>
-      <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
+      <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
     </div>
   </div>
-  <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
-  <span class="navbar-text">
-      <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
-  </span>
 </nav>
 
-<body>
-  <p>MODIFY TICKETS PAGE</p>
-</body>
+<!--Display ID-->
+<?php
+  echo "ID: ".$_SESSION['first_name']." ".$_SESSION['last_name']."<br />Select Action:";
+?>

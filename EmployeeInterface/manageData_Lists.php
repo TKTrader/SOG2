@@ -90,8 +90,14 @@
       <a class="nav-item nav-link" href="manageAthletes.php">Manage Athletes</a>
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
       <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
+<<<<<<< HEAD
       <a class="nav-item nav-link active" href="manageData_Lists.php">Managa Data Lists</a>
       <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
+=======
+      <a class="nav-item nav-link active" href="manageData_Lists.php">Manage Data Lists</a>
+      <a class="nav-item nav-link" href="athlete_event_registration.php">Athlete Event Registration</a>
+      <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
+>>>>>>> Added the new page to the employee UI
     </div>
   </div>
   <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
