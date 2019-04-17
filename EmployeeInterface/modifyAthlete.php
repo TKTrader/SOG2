@@ -89,13 +89,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   </span>
 </nav>
 
-<!-- Add Employee ID -->
-<div class="container">
-<?php
-  echo "Employee ID: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
-?>
-</div>
-
 <!-- <div class="container">
      Retrieve Athlete info and populate fields
     <div class="jumbotron" style="background-color:#ffffff;">
