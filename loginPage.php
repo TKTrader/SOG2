@@ -21,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <a class="nav-item nav-link" href="athletePage.php">Athletes</a>
       <a class="nav-item nav-link" href="registerPage.php">Register</a>
       <a class="nav-item nav-link active" href="loginPage.php">Login</a>
-      <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
     </div>
   </div>
   <img class="img-responsive" width="70px" height="40px" src="assets/rio-2016-logo.png">
