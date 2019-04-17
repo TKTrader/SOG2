@@ -9,15 +9,7 @@ if ($access != 'A') {
 }
 ?>
 
-<!-- TODO:
-1) Align Logout button all the way to the right?
-2) Assess what pages we need:  create/modify or combine into one? 
-3) Why is navbar changing size outside of dashboard?
-7) unable to get navbar-brand centered properly or white (need to add to CSS I think)
-4) Fix font display of Title-->
-
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #ff1a1a;">
-    <!-- <a class="navbar-brand navbar-dark"><span class="h2"><p class="font-weight-bold">Summer Olympic Games</p></span></a> -->
     <a class="navbar-brand navbar-dark"><font color="white">Summer Olympic Games</font></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -31,6 +23,10 @@ if ($access != 'A') {
       <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
     </div>
   </div>
+  <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
+  <span class="navbar-text">
+      <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
+  </span>
 </nav>
 
    
@@ -41,11 +37,6 @@ if ($access != 'A') {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-
-<!-- Add Athlete Name -->
-<?php
-  echo "Name: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
-?>
 
 <body>
 <div class="container">

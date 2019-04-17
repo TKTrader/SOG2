@@ -10,7 +10,6 @@ if ($access != 'P') {
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #005ce6;">
-<!-- <a class="navbar-brand navbar-dark"><span class="h2"><p class="font-weight-bold">Summer Olympic Games</p></span></a> -->
 <a class="navbar-brand navbar-dark"><font color="white">Summer Olympic Games</font></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -24,6 +23,10 @@ if ($access != 'P') {
       <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
     </div>
   </div>
+  <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
+  <span class="navbar-text">
+      <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
+  </span>
 </nav>
 
    
