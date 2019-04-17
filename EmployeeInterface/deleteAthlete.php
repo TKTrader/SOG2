@@ -53,9 +53,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 <form class="athlete has-success" action="deleteAthlete.php" method="post">
     <div class="jumbotron" style="background-color:#ffffff;">
     <p><b><h2>Delete Athlete</h2></b></p>
-
     <!-- display existing athletes lookup function -->
-    <p><b><h3>Select Athlete to Delete</h3></b></p>
     <select class="form-control" name="displayAthleteNames" required >
       <option value="" selected disabled hidden></option>
       <?php
@@ -68,8 +66,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       }
       ?>
     </select>
-
-    <p><b><h3>Verify correct fields below and submit to delete</h3></b></p>
+    <p><b><h3>Select Athlete above from Database</h3></b></p>
 
     <!-- id dropdown -->
     <div class="form-row">
@@ -114,6 +111,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       ?>
     </select>
     </div>
+
+    <p><b><h3>Confirm information and submit to delete</h3></b></p>
 
     <!-- Delete Button -->
     <button type="submit" name="deleteAthleteButton" class="btn btn-primary" style="background-color: #ff0000;">Delete</button>

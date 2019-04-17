@@ -19,7 +19,7 @@ if ($access != 'P') {
       <a class="nav-item nav-link active" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href=".php">Purchase Tickets</a>
       <a class="nav-item nav-link" href=".php">View Orders</a>
-      <a class="nav-item nav-link" href=".php">View Schedule</a>
+      <a class="nav-item nav-link" href="schedulePage.php">View Schedule</a>
       <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
     </div>
   </div>
@@ -43,9 +43,9 @@ if ($access != 'P') {
   <div class="jumbotron">
     <h1>Public Dashboard</h1>     
         <h2>Select an action:</h2>
-        <a class="btn btn-primary btn-lg btn-block" href="addAthletes.php" style="background-color: #005ce6;">Purchase Tickets</button>
-        <a class="btn btn-primary btn-lg btn-block" href="modifySchedule.php" style="background-color: #005ce6;">View Orders</button>
-        <a class="btn btn-primary btn-lg btn-block" href="modifySchedule.php" style="background-color: #005ce6;">View Schedule</button>
+        <a class="btn btn-primary btn-lg btn-block" href="purchaseTickets.php" style="background-color: #005ce6;">Purchase Tickets</button>
+        <a class="btn btn-primary btn-lg btn-block" href="viewOrders.php" style="background-color: #005ce6;">View Orders</button>
+        <a class="btn btn-primary btn-lg btn-block" href="schedulePage.php" style="background-color: #005ce6;">View Schedule</button>
     <!-- </div>
 </div> -->
 <!-- Above  div close is creating GUI issues, not sure why? -->

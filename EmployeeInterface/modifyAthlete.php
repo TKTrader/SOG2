@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         </tr>
     </thead>
     <?php
-        $query1 = "SELECT * FROM users INNER JOIN athletes ON users.id=athletes.id";
+        $query1 = "SELECT * FROM users INNER JOIN athletes ON users.id=athletes.id ORDER BY lastName ASC";
         $result = mysqli_query($mysqli,$query1) or die('Query fail: ' . mysqli_error());
     ?>
     <tbody>
@@ -197,15 +197,15 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <div class="form-row">
     <div class="form-group col-md-2">
       <label for="height">Height: feet</label>
-      <input type="number" class="form-control" name="heightFeet" id="heightFeet" placeholder="Feet">
+      <input type="number" min="2" max="8" class="form-control" name="heightFeet" id="heightFeet" placeholder="Feet">
     </div>\
     <div class="form-group col-md-2">
       <label for="height">inches</label>
-      <input type="number" class="form-control" name="heightInch" id="heightInch" placeholder="Inches">
+      <input type="number" min="0" max="11" class="form-control" name="heightInch" id="heightInch" placeholder="Inches">
     </div>
     <div class="form-group col-md-2">
       <label for="weight">Weight</label>
-      <input type="number" class="form-control" name="weight" id="weight" placeholder="pounds">
+      <input type="number" min="40" max="400" class="form-control" name="weight" id="weight" placeholder="pounds">
     </div>
     <div class="form-group col-md-5">
       <label for="password">Password</label>

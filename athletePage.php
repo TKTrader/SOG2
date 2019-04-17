@@ -15,7 +15,6 @@ require "header.php";
       <a class="nav-item nav-link active" href="athletePage.php">Athletes</a>
       <a class="nav-item nav-link" href="registerPage.php">Register</a>
       <a class="nav-item nav-link" href="loginPage.php">Login</a>
-      <a class="nav-item nav-link" href="logout.php"> Logout</a>
     </div>
   </div>
   <img class="img-responsive" width="70px" height="40px" src="assets/rio-2016-logo.png">

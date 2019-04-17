@@ -117,15 +117,15 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <div class="form-row">
     <div class="form-group col-md-2">
       <label for="height">Height: feet</label>
-      <input type="number" class="form-control" name="heightFeet" id="heightFeet" placeholder="Feet">
+      <input type="number" min="3" max="8" class="form-control" name="heightFeet" id="heightFeet" placeholder="Feet">
     </div>\
     <div class="form-group col-md-2">
       <label for="height">inches</label>
-      <input type="number" class="form-control" name="heightInch" id="heightInch" placeholder="Inches">
+      <input type="number" min="0" max="11"class="form-control" name="heightInch" id="heightInch" placeholder="Inches">
     </div>
     <div class="form-group col-md-2">
       <label for="weight">Weight</label>
-      <input type="number" class="form-control" name="weight" id="weight" placeholder="pounds">
+      <input type="number" min="40" max="400" class="form-control" name="weight" id="weight" placeholder="pounds">
     </div>
     <div class="form-group col-md-5">
       <label for="password">Password</label>
@@ -136,9 +136,46 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   </form>
 </div>
 
-<!-- Lower Navigation Panel -->
+<!-- Display table of athletes in database -->
 <div class="container">
-  <div class="jumbotron" style="background-color:#ffffff;">
+<p><b><h2>Athlete Database</h2></b></p>
+<table class="table table-striped table-bordered table-hover" id="dataTable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Height</th>
+            <th>Weight</th>
+        </tr>
+    </thead>
+    <?php
+        $query1 = "SELECT * FROM users INNER JOIN athletes ON users.id=athletes.id ORDER BY lastName ASC";
+        $result = mysqli_query($mysqli,$query1) or die('Query fail: ' . mysqli_error());
+    ?>
+    <tbody>
+      <?php while ($row = mysqli_fetch_array($result)) { 
+        $fullName = $row['firstName']." ".$row['lastName'];
+        $height = $row['heightFeet']."'".$row['heightInch']."\"";
+        echo "<tr>
+        <td>" . $row[0] . "</td>
+        <td>" . $fullName . "</td>
+        <td>" . $row[8] . "</td>
+        <td>" . $row[3] . "</td>
+        <td>" . $row[12] . "</td>
+        <td>" . $height . "</td>
+        <td>" . $row[11] . "</td>
+      </tr>"; }
+  ?>
+    </tbody>
+</table>
+</div>
+
+<!-- Lower Navigation Panel -->
+<div class="container" border: 10px solid gray;>
+  <div class="jumbotron" border: 10px solid gray; style="background-color:#ffffff;">
   <p><b><h3>Navigate:</h3></b></p>
     <a class="btn btn-primary btn-lg btn-block" href="modifyAthlete.php" style="background-color: #0099ff;">Modify Athlete</button>
     <a class="btn btn-primary btn-lg btn-block" href="deleteAthlete.php" style="background-color: #ff0000;">Delete Athlete</button>
