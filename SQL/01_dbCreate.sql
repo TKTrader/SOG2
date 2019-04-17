@@ -55,7 +55,8 @@ CREATE TABLE IF NOT EXISTS updatedEvent(
     ticketPrice DECIMAL(5,2),
     PRIMARY KEY (id),
     FOREIGN KEY (olympicEventID) REFERENCES olympicEvent(id) ON DELETE CASCADE
-) ENGINE=InnoDB;
+) ENGINE=InnoDB
+CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 # table to match athletes to their events
 CREATE TABLE IF NOT EXISTS athleteEvent(
@@ -69,8 +70,6 @@ CREATE TABLE IF NOT EXISTS athleteEvent(
 ) ENGINE=InnoDB
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-# actual tickets purchased.  Do we need column for total or calculate separately?
-# do we need foreign key here?
 CREATE TABLE IF NOT EXISTS ticketOrder(
     id INT AUTO_INCREMENT,
     eventID VARCHAR(30) NOT NULL, # from events table,
@@ -82,21 +81,21 @@ CREATE TABLE IF NOT EXISTS ticketOrder(
 ) ENGINE=InnoDB
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-CREATE TABLE IF NOT EXISTS eventList(
-    name VARCHAR(50) NOT NULL,
-    category VARCHAR(50) NOT NULL,
-    id INT AUTO_INCREMENT,
-    PRIMARY KEY (id),
-    FOREIGN KEY (category) REFERENCES categoryList(category)
-) ENGINE=InnoDB
-CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
 -- // categoryList not working; primary key had to be id, since auto-incremented
 -- #Reason for category being first is so the list is alphabetically organized instead of numerically
 CREATE TABLE IF NOT EXISTS categoryList(
     category VARCHAR(50) NOT NULL UNIQUE,
     id INT AUTO_INCREMENT,
     PRIMARY KEY (id)
+) ENGINE=InnoDB
+CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS eventList(
+    name VARCHAR(50) NOT NULL,
+    category VARCHAR(50) NOT NULL,
+    id INT AUTO_INCREMENT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (category) REFERENCES categoryList(category) ON DELETE CASCADE
 ) ENGINE=InnoDB
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -130,4 +129,4 @@ CREATE TABLE IF NOT EXISTS countryList(
 ) ENGINE=InnoDB
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
---https://dba.stackexchange.com/questions/76788/create-a-mysql-database-with-charset-utf-8
+#https://dba.stackexchange.com/questions/76788/create-a-mysql-database-with-charset-utf-8

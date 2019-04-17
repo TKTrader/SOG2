@@ -25,7 +25,6 @@ INSERT INTO athletes(id, country, heightFeet, heightInch, wgt, DOB)
 VALUES(
     '2',
     'France',
-    -- concat('5',char(39),'5',char(34)),
     '5',
     '5',
     '165.8',
@@ -36,7 +35,6 @@ INSERT INTO athletes(id, country, heightFeet, heightInch, wgt, DOB)
 VALUES(
     '3',
     'Greece',
-    -- concat('6',char(39),'6',char(34)),
     '6',
     '6',
     '210.1',
@@ -47,7 +45,6 @@ INSERT INTO athletes(id, country, heightFeet, heightInch, wgt, DOB)
 VALUES(
     '4',
     'Nigeria',
-    -- concat('5',char(39),'11',char(34)),
     '5',
     '11',
     '165.5',
@@ -58,7 +55,6 @@ INSERT INTO athletes(id, country, heightFeet, heightInch, wgt, DOB)
 VALUES(
     '5',
     'China',
-    -- concat('5',char(39),'10',char(34)),
     '5',
     '10',
     '155.3',
@@ -69,7 +65,6 @@ INSERT INTO athletes(id, country, heightFeet, heightInch, wgt, DOB)
 VALUES(
     '6',
     'Germany',
-    -- concat('7',char(39),'5',char(34)),
     '7',
     '5',
     '250.0',
