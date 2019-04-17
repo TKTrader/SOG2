@@ -38,11 +38,6 @@ if ($access != 'A') {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
-<!-- Add Athlete Name -->
-<!-- <?php
-  echo "Name: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
-?> -->
-
 <body>
 <div class="container">
   <div class="jumbotron">
