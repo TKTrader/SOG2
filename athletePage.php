@@ -18,6 +18,7 @@ require "header.php";
       <a class="nav-item nav-link" href="logout.php"> Logout</a>
     </div>
   </div>
+  <img class="img-responsive" width="70px" height="40px" src="assets/rio-2016-logo.png">
 </nav>
 
 <div class="athletePage_container">

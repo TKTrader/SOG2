@@ -24,12 +24,11 @@ if ($access != 'E') {
       <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
     </div>
   </div>
+  <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
+  <span class="navbar-text">
+      <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
+  </span>
 </nav>
-
-<!-- Add Employee ID -->
-<?php
-  echo "ID: ".$_SESSION['first_name']." ".$_SESSION['last_name'];
-?>
 
 <body>
   <p>MODIFY TICKETS PAGE</p>

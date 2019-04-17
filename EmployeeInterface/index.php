@@ -9,11 +9,6 @@ if ($access != 'E') {
 }
 ?>
 
-<!-- TODO:
-1) Align Logout button all the way to the right?
-3) Why is navbar changing size outside of dashboard?  <-  Container?
--->
-
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #009900;">
 <a class="navbar-brand navbar-dark"><font color="white">Summer Olympic Games</font></a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,6 +24,10 @@ if ($access != 'E') {
       <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
     </div>
   </div>
+  <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
+  <span class="navbar-text">
+      <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
+  </span>
 </nav>
 
 <!-- Add Employee ID -->

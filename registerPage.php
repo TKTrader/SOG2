@@ -25,9 +25,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
     </div>
   </div>
+  <img class="img-responsive" width="70px" height="40px" src="assets/rio-2016-logo.png">
 </nav>
-</body>
-</html>
 
 <form class = "logContainer" action="registerPage.php" method="post">
   <h1>Register</h1>
