@@ -289,7 +289,40 @@ nav {
     border-left: 1px solid rgb(150, 150, 150);
     border-bottom: 1px solid rgb(150, 150, 150);
 }
-
+/*Used in the athlete event registration add section*/
+.grid11 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    grid-gap: 10px;
+}
+.grid11 > span {
+    padding: 8px 4px;
+}
+/*Used in athlete event registration delete section*/
+.EUI_scheduleContainer2{
+  position: relative;
+  top: 15%;
+  left: 50%;
+  max-width: 40vh;
+  transform: translate(-50%);
+  margin-right: 0px;
+}
+.EUI_scheduleContainer2 > span{
+  text-align: center;
+}
+.EUI_scheduleContainer2 h4{
+  text-align: center;
+}
+.grid12 {
+    display: grid;
+    grid-template-columns: minmax(40px, 80px) minmax(20px, max-content) minmax(60px, 80px) ;
+    text-align: center;
+    grid-gap: 10px;
+}
+.grid12 > span {
+    padding: 8px 4px;
+}
 
 /* row space */
 .spacer10 {

@@ -101,6 +101,14 @@
   </span>
 </nav>
 
+<<<<<<< HEAD
+=======
+<!--Display ID-->
+<?php
+  echo "ID: ".$_SESSION['first_name']." ".$_SESSION['last_name']."<br />Select Action:";
+ ?>
+
+>>>>>>> Some progress on registering athletes to event
 <body>
   <!--FUNCTIONALITY BUTTONS-->
   <button type="button" onclick="toggle_visibility('tog');" class="btn btn-outline-success btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Add</button>
