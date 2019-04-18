@@ -14,6 +14,7 @@ if ($access != 'P') {
         <div class="container">
             <h2>Available Events</h2>
             <?php
+                $mysqli -> set_charset("utf8");
                 $query = "SELECT * FROM olympicevent";
 
                 echo '<table id="ticketTable" border="0" cellspacing="2" cellpadding="2"> 
