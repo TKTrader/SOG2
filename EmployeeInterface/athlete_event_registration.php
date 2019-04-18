@@ -26,19 +26,20 @@
       <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
     </div>
   </div>
+  <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
+  <span class="navbar-text">
+      <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
+  </span>
 </nav>
-
-<!--Display ID-->
-<?php
-  echo "ID: ".$_SESSION['first_name']." ".$_SESSION['last_name']."<br />Select Action:";
- ?>
 
 <body>
   <!--FUNCTIONALITY BUTTONS-->
+</br>
+  <p>Select an action:
   <button type="button" onclick="toggle_visibility('tog1');" class="btn btn-outline-success btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Add</button>
   <button type="button" onclick="toggle_visibility('tog2');" class="btn btn-outline-danger btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Delete</button>
   <button type="button" onclick="toggle_visibility('tog3');" class="btn btn-outline-primary btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Modify</button>
-
+  </p>
   <!--ADD SECTION-->
   <div id="tog1" style="display:none;" >
     <div class = "EUI_scheduleContainer">
@@ -56,6 +57,67 @@
             <button type="submit" name="Add_Athlete_Event " class="btn btn-success btn-block btn-sm">Submit</button>
           </div>
       </form>
+      <div class="SbyS">
+        <div class="grid13">
+          <span><strong>Athlete id </strong></span>
+          <span><strong>Athlete Name</strong></span>
+          <?php
+            //Select everything from event table
+            $sql ="SELECT * FROM users WHERE access = 'A'";
+            $sql2 ="SELECT * FROM olympicevent";
+
+            //Counter var
+            $counter = 1;
+            $counter2 = 1;
+
+            //run sql code and store in $result
+            $result = mysqli_query($mysqli, $sql);
+            $result2 = mysqli_query($mysqli, $sql2);
+
+            //Store the #  of rows in set
+            $queryResult = mysqli_num_rows($result);
+            $queryResult2 = mysqli_num_rows($result2);
+
+            //must at least have 1 row in result
+            if ($queryResult>0){
+              //fetch association array and store in $row
+              while ($row = mysqli_fetch_assoc($result)){
+                if ($counter % 2 != 0){
+                  echo "<span style='background-color:#EEEEEE;'>".$row['id']."</span>";
+                  echo "<span style='background-color:#EEEEEE;'>".$row['firstName']." ". $row['lastName']."</span>";
+                  $counter++;
+                }else{
+                  echo "<span>".$row['id']."</span>";
+                  echo "<span>".$row['firstName']." ". $row['lastName']."</span>";
+                  $counter++;
+                }
+              }
+            }
+          ?>
+        </div>
+        <div class = "grid13">
+          <span><strong>Event id</strong></span>
+          <span><strong>Event Name</strong></span>
+          <?php
+            //must at least have 1 row in result
+            if ($queryResult2>0){
+              //fetch association array and store in $row
+              while ($row2 = mysqli_fetch_assoc($result2)){
+                if($counter2 % 2 !=0){
+                  echo "<span style='background-color:#EEEEEE;'>".$row2['id']."</span>";
+                  echo "<span style='background-color:#EEEEEE;'>".$row2['name']."</span>";
+                  $counter2++;
+                }else{
+                  echo "<span>".$row2['id']."</span>";
+                  echo "<span>".$row2['name']."</span>";
+                  $counter2++;
+                }
+              }
+            }
+          ?>
+        </div>
+        <br /><br /><br />
+      </div>
       <hr>
     </div>
   </div>
@@ -149,7 +211,6 @@
       <hr>
     </div>
   </div>
-</div>
 </body>
 
 <script>

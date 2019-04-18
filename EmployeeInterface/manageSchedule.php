@@ -85,14 +85,9 @@
       <a class="nav-item nav-link" href="manageAthletes.php">Manage Athletes</a>
       <a class="nav-item nav-link active" href="manageSchedule.php">Manage Schedule</a>
       <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
-<<<<<<< HEAD
-      <a class="nav-item nav-link" href="manageData_Lists.php">Managa Data Lists</a>
-      <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
-=======
       <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
       <a class="nav-item nav-link" href="athlete_event_registration.php">Athlete Event Registration</a>
       <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
->>>>>>> Added the new page to the employee UI
     </div>
   </div>
   <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
@@ -101,19 +96,16 @@
   </span>
 </nav>
 
-<<<<<<< HEAD
-=======
-<!--Display ID-->
-<?php
-  echo "ID: ".$_SESSION['first_name']." ".$_SESSION['last_name']."<br />Select Action:";
- ?>
+</br>
 
->>>>>>> Some progress on registering athletes to event
 <body>
-  <!--FUNCTIONALITY BUTTONS-->
-  <button type="button" onclick="toggle_visibility('tog');" class="btn btn-outline-success btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Add</button>
-  <button type="button" onclick="toggle_visibility('tog2');" class="btn btn-outline-danger btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Delete</button>
-  <button type="button" onclick="toggle_visibility('tog3');" class="btn btn-outline-primary btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Modify</button>
+  <p>
+    Select an action:
+    <!--FUNCTIONALITY BUTTONS-->
+    <button type="button" onclick="toggle_visibility('tog');" class="btn btn-outline-success btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Add</button>
+    <button type="button" onclick="toggle_visibility('tog2');" class="btn btn-outline-danger btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Delete</button>
+    <button type="button" onclick="toggle_visibility('tog3');" class="btn btn-outline-primary btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Modify</button>
+  </p>
 
   <!--ADD SECTION-->
   <div id="tog" style="display:none;" >
