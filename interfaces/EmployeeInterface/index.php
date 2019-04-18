@@ -1,13 +1,6 @@
 <?php
 $thisPage="EmployeeHome";
 require 'components/employeeNav.php';
-require '../Controllers/checkAccess.php';
-
-//Kick anyone not an employee out
-if ($access != 'E') {
-    $_SESSION['message'] = 'Invalid Access';
-    header("location: error.php");
-}
 ?>
 
 <!-- TODO:
@@ -26,6 +19,6 @@ if ($access != 'E') {
         <a href="manageTickets.php"><button class="btn btn-success btn-lg btn-block user-action-btn" style="background-color: #009900;">Manage Tickets</button></a>
       </div>
     </div>
-  <?php require '../components/footer.php' ?>
+  <?php require '../../components/footer.php' ?>
   </body>
 </html>

@@ -1,12 +1,6 @@
 <?php
 $thisPage="ManageSchedule";
 require 'components/employeeNav.php';
-  require '../Controllers/checkAccess.php';
-
-  if ($access != 'E') {
-      $_SESSION['message'] = 'Invalid Access';
-      header("location: ../controllers/error.php");
-  }
 
   if ($_SERVER['REQUEST_METHOD']=='POST') {
     if (isset($_POST['AddtoSchedule_button'])) {

@@ -1,11 +1,5 @@
 <?php
 require 'components/employeeHeader.php';
-require '../controllers/checkAccess.php';
-
-if ($access != 'E') {
-    $_SESSION['message'] = 'Invalid Access';
-    header("location: error.php");
-}
 ?>
 
 <div class="container">

@@ -1,10 +1,7 @@
 <?php
-//odd bug where i need to refresh db connection & session start.
 require '../server/db_connection.php';
-//session_start(); Might not need this
 $email = mysqli_real_escape_string($mysqli, $_POST['email']);
 $result = $mysqli->query("SELECT * FROM users WHERE email='$email'");
-//Check if e-mail is in db
 if ($result->num_rows == 0) {
     $_SESSION['message'] = 'E-mail does not exist!';
     header("location: ../controllers/error.php");
@@ -19,19 +16,18 @@ else {
         $_SESSION['logged_in'] = true;
         $_SESSION['access'] = $user_email['access'];
         if ($_SESSION['access'] == 'A'){
-            header("Location: ../AthleteInterface/index.php");
+            header("Location: ../interfaces/AthleteInterface/index.php");
             exit();
         }else if ($_SESSION['access'] == 'E'){
-            header("Location: ./../EmployeeInterface/index.php");
+            header("Location: ./../interfaces/EmployeeInterface/index.php");
             exit();
         }else if ($_SESSION['access'] == 'P'){
-            header("Location: ./../PublicInterface/index.php");
+            header("Location: ./../interfaces/PublicInterface/index.php");
             exit();
         }else {
-              ($_SESSION['message'] = "Wrong password, try again!");
+            ($_SESSION['message'] = "Wrong password, try again!");
             header("location: ../controllers/error.php");
         } 
-        // header("location: ../index.php");
     }
     //________________Passwords DO NOT match__________________
     else {

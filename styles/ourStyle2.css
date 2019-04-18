@@ -287,15 +287,13 @@ nav {
 
 /* nav */
 #currentpage a {
-  font-weight: bold;
-  color: #333;
+  color: #333333;
 }
 /* end of nav */
 
 /* user nav */
 #user-currentpage a {
-  font-weight: bold;
-  color: #fff;
+  color: #ffffff;
 }
 /* end of user nav */
 

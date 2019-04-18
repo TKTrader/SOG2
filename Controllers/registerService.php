@@ -29,6 +29,6 @@ else {
         header("location: ../index.php");
     } else {
         $_SESSION['message'] = 'Something went wrong storing sessions vars...';
-        header("location: Controllers/error.php");
+        header("location: controllers/error.php");
     }
 }

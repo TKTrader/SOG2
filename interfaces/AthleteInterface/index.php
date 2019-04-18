@@ -1,12 +1,6 @@
 <?php
 $thisPage="AthleteHome";
 require 'components/athleteNav.php';
-require '../controllers/checkAccess.php';
-
-if ($access != 'A') {
-    $_SESSION['message'] = 'Invalid Access';
-    header("location: ../controllers/error.php");
-}
 ?>
 
 <!-- TODO:
@@ -27,5 +21,6 @@ if ($access != 'A') {
         <a href="viewSchedule.php"><button class="btn btn-danger btn-lg btn-block user-action-btn" style="background-color: #ff1a1a;">View Schedule</button></a>
       </div>
     </div>
+  <?php require '../../components/footer.php' ?>
   </body>
 </html>

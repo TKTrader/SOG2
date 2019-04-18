@@ -1,12 +1,6 @@
 <?php
 $thisPage="ManageTickets";
 require 'components/employeeNav.php';
-require '../controllers/checkAccess.php';
-
-if ($access != 'E') {
-    $_SESSION['message'] = 'Invalid Access';
-    header("location: ../controllers/error.php");
-}
 ?>
 
 <html>

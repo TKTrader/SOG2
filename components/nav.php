@@ -22,9 +22,9 @@
         </ul>
 
         <ul class="navbar-nav ml-auto">
-            <?php if ($access == 'A'){echo "<li><a class=\"nav-item nav-link\" href=\"../AthleteInterface/index.php\">Dashboard</a></li>";} ?>
-            <?php if ($access == 'E'){echo "<li><a class=\"nav-item nav-link\" href=\"../EmployeeInterface/index.php\">Dashboard</a></li>";} ?>
-            <?php if ($access == 'P'){echo "<li><a class=\"nav-item nav-link\" href=\"../PublicInterface/index.php\">Dashboard</a></li>";} ?>
+            <?php if ($access == 'A'){echo "<li><a class=\"nav-item nav-link\" href=\"../interfaces/AthleteInterface/index.php\">Dashboard</a></li>";} ?>
+            <?php if ($access == 'E'){echo "<li><a class=\"nav-item nav-link\" href=\"../interfaces/EmployeeInterface/index.php\">Dashboard</a></li>";} ?>
+            <?php if ($access == 'P'){echo "<li><a class=\"nav-item nav-link\" href=\"../interfaces/PublicInterface/index.php\">Dashboard</a></li>";} ?>
         </ul>
     </div>
 </nav>

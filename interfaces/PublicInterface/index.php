@@ -1,12 +1,6 @@
 <?php
 $thisPage="PublicHome";
 require 'components/publicNav.php';
-require '../controllers/checkAccess.php';
-
-if ($access != 'P') {
-    $_SESSION['message'] = 'Invalid Access';
-    header("location: ../controllers/error.php");
-}
 ?>
 
 <!-- TODO:
@@ -28,6 +22,6 @@ if ($access != 'P') {
         <a href="viewOrders.php"><button class="btn btn-primary btn-lg btn-block user-action-btn" style="background-color: #005ce6;">View Orders</button></a>
       </div>
   </div>
-  <?php require '../components/footer.php' ?>
+  <?php require '../../components/footer.php' ?>
   </body>
 </html>
