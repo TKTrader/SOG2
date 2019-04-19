@@ -16,29 +16,39 @@ require 'header.php';
       <a class="nav-item nav-link" href="athletePage.php">Athletes</a>
       <a class="nav-item nav-link" href="registerPage.php">Register</a>
       <a class="nav-item nav-link" href="loginPage.php">Login</a>
+      <a class="nav-item nav-link" href="logout.php"> Logout</a>
     </div>
   </div>
-  <img class="img-responsive" width="70px" height="40px" src="assets/rio-2016-logo.png">
-  <span class="navbar-text">
-      <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
-  </span>
 </nav>
 </body>
 <body>
   <div class="notificationPage_container">
     <hr>
     <?php
-    $query1 = "SELECT updatedEvent.location AS oldLocation, updatedEvent.date AS oldDate, updatedEvent.time AS oldTime, updatedEvent.name AS oldName, updatedEvent.category AS oldCategory, olympicEvent.location, olympicEvent.date, olympicEvent.time, olympicEvent.name, olympicEvent.category FROM olympicEvent INNER JOIN updatedEvent ON olympicEvent.id=updatedEvent.olympicEventID";
+    $query1 = "SELECT updatedEvent.name AS oldName, updatedEvent.date AS oldDate, updatedEvent.time AS oldTime, updatedEvent.location AS oldLocation, updatedEvent.type AS oldType, olympicEvent.name, olympicEvent.date, olympicEvent.time, olympicEvent.location, olympicEvent.type, olympicEvent.category, olympicEvent.ticketPrice FROM olympicEvent INNER JOIN updatedEvent ON olympicEvent.id=updatedEvent.olympicEventID";
     $query1_result = mysqli_query($mysqli, $query1);
-    $counter = 1;
-    echo"<tr>";
     while($row = mysqli_fetch_array($query1_result)) {
-        echo "<td><h4>" . $row['oldLocation'] . " " . $row['oldDate'] . " " . $row['oldTime'] . " " . $row['oldName'] . " " . $row['oldCategory'] . " Has been changed to " . $row['location'] . " " . $row['date'] . " " . $row['time'] . " " . $row['name'] . " " . $row['category'] . "</h3></td>";
-        if($counter % 3 == 0) {
-            echo"</tr>";
-            echo"<tr>";
+        if($row['oldDate'] != $row['date'] and $row['oldTime'] != $row['time'] and $row['oldLocation'] != $row['location']) {
+            echo "The event previously taking place at " . $row['oldLocation'] . " at " . $row['oldDate'] . " " . $row['oldTime'] . " is now at " . $row['location'] . " at " . $row['time'] . " " . $row['date'] . ".";
         }
-        $counter++;
+        elseif($row['oldDate'] != $row['date'] and $row['oldTime'] != $row['time']){
+            echo "The event previously taking place at " . $row['oldDate'] . " " . $row['oldTime'] . " is now at " . " at " . $row['date'] . " " . $row['time'] . ".";
+        }
+        elseif($row['oldTime'] != $row['time'] and $row['oldLocation'] != $row['location']){
+            echo "The event previously taking place at " . $row['oldLocation'] . " at " . $row['oldTime'] . " is now at " . $row['location'] . " at " . $row['time'] . ".";
+        }
+        elseif($row['oldDate'] != $row['date'] and $row['oldLocation'] != $row['location']){
+            echo "The event previously taking place at " . $row['oldLocation'] . " " . $row['oldTime'] . " is now at "  . $row['location'] . " " . $row['time'] . ".";
+        }
+        elseif($row['oldDate'] != $row['date']){
+            echo "The event previously taking place at " . $row['oldDate'] . " is now at " . $row['date'] . ".";
+        }
+        elseif($row['oldTime'] != $row['time']){
+            echo "The event previously taking place at " . $row['oldTime'] . " is now at " . $row['time'] . ".";
+        }
+        elseif($row['oldLocation'] != $row['location']){
+            echo "The event previously taking place at " . $row['oldLocation'] . " is now at " . $row['location'] . ".";
+        }
     }
     echo"</tr>";
     echo "</table>"
