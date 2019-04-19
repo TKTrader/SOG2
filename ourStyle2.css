@@ -393,7 +393,7 @@ nav {
   text-align: center;
 }
 .EUI_athleteEventContainer hr{
-  margin: 10px 0 10px 0; 
+  margin: 10px 0 10px 0;
 }
 .SbyS{
   display: grid;
@@ -401,9 +401,9 @@ nav {
   column-gap: 10px;
   position: relative;
   top: 0vh;
-  left: 5%;
+  left: 50%;
   max-width: 180vh;
-  transform: translate(-5%);
+  transform: translate(-50%);
 }
 .SbyS > span{
   text-align: center;
@@ -423,6 +423,7 @@ nav {
     border-left: 1px solid rgb(150, 150, 150);
     border-bottom: 1px solid rgb(150, 150, 150);
 }
+
 /*Used in Athlete Event Reg, Delete Function*/
 .grid14 {
     display: grid;
@@ -438,6 +439,19 @@ nav {
     padding: 8px 4px;
     border-left: 1px solid rgb(150, 150, 150);
     border-bottom: 1px solid rgb(150, 150, 150);
+}
+
+/*Used in Athlete Event Reg, Modify Function*/
+.grid15 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr minmax(60px, 80px);
+    text-align: center;
+    column-gap: 10px;
+    margin-left: 39vh;
+    max-width: 80vh;
+}
+.grid15 > span {
+    padding: 8px 4px;
 }
 
 /* row space */
