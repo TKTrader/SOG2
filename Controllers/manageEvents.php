@@ -49,7 +49,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   <input type="text" name="categoryName" placeholder="Category Name" required/>
   <input type="submit" name="category" />
 </form>
-<<<<<<< HEAD:Controllers/manageEvents.php
 
 <!--
 <select>
@@ -64,5 +63,3 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   ?>
 </select>
 -->
-=======
->>>>>>> master:manageEvents.php

@@ -1,6 +1,9 @@
 <?php
 $thisPage="PurchaseTickets";
 require 'components/publicNav.php';
+if ($_SERVER['REQUEST_METHOD']=='POST') {
+    if (isset($_POST['confirmPurchaseBtn'])) { include __DIR__.'/controllers/confirmPurchase.php'; }
+}
 ?>
 
 <html>
@@ -44,7 +47,7 @@ require 'components/publicNav.php';
                                 <td id=\'ticketType'.$value.'\' value='.$value.'>'.$type.'</td> 
                                 <td id=\'ticketCategory'.$value.'\' value='.$value.'>'.$category.'</td> 
                                 <td id=\'ticketPrice'.$value.'\' value='.$value.'>'.$ticketPrice.'</td>
-                                <td><button type=\'button\' class=\'btn\' data-toggle="modal" data-target="#purchaseModal" value='.$value.' onclick="setCurrentTicket(this)">Buy Ticket</button></td>
+                                <td><button type=\'button\' class=\'btn\' data-toggle="modal" data-target="#purchaseModal" value='.$value.' onClick="setCurrentTicket(this)">Buy Ticket</button></td>
                             </tr>';
                         $value++;
                     }
@@ -55,22 +58,30 @@ require 'components/publicNav.php';
         <script>
             var globalVal;
             var currEventName;
-            var currTicketPrice;
             var currEventNameText;
             var currTicketPriceText;
+            var ticketPrice;
             
             function setCurrentTicket(element){
                 var value = element.value;
                 globalVal = value;
 
                 currEventName = document.getElementById('ticketEventName' + globalVal);
-                currTicketPrice = document.getElementById('ticketPrice' + globalVal);
-
                 currEventNameText = currEventName.innerHTML;
-                currTicketPriceText = currTicketPrice.innerHTML;
 
                 document.getElementById('purchaseModalTitle').innerHTML = "Event: " + currEventNameText;
                 document.getElementById('confirmTicketPurchaseBtn').innerHTML = "Confirm Purchase of Ticket";
+            }
+
+            function confirmPurchaseOfTicket(){
+                currTicketPriceElem = document.getElementById('ticketPrice' + globalVal);
+                currTicketPrice = Number(currTicketPriceElem.innerHTML);
+                console.log(currTicketPrice);
+                numberOfTicketsElem = document.getElementById('numOfTicketsNumber');
+                numberOfTickets = Number(numberOfTicketsElem.value);
+                console.log(numberOfTickets);
+                ticketPrice = currTicketPrice * numberOfTickets;
+                console.log(ticketPrice);
             }
         </script>
 
@@ -92,7 +103,7 @@ require 'components/publicNav.php';
                                 <div class="col-md-12 order-md-1">
                                     <!-- BILLING ADDRESS -->
                                     <h4 class="mb-3">Billing address</h4>
-                                    <form class="needs-validation" novalidate>
+                                    <form class="needs-validation" action="purchaseTickets.php" method="post" novalidate>
                                         <div class="row">
                                             <div class="col-md-6 mb-3">
                                                 <label for="firstName">First name</label>
@@ -146,7 +157,7 @@ require 'components/publicNav.php';
 
                                         <div class="mb-3">
                                             <label for="numOfTickets">Number of Ticket(s)</label>
-                                            <input type="number" class="form-control" id="numOfTicketsNumber" placeholder="1" min="1" data-bind="value:replyNumber" required>
+                                            <input type="number" class="form-control" name="numOfTickets" id="numOfTicketsNumber" placeholder="1" min="1" data-bind="value:replyNumber" required>
                                             <div class="invalid-feedback">Please enter a valid number.</div>
                                         </div>
 
@@ -183,7 +194,7 @@ require 'components/publicNav.php';
                                         </div>
 
                                         <hr class="mb-4">
-                                        <button id="confirmTicketPurchaseBtn" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#successModal"></button>
+                                        <button id="confirmTicketPurchaseBtn" class="btn btn-primary btn-lg btn-block" onClick="confirmPurchaseOfTicket()" name="confirmPurchaseBtn"></button>
                                     </form>
                                 </div>
                             </div>
@@ -193,7 +204,7 @@ require 'components/publicNav.php';
             </div>
         </div>
 
-        <!-- SUCCESS MODAL -->
+        <!-- SUCCESS MODAL
         <div id="successModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -208,6 +219,6 @@ require 'components/publicNav.php';
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </body>
 </html>
