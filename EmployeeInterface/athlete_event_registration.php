@@ -8,6 +8,29 @@
       $_SESSION['message'] = 'Invalid Access';
       header("location: ../Controllers/error.php");
   }
+
+  if ($_SERVER['REQUEST_METHOD']=='POST') {
+    if (isset($_POST['Add_Athlete_Event'])) {
+
+      //Store posted values in vars
+      $athleteid = mysqli_real_escape_string($mysqli, $_POST['athleteID']);
+      $eventid = mysqli_real_escape_string($mysqli, $_POST['eventID']);
+      $placement = mysqli_real_escape_string($mysqli, $_POST['placement']);
+
+      //query to insert
+      $sql = "INSERT INTO athleteEvent (athleteID, eventID, placement) VALUES ('$athleteid', '$eventid', '$placement')";
+      mysqli_query($mysqli, $sql);
+    }
+    else if (isset($_POST['Delete_Athlete_Event'])) {
+
+      //Store posted values in vars
+      $rowid = mysqli_real_escape_string($mysqli, $_POST['athleteevent_id']);
+
+      //query to delete
+      $deleteEvent = "DELETE FROM athleteEvent WHERE id = '$rowid'";
+      mysqli_query($mysqli, $deleteEvent);
+    }
+  }
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #009900;">
@@ -34,15 +57,15 @@
 
 <body>
   <!--FUNCTIONALITY BUTTONS-->
-</br>
+  </br>
   <p>Select an action:
-  <button type="button" onclick="toggle_visibility('tog1');" class="btn btn-outline-success btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Add</button>
-  <button type="button" onclick="toggle_visibility('tog2');" class="btn btn-outline-danger btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Delete</button>
-  <button type="button" onclick="toggle_visibility('tog3');" class="btn btn-outline-primary btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Modify</button>
-  </p>
+    <button type="button" onclick="toggle_visibility('tog1');" class="btn btn-outline-info btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Add/Delete</button>
+    <button type="button" onclick="toggle_visibility('tog2');" class="btn btn-outline-primary btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Modify</button>
+    </p>
+
   <!--ADD SECTION-->
   <div id="tog1" style="display:none;" >
-    <div class = "EUI_scheduleContainer">
+    <div class = "EUI_athleteEventContainer">
       <form class = "schedule" action="athlete_event_registration.php" method="post" accept-charset="utf-8">
         <h4>ADD</h4>
           <div class = "grid11">
@@ -53,10 +76,21 @@
             <!--Drop Down bars below-->
             <input class="form-control" type="text"  name="athleteID" placeholder="#" required>
             <input class="form-control" type="text"  name="eventID" placeholder="#" required>
-            <input class="form-control" type="text"  name="Placement" placeholder="#" required>
-            <button type="submit" name="Add_Athlete_Event " class="btn btn-success btn-block btn-sm">Submit</button>
+            <input class="form-control" type="text"  name="placement" placeholder="#">
+            <button type="submit" name="Add_Athlete_Event" class="btn btn-success btn-block btn-sm">Submit</button>
           </div>
       </form>
+      <form class = "schedule" action="athlete_event_registration.php" method="post" accept-charset="utf-8">
+        <h4>DELETE</h4>
+          <div class = "grid12">
+            <span><strong>Row Key</strong></span>
+            <span></span>
+            <!--Drop Down bars below-->
+            <input class="form-control" type="text"  name="athleteevent_id" placeholder="#" required>
+            <button type="submit" name="Delete_Athlete_Event" class="btn btn-danger btn-block btn-sm">Submit</button>
+          </div>
+      </form>
+
       <div class="SbyS">
         <div class="grid13">
           <span><strong>Athlete id </strong></span>
@@ -116,32 +150,48 @@
             }
           ?>
         </div>
+        <div class="grid14">
+          <span><strong># </strong></span>
+          <span><strong>Althlete Id</strong></span>
+          <span><strong>Event Id</strong></span>
+          <span><strong>Placement</strong></span>
+          <?php
+            //Select everything from event table
+            $sql ="SELECT * FROM athleteevent";
+            $result = mysqli_query($mysqli, $sql);
+            $queryResult = mysqli_num_rows($result);
+
+            //must at least have 1 row in result
+            if ($queryResult>0){
+              //fetch association array and store in $row
+              while ($row = mysqli_fetch_assoc($result)){
+                if ($counter % 2 != 0){
+                  echo "<span style='background-color:#EEEEEE;'>".$row['id']."</span>";
+                  echo "<span style='background-color:#EEEEEE;'>".$row['athleteID']."</span>";
+                  echo "<span style='background-color:#EEEEEE;'>".$row['eventID']."</span>";
+                  echo "<span style='background-color:#EEEEEE;'>".$row['placement']."</span>";
+                  $counter++;
+                }else{
+                  echo "<span>".$row['id']."</span>";
+                  echo "<span>".$row['athleteID']."</span>";
+                  echo "<span>".$row['eventID']."</span>";
+                  echo "<span>".$row['placement']."</span>";
+                  $counter++;
+                }
+              }
+            }
+          ?>
+        </div>
         <br /><br /><br />
       </div>
       <hr>
     </div>
   </div>
 
-  <!--DELETE SECTION-->
-  <div id="tog2" style="display:none;" >
-    <div class = "EUI_scheduleContainer2">
-      <form class = "schedule" action="manageSchedule.php" method="post" accept-charset="utf-8">
-        <h4>DELETE</h4>
-          <div class = "grid12">
-            <span><strong>Row Key</strong></span>
-            <!--Drop Down bars below-->
-            <input class="form-control" type="text"  name="athleteevent_id" placeholder="#" required>
-            <button type="submit" name="DeletetoSchedule_button" class="btn btn-danger btn-block btn-sm">Submit</button>
-          </div>
-      </form>
-      <hr>
-    </div>
-  </div>
-
   <!--MODIFY SECTION-->
-  <div id="tog3" style="display:none;" >
+  <div id="tog2" style="display:none;" >
     <div class = "EUI_scheduleContainer">
-      <form class = "schedule" action="manageSchedule.php" method="post" accept-charset="utf-8">
+      <form class = "schedule" action="athlete_event_registration.php" method="post" accept-charset="utf-8">
         <h4>MODIFY</h4>
           <div class = "grid7">
             <span><strong>Row Key</strong></span>

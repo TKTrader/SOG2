@@ -143,6 +143,22 @@ nav {
     border-bottom: 1px solid rgb(150, 150, 150);
 }
 
+/*Used in ManageData List*/
+.grid_b {
+    display: grid;
+    grid-template-columns: minmax(20px, 40px) 2fr 3fr;
+    border-top: 1px solid rgb(150, 150, 150);
+    border-right: 1px solid rgb(150, 150, 150);
+    text-align: center;
+    overflow-y:scroll;
+    max-height: 55vh
+}
+.grid_b > span {
+    padding: 8px 4px;
+    border-left: 1px solid rgb(150, 150, 150);
+    border-bottom: 1px solid rgb(150, 150, 150);
+}
+
 /*Schedule CSS*/
 .grid_container2{
   position: relative;
@@ -324,8 +340,10 @@ nav {
 
 /*Used in the athlete event registration add section*/
 .grid11 {
+    margin-left: 39vh;
+    max-width: 80vh;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr minmax(60px, 80px);
     text-align: center;
     grid-gap: 10px;
 }
@@ -349,8 +367,9 @@ nav {
   text-align: center;
 }
 .grid12 {
+    margin-left: 39vh;
     display: grid;
-    grid-template-columns: minmax(40px, 80px) minmax(20px, max-content) minmax(60px, 80px) ;
+    grid-template-columns: minmax(20px, max-content) minmax(60px, 80px) ;
     text-align: center;
     grid-gap: 10px;
 }
@@ -359,14 +378,28 @@ nav {
 }
 
 /*Used in Athlete Event Registration add section*/
+.EUI_athleteEventContainer{
+  position: relative;
+  top: 15%;
+  left: 50%;
+  max-width: 160vh;
+  transform: translate(-50%);
+  margin-right: 0px;
+}
+.EUI_athleteEventContainer > span{
+  text-align: center;
+}
+.EUI_athleteEventContainer h4{
+  text-align: center;
+}
 .SbyS{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   column-gap: 10px;
   position: relative;
   top: 5vh;
   left:5%;
-  max-width: 140vh;
+  max-width: 180vh;
   transform: translate(-5%);
 }
 .SbyS > span{
@@ -383,6 +416,22 @@ nav {
     max-height: 55vh
 }
 .grid13 > span {
+    padding: 8px 4px;
+    border-left: 1px solid rgb(150, 150, 150);
+    border-bottom: 1px solid rgb(150, 150, 150);
+}
+/*Used in Athlete Event Reg, Delete Function*/
+.grid14 {
+    display: grid;
+    grid-template-columns: minmax(20px, 40px) 1fr 1fr 1fr;
+    grid-auto-rows: minmax(min-content, max-content);
+    border-top: 1px solid rgb(150, 150, 150);
+    border-right: 1px solid rgb(150, 150, 150);
+    text-align: center;
+    overflow-y:scroll;
+    max-height: 55vh
+}
+.grid14 > span {
     padding: 8px 4px;
     border-left: 1px solid rgb(150, 150, 150);
     border-bottom: 1px solid rgb(150, 150, 150);

@@ -122,7 +122,7 @@
           <span>ADD:</span>
           <input class="form-control" type="text" name="event_Name" placeholder="Event Name" required/>
           <select class="form-control" name="category" required>
-            <option value="" selected disabled hidden></option>
+            <option value="" selected disabled hidden>Pick a category</option>
             <?php
             $query = "SELECT category FROM categorylist";
             $result = mysqli_query($mysqli, $query);
