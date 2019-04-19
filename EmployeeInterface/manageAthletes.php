@@ -16,8 +16,8 @@ if ($access != 'E') {
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="manageAthletes.php">Manage Athletes</a>
+      <a class="nav-item nav-link" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="manageAthletes.php">Manage Athletes</a>
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
       <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
