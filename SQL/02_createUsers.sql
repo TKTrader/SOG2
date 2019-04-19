@@ -17,6 +17,78 @@
 # ------------------------------------------------
 INSERT INTO users(firstName, lastName, email, password, access, phone)
 VALUES(
+  'Onepunch',
+    'Man',
+    'oman@sogs.com',
+    '$2y$10$5ld.DVEncVaaDLI8ViH3xecaA7letUf7XGLrnI9FFsC9dGpNFzJUW',
+    'A',
+    '(666)444-1438'
+    );
+INSERT INTO users(firstName, lastName, email, password, access, phone)
+VALUES(
+  'Mark',
+    'Spitz',
+    'mspitz@sogs.com',
+    '$2y$10$5ld.DVEncVaaDLI8ViH3xecaA7letUf7XGLrnI9FFsC9dGpNFzJUW',
+    'A',
+    '(666)946-4591'
+    );
+INSERT INTO users(firstName, lastName, email, password, access, phone)
+VALUES(
+  'Isabell',
+    'Werth',
+    'iwerth@sogs.com',
+    '$2y$10$5ld.DVEncVaaDLI8ViH3xecaA7letUf7XGLrnI9FFsC9dGpNFzJUW',
+    'A',
+    '(666)727-0294'
+    );
+INSERT INTO users(firstName, lastName, email, password, access, phone)
+VALUES(
+  'Jennifer',
+    'Thompson',
+    'jthompson@sogs.com',
+    '$2y$10$5ld.DVEncVaaDLI8ViH3xecaA7letUf7XGLrnI9FFsC9dGpNFzJUW',
+    'A',
+    '(666)127-5114'
+    );
+INSERT INTO users(firstName, lastName, email, password, access, phone)
+VALUES(
+  'Birgit',
+    'Fischer',
+    'bfischer@sogs.com',
+    '$2y$10$5ld.DVEncVaaDLI8ViH3xecaA7letUf7XGLrnI9FFsC9dGpNFzJUW',
+    'A',
+    '(666)421-5134'
+    );
+INSERT INTO users(firstName, lastName, email, password, access, phone)
+VALUES(
+  'Muhammad',
+    'Ali',
+    'mali@sogs.com',
+    '$2y$10$5ld.DVEncVaaDLI8ViH3xecaA7letUf7XGLrnI9FFsC9dGpNFzJUW',
+    'A',
+    '(666)785-5194'
+    );
+INSERT INTO users(firstName, lastName, email, password, access, phone)
+VALUES(
+  'Larisa',
+    'Latynina',
+    'llatynina@sogs.com',
+    '$2y$10$5ld.DVEncVaaDLI8ViH3xecaA7letUf7XGLrnI9FFsC9dGpNFzJUW',
+    'A',
+    '(666)785-5392'
+    );
+INSERT INTO users(firstName, lastName, email, password, access, phone)
+VALUES(
+  'Michael',
+    'Phelps',
+    'mphelps@sogs.com',
+    '$2y$10$5ld.DVEncVaaDLI8ViH3xecaA7letUf7XGLrnI9FFsC9dGpNFzJUW',
+    'A',
+    '(666)867-5392'
+    );
+INSERT INTO users(firstName, lastName, email, password, access, phone)
+VALUES(
   'Nicolas',
     'Maduro',
     'athlete1@sogs.com',

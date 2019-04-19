@@ -90,8 +90,9 @@
       <a class="nav-item nav-link" href="manageAthletes.php">Manage Athletes</a>
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
       <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
-      <a class="nav-item nav-link active" href="manageData_Lists.php">Managa Data Lists</a>
-      <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
+      <a class="nav-item nav-link active" href="manageData_Lists.php">Manage Data Lists</a>
+      <a class="nav-item nav-link" href="athlete_event_registration.php">Athlete Event Registration</a>
+      <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
     </div>
   </div>
   <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
@@ -101,11 +102,16 @@
 </nav>
 
 <body>
-  <!--FUNCTIONALITY BUTTONS-->
-  <button type="button" onclick="toggle_visibility('tog1');" class="btn btn-outline-info btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Event</button>
-  <button type="button" onclick="toggle_visibility('tog2');" class="btn btn-outline-info btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Category</button>
-  <button type="button" onclick="toggle_visibility('tog3');" class="btn btn-outline-info btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Type</button>
-  <button type="button" onclick="toggle_visibility('tog4');" class="btn btn-outline-info btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Country</button>
+
+  </br>
+  <p>
+    Select an action:
+    <!--FUNCTIONALITY BUTTONS-->
+    <button type="button" onclick="toggle_visibility('tog1');" class="btn btn-outline-info btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Event</button>
+    <button type="button" onclick="toggle_visibility('tog2');" class="btn btn-outline-info btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Category</button>
+    <button type="button" onclick="toggle_visibility('tog3');" class="btn btn-outline-info btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Type</button>
+    <button type="button" onclick="toggle_visibility('tog4');" class="btn btn-outline-info btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Country</button>
+  </p>
 
   <!--Events Section-->
   <div id="tog1" style="display:none;" >
@@ -116,7 +122,7 @@
           <span>ADD:</span>
           <input class="form-control" type="text" name="event_Name" placeholder="Event Name" required/>
           <select class="form-control" name="category" required>
-            <option value="" selected disabled hidden></option>
+            <option value="" selected disabled hidden>Pick a category</option>
             <?php
             $query = "SELECT category FROM categorylist";
             $result = mysqli_query($mysqli, $query);
@@ -137,7 +143,7 @@
         </div>
       </form>
       <div class="grid_container">
-        <div class="grid">
+        <div class="grid_b">
           <span><strong># </strong></span>
           <span><strong>Category</strong></span>
           <span><strong>Name</strong></span>
@@ -199,7 +205,7 @@
         </div>
       </form>
       <div class="grid_container10">
-        <div class="grid10">
+        <div class="grid10_scroll">
           <span><strong># </strong></span>
           <span><strong>Category</strong></span>
           <?php
@@ -233,7 +239,6 @@
             }
            ?>
         </div>
-        <br /><br /><br />
       </div>
     </div>
   </div>
@@ -317,7 +322,7 @@
         </div>
       </form>
       <div class="grid_container10">
-        <div class="grid10">
+        <div class="grid10_scroll">
           <span><strong># </strong></span>
           <span><strong>Country</strong></span>
           <?php

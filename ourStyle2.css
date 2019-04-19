@@ -12,7 +12,7 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 8vh;
+  min-height: 1vh;
   background: transparent;
 }
 
@@ -127,6 +127,38 @@ nav {
     border-bottom: 1px solid rgb(150, 150, 150);
 }
 
+/*Used in ManageData List*/
+.grid_b {
+    display: grid;
+    grid-template-columns: minmax(20px, 40px) 2fr 3fr;
+    border-top: 1px solid rgb(150, 150, 150);
+    border-right: 1px solid rgb(150, 150, 150);
+    text-align: center;
+    overflow-y:scroll;
+    max-height: 55vh
+}
+.grid_b > span {
+    padding: 8px 4px;
+    border-left: 1px solid rgb(150, 150, 150);
+    border-bottom: 1px solid rgb(150, 150, 150);
+}
+
+/*Used in ManageData List*/
+.grid_b {
+    display: grid;
+    grid-template-columns: minmax(20px, 40px) 2fr 3fr;
+    border-top: 1px solid rgb(150, 150, 150);
+    border-right: 1px solid rgb(150, 150, 150);
+    text-align: center;
+    overflow-y:scroll;
+    max-height: 55vh
+}
+.grid_b > span {
+    padding: 8px 4px;
+    border-left: 1px solid rgb(150, 150, 150);
+    border-bottom: 1px solid rgb(150, 150, 150);
+}
+
 /*Schedule CSS*/
 .grid_container2{
   position: relative;
@@ -179,6 +211,7 @@ nav {
 .EUI_scheduleContainer h4{
   text-align: center;
 }
+
 /*Used in manageSchedule.php*/
 .grid4 {
     display: grid;
@@ -196,7 +229,6 @@ nav {
   max-width: 120vh;
   transform: translate(-50%);
 }
-
 .grid_container5 > span{
   text-align: center;
   vertical-align: middle;
@@ -223,6 +255,7 @@ nav {
 .grid6 > span {
     padding: 8px 4px;
 }
+
 /*Used in manageSchedule under modify section*/
 .grid7 {
     display: grid;
@@ -266,7 +299,8 @@ nav {
 .grid9 > span {
     padding: 8px 4px;
 }
-/*Used in */
+
+/*Used in Manage Data Lists Type Section*/
 .grid_container10{
   position: relative;
   top: 5vh;
@@ -289,7 +323,122 @@ nav {
     border-left: 1px solid rgb(150, 150, 150);
     border-bottom: 1px solid rgb(150, 150, 150);
 }
+.grid10_scroll {
+    display: grid;
+    grid-template-columns: minmax(20px, 40px) 1fr;
+    border-top: 1px solid rgb(150, 150, 150);
+    border-right: 1px solid rgb(150, 150, 150);
+    text-align: center;
+    overflow-y:scroll;
+    max-height: 55vh
+}
+.grid10_scroll > span {
+    padding: 8px 4px;
+    border-left: 1px solid rgb(150, 150, 150);
+    border-bottom: 1px solid rgb(150, 150, 150);
+}
 
+/*Used in the athlete event registration add section*/
+.grid11 {
+    margin-left: 39vh;
+    max-width: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr minmax(60px, 80px);
+    text-align: center;
+    grid-gap: 10px;
+}
+.grid11 > span {
+    padding: 8px 4px;
+}
+
+/*Used in athlete event registration delete section*/
+.EUI_scheduleContainer2{
+  position: relative;
+  top: 15%;
+  left: 50%;
+  max-width: 40vh;
+  transform: translate(-50%);
+  margin-right: 0px;
+}
+.EUI_scheduleContainer2 > span{
+  text-align: center;
+}
+.EUI_scheduleContainer2 h4{
+  text-align: center;
+}
+.grid12 {
+    margin-left: 39vh;
+    display: grid;
+    grid-template-columns: minmax(20px, max-content) minmax(60px, 80px) ;
+    text-align: center;
+    grid-gap: 10px;
+}
+.grid12 > span {
+    padding: 8px 4px;
+}
+
+/*Used in Athlete Event Registration add section*/
+.EUI_athleteEventContainer{
+  position: relative;
+  top: 15%;
+  left: 50%;
+  max-width: 160vh;
+  transform: translate(-50%);
+  margin-right: 0px;
+}
+.EUI_athleteEventContainer > span{
+  text-align: center;
+}
+.EUI_athleteEventContainer h4{
+  text-align: center;
+}
+.EUI_athleteEventContainer hr{
+  margin: 10px 0 10px 0; 
+}
+.SbyS{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  position: relative;
+  top: 0vh;
+  left: 5%;
+  max-width: 180vh;
+  transform: translate(-5%);
+}
+.SbyS > span{
+  text-align: center;
+}
+.grid13 {
+    display: grid;
+    grid-template-columns: minmax(80px, 100px) 1fr;
+    grid-auto-rows: minmax(min-content, max-content);
+    border-top: 1px solid rgb(150, 150, 150);
+    border-right: 1px solid rgb(150, 150, 150);
+    text-align: center;
+    overflow-y:scroll;
+    max-height: 54vh;
+}
+.grid13 > span {
+    padding: 8px 4px;
+    border-left: 1px solid rgb(150, 150, 150);
+    border-bottom: 1px solid rgb(150, 150, 150);
+}
+/*Used in Athlete Event Reg, Delete Function*/
+.grid14 {
+    display: grid;
+    grid-template-columns: minmax(20px, 40px) 1fr 1fr 1fr;
+    grid-auto-rows: minmax(min-content, max-content);
+    border-top: 1px solid rgb(150, 150, 150);
+    border-right: 1px solid rgb(150, 150, 150);
+    text-align: center;
+    overflow-y:scroll;
+    max-height: 54vh
+}
+.grid14 > span {
+    padding: 8px 4px;
+    border-left: 1px solid rgb(150, 150, 150);
+    border-bottom: 1px solid rgb(150, 150, 150);
+}
 
 /* row space */
 .spacer10 {
