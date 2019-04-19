@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS athletes(
 ) ENGINE=InnoDB
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-CREATE TABLE IF NOT EXISTS olympicEvent( 
+CREATE TABLE IF NOT EXISTS olympicEvent(
     id INT AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
     date DATE NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS olympicEvent(
 ) ENGINE=InnoDB
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-CREATE TABLE IF NOT EXISTS updatedEvent( 
+CREATE TABLE IF NOT EXISTS updatedEvent(
     id INT AUTO_INCREMENT,
     olympicEventID INT NOT NULL,
     name VARCHAR(50) NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS athleteEvent(
     eventID INT NOT NULL, #foreign key
     placement INT(3),  # athlete rank in event
     PRIMARY KEY (id),
-    FOREIGN KEY (athleteID) REFERENCES athletes(id) ON DELETE CASCADE,
+    FOREIGN KEY (athleteID) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (eventID) REFERENCES olympicEvent(id) ON DELETE CASCADE
 ) ENGINE=InnoDB
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

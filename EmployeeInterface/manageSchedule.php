@@ -87,7 +87,7 @@
       <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
       <a class="nav-item nav-link" href="athlete_event_registration.php">Athlete Event Registration</a>
-      <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
+      <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
     </div>
   </div>
   <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
