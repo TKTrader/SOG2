@@ -70,7 +70,7 @@ require 'components/publicNav.php';
                 currTicketPriceText = currTicketPrice.innerHTML;
 
                 document.getElementById('purchaseModalTitle').innerHTML = "Event: " + currEventNameText;
-                document.getElementById('confirmTicketPurchaseBtn').innerHTML = "Confirm Purchase of $" + currTicketPriceText;
+                document.getElementById('confirmTicketPurchaseBtn').innerHTML = "Confirm Purchase of Ticket";
             }
         </script>
 
