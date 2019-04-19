@@ -12,7 +12,7 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 8vh;
+  min-height: 1vh;
   background: transparent;
 }
 
@@ -392,13 +392,16 @@ nav {
 .EUI_athleteEventContainer h4{
   text-align: center;
 }
+.EUI_athleteEventContainer hr{
+  margin: 10px 0 10px 0; 
+}
 .SbyS{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 10px;
   position: relative;
-  top: 5vh;
-  left:5%;
+  top: 0vh;
+  left: 5%;
   max-width: 180vh;
   transform: translate(-5%);
 }
@@ -413,7 +416,7 @@ nav {
     border-right: 1px solid rgb(150, 150, 150);
     text-align: center;
     overflow-y:scroll;
-    max-height: 55vh
+    max-height: 54vh;
 }
 .grid13 > span {
     padding: 8px 4px;
@@ -429,7 +432,7 @@ nav {
     border-right: 1px solid rgb(150, 150, 150);
     text-align: center;
     overflow-y:scroll;
-    max-height: 55vh
+    max-height: 54vh
 }
 .grid14 > span {
     padding: 8px 4px;
