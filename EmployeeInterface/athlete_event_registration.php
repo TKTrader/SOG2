@@ -17,8 +17,14 @@
       $eventid = mysqli_real_escape_string($mysqli, $_POST['eventID']);
       $placement = mysqli_real_escape_string($mysqli, $_POST['placement']);
 
-      //query to insert
-      $sql = "INSERT INTO athleteEvent (athleteID, eventID, placement) VALUES ('$athleteid', '$eventid', '$placement')";
+      //if placement is left as null different sql statement, else do sql statement with placement value
+      if ($placement == NULL){
+        //query to insert
+        $sql = "INSERT INTO athleteEvent (athleteID, eventID) VALUES ('$athleteid', '$eventid')";
+      }else{
+        ///query to insert
+        $sql = "INSERT INTO athleteEvent (athleteID, eventID, placement) VALUES ('$athleteid', '$eventid', '$placement')";
+      }
       mysqli_query($mysqli, $sql);
     }
     else if (isset($_POST['Delete_Athlete_Event'])) {
@@ -44,14 +50,26 @@
       $run_query1 = mysqli_query($mysqli, $search_it_exists);
       $checkquery = mysqli_num_rows($run_query1);
       if ($checkquery > 0){
-        //Update query
-        $modifyQuery1 = "UPDATE athleteevent
-        SET athleteID = '$athleteid_SELECTED',
-        eventID = '$eventid_SELECTED',
-        placement = '$placement_SELECTED'
-        WHERE id = '$row_SELECTED'";
 
-        mysqli_query($mysqli, $modifyQuery1);
+        //if placement is left as null different sql statement, else do sql statement with placement value
+        if ($placement_SELECTED == NULL){
+          //Update query
+          $modifyQuery1 = "UPDATE athleteevent
+          SET athleteID = '$athleteid_SELECTED',
+          eventID = '$eventid_SELECTED',
+          placement = NULL
+          WHERE id = '$row_SELECTED'";
+          mysqli_query($mysqli, $modifyQuery1);
+        }else{
+          //Update query
+          $modifyQuery1 = "UPDATE athleteevent
+          SET athleteID = '$athleteid_SELECTED',
+          eventID = '$eventid_SELECTED',
+          placement = '$placement_SELECTED'
+          WHERE id = '$row_SELECTED'";
+          mysqli_query($mysqli, $modifyQuery1);
+        }
+
       }
     }
   }
@@ -201,7 +219,7 @@
                 }
               ?>
             </select>
-            <input type="text" class="form-control" name="mod_placement" placeholder="#" required>
+            <input type="text" class="form-control" name="mod_placement" placeholder="#">
             <button type="submit" name="Modify_Athlete_Event" class="btn btn-primary btn-block btn-sm">Submit</button>
           </div>
       </form>
