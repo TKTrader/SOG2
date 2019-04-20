@@ -3,8 +3,6 @@ $thisPage="PurchaseTickets";
 require 'components/publicNav.php';
 if ($_SERVER['REQUEST_METHOD']=='POST') {
     if (isset($_POST['confirmPurchaseBtn'])) { 
-        //include __DIR__.'/controllers/confirmPurchase.php';
-        
         // getting eventId;
         $eventId = $_POST['ticketOrderEventId'];
 
