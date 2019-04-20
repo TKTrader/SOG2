@@ -86,6 +86,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                 } 
             ?>
         </div>
+        <?php require 'components/publicFooter.php'; ?>
+        </body>
         
         <script>
             var globalVal;
@@ -240,7 +242,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                 </div>
             </div>
         </div>
-    <?php require 'components/publicFooter.php'; ?>
     <!-- SCRIPT FOR CALCULATING ORDER PRICE -->
     <script>
         /*function confirmPurchaseOfTicket(){
@@ -256,5 +257,4 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             ticketPrice = currTicketPrice * numberOfTickets;
         }*/
     </script>
-    </body>
 </html>
