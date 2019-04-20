@@ -10,7 +10,7 @@ require 'components/employeeNav.php';
 
 <html>
   <body>
-    <div class="container">
+    <div class="container p-4">
       <div class="jumbotron">
         <h1><strong>Employee Dashboard</strong></h1>
         <h2>Select an action:</h2>

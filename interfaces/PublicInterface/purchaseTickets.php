@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                         <table class="table table-bordered table-hover" id="ticketTable"> 
                             <thead class="thead-light">
                                 <tr class=\'ticketTableHeaderRow\'> 
-                                    <th scope="col"> <font face="Arial">ID</font> </th> 
+                                    <th scope="col" style="display:none;"> <font face="Arial">ID</font> </th> 
                                     <th scope="col"> <font face="Arial">Event Name</font> </th> 
                                     <th scope="col"> <font face="Arial">Date</font> </th> 
                                     <th scope="col"> <font face="Arial">Time</font> </th> 
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                         $ticketPrice = $row["ticketPrice"]; 
 
                         echo '<tr value='.$value.'> 
-                                <td scope="row" id=\'ticketEventId'.$value.'\' value='.$value.'>'.$id.'</td> 
+                                <td id=\'ticketEventId'.$value.'\' value='.$value.' style="display:none;">'.$id.'</td> 
                                 <td id=\'ticketEventName'.$value.'\' value='.$value.'>'.$eventName.'</td> 
                                 <td id=\'ticketDate'.$value.'\' value='.$value.'>'.$date.'</td> 
                                 <td id=\'ticketTime'.$value.'\' value='.$value.'>'.$time.'</td> 
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                                 <td id=\'ticketType'.$value.'\' value='.$value.'>'.$type.'</td> 
                                 <td id=\'ticketCategory'.$value.'\' value='.$value.'>'.$category.'</td> 
                                 <td id=\'ticketPrice'.$value.'\' value='.$value.'>'.$ticketPrice.'</td>
-                                <td><button type=\'button\' class=\'btn\' data-toggle="modal" data-target="#purchaseModal" value='.$value.' onClick="setCurrentTicket(this)">Buy Ticket</button></td>
+                                <td class="text-center"><button type=\'button\' class=\'btn\' data-toggle="modal" data-target="#purchaseModal" value='.$value.' onClick="setCurrentTicket(this)">Buy Ticket</button></td>
                             </tr>';
                         $value++;
                     }
@@ -113,6 +113,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                 document.getElementById('confirmTicketPurchaseBtn').innerHTML = "Confirm Purchase of Ticket";
                 document.getElementById('formTicketPrice').innerHTML = currTicketPriceText;
                 document.getElementById('formTicketOrderEventId').innerHTML = currTicketEventIdText;
+                document.getElementById('formTicketPrice').value = currTicketPriceText;
+                document.getElementById('formTicketOrderEventId').value = currTicketEventIdText;
             }
         </script>
 
@@ -187,11 +189,11 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                                         <h4 class="mb-3">Ticket Information</h4>
 
                                         <div class="mb-3"> <!-- style="display:none;" -->
-                                            <label for="ticketPrice">ID:</label> <span name="ticketOrderEventId" id="formTicketOrderEventId"></span>
+                                            <label for="ticketPrice">ID:</label> <span name="ticketOrderEventId" id="formTicketOrderEventId" required></span>
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="ticketPrice">Price per Ticket $</label><span name="pricePerTicket" id="formTicketPrice"></span>
+                                            <label for="ticketPrice">Price per Ticket $</label><span name="pricePerTicket" id="formTicketPrice" required></span>
                                         </div>
                                         
                                         <div class="mb-3">
