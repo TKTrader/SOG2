@@ -19,6 +19,6 @@ require 'components/employeeNav.php';
         <a href="manageTickets.php"><button class="btn btn-success btn-lg btn-block user-action-btn" style="background-color: #009900;">Manage Tickets</button></a>
       </div>
     </div>
-  <?php require '../../components/footer.php' ?>
+  <?php require 'components/employeeFooter.php' ?>
   </body>
 </html>

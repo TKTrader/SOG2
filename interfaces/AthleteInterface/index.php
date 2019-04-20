@@ -21,6 +21,6 @@ require 'components/athleteNav.php';
         <a href="viewSchedule.php"><button class="btn btn-danger btn-lg btn-block user-action-btn" style="background-color: #ff1a1a;">View Schedule</button></a>
       </div>
     </div>
-  <?php require '../../components/footer.php' ?>
+  <?php require 'components/athleteFooter.php'; ?>
   </body>
 </html>

@@ -2,7 +2,33 @@
 $thisPage="PurchaseTickets";
 require 'components/publicNav.php';
 if ($_SERVER['REQUEST_METHOD']=='POST') {
-    if (isset($_POST['confirmPurchaseBtn'])) { include __DIR__.'/controllers/confirmPurchase.php'; }
+    if (isset($_POST['confirmPurchaseBtn'])) { 
+        //include __DIR__.'/controllers/confirmPurchase.php';
+        
+        // getting eventId;
+        $eventId = $_POST['ticketOrderEventId'];
+
+        // getting numTickets
+        $numberOfTickets = number_format($_POST['numOfTickets']);
+
+        // getting ticketPrice
+        $ticketOrderPrice = number_format($_POST['pricePerTicket']);
+
+        // getting orderTimeStamp
+        date_default_timezone_set("America/New_York");
+        $ticketOrderTimeStamp = date("Y-m-d H:i:s");
+        
+        // getting customerId
+        $fName = $_SESSION['first_name'];
+        $customerIdSql = "SELECT id FROM `users` WHERE firstName = '$fName'";
+        $customerIdResult = mysqli_query($mysqli, $customerIdSql);
+        $customerId = mysqli_fetch_assoc($customerIdResult)["id"];
+
+        $ticketOrderSql = "INSERT INTO ticketOrder(eventID, numTickets, ticketPrice, orderTimeStamp, customerID) VALUES('$eventId', $numberOfTickets, $ticketOrderPrice, '$ticketOrderTimeStamp', $customerId)";
+        mysqli_query($mysqli, $ticketOrderSql);
+
+        header("Location: viewOrders.php");
+    }
 }
 ?>
 
@@ -15,15 +41,15 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                 $query = "SELECT * FROM olympicevent";
 
                 echo '<table id="ticketTable" border="0" cellspacing="2" cellpadding="2"> 
-                <tr> 
-                    <td> <font face="Arial">ID</font> </td> 
-                    <td> <font face="Arial">Event Name</font> </td> 
-                    <td> <font face="Arial">Date</font> </td> 
-                    <td> <font face="Arial">Time</font> </td> 
-                    <td> <font face="Arial">Location</font> </td> 
-                    <td> <font face="Arial">Type</font> </td> 
-                    <td> <font face="Arial">Category</font> </td>
-                    <td> <font face="Arial">Ticket Price</font> </td>
+                <tr class=\'ticketTableHeaderRow\'> 
+                    <td class=\'ticketTableHeader\'> <font face="Arial">ID</font> </td> 
+                    <td class=\'ticketTableHeader\'> <font face="Arial">Event Name</font> </td> 
+                    <td class=\'ticketTableHeader\'> <font face="Arial">Date</font> </td> 
+                    <td class=\'ticketTableHeader\'> <font face="Arial">Time</font> </td> 
+                    <td class=\'ticketTableHeader\'> <font face="Arial">Location</font> </td> 
+                    <td class=\'ticketTableHeader\'> <font face="Arial">Type</font> </td> 
+                    <td class=\'ticketTableHeader\'> <font face="Arial">Category</font> </td>
+                    <td class=\'ticketTableHeader\'> <font face="Arial">Ticket Price</font> </td>
                 </tr>';
 
                 $value = 1;
@@ -38,8 +64,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                         $category = $row["category"];
                         $ticketPrice = $row["ticketPrice"]; 
 
-                        echo '<tr id=\'row'.$value.'\' value='.$value.'> 
-                                <td id=\'ticketId'.$value.'\' value='.$value.'>'.$id.'</td> 
+                        echo '<tr class=\'row'.$value.'\' value='.$value.'> 
+                                <td id=\'ticketEventId'.$value.'\' value='.$value.'>'.$id.'</td> 
                                 <td id=\'ticketEventName'.$value.'\' value='.$value.'>'.$eventName.'</td> 
                                 <td id=\'ticketDate'.$value.'\' value='.$value.'>'.$date.'</td> 
                                 <td id=\'ticketTime'.$value.'\' value='.$value.'>'.$time.'</td> 
@@ -59,34 +85,28 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             var globalVal;
             var currEventName;
             var currEventNameText;
+            var currTicketPrice;
             var currTicketPriceText;
-            var ticketPrice;
-            
+            var currTicketEventId;
+            var currTicketEventIdText;
+
             function setCurrentTicket(element){
                 var value = element.value;
                 globalVal = value;
 
                 currEventName = document.getElementById('ticketEventName' + globalVal);
                 currEventNameText = currEventName.innerHTML;
+                currTicketPrice = document.getElementById('ticketPrice' + globalVal);
+                currTicketPriceText = currTicketPrice.innerHTML;
+                currTicketEventId = document.getElementById('ticketEventId' + globalVal);
+                currTicketEventIdText = currTicketEventId.innerHTML;
 
                 document.getElementById('purchaseModalTitle').innerHTML = "Event: " + currEventNameText;
                 document.getElementById('confirmTicketPurchaseBtn').innerHTML = "Confirm Purchase of Ticket";
-            }
-
-            function confirmPurchaseOfTicket(){
-                currTicketPriceElem = document.getElementById('ticketPrice' + globalVal);
-                currTicketPrice = Number(currTicketPriceElem.innerHTML);
-                console.log(currTicketPrice);
-                numberOfTicketsElem = document.getElementById('numOfTicketsNumber');
-                numberOfTickets = Number(numberOfTicketsElem.value);
-                console.log(numberOfTickets);
-                ticketPrice = currTicketPrice * numberOfTickets;
-                console.log(ticketPrice);
+                document.getElementById('formTicketPrice').innerHTML = currTicketPriceText;
+                document.getElementById('formTicketOrderEventId').innerHTML = currTicketEventIdText;
             }
         </script>
-
-        <?php
-        ?>
 
         <!-- PURCHASE MODAL -->
         <div id="purchaseModal" class="modal fade" role="dialog">
@@ -155,6 +175,17 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                                             </div>
                                         </div>
 
+                                         <!-- TICKET INFORMATION -->
+                                        <h4 class="mb-3">Ticket Information</h4>
+
+                                        <div class="mb-3"> <!-- style="display:none;" -->
+                                            <label for="ticketPrice">ID:</label> <span name="ticketOrderEventId" id="formTicketOrderEventId"></span>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="ticketPrice">Price per Ticket $</label><span name="pricePerTicket" id="formTicketPrice"></span>
+                                        </div>
+                                        
                                         <div class="mb-3">
                                             <label for="numOfTickets">Number of Ticket(s)</label>
                                             <input type="number" class="form-control" name="numOfTickets" id="numOfTicketsNumber" placeholder="1" min="1" data-bind="value:replyNumber" required>
@@ -203,22 +234,21 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                 </div>
             </div>
         </div>
+    <?php require 'components/publicFooter.php'; ?>
+    <!-- SCRIPT FOR CALCULATING ORDER PRICE -->
+    <script>
+        /*function confirmPurchaseOfTicket(){
+            currTicketEventIdElem = document.getElementById('ticketEventId' + globalVal);
+            currTicketEventId = Number(currTicketEventIdElem.innerHTML);
 
-        <!-- SUCCESS MODAL
-        <div id="successModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Event: ???</h4>
-                        <button type="button" class="close" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                    </div>
+            currTicketPriceElem = document.getElementById('ticketPrice' + globalVal);
+            currTicketPrice = Number(currTicketPriceElem.innerHTML);
 
-                    <div class="modal-body">
-                        <h3>Thank you for your puchase of ???</h1>
-                        <h4>To view all orders, please click <a href="viewOrders.php">here</a>.</h4>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+            numberOfTicketsElem = document.getElementById('numOfTicketsNumber');
+            numberOfTickets = Number(numberOfTicketsElem.value);
+
+            ticketPrice = currTicketPrice * numberOfTickets;
+        }*/
+    </script>
     </body>
 </html>

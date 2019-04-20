@@ -22,6 +22,6 @@ require 'components/publicNav.php';
         <a href="viewOrders.php"><button class="btn btn-primary btn-lg btn-block user-action-btn" style="background-color: #005ce6;">View Orders</button></a>
       </div>
   </div>
-  <?php require '../../components/footer.php' ?>
+  <?php require 'components/publicFooter.php'; ?>
   </body>
 </html>
