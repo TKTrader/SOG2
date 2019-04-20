@@ -34,23 +34,28 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
 <html>
     <body>
-        <div class="container">
+        <div class="container-fluid p-4">
             <h2>Available Events</h2>
             <?php
                 $mysqli -> set_charset("utf8");
                 $query = "SELECT * FROM olympicevent";
 
-                echo '<table id="ticketTable" border="0" cellspacing="2" cellpadding="2"> 
-                <tr class=\'ticketTableHeaderRow\'> 
-                    <td class=\'ticketTableHeader\'> <font face="Arial">ID</font> </td> 
-                    <td class=\'ticketTableHeader\'> <font face="Arial">Event Name</font> </td> 
-                    <td class=\'ticketTableHeader\'> <font face="Arial">Date</font> </td> 
-                    <td class=\'ticketTableHeader\'> <font face="Arial">Time</font> </td> 
-                    <td class=\'ticketTableHeader\'> <font face="Arial">Location</font> </td> 
-                    <td class=\'ticketTableHeader\'> <font face="Arial">Type</font> </td> 
-                    <td class=\'ticketTableHeader\'> <font face="Arial">Category</font> </td>
-                    <td class=\'ticketTableHeader\'> <font face="Arial">Ticket Price</font> </td>
-                </tr>';
+                echo '<div class="table-responsive-sm table-responsive-md">
+                        <table class="table table-bordered table-hover" id="ticketTable"> 
+                            <thead class="thead-light">
+                                <tr class=\'ticketTableHeaderRow\'> 
+                                    <th scope="col"> <font face="Arial">ID</font> </th> 
+                                    <th scope="col"> <font face="Arial">Event Name</font> </th> 
+                                    <th scope="col"> <font face="Arial">Date</font> </th> 
+                                    <th scope="col"> <font face="Arial">Time</font> </th> 
+                                    <th scope="col"> <font face="Arial">Location</font> </th> 
+                                    <th scope="col"> <font face="Arial">Type</font> </th> 
+                                    <th scope="col"> <font face="Arial">Category</font> </th>
+                                    <th scope="col"> <font face="Arial">Ticket Price</font> </th>
+                                    <th scope="col"></td>
+                                </tr>
+                            </thead>
+                        <tbody>';
 
                 $value = 1;
                 if ($result = $mysqli->query($query)) {
@@ -64,8 +69,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                         $category = $row["category"];
                         $ticketPrice = $row["ticketPrice"]; 
 
-                        echo '<tr class=\'row'.$value.'\' value='.$value.'> 
-                                <td id=\'ticketEventId'.$value.'\' value='.$value.'>'.$id.'</td> 
+                        echo '<tr value='.$value.'> 
+                                <td scope="row" id=\'ticketEventId'.$value.'\' value='.$value.'>'.$id.'</td> 
                                 <td id=\'ticketEventName'.$value.'\' value='.$value.'>'.$eventName.'</td> 
                                 <td id=\'ticketDate'.$value.'\' value='.$value.'>'.$date.'</td> 
                                 <td id=\'ticketTime'.$value.'\' value='.$value.'>'.$time.'</td> 
@@ -77,6 +82,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                             </tr>';
                         $value++;
                     }
+                    echo '</tbody></table></div>';
                 } 
             ?>
         </div>

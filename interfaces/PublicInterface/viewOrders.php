@@ -5,7 +5,7 @@ require 'components/publicNav.php';
 
 <html>
     <body>
-        <div class="container">
+        <div class="container-fluid p-4">
             <h2>Orders</h2>
             <?php
                 // getting customer's ID
@@ -18,13 +18,17 @@ require 'components/publicNav.php';
                 $ticketOrderSql  = "SELECT * FROM `ticketorder` WHERE customerID = '$customerId'";
                 $ticketOrderResult = mysqli_query($mysqli, $ticketOrderSql);
 
-                echo '<table id="ticketOrdersTable" border="0" cellspacing="2" cellpadding="2"> 
-                    <tr class=\'ticketOrdersTableRow\'> 
-                        <td class=\'ticketOrdersHeader\'> <font face="Arial">Event Name</font> </td> 
-                        <td class=\'ticketOrdersHeader\'> <font face="Arial"># of Tickets</font> </td> 
-                        <td class=\'ticketOrdersHeader\'> <font face="Arial">Price</font> </td> 
-                        <td class=\'ticketOrdersHeader\'> <font face="Arial">Time Stamp</font> </td> 
-                    </tr>';
+                echo '<div class="table-responsive-sm table-responsive-md">
+                        <table class="table table-bordered table-hover" id="ticketOrdersTable"> 
+                            <thead class="thead-light">
+                                <tr class=\'ticketOrdersTableRow\'> 
+                                    <th scope="col" class=\'ticketOrdersHeader\'> <font face="Arial">Event Name</font> </th> 
+                                    <th scope="col" class=\'ticketOrdersHeader\'> <font face="Arial"># of Tickets</font> </th> 
+                                    <th scope="col" class=\'ticketOrdersHeader\'> <font face="Arial">Price</font> </th> 
+                                    <th scope="col" class=\'ticketOrdersHeader\'> <font face="Arial">Time Stamp</font> </th> 
+                                </tr>
+                            </thead>
+                        <tbody>';
 
                 $value = 1;
                 while ($ticketOrderRow = $ticketOrderResult -> fetch_assoc()) {
@@ -39,13 +43,14 @@ require 'components/publicNav.php';
                     $eventName = mysqli_fetch_assoc($eventNameResult)["name"];
 
                     echo '<tr class=\'row'.$value.'\' value='.$value.'> 
-                            <td id=\'eventId'.$value.'\' value='.$value.'>'.$eventName.'</td> 
+                            <td scope="row" id=\'eventId'.$value.'\' value='.$value.'>'.$eventName.'</td> 
                             <td id=\'numTickets'.$value.'\' value='.$value.'>'.$numTickets.'</td> 
                             <td id=\'ticketPrice'.$value.'\' value='.$value.'>'.$ticketPrice.'</td> 
                             <td id=\'orderTimeStamp'.$value.'\' value='.$value.'>'.$orderTimeStamp.'</td>
                         </tr>';
                     $value++;
                 }
+                echo '</tbody></table></div>';
             ?>
         </div>
         <?php require 'components/publicFooter.php'; ?>
