@@ -29,15 +29,6 @@ if ($access != 'A') {
   </span>
 </nav>
 
-   
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
-
 <body>
 <div class="container">
   <div class="jumbotron">
@@ -48,5 +39,4 @@ if ($access != 'A') {
         <a class="btn btn-primary btn-lg btn-block" href="modifySchedule.php" style="background-color: #ff1a1a;">View Schedule</button>
     <!-- </div>
 </div> -->
-<!-- Above  div close is creating GUI issues, not sure why? -->
 </body>

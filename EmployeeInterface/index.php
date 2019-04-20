@@ -9,6 +9,7 @@ if ($access != 'E') {
 }
 ?>
 
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #009900;">
 <a class="navbar-brand navbar-dark"><font color="white">Summer Olympic Games</font></a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,14 +32,7 @@ if ($access != 'E') {
   </span>
 </nav>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
-
+<!-- Lower Navigation Panel -->
 <body>
 <div class="container">
   <div class="jumbotron" style="background-color:#d6f5d6;">
@@ -49,6 +43,4 @@ if ($access != 'E') {
         <a class="btn btn-primary btn-lg btn-block" href="manageTickets.php" style="background-color: #009900;">Manage Tickets</button>
     <!-- </div>
 </div> -->
-<!-- Above  div close is creating GUI issues, not sure why? -->
-<!--The problem is in the style sheet-->
 </body>

@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       // Update Athlete info into user table
       $modifyAthleteDB = "UPDATE users SET firstName='$firstName', lastName='$lastName', email='$email' WHERE id='$id'";
       mysqli_query($mysqli, $modifyAthleteDB);
-      //  check all other fields, if exist, modify field
+      //  check all other fields, if changes exist, modify field
       if ($pwd!=NULL){
         $modifyPwd = "UPDATE users SET password='$pwd' WHERE id='$id'";
         mysqli_query($mysqli, $modifyPwd);
@@ -45,12 +45,12 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         mysqli_query($mysqli, $modifyHeightInch);
       }
       if ($weight!=NULL){
-        $modifyWeight = "UPDATE athletes SET weight='$weight' WHERE id='$id'";
+        $modifyWeight = "UPDATE athletes SET wgt='$weight' WHERE id='$id'";
         mysqli_query($mysqli, $modifyWeight);
       }
       if ($dateOfBirth!=NULL){
         $modifyDOB = "UPDATE athletes SET DOB='$dateOfBirth' WHERE id='$id'";
-        mysqli_query($mysqli, $dateOfBirth);
+        mysqli_query($mysqli, $modifyDOB);
       }
       //   // check output (comment out)
         // echo "firstName: ".$firstName." <br/> lastName: ".$lastName." <br/> country: ".$country.
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
       <a class="nav-item nav-link" href="athlete_event_registration.php">Athlete Event Registration</a>
-      <a class="nav-item nav-link" href="logout.php"> Logout</a></li>
+      <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
     </div>
   </div>
   <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
@@ -89,30 +89,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
   </span>
 </nav>
-
-<!-- <div class="container">
-     Retrieve Athlete info and populate fields
-    <div class="jumbotron" style="background-color:#ffffff;">
-    <p><b><h2>Select Athlete to Modify</h2></b></p>
-    <form class="athlete has-success" action="modifyAthlete.php" method="post">
-        <div class="form-row">
-        <select class="form-control col-md-6" name="event" required >
-            <option value="" selected disabled hidden></option>
-            <?php
-            // $mysqli->set_charset("utf8");
-            // $query = "SELECT concat(firstName,' ',lastName) fullName FROM users WHERE access='A'";
-            // $result = mysqli_query($mysqli, $query);
-            // while ($row = mysqli_fetch_assoc($result)) {
-                // $value = $row['fullName'];
-                // echo "<option value='$value'>$value</option>";
-            // }
-            ?>
-         </select>
-        <button type="submit" Name="displayButton" class="btn btn-primary">Display Info</button>
-        </div>
-    </form>
-    </div>
-</div> -->
 
 <!-- Display table of athletes in database -->
 <div class="container">

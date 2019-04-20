@@ -66,10 +66,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
       <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
-<<<<<<< HEAD
-=======
       <a class="nav-item nav-link" href="athlete_event_registration.php">Athlete Event Registration</a>
->>>>>>> Added the new page to the employee UI
       <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
     </div>
   </div>
@@ -79,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   </span>
 </nav>
 
-<!-- main page -->
+<!-- main page with dropdowns, etc -->
 <body>
 <div class="container">
 <p style="text-align:center"><b><h2>Register New Athlete</h2></b></p>
@@ -155,6 +152,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             <th>Weight</th>
         </tr>
     </thead>
+    <!-- Populate table of athletes with SQL -->
     <?php
         $query1 = "SELECT * FROM users INNER JOIN athletes ON users.id=athletes.id ORDER BY lastName ASC";
         $result = mysqli_query($mysqli,$query1) or die('Query fail: ' . mysqli_error());

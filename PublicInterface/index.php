@@ -9,6 +9,7 @@ if ($access != 'P') {
 }
 ?>
 
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #005ce6;">
 <a class="navbar-brand navbar-dark"><font color="white">Summer Olympic Games</font></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,13 +31,13 @@ if ($access != 'P') {
 </nav>
 
    
-<head>
+<!-- <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
+</head> -->
 <body>
 
 <div class="container">
@@ -48,5 +49,4 @@ if ($access != 'P') {
         <a class="btn btn-primary btn-lg btn-block" href="schedulePage.php" style="background-color: #005ce6;">View Schedule</button>
     <!-- </div>
 </div> -->
-<!-- Above  div close is creating GUI issues, not sure why? -->
 </body>
