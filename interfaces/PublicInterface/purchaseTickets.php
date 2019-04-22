@@ -3,29 +3,7 @@ $thisPage="PurchaseTickets";
 require 'components/publicNav.php';
 if ($_SERVER['REQUEST_METHOD']=='POST') {
     if (isset($_POST['confirmPurchaseBtn'])) { 
-        // getting eventId;
-        $eventId = $_POST['ticketOrderEventId'];
-
-        // getting numTickets
-        $numberOfTickets = number_format($_POST['numOfTickets']);
-
-        // getting ticketPrice
-        $ticketOrderPrice = number_format($_POST['pricePerTicket']);
-
-        // getting orderTimeStamp
-        date_default_timezone_set("America/New_York");
-        $ticketOrderTimeStamp = date("Y-m-d H:i:s");
-        
-        // getting customerId
-        $fName = $_SESSION['first_name'];
-        $customerIdSql = "SELECT id FROM `users` WHERE firstName = '$fName'";
-        $customerIdResult = mysqli_query($mysqli, $customerIdSql);
-        $customerId = mysqli_fetch_assoc($customerIdResult)["id"];
-
-        $ticketOrderSql = "INSERT INTO ticketOrder(eventID, numTickets, ticketPrice, orderTimeStamp, customerID) VALUES('$eventId', $numberOfTickets, $ticketOrderPrice, '$ticketOrderTimeStamp', $customerId)";
-        mysqli_query($mysqli, $ticketOrderSql);
-
-        header("Location: viewOrders.php");
+        include __DIR__.'/controllers/processTicket.php';        
     }
 }
 ?>
@@ -91,8 +69,10 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             var globalVal;
             var currEventName;
             var currEventNameText;
+
             var currTicketPrice;
             var currTicketPriceText;
+
             var currTicketEventId;
             var currTicketEventIdText;
 
@@ -186,12 +166,12 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                                          <!-- TICKET INFORMATION -->
                                         <h4 class="mb-3">Ticket Information</h4>
 
-                                        <div class="mb-3"> <!-- style="display:none;" -->
-                                            <label for="ticketPrice">ID:</label> <span name="ticketOrderEventId" id="formTicketOrderEventId" required></span>
+                                        <div class="mb-3" style="display:none">
+                                            <input name="ticketOrderEventId" id="formTicketOrderEventId" type="hidden">
                                         </div>
 
-                                        <div class="mb-3">
-                                            <label for="ticketPrice">Price per Ticket $</label><span name="pricePerTicket" id="formTicketPrice" required></span>
+                                        <div class="mb-3" style="display:none">
+                                            <input name="pricePerTicket" id="formTicketPrice" type="hidden">
                                         </div>
                                         
                                         <div class="mb-3">
