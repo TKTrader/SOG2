@@ -14,6 +14,7 @@
       <li <?php if ($thisPage=="ManageAthletes") echo "id=\"user-currentpage\""; ?>><a class="nav-item nav-link" href="manageAthletes.php">Manage Athletes</a></li>
       <li <?php if ($thisPage=="ManageSchedule") echo "id=\"user-currentpage\""; ?>><a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a></li>
       <li <?php if ($thisPage=="ManageTickets") echo "id=\"user-currentpage\""; ?>><a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a></li>
+      <li <?php if ($thisPage=="ViewOrders") echo "id=\"user-currentpage\""; ?>><a class="nav-item nav-link" href="viewOrders.php">View Orders</a></li>
       <li><a class="nav-item nav-link" href="../../controllers/logout.php"> Logout</a></li>
     </ul>
     <ul class="navbar-nav ml-auto">

@@ -12,9 +12,10 @@
         <ul class="navbar-nav">
             <li><a class="nav-item nav-link" href="../../index.php">Home</a></li>
             <li <?php if ($thisPage=="AthleteHome") echo "id=\"user-currentpage\""; ?>><a class="nav-item nav-link" href="index.php">Dashboard</a>
-            <li <?php if ($thisPage=="ReserveTickets") echo "id=\"user-currentpage\""; ?>> <a class="nav-item nav-link" href="reserveTickets.php">Reserve Tickets</a>
             <li <?php if ($thisPage=="Autograph") echo "id=\"user-currentpage\""; ?>><a class="nav-item nav-link" href="scheduleAutograph.php">Schedule Autograph</a>
             <li <?php if ($thisPage=="ViewSchedule") echo "id=\"user-currentpage\""; ?>><a class="nav-item nav-link" href="viewSchedule.php">View Schedule</a>
+            <li <?php if ($thisPage=="ReserveTickets") echo "id=\"user-currentpage\""; ?>> <a class="nav-item nav-link" href="reserveTickets.php">Reserve Tickets</a>
+            <li <?php if ($thisPage=="ViewOrders") echo "id=\"user-currentpage\""; ?>><a class="nav-item nav-link" href="viewOrders.php">View Orders</a></li>
             <li><a class="nav-item nav-link" href="../../controllers/logout.php">Logout</a></li>
         </ul>
         <ul class="navbar-nav ml-auto">

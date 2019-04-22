@@ -213,7 +213,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                                         </div>
 
                                         <hr class="mb-4">
-                                        <button id="confirmTicketPurchaseBtn" class="btn btn-primary btn-lg btn-block" onClick="confirmPurchaseOfTicket()" name="confirmPurchaseBtn"></button>
+                                        <button id="confirmTicketPurchaseBtn" class="btn btn-primary btn-lg btn-block" name="confirmPurchaseBtn"></button>
                                     </form>
                                 </div>
                             </div>
@@ -222,19 +222,4 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                 </div>
             </div>
         </div>
-    <!-- SCRIPT FOR CALCULATING ORDER PRICE -->
-    <script>
-        /*function confirmPurchaseOfTicket(){
-            currTicketEventIdElem = document.getElementById('ticketEventId' + globalVal);
-            currTicketEventId = Number(currTicketEventIdElem.innerHTML);
-
-            currTicketPriceElem = document.getElementById('ticketPrice' + globalVal);
-            currTicketPrice = Number(currTicketPriceElem.innerHTML);
-
-            numberOfTicketsElem = document.getElementById('numOfTicketsNumber');
-            numberOfTickets = Number(numberOfTicketsElem.value);
-
-            ticketPrice = currTicketPrice * numberOfTickets;
-        }*/
-    </script>
 </html>

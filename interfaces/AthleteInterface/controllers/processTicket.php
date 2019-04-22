@@ -6,7 +6,7 @@
   $numberOfTickets = mysqli_real_escape_string($mysqli, number_format($_POST['numOfTickets']));
 
   // getting ticketPrice
-  $ticketOrderPrice = mysqli_real_escape_string($mysqli, number_format($_POST['pricePerTicket']));
+  $ticketOrderPrice = 0;
 
   // getting orderTimeStamp
   date_default_timezone_set("America/New_York");
