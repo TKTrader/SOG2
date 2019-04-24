@@ -26,7 +26,7 @@ require 'header.php';
     <div id="body-wrapper">
       <main role="main">
         <section class="jumbotron text-center sogs-bg">
-          <div class="container text-white bg-dark">
+          <div class="container text-white" style="background-color: rgba(52, 58, 60, .6)">
             <h1 class="jumbotron-heading">Summer Olympic Games 2016</h1>
             <p class="lead">Welcome to the main website for the Summer Olympic Games of 2016!</p>
             <p class="lead">View some of our featured events!</p>
