@@ -24,7 +24,10 @@ if ($access != 'A') {
         <a class="nav-item nav-link" href="../logout.php"> Logout</a>
       </div>
     </div>
-    <img class="img-responsive" width="70px" height="40px" src="assets/rio-2016-logo.png">
+    <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
+    <span class="navbar-text">
+      <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
+    </span>
   </nav>
 
   <!--CALENDAR SECTION-->
