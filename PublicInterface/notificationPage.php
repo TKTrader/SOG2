@@ -16,7 +16,7 @@ if ($access != 'P') {
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href=".php">Purchase Tickets</a>
       <a class="nav-item nav-link" href=".php">View Orders</a>
       <a class="nav-item nav-link" href="schedulePage.php">View Schedule</a>
