@@ -1,4 +1,6 @@
 <?php
+require 'athleteHeader.php';
+require '../Controllers/checkAccess.php';
 //Logic to choose different header would go here, by default require header is there.
 if ($access != 'A') {
     $_SESSION['message'] = 'Invalid Access';

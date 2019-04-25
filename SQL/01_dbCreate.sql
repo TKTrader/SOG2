@@ -72,12 +72,14 @@ CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS ticketOrder(
     id INT AUTO_INCREMENT,
-    eventID VARCHAR(30) NOT NULL, # from events table,
+    eventID INT NOT NULL, # from events table,
     numTickets INT NOT NULL,
     ticketPrice DECIMAL(5,2) NOT NULL, # from events table
     orderTimeStamp TIMESTAMP NOT NULL,
     customerID INT NOT NULL, # from users table
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    FOREIGN KEY (eventID) REFERENCES olympicevent(id) ON DELETE CASCADE,
+    FOREIGN KEY (customerID) REFERENCES users(id) ON DELETE CASCADE    
 ) ENGINE=InnoDB
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 

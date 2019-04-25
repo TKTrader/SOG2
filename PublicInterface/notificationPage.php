@@ -1,4 +1,7 @@
 <?php
+require 'publicHeader.php';
+require '../Controllers/checkAccess.php';
+
 //Logic to choose different header would go here, by default require header is there.
 if ($access != 'P') {
     $_SESSION['message'] = 'Invalid Access';
