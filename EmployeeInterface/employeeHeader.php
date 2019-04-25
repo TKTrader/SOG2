@@ -2,6 +2,7 @@
   require '../Server/db_connection.php';
   session_start();
 ?>
+<!DOCTYPE html>
 <html>
   <head>
     <title>SOG</title>

@@ -57,7 +57,7 @@ nav {
   width: 300px;
   padding: 40px;
   position: absolute;
-  top: 25%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%);
   background: white;
@@ -90,7 +90,6 @@ nav {
 .logContainer input[type="submit"]{
   border:0;
   background: none;
-  margin: 20px auto;
   text-align: center;
   border: 2px solid rgb(189, 189, 189);
   padding: 14px 40px;
@@ -103,7 +102,7 @@ nav {
 }
 
 /*Events CSS & Used in event Employee UI*/
-.grid_container{
+.grid_container {
   position: relative;
   top: 5vh;
   left: 50%;
@@ -122,22 +121,6 @@ nav {
     text-align: center;
 }
 .grid > span {
-    padding: 8px 4px;
-    border-left: 1px solid rgb(150, 150, 150);
-    border-bottom: 1px solid rgb(150, 150, 150);
-}
-
-/*Used in ManageData List*/
-.grid_b {
-    display: grid;
-    grid-template-columns: minmax(20px, 40px) 2fr 3fr;
-    border-top: 1px solid rgb(150, 150, 150);
-    border-right: 1px solid rgb(150, 150, 150);
-    text-align: center;
-    overflow-y:scroll;
-    max-height: 55vh
-}
-.grid_b > span {
     padding: 8px 4px;
     border-left: 1px solid rgb(150, 150, 150);
     border-bottom: 1px solid rgb(150, 150, 150);

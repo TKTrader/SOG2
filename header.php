@@ -2,7 +2,7 @@
   require 'Server/db_connection.php';
   session_start();
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
      <title>SOG</title>
