@@ -20,10 +20,12 @@ if ($access != 'P') {
         <a class="nav-item nav-link" href=".php">Purchase Tickets</a>
         <a class="nav-item nav-link" href=".php">View Orders</a>
         <a class="nav-item nav-link active" href="schedulePage.php">View Schedule</a>
-        <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
+        <a class="nav-item nav-link" href="../logout.php"> Logout</a>
       </div>
     </div>
-    <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
+    <a class="navbar-brand float-right" href="notificationPage.php">
+      <img class="img-responsive" width="70px" height="40px" src="assets/rio-2016-logo.png">
+    </a>
   </nav>
 
   <!--CALENDAR SECTION-->

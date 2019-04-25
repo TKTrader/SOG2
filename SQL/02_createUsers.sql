@@ -129,9 +129,9 @@ VALUES(
 
 INSERT INTO users(firstName, lastName, email, password, access, phone)
 VALUES(
-  'Tai',
-    'Beast',
-    'TaiBeast@sogs.com',
+  'Jon',
+    'Cho',
+    'JonCho@sogs.com',
     '$2y$10$KL1AzOZg1BLH63ah4IATvOJDwFmq4Csl6ORtYm3dsPv.2caP3A6LW',
     'A',
     '(987)656-9848'

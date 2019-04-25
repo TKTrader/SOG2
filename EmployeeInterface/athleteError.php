@@ -20,10 +20,12 @@ if ($access != 'E') {
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
       <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
-      <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
+      <a class="nav-item nav-link" href="../logout.php"> Logout</a>
     </div>
   </div>
-  <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
+    <a class="navbar-brand float-right" href="notificationPage.php">
+      <img class="img-responsive" width="70px" height="40px" src="assets/rio-2016-logo.png">
+    </a>
   <span class="navbar-text">
       <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
   </span>
