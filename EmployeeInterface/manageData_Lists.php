@@ -182,9 +182,9 @@
             }
            ?>
         </div>
-        <br /><br /><br />
       </div>
     </div>
+    <br /><br />
   </div>
 
   <!--Category Section-->
@@ -243,6 +243,7 @@
         </div>
       </div>
     </div>
+    <br /><br />
   </div>
 
   <!--Type Section-->
@@ -299,9 +300,9 @@
             }
           ?>
         </div>
-        <br /><br /><br />
       </div>
     </div>
+    <br /><br />
   </div>
 
   <!--Country Section-->
@@ -358,7 +359,6 @@
             }
           ?>
         </div>
-        <br /><br /><br />
       </div>
     </div>
   </div>
