@@ -24,9 +24,25 @@ if ($access != 'A') {
         <a class="nav-item nav-link" href="../logout.php"> Logout</a>
       </div>
     </div>
-    <a class="navbar-brand float-right" href="notificationPage.php">
-      <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
-    </a>
+
+    <?php
+//    Does athlete have an event he is competing in
+      $query1 = "SELECT * FROM updatedEvent WHERE ID IN (SELECT eventID FROM athleteevent WHERE athleteID IN (SELECT id FROM users WHERE email = \"". $_SESSION['email'] ."\"));";
+      $query1_result = mysqli_query($mysqli, $query1);
+      $row = mysqli_fetch_array($query1_result);
+//    Picture that's displayed if you don't have a notification
+      if(!$row) {
+        echo "<a class=\"navbar-brand float-right\" href=\"notificationPage.php\">
+                <img class=\"img-responsive\" width=\"70px\" height=\"40px\" src=\"../assets/rio-2016-logo.png\">
+             </a>";
+      }
+//    Picture that's displayed if you have a notification
+      else{
+        echo "<a class=\"navbar-brand float-right\" href=\"notificationPage.php\">
+                <img class=\"img-responsive\" width=\"70px\" height=\"40px\" src=\"../assets/notification.jpg\">
+             </a>";
+      }
+    ?>
     <span class="navbar-text">
       <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
     </span>
