@@ -129,7 +129,7 @@
             $query = "SELECT category FROM categorylist";
             $result = mysqli_query($mysqli, $query);
             while ($row = mysqli_fetch_assoc($result)) {
-              //echo "<option value=".$row['category'].">".$row['category']."</option>";
+              //echo "<option value=".$row['category'].">".$row['category']."</option>"; ////Can have bug with long strings with spaces
               $value = $row['category'];
               echo "<option value='$value'>$value</option>";
             }
