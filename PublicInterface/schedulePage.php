@@ -24,7 +24,7 @@ if ($access != 'P') {
       </div>
     </div>
     <a class="navbar-brand float-right" href="notificationPage.php">
-      <img class="img-responsive" width="70px" height="40px" src="assets/rio-2016-logo.png">
+      <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
     </a>
   </nav>
 
