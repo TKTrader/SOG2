@@ -1,6 +1,9 @@
 <?php
 //Logic to choose different header would go here, by default require header is there.
-require 'athleteHeader.php';
+if ($access != 'A') {
+    $_SESSION['message'] = 'Invalid Access';
+    header("location: ../Controllers/error.php");
+}
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #ff1a1a;">

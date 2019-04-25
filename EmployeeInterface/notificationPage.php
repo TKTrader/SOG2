@@ -1,6 +1,9 @@
 <?php
 //Logic to choose different header would go here, by default require header is there.
-require 'employeeHeader.php';
+if ($access != 'E') {
+    $_SESSION['message'] = 'Invalid Access';
+    header("location: ../Controllers/error.php");
+}
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #009900;">
