@@ -20,10 +20,12 @@ if ($access != 'A') {
       <a class="nav-item nav-link" href=".php">Autographs</a>
       <a class="nav-item nav-link" href=".php">Tickets</a>
       <a class="nav-item nav-link" href="schedulePage.php">Schedule</a>
-      <a class="nav-item nav-link" href="../logout.php"> Logout</a></li>
+      <a class="nav-item nav-link" href="../logout.php"> Logout</a>
     </div>
   </div>
-  <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
+    <a class="navbar-brand float-right" href="notificationPage.php">
+      <img class="img-responsive" width="70px" height="40px" src="../assets/rio-2016-logo.png">
+    </a>
   <span class="navbar-text">
       <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
   </span>
@@ -32,7 +34,7 @@ if ($access != 'A') {
 <body>
 <div class="container">
   <div class="jumbotron">
-    <h1>Athlete Dashboard</h1>
+    <h1>Athlete Dashboard</h1>    
         <h2>Select an action:</h2>
         <a class="btn btn-primary btn-lg btn-block" href="addAthletes.php" style="background-color: #ff1a1a;">Reserve Tickets</button>
         <a class="btn btn-primary btn-lg btn-block" href="modifySchedule.php" style="background-color: #ff1a1a;">Schedule Autograph Session</button>

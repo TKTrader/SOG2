@@ -18,7 +18,9 @@ require 'header.php';
       <a class="nav-item nav-link" href="loginPage.php">Login</a>
     </div>
   </div>
-  <img class="img-responsive" width="70px" height="40px" src="assets/rio-2016-logo.png">
+    <a class="navbar-brand float-right" href="notificationPage.php">
+      <img class="img-responsive" width="70px" height="40px" src="assets/rio-2016-logo.png">
+    </a>
 </nav>
 
 <body>
