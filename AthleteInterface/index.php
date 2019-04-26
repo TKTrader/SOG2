@@ -18,8 +18,9 @@ if ($access != 'A') {
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="autographPage.php">Autographs</a>
-      <a class="nav-item nav-link" href=".php">Tickets</a>
+      <a class="nav-item nav-link" href="reserveTickets.php">Tickets</a>
       <a class="nav-item nav-link" href="schedulePage.php">Schedule</a>
+      <a class="nav-item nav-link" href="viewOrders.php">View Orders</a>
       <a class="nav-item nav-link" href="../logout.php"> Logout</a>
     </div>
   </div>
@@ -50,9 +51,9 @@ if ($access != 'A') {
   <div class="jumbotron">
     <h1>Athlete Dashboard</h1>    
         <h2>Select an action:</h2>
-        <a class="btn btn-primary btn-lg btn-block" href="addAthletes.php" style="background-color: #ff1a1a;">Reserve Tickets</button>
+        <a class="btn btn-primary btn-lg btn-block" href="reserveTickets.php" style="background-color: #ff1a1a;">Reserve Tickets</button>
         <a class="btn btn-primary btn-lg btn-block" href="modifySchedule.php" style="background-color: #ff1a1a;">Schedule Autograph Session</button>
-        <a class="btn btn-primary btn-lg btn-block" href="modifySchedule.php" style="background-color: #ff1a1a;">View Schedule</button>
+        <a class="btn btn-primary btn-lg btn-block" href="schedulePage.php" style="background-color: #ff1a1a;">View Schedule</button>
     <!-- </div>
 </div> -->
 

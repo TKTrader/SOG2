@@ -16,7 +16,7 @@ nav {
   background: transparent;
 }
 
-.logo{
+.logo {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 22px;
@@ -24,7 +24,7 @@ nav {
   margin-left: 2vh;
 }
 
-.menu{
+.menu {
   display: flex;
   justify-content: flex-end;
   list-style: none;
@@ -47,13 +47,13 @@ nav {
 
 .menu li a:hover {
   background: rgb(199, 199, 199);
-  transition: .4s;
+  transition: 0.4s;
   color: #000;
 }
 
 /*Login/Reg CSS*/
 /*Modified  but based off: https://www.youtube.com/watch?v=HV7DtH3J2PU*/
-.logContainer{
+.logContainer {
   width: 300px;
   padding: 40px;
   position: absolute;
@@ -64,14 +64,16 @@ nav {
   text-align: center;
   border: 3px solid rgb(189, 189, 189);
 }
-.logContainer h1{
+.logContainer h1 {
   letter-spacing: 3px;
   color: black;
   text-transform: uppercase;
   font-weight: 500;
 }
-.logContainer input[type="text"],.logContainer input[type="email"],.logContainer input[type="password"]{
-  border:0;
+.logContainer input[type="text"],
+.logContainer input[type="email"],
+.logContainer input[type="password"] {
+  border: 0;
   background: none;
   display: block;
   margin: 20px auto;
@@ -83,12 +85,14 @@ nav {
   color: black;
   transition: 0.25s;
 }
-.logContainer input[type="text"]:focus,.logContainer input[type="email"]:focus,.logContainer input[type="password"]:focus{
+.logContainer input[type="text"]:focus,
+.logContainer input[type="email"]:focus,
+.logContainer input[type="password"]:focus {
   width: 215px;
   border-color: rgb(153, 193, 221);
 }
-.logContainer input[type="submit"]{
-  border:0;
+.logContainer input[type="submit"] {
+  border: 0;
   background: none;
   text-align: center;
   border: 2px solid rgb(189, 189, 189);
@@ -97,7 +101,7 @@ nav {
   color: black;
   transition: 0.25s;
 }
-.logContainer input[type="submit"]:hover{
+.logContainer input[type="submit"]:hover {
   background: rgb(189, 189, 189);
 }
 
@@ -109,78 +113,78 @@ nav {
   max-width: 70vh;
   transform: translate(-50%);
 }
-.grid_container > span{
+.grid_container > span {
   text-align: center;
 }
 .grid {
-    display: grid;
-    /*grid-template-columns: minmax(20px, 30px) 1fr 3fr 1fr 1fr 1fr; */
-    grid-template-columns: minmax(20px, 40px) 2fr 3fr;
-    border-top: 1px solid rgb(150, 150, 150);
-    border-right: 1px solid rgb(150, 150, 150);
-    text-align: center;
+  display: grid;
+  /*grid-template-columns: minmax(20px, 30px) 1fr 3fr 1fr 1fr 1fr; */
+  grid-template-columns: minmax(20px, 40px) 2fr 3fr;
+  border-top: 1px solid rgb(150, 150, 150);
+  border-right: 1px solid rgb(150, 150, 150);
+  text-align: center;
 }
 .grid > span {
-    padding: 8px 4px;
-    border-left: 1px solid rgb(150, 150, 150);
-    border-bottom: 1px solid rgb(150, 150, 150);
+  padding: 8px 4px;
+  border-left: 1px solid rgb(150, 150, 150);
+  border-bottom: 1px solid rgb(150, 150, 150);
 }
 
 /*Used in ManageData List*/
 .grid_b {
-    display: grid;
-    grid-template-columns: minmax(20px, 40px) 2fr 3fr;
-    border-top: 1px solid rgb(150, 150, 150);
-    border-right: 1px solid rgb(150, 150, 150);
-    text-align: center;
-    overflow-y:scroll;
-    max-height: 55vh
+  display: grid;
+  grid-template-columns: minmax(20px, 40px) 2fr 3fr;
+  border-top: 1px solid rgb(150, 150, 150);
+  border-right: 1px solid rgb(150, 150, 150);
+  text-align: center;
+  overflow-y: scroll;
+  max-height: 55vh;
 }
 .grid_b > span {
-    padding: 8px 4px;
-    border-left: 1px solid rgb(150, 150, 150);
-    border-bottom: 1px solid rgb(150, 150, 150);
+  padding: 8px 4px;
+  border-left: 1px solid rgb(150, 150, 150);
+  border-bottom: 1px solid rgb(150, 150, 150);
 }
 
 /*Schedule CSS*/
-.grid_container2{
+.grid_container2 {
   position: relative;
   top: 10vh;
   left: 50%;
   max-width: 120vh;
   transform: translate(-50%);
 }
-.grid_container2 > span{
+.grid_container2 > span {
   text-align: center;
 }
 .grid2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    border-top: 1px solid rgb(150, 150, 150);
-    border-right: 1px solid rgb(150, 150, 150);
-    text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  border-top: 1px solid rgb(150, 150, 150);
+  border-right: 1px solid rgb(150, 150, 150);
+  text-align: center;
 }
 .grid2 > span {
-    padding: 8px 4px;
-    border-left: 1px solid rgb(150, 150, 150);
-    border-bottom: 1px solid rgb(150, 150, 150);
+  padding: 8px 4px;
+  border-left: 1px solid rgb(150, 150, 150);
+  border-bottom: 1px solid rgb(150, 150, 150);
 }
 
 .grid3 {
-    display: grid;
-    grid-template-columns: minmax(20px, 40px) 1fr 2fr 1fr 1fr 1fr;
-    border-top: 1px solid rgb(150, 150, 150);
-    border-right: 1px solid rgb(150, 150, 150);
-    text-align: center;
+  display: grid;
+  grid-template-columns: minmax(20px, 40px) 1fr 2fr 1fr 1fr 1fr;
+  border-top: 1px solid rgb(150, 150, 150);
+  border-right: 1px solid rgb(150, 150, 150);
+  text-align: center;
 }
 .grid3 > span {
-    padding: 8px 4px;
-    border-left: 1px solid rgb(150, 150, 150);
-    border-bottom: 1px solid rgb(150, 150, 150);
+  padding: 8px 4px;
+  border-left: 1px solid rgb(150, 150, 150);
+  border-bottom: 1px solid rgb(150, 150, 150);
 }
 
 /* Employee Interface Schedule CSS*/
-.EUI_scheduleContainer{
+.EUI_scheduleContainer {
   position: relative;
   top: 15%;
   left: 50%;
@@ -188,69 +192,69 @@ nav {
   transform: translate(-50%);
   margin-right: 0px;
 }
-.EUI_scheduleContainer > span{
+.EUI_scheduleContainer > span {
   text-align: center;
 }
-.EUI_scheduleContainer h4{
+.EUI_scheduleContainer h4 {
   text-align: center;
 }
 
 /*Used in manageSchedule.php*/
 .grid4 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  text-align: center;
 }
 .grid4 > span {
-    padding: 8px 4px;
+  padding: 8px 4px;
 }
 
 /*Schedule CSS under Employee Interface*/
-.grid_container5{
+.grid_container5 {
   position: relative;
   left: 50%;
   max-width: 120vh;
   transform: translate(-50%);
 }
-.grid_container5 > span{
+.grid_container5 > span {
   text-align: center;
   vertical-align: middle;
 }
 .grid5 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    border-top: 1px solid rgb(150, 150, 150);
-    border-right: 1px solid rgb(150, 150, 150);
-    text-align: center;
-    vertical-align: middle;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  border-top: 1px solid rgb(150, 150, 150);
+  border-right: 1px solid rgb(150, 150, 150);
+  text-align: center;
+  vertical-align: middle;
 }
 .grid5 > span {
-    padding: 8px 4px;
-    border-left: 1px solid rgb(150, 150, 150);
-    border-bottom: 1px solid rgb(150, 150, 150);
+  padding: 8px 4px;
+  border-left: 1px solid rgb(150, 150, 150);
+  border-bottom: 1px solid rgb(150, 150, 150);
 }
 
 .grid6 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
 }
 .grid6 > span {
-    padding: 8px 4px;
+  padding: 8px 4px;
 }
 
 /*Used in manageSchedule under modify section*/
 .grid7 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  text-align: center;
 }
 .grid7 > span {
-    padding: 8px 4px;
+  padding: 8px 4px;
 }
 /*Used in manageData_Lists*/
 /* Employee Interface Schedule CSS*/
-.EUI_datalistContainer{
+.EUI_datalistContainer {
   position: relative;
   top: 15%;
   left: 50%;
@@ -258,84 +262,84 @@ nav {
   transform: translate(-50%);
   margin-right: 0px;
 }
-.EUI_datalistContainer > span{
+.EUI_datalistContainer > span {
   text-align: center;
 }
-.EUI_datalistContainer h4{
+.EUI_datalistContainer h4 {
   text-align: center;
 }
 .grid8 {
-    display: grid;
-    grid-template-columns: minmax(40px, 60px) 1fr 1fr minmax(60px, 80px);
-    text-align: center;
-    grid-gap: 10px;
+  display: grid;
+  grid-template-columns: minmax(40px, 60px) 1fr 1fr minmax(60px, 80px);
+  text-align: center;
+  grid-gap: 10px;
 }
 .grid8 > span {
-    padding: 8px 4px;
+  padding: 8px 4px;
 }
 .grid9 {
-    display: grid;
-    grid-template-columns: minmax(40px, 60px) 1fr minmax(60px, 80px) 1fr;
-    text-align: center;
-    grid-gap: 10px;
+  display: grid;
+  grid-template-columns: minmax(40px, 60px) 1fr minmax(60px, 80px) 1fr;
+  text-align: center;
+  grid-gap: 10px;
 }
 .grid9 > span {
-    padding: 8px 4px;
+  padding: 8px 4px;
 }
 
 /*Used in Manage Data Lists Type Section*/
-.grid_container10{
+.grid_container10 {
   position: relative;
   top: 5vh;
   left: 50%;
   max-width: 70vh;
   transform: translate(-50%);
 }
-.grid_container10 > span{
+.grid_container10 > span {
   text-align: center;
 }
 .grid10 {
-    display: grid;
-    grid-template-columns: minmax(20px, 40px) 1fr;
-    border-top: 1px solid rgb(150, 150, 150);
-    border-right: 1px solid rgb(150, 150, 150);
-    text-align: center;
+  display: grid;
+  grid-template-columns: minmax(20px, 40px) 1fr;
+  border-top: 1px solid rgb(150, 150, 150);
+  border-right: 1px solid rgb(150, 150, 150);
+  text-align: center;
 }
 .grid10 > span {
-    padding: 8px 4px;
-    border-left: 1px solid rgb(150, 150, 150);
-    border-bottom: 1px solid rgb(150, 150, 150);
+  padding: 8px 4px;
+  border-left: 1px solid rgb(150, 150, 150);
+  border-bottom: 1px solid rgb(150, 150, 150);
 }
 .grid10_scroll {
-    display: grid;
-    grid-template-columns: minmax(20px, 40px) 1fr;
-    border-top: 1px solid rgb(150, 150, 150);
-    border-right: 1px solid rgb(150, 150, 150);
-    text-align: center;
-    overflow-y:scroll;
-    max-height: 55vh
+  display: grid;
+  grid-template-columns: minmax(20px, 40px) 1fr;
+  border-top: 1px solid rgb(150, 150, 150);
+  border-right: 1px solid rgb(150, 150, 150);
+  text-align: center;
+  overflow-y: scroll;
+  max-height: 55vh;
 }
 .grid10_scroll > span {
-    padding: 8px 4px;
-    border-left: 1px solid rgb(150, 150, 150);
-    border-bottom: 1px solid rgb(150, 150, 150);
+  padding: 8px 4px;
+  border-left: 1px solid rgb(150, 150, 150);
+  border-bottom: 1px solid rgb(150, 150, 150);
 }
 
 /*Used in the athlete event registration add section*/
 .grid11 {
-    margin-left: 39vh;
-    max-width: 80vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr minmax(60px, 80px);
-    text-align: center;
-    grid-gap: 10px;
+  margin-left: 39vh;
+  max-width: 80vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr minmax(60px, 80px);
+  text-align: center;
+  grid-gap: 10px;
 }
 .grid11 > span {
-    padding: 8px 4px;
+  padding: 8px 4px;
 }
 
 /*Used in athlete event registration delete section*/
-.EUI_scheduleContainer2{
+.EUI_scheduleContainer2 {
   position: relative;
   top: 15%;
   left: 50%;
@@ -343,25 +347,25 @@ nav {
   transform: translate(-50%);
   margin-right: 0px;
 }
-.EUI_scheduleContainer2 > span{
+.EUI_scheduleContainer2 > span {
   text-align: center;
 }
-.EUI_scheduleContainer2 h4{
+.EUI_scheduleContainer2 h4 {
   text-align: center;
 }
 .grid12 {
-    margin-left: 39vh;
-    display: grid;
-    grid-template-columns: minmax(20px, max-content) minmax(60px, 80px) ;
-    text-align: center;
-    grid-gap: 10px;
+  margin-left: 39vh;
+  display: grid;
+  grid-template-columns: minmax(20px, max-content) minmax(60px, 80px);
+  text-align: center;
+  grid-gap: 10px;
 }
 .grid12 > span {
-    padding: 8px 4px;
+  padding: 8px 4px;
 }
 
 /*Used in Athlete Event Registration add section*/
-.EUI_athleteEventContainer{
+.EUI_athleteEventContainer {
   position: relative;
   top: 15%;
   left: 50%;
@@ -369,16 +373,16 @@ nav {
   transform: translate(-50%);
   margin-right: 0px;
 }
-.EUI_athleteEventContainer > span{
+.EUI_athleteEventContainer > span {
   text-align: center;
 }
-.EUI_athleteEventContainer h4{
+.EUI_athleteEventContainer h4 {
   text-align: center;
 }
-.EUI_athleteEventContainer hr{
+.EUI_athleteEventContainer hr {
   margin: 10px 0 10px 0;
 }
-.SbyS{
+.SbyS {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 10px;
@@ -388,53 +392,53 @@ nav {
   max-width: 180vh;
   transform: translate(-50%);
 }
-.SbyS > span{
+.SbyS > span {
   text-align: center;
 }
 .grid13 {
-    display: grid;
-    grid-template-columns: minmax(80px, 100px) 1fr;
-    grid-auto-rows: minmax(min-content, max-content);
-    border-top: 1px solid rgb(150, 150, 150);
-    border-right: 1px solid rgb(150, 150, 150);
-    text-align: center;
-    overflow-y:scroll;
-    max-height: 54vh;
+  display: grid;
+  grid-template-columns: minmax(80px, 100px) 1fr;
+  grid-auto-rows: minmax(min-content, max-content);
+  border-top: 1px solid rgb(150, 150, 150);
+  border-right: 1px solid rgb(150, 150, 150);
+  text-align: center;
+  overflow-y: scroll;
+  max-height: 54vh;
 }
 .grid13 > span {
-    padding: 8px 4px;
-    border-left: 1px solid rgb(150, 150, 150);
-    border-bottom: 1px solid rgb(150, 150, 150);
+  padding: 8px 4px;
+  border-left: 1px solid rgb(150, 150, 150);
+  border-bottom: 1px solid rgb(150, 150, 150);
 }
 
 /*Used in Athlete Event Reg, Delete Function*/
 .grid14 {
-    display: grid;
-    grid-template-columns: minmax(20px, 40px) 1fr 1fr 1fr;
-    grid-auto-rows: minmax(min-content, max-content);
-    border-top: 1px solid rgb(150, 150, 150);
-    border-right: 1px solid rgb(150, 150, 150);
-    text-align: center;
-    overflow-y:scroll;
-    max-height: 54vh
+  display: grid;
+  grid-template-columns: minmax(20px, 40px) 1fr 1fr 1fr;
+  grid-auto-rows: minmax(min-content, max-content);
+  border-top: 1px solid rgb(150, 150, 150);
+  border-right: 1px solid rgb(150, 150, 150);
+  text-align: center;
+  overflow-y: scroll;
+  max-height: 54vh;
 }
 .grid14 > span {
-    padding: 8px 4px;
-    border-left: 1px solid rgb(150, 150, 150);
-    border-bottom: 1px solid rgb(150, 150, 150);
+  padding: 8px 4px;
+  border-left: 1px solid rgb(150, 150, 150);
+  border-bottom: 1px solid rgb(150, 150, 150);
 }
 
 /*Used in Athlete Event Reg, Modify Function*/
 .grid15 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr minmax(60px, 80px);
-    text-align: center;
-    column-gap: 10px;
-    margin-left: 39vh;
-    max-width: 80vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr minmax(60px, 80px);
+  text-align: center;
+  column-gap: 10px;
+  margin-left: 39vh;
+  max-width: 80vh;
 }
 .grid15 > span {
-    padding: 8px 4px;
+  padding: 8px 4px;
 }
 
 /* row space */
@@ -443,34 +447,41 @@ nav {
 }
 
 /*Noob not commeting his code section*/
-.athletePage_container table{
-    width: 100%;
+.athletePage_container table {
+  width: 100%;
 }
 
-.athletePage_container td{
-    background-color: beige;
-    height: 10em;
-    width: 12em;
+.athletePage_container td {
+  background-color: beige;
+  height: 10em;
+  width: 12em;
 }
 
-.athletePage_container h3{
-    margin-top: 2em;
-    text-align: center;
+.athletePage_container h3 {
+  margin-top: 2em;
+  text-align: center;
 }
 
-.athletePage_container img{
-    position: relative;
-    height: 80%;
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
+.athletePage_container img {
+  position: relative;
+  height: 80%;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
-.athletePage_container p{
-    margin-bottom: 2em;
+.athletePage_container p {
+  margin-bottom: 2em;
 }
 
 /*PublicInterface */
 .navbar-brand_navbar-dark {
-    color: white;
+  color: white;
 }
+
+/* home page */
+.sogs-bg {
+  background-image: url("assets/cartoon-clouds.png");
+  background-size: cover;
+}
+/* end of home page */

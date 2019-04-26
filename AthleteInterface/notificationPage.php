@@ -16,8 +16,9 @@ if ($access != 'A') {
     <div class="navbar-nav">
       <a class="nav-item nav-link" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="autographPage.php">Autographs</a>
-      <a class="nav-item nav-link" href=".php">Tickets</a>
+      <a class="nav-item nav-link" href="reserveTickets.php">Tickets</a>
       <a class="nav-item nav-link" href="schedulePage.php">Schedule</a>
+      <a class="nav-item nav-link" href="viewOrders.php">View Orders</a>
       <a class="nav-item nav-link" href="../logout.php"> Logout</a>
     </div>
   </div>
