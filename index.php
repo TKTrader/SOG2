@@ -18,12 +18,63 @@ require 'header.php';
       <a class="nav-item nav-link" href="loginPage.php">Login</a>
     </div>
   </div>
-    <a class="navbar-brand float-right" href="notificationPage.php">
-      <img class="img-responsive" width="70px" height="40px" src="assets/rio-2016-logo.png">
-    </a>
+  <img class="img-responsive" width="70px" height="40px" src="assets/rio-2016-logo.png">
 </nav>
 
-<body>
-  <p>HOME PAGE</p>
-</body>
+<html>
+  <body>
+    <div id="body-wrapper">
+      <main role="main">
+        <section class="jumbotron text-center sogs-bg">
+          <div class="container text-white" style="background-color: rgba(52, 58, 60, .6)">
+            <h1 class="jumbotron-heading">Summer Olympic Games 2016</h1>
+            <p class="lead">Welcome to the main website for the Summer Olympic Games of 2016!</p>
+            <p class="lead">View some of our featured events!</p>
+          </div>
+        </section>
+
+        <div class="album py-5 bg-light sogs-bg">
+          <div class="container">
+            <div class="text-center mb-4 text-white"><h2>Featured Events</h2></div>
+            <div class="row">
+              <?php 
+              $mysqli -> set_charset("utf8");
+              $query = "SELECT * FROM olympicevent";
+                if ($result = $mysqli->query($query)) {
+                    for ($i = 0; $i < 3; $i++) {
+                        $row = $result -> fetch_assoc();
+                        $eventName = $row["name"];
+                        $date = $row["date"];
+                        $time = $row["time"];
+                        $location = $row["location"];
+                        $type = $row["type"];
+                        $category = $row["category"];
+                        $ticketPrice = $row["ticketPrice"]; 
+                        
+                        if ($type == "comp") {
+                          $type = "Competition";
+                        } else if ($type == "award") {
+                          $type = "Award Ceremony";
+                        }
+                        echo
+                        '<div class="col-md-4">
+                          <div class="card mb-4 shadow-sm">
+                            <div class="card-body">
+                              <h4>Name: <span style="font-weight:normal;">'.$eventName.'</span></h4>
+                              <h4>Category: <span style="font-weight:normal;">'.$category.'</span></h4>
+                              <h4>Type: <span style="font-weight:normal;">'.$type.'</span></h4>
+                              <p class="card-text">'.$location.' at '.$time.'</p>
+                              <span class="text-muted">$'.$ticketPrice.'</span>
+                            </div>
+                          </div>
+                        </div>';
+                    }
+                } 
+              ?>            
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>
