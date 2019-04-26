@@ -97,16 +97,15 @@
     </div>
   </div>
     <?php
+//    Does athlete have an event he is competing in that got updated
+      $query1 = "SELECT notify FROM users WHERE email = \"".$_SESSION['email']."\"";
 //    Has the user purchased a ticket to an event that got updated
-      $query1 = "SELECT id FROM updatedEvent WHERE olympicEventID IN (SELECT eventID FROM ticketorder WHERE customerID IN (SELECT id FROM users WHERE email = \"". $_SESSION['email'] ."\"));";
-      $query1_result = mysqli_query($mysqli, $query1);
-      $row1 = mysqli_fetch_array($query1_result);
-      $ticketUpdated = !empty($row1);
+      $notification = mysqli_fetch_array(mysqli_query($mysqli, $query1));
 //    Picture that's displayed if you have a notification
-      if($ticketUpdated) {
+      if($notification[0]==1) {
         echo "<a class=\"navbar-brand float-right\" href=\"notificationPage.php\">
-                <img class=\"img-responsive\" width=\"70px\" height=\"40px\" src=\"../assets/notification.jpg\">
-             </a>";
+                    <img class=\"img-responsive\" width=\"70px\" height=\"40px\" src=\"../assets/notification.jpg\">
+                 </a>";
       }
 //    Picture that's displayed if you don't have a notification
       else{
@@ -114,7 +113,7 @@
                 <img class=\"img-responsive\" width=\"70px\" height=\"40px\" src=\"../assets/rio-2016-logo.png\">
              </a>";
       }
-  ?>
+    ?>
   <span class="navbar-text">
       <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
   </span>

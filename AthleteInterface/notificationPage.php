@@ -15,10 +15,10 @@ if ($access != 'A') {
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href=".php">Autographs</a>
+      <a class="nav-item nav-link" href="autographPage.php">Autographs</a>
       <a class="nav-item nav-link" href="reserveTickets.php">Tickets</a>
-        <a class="nav-item nav-link" href="schedulePage.php">Schedule</a>
-        <a class="nav-item nav-link" href="viewOrders.php">View Orders</a>
+      <a class="nav-item nav-link" href="schedulePage.php">Schedule</a>
+      <a class="nav-item nav-link" href="viewOrders.php">View Orders</a>
       <a class="nav-item nav-link" href="../logout.php"> Logout</a>
     </div>
   </div>
@@ -38,29 +38,32 @@ if ($access != 'A') {
     $query1_result = mysqli_query($mysqli, $query1);
     while($row = mysqli_fetch_array($query1_result)) {
         if($row['oldDate'] != $row['date'] and $row['oldTime'] != $row['time'] and $row['oldLocation'] != $row['location']) {
-            echo "The event previously taking place at " . $row['oldLocation'] . " at " . $row['oldDate'] . " " . $row['oldTime'] . " is now at " . $row['location'] . " at " . $row['time'] . " " . $row['date'] . ".";
+            echo "<p>The event previously taking place at " . $row['oldLocation'] . " at " . $row['oldDate'] . " " . $row['oldTime'] . " is now at " . $row['location'] . " at " . $row['time'] . " " . $row['date'] . ".</p>";
         }
         elseif($row['oldDate'] != $row['date'] and $row['oldTime'] != $row['time']){
-            echo "The event previously taking place at " . $row['oldDate'] . " " . $row['oldTime'] . " is now at " . " at " . $row['date'] . " " . $row['time'] . ".";
+            echo "<p>The event previously taking place at " . $row['oldDate'] . " " . $row['oldTime'] . " is now at " . " at " . $row['date'] . " " . $row['time'] . ".<p/>";
         }
         elseif($row['oldTime'] != $row['time'] and $row['oldLocation'] != $row['location']){
-            echo "The event previously taking place at " . $row['oldLocation'] . " at " . $row['oldTime'] . " is now at " . $row['location'] . " at " . $row['time'] . ".";
+            echo "<p>The event previously taking place at " . $row['oldLocation'] . " at " . $row['oldTime'] . " is now at " . $row['location'] . " at " . $row['time'] . ".</p>";
         }
         elseif($row['oldDate'] != $row['date'] and $row['oldLocation'] != $row['location']){
-            echo "The event previously taking place at " . $row['oldLocation'] . " " . $row['oldTime'] . " is now at "  . $row['location'] . " " . $row['time'] . ".";
+            echo "<p>The event previously taking place at " . $row['oldLocation'] . " " . $row['oldTime'] . " is now at "  . $row['location'] . " " . $row['time'] . ".</p>";
         }
         elseif($row['oldDate'] != $row['date']){
-            echo "The event previously taking place at " . $row['oldDate'] . " is now at " . $row['date'] . ".";
+            echo "<p>The event previously taking place at " . $row['oldDate'] . " is now at " . $row['date'] . ".</p.";
         }
         elseif($row['oldTime'] != $row['time']){
-            echo "The event previously taking place at " . $row['oldTime'] . " is now at " . $row['time'] . ".";
+            echo "<p>The event previously taking place at " . $row['oldTime'] . " is now at " . $row['time'] . ".</p>";
         }
         elseif($row['oldLocation'] != $row['location']){
-            echo "The event previously taking place at " . $row['oldLocation'] . " is now at " . $row['location'] . ".";
+            echo "<p>The event previously taking place at " . $row['oldLocation'] . " is now at " . $row['location'] . ".</p>";
         }
     }
     echo"</tr>";
-    echo "</table>"
+    echo "</table>";
+      //remove notification from user who viewed this page
+      $query1 = "UPDATE users SET notify = 0 WHERE email = \"".$_SESSION['email']."\"";
+      mysqli_query($mysqli, $query1);
     ?>
 </div>
 </body>

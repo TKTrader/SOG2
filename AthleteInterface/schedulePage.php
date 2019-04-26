@@ -18,37 +18,31 @@ if ($access != 'A') {
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-item nav-link" href="index.php">Dashboard <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href=".php">Autographs</a>
+        <a class="nav-item nav-link" href="autographPage.php">Autographs</a>
         <a class="nav-item nav-link" href="reserveTickets.php">Tickets</a>
-        <a class="nav-item nav-link" href=".php">Schedule</a>
+        <a class="nav-item nav-link active" href="schedulePage.php">Schedule</a>
         <a class="nav-item nav-link" href="viewOrders.php">View Orders</a>
         <a class="nav-item nav-link" href="../logout.php"> Logout</a>
       </div>
     </div>
-      <?php
+    <?php
 //    Does athlete have an event he is competing in that got updated
-        $query1 = "SELECT * FROM updatedEvent WHERE ID IN (SELECT eventID FROM athleteevent WHERE athleteID IN (SELECT id FROM users WHERE email = \"". $_SESSION['email'] ."\"));";
+      $query1 = "SELECT notify FROM users WHERE email = \"".$_SESSION['email']."\"";
 //    Has the user purchased a ticket to an event that got updated
-          $query2 = "SELECT id FROM updatedEvent WHERE olympicEventID IN (SELECT eventID FROM ticketorder WHERE customerID IN (SELECT id FROM users WHERE email = \"". $_SESSION['email'] ."\"));";
-          $query1_result = mysqli_query($mysqli, $query1);
-          $row1 = mysqli_fetch_array($query1_result);
-          $eventUpdated = !empty($row1);
-          $query2_result = mysqli_query($mysqli, $query2);
-          $row2 = mysqli_fetch_array($query2_result);
-          $ticketUpdated = !empty($row2);
+      $notification = mysqli_fetch_array(mysqli_query($mysqli, $query1));
 //    Picture that's displayed if you have a notification
-          if($eventUpdated or $ticketUpdated) {
-            echo "<a class=\"navbar-brand float-right\" href=\"notificationPage.php\">
+      if($notification[0]==1) {
+        echo "<a class=\"navbar-brand float-right\" href=\"notificationPage.php\">
                     <img class=\"img-responsive\" width=\"70px\" height=\"40px\" src=\"../assets/notification.jpg\">
                  </a>";
-          }
+      }
 //    Picture that's displayed if you don't have a notification
-          else{
-            echo "<a class=\"navbar-brand float-right\" href=\"notificationPage.php\">
-                    <img class=\"img-responsive\" width=\"70px\" height=\"40px\" src=\"../assets/rio-2016-logo.png\">
-                 </a>";
-          }
-      ?>
+      else{
+        echo "<a class=\"navbar-brand float-right\" href=\"notificationPage.php\">
+                <img class=\"img-responsive\" width=\"70px\" height=\"40px\" src=\"../assets/rio-2016-logo.png\">
+             </a>";
+      }
+  ?>
     <span class="navbar-text">
       <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
     </span>
