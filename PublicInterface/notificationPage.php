@@ -61,7 +61,9 @@ if ($access != 'P') {
         }
     }
     echo"</tr>";
-    echo "</table>"
+    echo "</table>";
+    $query1 = "UPDATE users SET notify = 0 WHERE email = \"".$_SESSION['email']."\"";
+    mysqli_query($mysqli, $query1);
     ?>
 </div>
 </body>
