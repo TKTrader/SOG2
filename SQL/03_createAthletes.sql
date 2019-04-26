@@ -38,7 +38,7 @@ VALUES(
     '6',
     '6',
     '210.1',
-    '1587-12-12'
+    '2000-12-12'
     );
 
 INSERT INTO athletes(id, country, heightFeet, heightInch, wgt, DOB)
@@ -58,7 +58,7 @@ VALUES(
     '5',
     '10',
     '155.3',
-    '1997-03-12'
+    '1997-03-18'
     );
 
 INSERT INTO athletes(id, country, heightFeet, heightInch, wgt, DOB)
@@ -68,7 +68,7 @@ VALUES(
     '7',
     '5',
     '250.0',
-    '0666-06-06'
+    '1666-06-06'
     );
     
 INSERT INTO athletes(id, country, heightFeet, heightInch, wgt, DOB)
@@ -88,7 +88,7 @@ VALUES(
     '5',
     '5',
     '165.8',
-    '1997-02-07'
+    '1998-01-09'
     );
 
 INSERT INTO athletes(id, country, heightFeet, heightInch, wgt, DOB)
@@ -98,7 +98,7 @@ VALUES(
     '6',
     '6',
     '210.1',
-    '1587-12-12'
+    '1987-12-10'
     );
 
 INSERT INTO athletes(id, country, heightFeet, heightInch, wgt, DOB)
@@ -108,7 +108,7 @@ VALUES(
     '5',
     '11',
     '165.5',
-    '2000-08-26'
+    '2000-05-17'
     );
 
 INSERT INTO athletes(id, country, heightFeet, heightInch, wgt, DOB)
@@ -128,7 +128,7 @@ VALUES(
     '7',
     '5',
     '250.0',
-    '0666-06-06'
+    '1998-06-06'
     );
     
 INSERT INTO athletes(id, country, heightFeet, heightInch, wgt, DOB)

@@ -190,7 +190,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       </div>
       <div class="form-group col-md-6">
         <label for="dob">Date of Birth</label>
-        <input type="date" class="form-control" name ="dob" id="dob" value="2000-01-01" placeholder="Enter date of birth">
+        <input type="date" class="form-control" name ="dob" id="dob" placeholder="Enter date of birth">
         <small id="dob" class="form-text text-muted">MM-DD-YYYY</small>
       </div>
     </div>
