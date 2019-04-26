@@ -130,14 +130,20 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <?php while ($row = mysqli_fetch_array($result)) { 
         $fullName = $row['firstName']." ".$row['lastName'];
         $height = $row['heightFeet']."'".$row['heightInch']."\"";
+        $id = $row['id'];
+        $country =$row['country'];
+        $email = $row['email'];
+        $dob = $row['DOB'];
+        $weight = $row['wgt'];
+
         echo "<tr>
-        <td>" . $row[0] . "</td>
+        <td>" . $id . "</td>
         <td>" . $fullName . "</td>
-        <td>" . $row[8] . "</td>
-        <td>" . $row[3] . "</td>
-        <td>" . $row[12] . "</td>
+        <td>" . $country . "</td>
+        <td>" . $email . "</td>
+        <td>" . $dob . "</td>
         <td>" . $height . "</td>
-        <td>" . $row[11] . "</td>
+        <td>" . $weight . "</td>
       </tr>"; }
   ?>
     </tbody>
