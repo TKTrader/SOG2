@@ -18,7 +18,7 @@ if ($access != 'A') {
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-item nav-link" href="index.php">Dashboard <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href=".php">Autographs</a>
+        <a class="nav-item nav-link" href="autographPage.php">Autographs</a>
         <a class="nav-item nav-link" href=".php">Tickets</a>
         <a class="nav-item nav-link active" href="schedulePage.php">Schedule</a>
         <a class="nav-item nav-link" href="../logout.php"> Logout</a>
