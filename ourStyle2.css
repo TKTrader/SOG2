@@ -437,6 +437,7 @@ nav {
   margin-left: 39vh;
   max-width: 80vh;
 }
+
 .grid15 > span {
   padding: 8px 4px;
 }
@@ -472,6 +473,31 @@ nav {
 
 .athletePage_container p {
   margin-bottom: 2em;
+}
+
+/* Athlete Interface Autograph CSS*/
+.AUI_autographContainer {
+  position: relative;
+  top: 15%;
+  left: 50%;
+  max-width: 120vh;
+  transform: translate(-50%);
+  margin-right: 0px;
+}
+.AUI_autographContainer > span {
+  text-align: center;
+}
+.AUI_autographContainer h4 {
+  text-align: center;
+}
+
+.autoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
+}
+.autoGrid > span {
+  padding: 8px 4px;
 }
 
 /*PublicInterface */

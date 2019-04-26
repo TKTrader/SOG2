@@ -12,12 +12,6 @@
   if ($_SERVER['REQUEST_METHOD']=='POST') {
     if (isset($_POST['Add_Athlete_Event'])) {
 
-      //update user if their ticket was changed
-      $update_ticket_holders = "UPDATE users SET notify = 1 WHERE ID IN (SELECT customerID FROM ticketorder WHERE eventID = '$row_SELECTED')";
-      //update athlete if their event was changed
-      $update_athletes = "UPDATE users SET notify = 1 WHERE ID IN (SELECT athleteID FROM athleteEvent WHERE eventID = '$row_SELECTED')";
-      mysqli_query($mysqli, $update_athletes);
-
       //Store posted values in vars
       $athleteid = mysqli_real_escape_string($mysqli, $_POST['athleteID']);
       $eventid = mysqli_real_escape_string($mysqli, $_POST['eventID']);
@@ -91,8 +85,7 @@
       <a class="nav-item nav-link" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="manageAthletes.php">Manage Athletes</a>
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
-      <a class="nav-item nav-link" href="reserveTickets.php">Reserve Tickets</a>
-      <a class="nav-item nav-link" href="viewOrders.php">View Orders</a>
+      <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Managa Data Lists</a>
       <a class="nav-item nav-link active" href="athlete_event_registration.php">Athlete Event Registration</a>
       <a class="nav-item nav-link" href="../logout.php"> Logout</a>
