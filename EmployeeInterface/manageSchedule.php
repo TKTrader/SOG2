@@ -49,12 +49,19 @@
       $type_SELECTED = mysqli_real_escape_string($mysqli, $_POST['type']);
       $price_SELECTED = mysqli_real_escape_string($mysqli, $_POST['price']);
       
+      //update user if their ticket was changed
+      $query1 = "UPDATE users SET notify = 1 WHERE ID IN (SELECT customerID FROM ticketorder WHERE eventID = '$row_SELECTED')";
+      //update athlete if their event was changed
+      $query2 = "UPDATE users SET notify = 1 WHERE ID IN (SELECT customerID FROM ticketorder WHERE eventID = '$row_SELECTED')";
+      $query1_result = mysqli_query($mysqli, $query1);
+      $query2_result = mysqli_query($mysqli, $query2);
+        
       //Move old information to an archive (updatedEvent table)
       $archive_query = "INSERT INTO updatedevent(olympicEventID, name, date, time, location, type, category, ticketPrice) SELECT * FROM olympicEvent WHERE id = '$row_SELECTED'";
       mysqli_query($mysqli, $archive_query);
-        
-//      $update 
-//      $run_query2 = mysqli_query($mysqli, $update_notifications);
+
+      $update_users = ""
+      $run_query2 = mysqli_query($mysqli, $update_notifications);
         
       //Search to make sure there is a query 1st
       $search_it_exists = "SELECT id FROM olympicEvent WHERE id = '$row_SELECTED'";
