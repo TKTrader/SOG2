@@ -12,12 +12,6 @@
   if ($_SERVER['REQUEST_METHOD']=='POST') {
     if (isset($_POST['Add_Athlete_Event'])) {
 
-      //update user if their ticket was changed
-      $update_ticket_holders = "UPDATE users SET notify = 1 WHERE ID IN (SELECT customerID FROM ticketorder WHERE eventID = '$row_SELECTED')";
-      //update athlete if their event was changed
-      $update_athletes = "UPDATE users SET notify = 1 WHERE ID IN (SELECT athleteID FROM athleteEvent WHERE eventID = '$row_SELECTED')";
-      mysqli_query($mysqli, $update_athletes);
-
       //Store posted values in vars
       $athleteid = mysqli_real_escape_string($mysqli, $_POST['athleteID']);
       $eventid = mysqli_real_escape_string($mysqli, $_POST['eventID']);

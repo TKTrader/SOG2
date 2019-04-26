@@ -131,7 +131,7 @@
     <button type="button" onclick="toggle_visibility('tog4');" class="btn btn-outline-info btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Country</button>
   </p>
 
-  <!--Events Section-->
+  <!--Event Section-->
   <div id="tog1" style="display:none;" >
     <div class = "EUI_datalistContainer">
       <h4>Event</h4>
