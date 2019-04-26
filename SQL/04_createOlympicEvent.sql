@@ -62,7 +62,7 @@ INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice
 VALUES(
     '10M Platform WOMEN',
     '2016-08-16',
-    '01:00:00',
+    '13:00:00',
     'Arena 1',
     'comp',
     'Diving',
@@ -72,7 +72,7 @@ INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice
 VALUES(
     'Singles Badminton MEN',
     '2016-08-16',
-    '01:00:00',
+    '13:00:00',
     'Arena 2',
     'comp',
     'Badminton',
@@ -82,7 +82,7 @@ INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice
 VALUES(
     'Singles Badminton WOMEN',
     '2016-08-17',
-    '01:00:00',
+    '13:00:00',
     'Arena 2',
     'comp',
     'Badminton',
@@ -92,7 +92,7 @@ INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice
 VALUES(
     '1000M Canoe Single MEN',
     '2016-08-17',
-    '02:00:00',
+    '014:00:00',
     'Arena 3',
     'comp',
     'Canoe Sprint',
@@ -102,7 +102,7 @@ INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice
 VALUES(
     'Kayak Single WOMEN',
     '2016-08-18',
-    '02:00:00',
+    '014:00:00',
     'Arena 3',
     'comp',
     'Canoe Slalom',
@@ -123,7 +123,7 @@ INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice
 VALUES(
     'Kayak Awards Ceremony WOMEN',
     '2016-08-19',
-    '02:00:00',
+    '15:00:00',
     'Arena 1',
     'award',
     'Canoe Slalom',
@@ -156,7 +156,7 @@ INSERT INTO olympicEvent (name, date, time, location, type, category,ticketPrice
 VALUES(
     '5000M MEN',
     '2016-08-18',
-    '02:00:00',
+    '14:00:00',
     'Arena 2',
     'comp',
     'Athletics',
@@ -166,7 +166,7 @@ INSERT INTO olympicEvent (name, date, time, location, type, category,ticketPrice
 VALUES(
     '50KM RACE WALK MEN',
     '2016-08-19',
-    '03:00:00',
+    '15:00:00',
     'Arena 3',
     'comp',
     'Athletics',
@@ -176,7 +176,7 @@ INSERT INTO olympicEvent (name, date, time, location, type, category,ticketPrice
 VALUES(
     '800M MEN',
     '2016-08-20',
-    '04:00:00',
+    '16:00:00',
     'Arena 4',
     'comp',
     'Athletics',
@@ -186,7 +186,7 @@ INSERT INTO olympicEvent (name, date, time, location, type, category,ticketPrice
 VALUES(
     'DECATHLON MEN',
     '2016-08-21',
-    '05:00:00',
+    '17:00:00',
     'Arena 5',
     'comp',
     'Athletics',
