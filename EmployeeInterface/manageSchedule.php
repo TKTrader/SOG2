@@ -53,10 +53,6 @@
       $archive_query = "INSERT INTO updatedevent(olympicEventID, name, date, time, location, type, category, ticketPrice) SELECT * FROM olympicEvent WHERE id = '$row_SELECTED'";
       mysqli_query($mysqli, $archive_query);
         
-            
-      //Update related users      //Move old information to an archive (updatedEvent table)
-      $archive_query = "INSERT INTO updatedevent(olympicEventID, name, date, time, location, type, category, ticketPrice) SELECT * FROM olympicEvent WHERE id = '$row_SELECTED'";
-      mysqli_query($mysqli, $archive_query);
 //      $update 
 //      $run_query2 = mysqli_query($mysqli, $update_notifications);
         
