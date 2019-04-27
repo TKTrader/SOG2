@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <a class="nav-item nav-link" href="viewOrders.php">View Orders</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
       <a class="nav-item nav-link" href="athlete_event_registration.php">Event Registration</a>
-      <a class="nav-item nav-link" href="../logout.php"> Logout</a>
+      <a class="nav-item nav-link" href="../logout.php">Logout</a>
     </div>
   </div>
 
