@@ -36,7 +36,7 @@ require 'header.php';
 
 <div class="bell">
     <a class="navbar-brand float-right" href="notificationPage.php">
-          <img src="bell.png" height="30" alt="">
+          <img src="assets/bell.png" height="30" alt="">
         </a>
 </div>
 </nav>
@@ -52,7 +52,7 @@ require 'header.php';
 <div class="card-deck">
 
 <div class="h-50 card" style="width: auto; border: none;">
-  <img class="card-img-top" src="athlete.png" alt="Card image cap">
+  <img class="card-img-top" src="assets/athlete.png" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">Athletes</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -62,7 +62,7 @@ require 'header.php';
 
 
 <div class="h-50 card" style="width: auto; border: none;">
-  <img class="card-img-top" src="schedule.png" alt="Card image cap">
+  <img class="card-img-top" src="assets/schedule.png" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">Schedule</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -71,7 +71,7 @@ require 'header.php';
 </div>
 
 <div class="h-50 card" style="width: auto; border: none;">
-  <img class="card-img-top" src="sports.png" alt="Card image cap">
+  <img class="card-img-top" src="assets/sports.png" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">Events</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -83,7 +83,7 @@ require 'header.php';
 </div>
 
 <div class="card bg-dark text-white" style="top: 25%;">
-  <img class="card-img" src="rio4.png" alt="Card image" style="width: auto; height: 55em;">
+  <img class="card-img" src="assets/rio4.png" alt="Card image" style="width: auto; height: 55em;">
   <div class="card-img-overlay" style="margin: 25%; left: -12%;">
     <h2 class="card-title">Event Tickets!</h2>
     <p class="card-text">Learn more on how you can purcharse tickets to <br> your favortie olympic event.</p>

@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <a class="nav-item nav-link" href="viewOrders.php">View Orders</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
       <a class="nav-item nav-link" href="athlete_event_registration.php">Event Registration</a>
-      <a class="nav-item nav-link" href="../logout.php">Logout</a>
+      <a class="nav-item nav-link" href="../logout.php"> Logout</a>
     </div>
   </div>
 
@@ -44,13 +44,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 //    Picture that's displayed if you have a notification
       if($notification[0]==1) {
         echo "<a class=\"navbar-brand float-right\" href=\"notificationPage.php\">
-                    <img class=\"img-responsive\" width=\"30em\" height=\"30em\" src=\"../bell2.png\">
+                    <img class=\"img-responsive\" width=\"30em\" height=\"30em\" src=\"../assets/bell2.png\">
                  </a>";
       }
 //    Picture that's displayed if you don't have a notification
       else{
         echo "<a class=\"navbar-brand float-right\" href=\"notificationPage.php\">
-                <img class=\"img-responsive\" width=\"30em\" height=\"30em\" src=\"../bell.png\">
+                <img class=\"img-responsive\" width=\"30em\" height=\"30em\" src=\"../assets/bell.png\">
              </a>";
       }
     ?>

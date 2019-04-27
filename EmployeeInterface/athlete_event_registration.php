@@ -104,13 +104,13 @@
 //    Picture that's displayed if you have a notification
       if($notification[0]==1) {
         echo "<a class=\"navbar-brand float-right\" href=\"notificationPage.php\">
-                    <img class=\"img-responsive\" width=\"30em\" height=\"30em\" src=\"../bell2.png\">
+                    <img class=\"img-responsive\" width=\"30em\" height=\"30em\" src=\"../assets/bell2.png\">
                  </a>";
       }
 //    Picture that's displayed if you don't have a notification
       else{
         echo "<a class=\"navbar-brand float-right\" href=\"notificationPage.php\">
-                <img class=\"img-responsive\" width=\"30em\" height=\"30em\" src=\"../bell.png\">
+                <img class=\"img-responsive\" width=\"30em\" height=\"30em\" src=\"../assets/bell.png\">
              </a>";
       }
     ?>

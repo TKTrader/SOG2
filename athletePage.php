@@ -35,7 +35,7 @@ require "header.php";
 
 <div class="bell">
     <a class="navbar-brand float-right" href="notificationPage.php">
-          <img src="bell.png" height="30" alt="">
+          <img src="assets/bell.png" height="30" alt="">
         </a>
 </div>
 </nav>
