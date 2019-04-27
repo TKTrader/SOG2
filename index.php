@@ -86,8 +86,7 @@ require 'header.php';
   <img class="card-img" src="assets/rio4.png" alt="Card image" style="width: auto; height: 55em;">
   <div class="card-img-overlay" style="margin: 25%; left: -12%;">
     <h2 class="card-title">Event Tickets!</h2>
-    <p class="card-text">Learn more on how you can purcharse tickets to <br> your favortie olympic event.</p>
-    <button type="button" class="btn btn-primary">Learn more</button>
+    <p class="card-text">Sign in to purchase tickets <br> your favortie olympic event!</p>
   </div>
 </div>
 
