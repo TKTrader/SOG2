@@ -47,7 +47,17 @@ if ($access != 'A') {
       <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
     </span>
 </nav>
+<h3>Your Schedule</h3>
 <table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Location</th>
+        </tr>
+    </thead>
     <?php
         //Retrieve all events this athlete is competing in, their autograph sessions, and events they bought tickets to and order them by date and time.
         $query2 = "SELECT * FROM olympicevent WHERE ID IN 
