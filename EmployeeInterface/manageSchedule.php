@@ -48,18 +48,18 @@
       $location_SELECTED = mysqli_real_escape_string($mysqli, $_POST['location']);
       $type_SELECTED = mysqli_real_escape_string($mysqli, $_POST['type']);
       $price_SELECTED = mysqli_real_escape_string($mysqli, $_POST['price']);
-      
+
       //update user if their ticket was changed
       $update_ticket_holders = "UPDATE users SET notify = 1 WHERE ID IN (SELECT customerID FROM ticketorder WHERE eventID = '$row_SELECTED')";
       //update athlete if their event was changed
       $update_athletes = "UPDATE users SET notify = 1 WHERE ID IN (SELECT athleteID FROM athleteEvent WHERE eventID = '$row_SELECTED')";
       mysqli_query($mysqli, $update_ticket_holders);
       mysqli_query($mysqli, $update_athletes);
-        
+
       //Move old information to an archive (updatedEvent table)
       $archive_query = "INSERT INTO updatedevent(olympicEventID, name, date, time, location, type, category, ticketPrice) SELECT * FROM olympicEvent WHERE id = '$row_SELECTED'";
       mysqli_query($mysqli, $archive_query);
-        
+
       //Search to make sure there is a query 1st
       $search_it_exists = "SELECT id FROM olympicEvent WHERE id = '$row_SELECTED'";
       $run_query1 = mysqli_query($mysqli, $search_it_exists);
@@ -98,7 +98,7 @@
       <a class="nav-item nav-link" href="reserveTickets.php">Reserve Tickets</a>
       <a class="nav-item nav-link" href="viewOrders.php">View Orders</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
-      <a class="nav-item nav-link" href="athlete_event_registration.php">Athlete Event Registration</a>
+      <a class="nav-item nav-link" href="athlete_event_registration.php">Event Registration</a>
       <a class="nav-item nav-link" href="../logout.php"> Logout</a>
     </div>
   </div>

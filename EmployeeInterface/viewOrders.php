@@ -23,7 +23,7 @@ if ($access != 'E') {
       <a class="nav-item nav-link" href="reserveTickets.php">Reserve Tickets</a>
       <a class="nav-item nav-link active" href="viewOrders.php">View Orders<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
-      <a class="nav-item nav-link" href="athlete_event_registration.php">Athlete Event Registration</a>
+      <a class="nav-item nav-link" href="athlete_event_registration.php">Event Registration</a>
       <a class="nav-item nav-link" href="../logout.php">Logout</a>
     </div>
   </div>
@@ -65,12 +65,12 @@ if ($access != 'E') {
                 $ticketOrderSql  = "SELECT * FROM `ticketorder` WHERE customerID = '$customerId'";
                 $ticketOrderResult = mysqli_query($mysqli, $ticketOrderSql);
                 echo '<div class="table-responsive-sm table-responsive-md">
-                        <table class="table table-bordered table-hover" id="ticketOrdersTable"> 
+                        <table class="table table-bordered table-hover" id="ticketOrdersTable">
                             <thead class="thead-light">
-                                <tr class=\'ticketOrdersTableRow\'> 
-                                    <th scope="col" class=\'ticketOrdersHeader\'> <font face="Arial">Event Name</font> </th> 
-                                    <th scope="col" class=\'ticketOrdersHeader\'> <font face="Arial"># of Tickets</font> </th> 
-                                    <th scope="col" class=\'ticketOrdersHeader\'> <font face="Arial">Time Stamp</font> </th> 
+                                <tr class=\'ticketOrdersTableRow\'>
+                                    <th scope="col" class=\'ticketOrdersHeader\'> <font face="Arial">Event Name</font> </th>
+                                    <th scope="col" class=\'ticketOrdersHeader\'> <font face="Arial"># of Tickets</font> </th>
+                                    <th scope="col" class=\'ticketOrdersHeader\'> <font face="Arial">Time Stamp</font> </th>
                                 </tr>
                             </thead>
                         <tbody>';
@@ -83,9 +83,9 @@ if ($access != 'E') {
                     $eventNameSql = "SELECT name FROM `olympicevent` WHERE id = '$eventId'";
                     $eventNameResult = mysqli_query($mysqli, $eventNameSql);
                     $eventName = mysqli_fetch_assoc($eventNameResult)["name"];
-                    echo '<tr class=\'row'.$value.'\' value='.$value.'> 
-                            <td scope="row" id=\'eventId'.$value.'\' value='.$value.'>'.$eventName.'</td> 
-                            <td id=\'numTickets'.$value.'\' value='.$value.'>'.$numTickets.'</td> 
+                    echo '<tr class=\'row'.$value.'\' value='.$value.'>
+                            <td scope="row" id=\'eventId'.$value.'\' value='.$value.'>'.$eventName.'</td>
+                            <td id=\'numTickets'.$value.'\' value='.$value.'>'.$numTickets.'</td>
                             <td id=\'orderTimeStamp'.$value.'\' value='.$value.'>'.$orderTimeStamp.'</td>
                         </tr>';
                     $value++;

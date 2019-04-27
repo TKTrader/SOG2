@@ -4,13 +4,13 @@
 
   // getting numTickets
   $numberOfTickets = mysqli_real_escape_string($mysqli, number_format($_POST['numOfTickets']));
-  
+
   $ticketOrderPrice = 0;
-  
+
   // getting orderTimeStamp
   date_default_timezone_set("America/New_York");
   $ticketOrderTimeStamp = mysqli_real_escape_string($mysqli, date("Y-m-d H:i:s"));
-  
+
   // getting customerId
   $fName = $_SESSION['first_name'];
   $customerIdSql = "SELECT id FROM `users` WHERE firstName = '$fName'";
