@@ -18,7 +18,7 @@ if ($access != 'E') {
       <a class="nav-item nav-link" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link active" href="manageAthletes.php">Manage Athletes</a>
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
-      <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
+      <a class="nav-item nav-link" href="reserveTickets.php">Reserve Tickets</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
       <a class="nav-item nav-link" href="../logout.php"> Logout</a>
     </div>
@@ -48,7 +48,7 @@ if ($access != 'E') {
 
 <div class="form">
 <div class="container">
-  <h1>Error</h1>
+  <h1>Database Error</h1>
   <?php echo $_SESSION['message']; ?>
   <div class="jumbotron" style="background-color:#ffffff;">
   <p><b><h3>Navigate:</h3></b></p>

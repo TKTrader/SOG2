@@ -36,8 +36,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       //   echo "firstName: ".$firstName." <br /> lastName: ".$lastName." <br /> country: ".$country.
       //   "<br /> DOB: ".$dateOfBirth."<br /> height: ".$height.
       //   "<br /> weight: ".$weight."<br />password: ".$pwd."<br/> email: ".$email;
-      mysqli_query($mysqli, $insertAthleteDB);
-
+      mysqli_query($mysqli, $insertAthleteDB); 
       // insert secondary Athlete info into athletes table   
       $insertAthleteDB2 = "INSERT INTO athletes(id, country, heightFeet, heightInch, wgt, DOB)"
       ."VALUES ((SELECT id FROM users WHERE users.firstName='$firstName' AND users.lastName='$lastName'), '$country', '$heightFeet','$heightInch', '$weight',  '$dateOfBirth')";
@@ -48,7 +47,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         $_SESSION['message'] = 'Database Input Error';
         header("location: athleteError.php");
       } else {
-        echo "SUCCESS!!";
+        $_SESSION['message'] = 'Athlete added';
+        header("location: dbSuccess.php");
       }
   }
 }
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <a class="nav-item nav-link" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link active" href="manageAthletes.php">Manage Athletes</a>
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
-      <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
+      <a class="nav-item nav-link" href="reserveTickets.php">Reserve Tickets</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
       <a class="nav-item nav-link" href="athlete_event_registration.php">Athlete Event Registration</a>
       <a class="nav-item nav-link" href="../logout.php"> Logout</a>
@@ -197,6 +197,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     </tbody>
 </table>
 </div>
+</body>
 
 <!-- Lower Navigation Panel -->
 <div class="container" border: 10px solid gray;>
@@ -206,4 +207,3 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     <a class="btn btn-primary btn-lg btn-block" href="deleteAthlete.php" style="background-color: #ff0000;">Delete Athlete</button>
     <!-- </div>
 </div> -->
-</body>

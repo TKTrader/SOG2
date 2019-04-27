@@ -22,6 +22,15 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       //   // check fields
         echo "firstName: ".$firstName." <br /> lastName: ".$lastName." id: ".$id;
       mysqli_query($mysqli, $deleteAthleteDB);
+
+      $result= mysqli_query($mysqli, $deleteAthleteDB);
+      if (!$result) {
+        $_SESSION['message'] = 'Database Deletion Error';
+        header("location: athleteError.php");
+      } else {
+        $_SESSION['message'] = 'Athlete Deleted!';
+        header("location: dbSuccess.php");
+      }
   }
 }
 ?>
@@ -36,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <a class="nav-item nav-link" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link active" href="manageAthletes.php">Manage Athletes</a>
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
-      <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
+      <a class="nav-item nav-link" href="reserveTickets.php">Reserve Tickets</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Managa Data Lists</a>
       <a class="nav-item nav-link" href="athlete_event_registration.php">Athlete Event Registration</a>
       <a class="nav-item nav-link" href="../logout.php"> Logout</a>
