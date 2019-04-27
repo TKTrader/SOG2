@@ -8,8 +8,8 @@ if ($access != 'E') {
     header("location: ../Controllers/error.php");
 }
 if ($_SERVER['REQUEST_METHOD']=='POST') {
-    if (isset($_POST['confirmPurchaseBtn'])) { 
-        include __DIR__.'/processTicket.php';        
+    if (isset($_POST['confirmPurchaseBtn'])) {
+        include __DIR__.'/processTicket.php';
     }
 }
 ?>
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <a class="nav-item nav-link active" href="reserveTickets.php">Reserve Tickets<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="viewOrders.php">View Orders</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
-      <a class="nav-item nav-link" href="athlete_event_registration.php">Athlete Event Registration</a>
+      <a class="nav-item nav-link" href="athlete_event_registration.php">Event Registration</a>
       <a class="nav-item nav-link" href="../logout.php">Logout</a>
     </div>
   </div>
@@ -64,15 +64,15 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                 $mysqli -> set_charset("utf8");
                 $query = "SELECT * FROM olympicevent";
                 echo '<div class="table-responsive-sm table-responsive-md">
-                        <table class="table table-bordered table-hover" id="ticketTable"> 
+                        <table class="table table-bordered table-hover" id="ticketTable">
                             <thead class="thead-light">
-                                <tr class=\'ticketTableHeaderRow\'> 
-                                    <th scope="col" style="display:none;"> <font face="Arial">ID</font> </th> 
-                                    <th scope="col"> <font face="Arial">Event Name</font> </th> 
-                                    <th scope="col"> <font face="Arial">Date</font> </th> 
-                                    <th scope="col"> <font face="Arial">Time</font> </th> 
-                                    <th scope="col"> <font face="Arial">Location</font> </th> 
-                                    <th scope="col"> <font face="Arial">Type</font> </th> 
+                                <tr class=\'ticketTableHeaderRow\'>
+                                    <th scope="col" style="display:none;"> <font face="Arial">ID</font> </th>
+                                    <th scope="col"> <font face="Arial">Event Name</font> </th>
+                                    <th scope="col"> <font face="Arial">Date</font> </th>
+                                    <th scope="col"> <font face="Arial">Time</font> </th>
+                                    <th scope="col"> <font face="Arial">Location</font> </th>
+                                    <th scope="col"> <font face="Arial">Type</font> </th>
                                     <th scope="col"> <font face="Arial">Category</font> </th>
                                     <th scope="col"></td>
                                 </tr>
@@ -88,24 +88,24 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                         $location = $row["location"];
                         $type = $row["type"];
                         $category = $row["category"];
-                        echo '<tr value='.$value.'> 
-                                <td id=\'ticketEventId'.$value.'\' value='.$value.' style="display:none;">'.$id.'</td> 
-                                <td id=\'ticketEventName'.$value.'\' value='.$value.'>'.$eventName.'</td> 
-                                <td id=\'ticketDate'.$value.'\' value='.$value.'>'.$date.'</td> 
-                                <td id=\'ticketTime'.$value.'\' value='.$value.'>'.$time.'</td> 
-                                <td id=\'ticketLocation'.$value.'\' value='.$value.'>'.$location.'</td> 
-                                <td id=\'ticketType'.$value.'\' value='.$value.'>'.$type.'</td> 
-                                <td id=\'ticketCategory'.$value.'\' value='.$value.'>'.$category.'</td> 
+                        echo '<tr value='.$value.'>
+                                <td id=\'ticketEventId'.$value.'\' value='.$value.' style="display:none;">'.$id.'</td>
+                                <td id=\'ticketEventName'.$value.'\' value='.$value.'>'.$eventName.'</td>
+                                <td id=\'ticketDate'.$value.'\' value='.$value.'>'.$date.'</td>
+                                <td id=\'ticketTime'.$value.'\' value='.$value.'>'.$time.'</td>
+                                <td id=\'ticketLocation'.$value.'\' value='.$value.'>'.$location.'</td>
+                                <td id=\'ticketType'.$value.'\' value='.$value.'>'.$type.'</td>
+                                <td id=\'ticketCategory'.$value.'\' value='.$value.'>'.$category.'</td>
                                 <td class="text-center"><button type=\'button\' class=\'btn\' data-toggle="modal" data-target="#purchaseModal" value='.$value.' onClick="setCurrentTicket(this)">Reserve Ticket</button></td>
                             </tr>';
                         $value++;
                     }
                     echo '</tbody></table></div>';
-                } 
+                }
             ?>
         </div>
         </body>
-        
+
         <script>
             var globalVal;
             var currEventName;

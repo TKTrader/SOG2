@@ -36,8 +36,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       //   echo "firstName: ".$firstName." <br /> lastName: ".$lastName." <br /> country: ".$country.
       //   "<br /> DOB: ".$dateOfBirth."<br /> height: ".$height.
       //   "<br /> weight: ".$weight."<br />password: ".$pwd."<br/> email: ".$email;
-      mysqli_query($mysqli, $insertAthleteDB); 
-      // insert secondary Athlete info into athletes table   
+      mysqli_query($mysqli, $insertAthleteDB);
+      // insert secondary Athlete info into athletes table
       $insertAthleteDB2 = "INSERT INTO athletes(id, country, heightFeet, heightInch, wgt, DOB)"
       ."VALUES ((SELECT id FROM users WHERE users.firstName='$firstName' AND users.lastName='$lastName'), '$country', '$heightFeet','$heightInch', '$weight',  '$dateOfBirth')";
       // echo "$insertAthleteDB2";
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
       <a class="nav-item nav-link" href="reserveTickets.php">Reserve Tickets</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
-      <a class="nav-item nav-link" href="athlete_event_registration.php">Athlete Event Registration</a>
+      <a class="nav-item nav-link" href="athlete_event_registration.php">Event Registration</a>
       <a class="nav-item nav-link" href="../logout.php"> Logout</a>
     </div>
   </div>
@@ -175,7 +175,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         $result = mysqli_query($mysqli,$query1) or die('Query fail: ' . mysqli_error());
     ?>
     <tbody>
-      <?php while ($row = mysqli_fetch_array($result)) { 
+      <?php while ($row = mysqli_fetch_array($result)) {
         $fullName = $row['firstName']." ".$row['lastName'];
         $height = $row['heightFeet']."'".$row['heightInch']."\"";
         $id = $row['id'];
