@@ -36,8 +36,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       //   echo "firstName: ".$firstName." <br /> lastName: ".$lastName." <br /> country: ".$country.
       //   "<br /> DOB: ".$dateOfBirth."<br /> height: ".$height.
       //   "<br /> weight: ".$weight."<br />password: ".$pwd."<br/> email: ".$email;
-      mysqli_query($mysqli, $insertAthleteDB); 
-      // insert secondary Athlete info into athletes table   
+      mysqli_query($mysqli, $insertAthleteDB);
+      // insert secondary Athlete info into athletes table
       $insertAthleteDB2 = "INSERT INTO athletes(id, country, heightFeet, heightInch, wgt, DOB)"
       ."VALUES ((SELECT id FROM users WHERE users.firstName='$firstName' AND users.lastName='$lastName'), '$country', '$heightFeet','$heightInch', '$weight',  '$dateOfBirth')";
       // echo "$insertAthleteDB2";
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 ?>
 <!-- navbar -->
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #009900;">
-  <a class="navbar-brand navbar-dark"><font color="white">Summer Olympic Games</font></a>
+  <a class="navbar-brand navbar-dark" style="color:white;">Summer Olympic Games</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -65,11 +65,16 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <a class="nav-item nav-link active" href="manageAthletes.php">Manage Athletes</a>
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
       <a class="nav-item nav-link" href="reserveTickets.php">Reserve Tickets</a>
+      <a class="nav-item nav-link" href="viewOrders.php">View Orders</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
-      <a class="nav-item nav-link" href="athlete_event_registration.php">Athlete Event Registration</a>
+      <a class="nav-item nav-link" href="athlete_event_registration.php">Event Registration</a>
       <a class="nav-item nav-link" href="../logout.php"> Logout</a>
     </div>
   </div>
+
+  <span class="navbar-text">
+    <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
+  </span>
     <?php
 //    Does athlete have an event he is competing in that got updated
       $query1 = "SELECT notify FROM users WHERE email = \"".$_SESSION['email']."\"";
@@ -78,19 +83,16 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 //    Picture that's displayed if you have a notification
       if($notification[0]==1) {
         echo "<a class=\"navbar-brand float-right\" href=\"notificationPage.php\">
-                    <img class=\"img-responsive\" width=\"70px\" height=\"40px\" src=\"../assets/notification.jpg\">
+                    <img class=\"img-responsive\" width=\"30em\" height=\"30em\" src=\"../bell2.png\">
                  </a>";
       }
 //    Picture that's displayed if you don't have a notification
       else{
         echo "<a class=\"navbar-brand float-right\" href=\"notificationPage.php\">
-                <img class=\"img-responsive\" width=\"70px\" height=\"40px\" src=\"../assets/rio-2016-logo.png\">
+                <img class=\"img-responsive\" width=\"30em\" height=\"30em\" src=\"../bell.png\">
              </a>";
       }
     ?>
-  <span class="navbar-text">
-    <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
-  </span>
 </nav>
 
 <!-- main page with dropdowns, etc -->
@@ -175,7 +177,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         $result = mysqli_query($mysqli,$query1) or die('Query fail: ' . mysqli_error());
     ?>
     <tbody>
-      <?php while ($row = mysqli_fetch_array($result)) { 
+      <?php while ($row = mysqli_fetch_array($result)) {
         $fullName = $row['firstName']." ".$row['lastName'];
         $height = $row['heightFeet']."'".$row['heightInch']."\"";
         $id = $row['id'];
