@@ -25,24 +25,11 @@ if ($access != 'A') {
   <span class="navbar-text">
       <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
   </span>
-    <?php
-//    Does athlete have an event he is competing in that got updated
-      $query1 = "SELECT notify FROM users WHERE email = \"".$_SESSION['email']."\"";
-//    Has the user purchased a ticket to an event that got updated
-      $notification = mysqli_fetch_array(mysqli_query($mysqli, $query1));
-//    Picture that's displayed if you have a notification
-      if($notification[0]==1) {
-        echo "<a class=\"navbar-brand float-right\" href=\"notificationPage.php\">
-                    <img class=\"img-responsive\" width=\"30em\" height=\"30em\" src=\"../bell2.png\">
-                 </a>";
-      }
-//    Picture that's displayed if you don't have a notification
-      else{
-        echo "<a class=\"navbar-brand float-right\" href=\"notificationPage.php\">
-                <img class=\"img-responsive\" width=\"30em\" height=\"30em\" src=\"../bell.png\">
-             </a>";
-      }
-  ?>
+  <div class="bell">
+    <a class="navbar-brand float-right" href="notificationPage.php">
+          <img src="bell.png" height="30" alt="">
+        </a>
+</div>
 </nav>
 </body>
 <body>
