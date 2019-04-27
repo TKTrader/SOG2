@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         $location_SELECTED = mysqli_real_escape_string($mysqli, $_POST['location']);
         $price_SELECTED = mysqli_real_escape_string($mysqli, $_POST['price']);
         $insertAutographQuery1 = "INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice)"
-        ."VALUES ('$full_name', '$date_SELECTED', '$time_SELECTED', '$location_SELECTED',  'autog', 'autograph',  '$price_SELECTED')";
+        ."VALUES ('$full_name', '$date_SELECTED', '$time_SELECTED', '$location_SELECTED',  'autog', 'Autograph',  '$price_SELECTED')";
         mysqli_query($mysqli, $insertAutographQuery1);
     }
 }
@@ -61,11 +61,8 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   </span>
 </nav>
 <body>      
-    
-  <button type="button" onclick="toggle_visibility('tog');" class="btn btn-outline-success btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Add</button>
   
   <!--ADD SECTION-->
-  <div id="tog" style="display:none;" >
     <div class = "AUI_autographContainer">
       <form class = "schedule" action="autographPage.php" method="post" accept-charset="utf-8">
         <h4>ADD</h4>
@@ -95,7 +92,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       </form>
       <hr>
     </div>
-  </div>
 </body>
 
 

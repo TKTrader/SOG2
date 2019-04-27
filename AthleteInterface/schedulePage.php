@@ -47,6 +47,21 @@ if ($access != 'A') {
       <a class="nav-item nav-link" style="color: #ffffff"> <?php echo "UserID: ".$_SESSION['first_name']." ".$_SESSION['last_name']; ?> </a>
     </span>
 </nav>
+<table class="table">
+    <?php
+        //Retrieve all events this athlete is competing in, their autograph sessions, and events they bought tickets to and order them by date and time.
+        $query2 = "SELECT * FROM olympicevent WHERE ID IN 
+            (SELECT eventID FROM athleteEvent WHERE athleteID IN 
+                (SELECT ID FROM users WHERE email = \"".$_SESSION['email']."\")) 
+            OR name = \"".$_SESSION['first_name'].$_SESSION['last_name']."\" 
+                OR ID IN 
+                (SELECT eventID FROM ticketOrder WHERE customerID IN 
+                    (SELECT ID FROM USERS WHERE email = \"".$_SESSION['email']."\")) ORDER BY date ASC, time ASC;";
+        $query2_result = mysqli_query($mysqli, $query2);
 
-
+        while($row2 = mysqli_fetch_array($query2_result)) {
+            echo "<tr><td>".$row2['name']."</td><td>".$row2['category']."</td><td>".$row2['date']."</td><td>".$row2['time']."</td><td>".$row2['location']."</td></tr>";
+        }
+    ?>
+</table>
 </body>

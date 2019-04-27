@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link" href="index.php">Dashboard</a>
-      <a class="nav-item nav-link" href=".php">Autographs</a>
+      <a class="nav-item nav-link" href="autographPage.php">Autographs</a>
       <a class="nav-item nav-link active" href="reserveTickets.php">Tickets<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="schedulePage.php">Schedule</a>
       <a class="nav-item nav-link" href="viewOrders.php">View Orders</a>

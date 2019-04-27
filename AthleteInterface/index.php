@@ -52,7 +52,7 @@ if ($access != 'A') {
     <h1>Athlete Dashboard</h1>    
         <h2>Select an action:</h2>
         <a class="btn btn-primary btn-lg btn-block" href="reserveTickets.php" style="background-color: #ff1a1a;">Reserve Tickets</button>
-        <a class="btn btn-primary btn-lg btn-block" href="modifySchedule.php" style="background-color: #ff1a1a;">Schedule Autograph Session</button>
+        <a class="btn btn-primary btn-lg btn-block" href="autographPage.php" style="background-color: #ff1a1a;">Schedule Autograph Session</button>
         <a class="btn btn-primary btn-lg btn-block" href="schedulePage.php" style="background-color: #ff1a1a;">View Schedule</button>
     <!-- </div>
 </div> -->
