@@ -11,7 +11,7 @@ if ($access != 'E') {
 // Button: Modify functionality
 if ($_SERVER['REQUEST_METHOD']=='POST') {
     if (isset($_POST['modifyAthleteButton'])) {
-        echo "modifyAthleteButton Working";
+        // echo "modifyAthleteButton Working";
             // Store form variables with security to prevent SQL injection
         $id = mysqli_real_escape_string($mysqli, $_POST['id']);
         $firstName = mysqli_real_escape_string($mysqli, $_POST['firstName']);
@@ -56,13 +56,14 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         // echo "firstName: ".$firstName." <br/> lastName: ".$lastName." <br/> country: ".$country.
         // "<br/> DOB: ".$dateOfBirth."<br/> height: ".$heightFeet."<br/> heightInch: ".$heightInch."<br/> id: ".
         // "<br/> weight: ".$weight."<br/>password: ".$pwd."<br/> email: ".$email;
-
-    //   if (!$result) {
-    //     $_SESSION['message'] = 'Database Input Error';
-    //     header("location: athleteError.php");
-    //   } else {
-    //     echo "SUCCESS!!";
-    //   }
+      $result= mysqli_query($mysqli, $modifyAthleteDB);
+      if (!$result) {
+        $_SESSION['message'] = 'Database Input Error';
+        header("location: athleteError.php");
+      } else {
+        $_SESSION['message'] = 'Athlete modified!';
+        header("location: dbSuccess.php");
+      }
     }
 }
 ?>
@@ -78,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <a class="nav-item nav-link" href="index.php">Dashboard<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link active" href="manageAthletes.php">Manage Athletes</a>
       <a class="nav-item nav-link" href="manageSchedule.php">Manage Schedule</a>
-      <a class="nav-item nav-link" href="manageTickets.php">Manage Tickets</a>
+      <a class="nav-item nav-link" href="reserveTickets.php">Reserve Tickets</a>
       <a class="nav-item nav-link" href="manageData_Lists.php">Manage Data Lists</a>
       <a class="nav-item nav-link" href="athlete_event_registration.php">Athlete Event Registration</a>
       <a class="nav-item nav-link" href="../logout.php"> Logout</a>
