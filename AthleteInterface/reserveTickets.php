@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                 currTicketEventId = document.getElementById('ticketEventId' + globalVal);
                 currTicketEventIdText = currTicketEventId.innerHTML;
                 document.getElementById('purchaseModalTitle').innerHTML = "Event: " + currEventNameText;
-                document.getElementById('confirmTicketPurchaseBtn').innerHTML = "Confirm TTicket";
+                document.getElementById('confirmTicketPurchaseBtn').innerHTML = "Confirm Ticket";
                 document.getElementById('formTicketOrderEventId').innerHTML = currTicketEventIdText;
                 document.getElementById('formTicketOrderEventId').value = currTicketEventIdText;
             }
