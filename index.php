@@ -55,7 +55,7 @@ require 'header.php';
   <img class="card-img-top" src="assets/athlete.png" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">Athletes</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">View this season's Olympic athletes!</p>
     <a href="athletePage.php" class="btn btn-primary">Learn more</a>
   </div>
 </div>
@@ -65,7 +65,7 @@ require 'header.php';
   <img class="card-img-top" src="assets/schedule.png" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">Schedule</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">See upcoming competitions, award ceremonies and more! Be sure to reserve your tickets soon!</p>
     <a href="schedulePage.php" class="btn btn-primary">Learn more</a>
   </div>
 </div>
@@ -73,8 +73,8 @@ require 'header.php';
 <div class="h-50 card" style="width: auto; border: none;">
   <img class="card-img-top" src="assets/sports.png" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Events</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 class="card-title"></br></br>Events</h5>
+    <p class="card-text">This summer's featured sports: </br>Track and field, archery, equestrian, swimming and more</p>
     <a href="eventsPage.php" class="btn btn-primary">Learn more</a>
   </div>
 

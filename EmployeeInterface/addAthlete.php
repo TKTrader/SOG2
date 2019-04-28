@@ -27,8 +27,10 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       // Check if user already exists
       $check = $mysqli->query("SELECT * FROM users WHERE email='$email'") or die($mysqli->error());
       if ($check->num_rows > 0) {
-        echo "Athlete already exists";
-        mysqli_free_result($check);
+        $_SESSION['message'] =$firstName.' '.$lastName.' already exists in database!';
+        header("location: athleteError.php");
+        // echo "Athlete already exists";
+        // mysqli_free_result($check);
       }
       // insert Athlete info into user table
       $insertAthleteDB = "INSERT INTO users(firstName, lastName, email, password, access)"."VALUES ('$firstName', '$lastName', '$email', '$pwd',  '$access')";
@@ -44,10 +46,12 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       // echo "id: ".$id." <br /> country: ".$country."<br /> height: ".$height."<br /> weight: ".$weight."<br />DOB: ".$dateOfBirth;
       $result= mysqli_query($mysqli, $insertAthleteDB2);
       if (!$result) {
-        $_SESSION['message'] = 'Database Input Error';
+        // $_SESSION['message'] = 'Database Input Error';
+        $_SESSION['message'] =$firstName.' '.$lastName.' already exists in database or some other input error!';
         header("location: athleteError.php");
       } else {
-        $_SESSION['message'] = 'Athlete added';
+        // $_SESSION['message'] = 'Athlete added';
+        $_SESSION['message'] =$firstName.' '.$lastName.' successfully added to athlete database!';
         header("location: athleteSuccess.php");
       }
   }

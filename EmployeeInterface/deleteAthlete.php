@@ -17,19 +17,16 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       $id = mysqli_real_escape_string($mysqli, $_POST['id']);
       $access = "A";
 
-      // delete Athlete from user table
+      // check if entryformat correct
+      $checkDB = $mysqli->query("SELECT * FROM users WHERE id='$id' AND firstName='$firstName' AND lastName='$lastName'") or die($mysqli->error());
       $deleteAthleteDB = "DELETE FROM users WHERE id='$id' AND firstName='$firstName' AND lastName='$lastName'";
-      //   // check fields
-        // echo "firstName: ".$firstName." <br /> lastName: ".$lastName." id: ".$id;
-      mysqli_query($mysqli, $deleteAthleteDB);
-
-      $result= mysqli_query($mysqli, $deleteAthleteDB);
-      if (!$result) {
-        $_SESSION['message'] = 'Database Deletion Error';
-        header("location: athleteError.php");
-      } else {
-        $_SESSION['message'] = 'Athlete Deleted!';
+      if ($checkDB->num_rows > 0) {
+        mysqli_query($mysqli, $deleteAthleteDB);
+        $_SESSION['message'] ='ID: '.$id.' '.$firstName.' '.$lastName.' successfully deleted!';
         header("location: athleteSuccess.php");
+      } else {
+        $_SESSION['message'] = 'Database Deletion Error: ID: '.$id.' '.$firstName.' '.$lastName.' does not exist!';
+        header("location: athleteError.php");
       }
   }
 }
