@@ -53,10 +53,57 @@ if ($access != 'E') {
 <div class="container">
   <h1>Database Modification Successful</h1>
   <?php echo $_SESSION['message']; ?>
+  
+  <!-- Display table of athletes in database -->
+<div class="container">
+<p><b><h2>Athlete Database</h2></b></p>
+<table class="table table-striped table-bordered table-hover" id="dataTable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Height</th>
+            <th>Weight</th>
+        </tr>
+    </thead>
+    <!-- Populate table of athletes with SQL -->
+    <?php
+        $query1 = "SELECT * FROM users INNER JOIN athletes ON users.id=athletes.id ORDER BY lastName ASC";
+        $result = mysqli_query($mysqli,$query1) or die('Query fail: ' . mysqli_error());
+    ?>
+    <tbody>
+      <?php while ($row = mysqli_fetch_array($result)) {
+        $fullName = $row['firstName']." ".$row['lastName'];
+        $height = $row['heightFeet']."'".$row['heightInch']."\"";
+        $id = $row['id'];
+        $country =$row['country'];
+        $email = $row['email'];
+        $dob = $row['DOB'];
+        $weight = $row['wgt'];
+
+        echo "<tr>
+        <td>" . $id . "</td>
+        <td>" . $fullName . "</td>
+        <td>" . $country . "</td>
+        <td>" . $email . "</td>
+        <td>" . $dob . "</td>
+        <td>" . $height . "</td>
+        <td>" . $weight . "</td>
+      </tr>"; }
+  ?>
+    </tbody>
+</table>
+</div>
+</body>
+
+<!-- lower navigation panel -->
   <div class="jumbotron" style="background-color:#ffffff;">
   <p><b><h3>Navigate:</h3></b></p>
     <a class="btn btn-primary btn-lg btn-block" href="addAthlete.php" style="background-color: #009900;">Register New Athlete</button>
     <a class="btn btn-primary btn-lg btn-block" href="modifyAthlete.php" style="background-color: #0099ff;">Modify Athlete</button>
     <a class="btn btn-primary btn-lg btn-block" href="deleteAthlete.php" style="background-color: #ff0000;">Delete Athlete</button>
     <!-- </div> -->
-</div>
+<!-- </div> -->

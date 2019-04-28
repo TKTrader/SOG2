@@ -59,4 +59,4 @@ if ($access != 'E') {
     <a class="btn btn-primary btn-lg btn-block" href="modifyAthlete.php" style="background-color: #0099ff;">Modify Athlete</button>
     <a class="btn btn-primary btn-lg btn-block" href="deleteAthlete.php" style="background-color: #ff0000;">Delete Athlete</button>
     <!-- </div> -->
-</div>
+<!-- </div> -->

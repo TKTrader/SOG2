@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         header("location: athleteError.php");
       } else {
         $_SESSION['message'] = 'Athlete added';
-        header("location: dbSuccess.php");
+        header("location: athleteSuccess.php");
       }
   }
 }
@@ -131,7 +131,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       <div class="form-group col-md-6">
         <label for="dob">Date of Birth</label>
         <input type="date" class="form-control" name ="dob" id="dob" placeholder="Enter date of birth">
-        <small id="dob" class="form-text text-muted">MM-DD-YYYY</small>
       </div>
     </div>
       <div class="form-row">
