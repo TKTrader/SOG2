@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS users(
     password VARCHAR(64) NOT NULL,
     access VARCHAR(1) DEFAULT 'P', # A:Athlete, Employee:E, PublicUser:P
     phone VARCHAR(24),
-    notify BIT,
+    notify BIT DEFAULT 0,
     PRIMARY KEY (id)
 ) ENGINE=InnoDB
 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

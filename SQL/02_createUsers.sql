@@ -29,7 +29,7 @@ INSERT INTO users(firstName, lastName, email, password, access, phone, notify)
 VALUES(
   'Mark',
     'Spitz',
-    'mspitz@sogs.com',
+    'MarkSpitz@sogs.com',
     '$2y$10$5ld.DVEncVaaDLI8ViH3xecaA7letUf7XGLrnI9FFsC9dGpNFzJUW',
     'A',
     '(666)946-4591',
@@ -39,7 +39,7 @@ INSERT INTO users(firstName, lastName, email, password, access, phone, notify)
 VALUES(
   'Isabell',
     'Werth',
-    'iwerth@sogs.com',
+    'IsabellWerth@sogs.com',
     '$2y$10$5ld.DVEncVaaDLI8ViH3xecaA7letUf7XGLrnI9FFsC9dGpNFzJUW',
     'A',
     '(666)727-0294',
@@ -49,7 +49,7 @@ INSERT INTO users(firstName, lastName, email, password, access, phone, notify)
 VALUES(
   'Jennifer',
     'Thompson',
-    'jthompson@sogs.com',
+    'JenniferThompson@sogs.com',
     '$2y$10$5ld.DVEncVaaDLI8ViH3xecaA7letUf7XGLrnI9FFsC9dGpNFzJUW',
     'A',
     '(666)127-5114',
@@ -59,7 +59,7 @@ INSERT INTO users(firstName, lastName, email, password, access, phone, notify)
 VALUES(
   'Birgit',
     'Fischer',
-    'bfischer@sogs.com',
+    'BirgitFischer@sogs.com',
     '$2y$10$5ld.DVEncVaaDLI8ViH3xecaA7letUf7XGLrnI9FFsC9dGpNFzJUW',
     'A',
     '(666)421-5134',
@@ -79,7 +79,7 @@ INSERT INTO users(firstName, lastName, email, password, access, phone, notify)
 VALUES(
   'Larisa',
     'Latynina',
-    'llatynina@sogs.com',
+    'LarisaLatynina@sogs.com',
     '$2y$10$5ld.DVEncVaaDLI8ViH3xecaA7letUf7XGLrnI9FFsC9dGpNFzJUW',
     'A',
     '(666)785-5392',
@@ -201,7 +201,7 @@ INSERT INTO users(firstName, lastName, email, password, access, phone, notify)
 VALUES(
     'Joao',
     'Gilberto',
-    'employee3@sogs.com',
+    'JoaoGilberto@sogs.com',
     '$2y$10$cxnZfdYMy4BY9d8VDLOfQ.TcBf/M3doiwbv7QOkMVsFDBVT9TWLX2',
     'E',
     '(800)656-5678 x567',
