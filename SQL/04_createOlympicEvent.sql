@@ -18,6 +18,99 @@
 INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice)
 VALUES(
   'Race WOMEN',
+    '2016-08-03',
+    '13:00:00',
+    'Arena 1',
+    'comp',
+    'Cycling BMX',
+    '20.00'
+    );
+
+INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice)
+VALUES(
+  'Race MEN',
+    '2016-08-04',
+    '13:00:00',
+    'Arena 1',
+    'comp',
+    'Cycling BMX',
+    '20.00'
+    );
+
+INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice)
+VALUES(
+  'Individual (olympic round 70M) MEN',
+    '2016-08-05',
+    '12:00:00',
+    'Arena 1',
+    'comp',
+    'Archery',
+    '20.00'
+    );
+
+INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice)
+VALUES(
+    'Individual (olympic round 70M) WOMEN',
+    '2016-08-06',
+    '12:00:00',
+    'Arena 2',
+    'comp',
+    'Archery',
+    '25.00'
+    );
+INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice)
+VALUES(
+    '10M Platform WOMEN',
+    '2016-08-07',
+    '13:00:00',
+    'Arena 1',
+    'comp',
+    'Diving',
+    '15.00'
+    );
+INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice)
+VALUES(
+    'Singles Badminton MEN',
+    '2016-08-08',
+    '13:00:00',
+    'Arena 2',
+    'comp',
+    'Badminton',
+    '20.00'
+    );
+INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice)
+VALUES(
+    'Singles Badminton WOMEN',
+    '2016-08-09',
+    '13:00:00',
+    'Arena 2',
+    'comp',
+    'Badminton',
+    '20.00'
+    );
+INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice)
+VALUES(
+    '1000M Canoe Single MEN',
+    '2016-08-10',
+    '14:00:00',
+    'Arena 3',
+    'comp',
+    'Canoe Sprint',
+    '10.00'
+    );
+INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice)
+VALUES(
+    'Kayak Single WOMEN',
+    '2016-08-11',
+    '14:00:00',
+    'Arena 3',
+    'comp',
+    'Canoe Slalom',
+    '14.00'
+    );
+INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice)
+VALUES(
+  'Race WOMEN',
     '2016-08-12',
     '13:00:00',
     'Arena 1',
