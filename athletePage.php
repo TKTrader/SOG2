@@ -44,14 +44,14 @@ require "header.php";
     <hr>
     <?php
     //for now only name and country, could do sports later
-    $query1 = "SELECT * FROM athletes INNER JOIN users ON athletes.id=users.id";
-    echo "<table class=\"athletes\">";
+    $query1 = "SELECT firstName, lastName, country, DATE_FORMAT(DOB, '%M-%D-%Y') AS DOB, heightFeet, heightInch, wgt FROM athletes INNER JOIN users ON athletes.id=users.id";
+    echo "<table class=\"table\">";
     $query1_result = mysqli_query($mysqli, $query1);
     $counter = 1;
     echo"<tr>";
     while($row = mysqli_fetch_array($query1_result)) {
-        echo "<td><h4>" . $row['firstName'] . " " . $row['lastName'] . "</h3><ul><li>" . $row['country'] . "</li><li>" .
-            $row['DOB'] . "</li><li>" . $row['heightFeet'] ."'". $row['heightInch']."\""."</li><li>" . $row['wgt']  . "</ul></td>";
+        echo "<td><h4>" . $row['firstName'] . " " . $row['lastName'] . "</h4><ul><li><strong>Country: </strong>" . $row['country'] . "</li><li><strong>Date of Birth: </strong>" .
+            $row['DOB'] . "</li><li><strong>Height: </strong>" . $row['heightFeet'] ."'". $row['heightInch']."\""."</li><li><strong>Weight: </strong>" . $row['wgt']  . "</ul></td>";
         if($counter % 3 == 0) {
             echo"</tr>";
             echo"<tr>";
