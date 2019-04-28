@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       // delete Athlete from user table
       $deleteAthleteDB = "DELETE FROM users WHERE id='$id' AND firstName='$firstName' AND lastName='$lastName'";
       //   // check fields
-        echo "firstName: ".$firstName." <br /> lastName: ".$lastName." id: ".$id;
+        // echo "firstName: ".$firstName." <br /> lastName: ".$lastName." id: ".$id;
       mysqli_query($mysqli, $deleteAthleteDB);
 
       $result= mysqli_query($mysqli, $deleteAthleteDB);
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         header("location: athleteError.php");
       } else {
         $_SESSION['message'] = 'Athlete Deleted!';
-        header("location: dbSuccess.php");
+        header("location: athleteSuccess.php");
       }
   }
 }
