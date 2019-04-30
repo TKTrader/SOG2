@@ -3,7 +3,7 @@ require 'publicHeader.php';
 require '../Controllers/checkAccess.php';
 
 //Logic to choose different header would go here, by default require header is there.
-if ($access != 'P') {
+if ($access != 'P' || $_SESSION['email']=='security@sogs.com') {
     $_SESSION['message'] = 'Invalid Access';
     header("location: ../Controllers/error.php");
 }

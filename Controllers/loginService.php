@@ -24,6 +24,9 @@ else {
         }else if ($_SESSION['access'] == 'E'){
             header("Location: ./EmployeeInterface/index.php");
             exit();
+        }else if ($_SESSION['email'] == 'security@sogs.com'){
+            header("Location: ./PublicInterface/security.php");
+            exit();
         }else if ($_SESSION['access'] == 'P'){
             header("Location: ./PublicInterface/index.php");
             exit();
