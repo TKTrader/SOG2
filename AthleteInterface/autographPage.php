@@ -91,9 +91,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         if ($_SERVER['REQUEST_METHOD']=='POST') {
             if (isset($_POST['AddtoSchedule_button'])) {
                 $select_check = "SELECT * FROM olympicEvent WHERE ID in (SELECT eventID FROM athleteEvent WHERE athleteID in (SELECT id FROM users WHERE email = \"".$_SESSION['email']."\"))";
+                $select_check2 = "SELECT * FROM olympicEvent WHERE name = \"".$_SESSION['first_name'].$_SESSION['last_name']."\"";
                 $event_is_conflicting = false;
                 $select_check_result = mysqli_query($mysqli, $select_check);
+                $select_check_result2 = mysqli_query($mysqli, $select_check2);
                 while($row = mysqli_fetch_array($select_check_result)){
+//                    while()
+//                    echo $row['date'].$date_SELECTED.$row['time'].$time_SELECTED;
                     if($date_SELECTED == $row['date'] && $time_SELECTED == $row['time']){
                         $event_is_conflicting = true;
                         break;
@@ -106,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                     echo "<h3>This event conflicts with an event you are scheduled for. Please try again.</h3>";
                 }
                 else{
-                    $insertAutographQuery1 = "INSERT INTO olympicEvent(name, date, time, location, type, category, price)"."VALUES ('$full_name', '$date_SELECTED', '$time_SELECTED', '$location_SELECTED',  'autog', 'Autograph', '0.00')";
+                    $insertAutographQuery1 = "INSERT INTO olympicEvent(name, date, time, location, type, category)"."VALUES ('$full_name', '$date_SELECTED', '$time_SELECTED', '$location_SELECTED',  'autog', 'Autograph')";
                     mysqli_query($mysqli, $insertAutographQuery1);
                     echo "<h3>Autograph session scheduled successfully.</h3>";
                 }
