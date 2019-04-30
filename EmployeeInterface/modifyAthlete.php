@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         header("location: athleteError.php");
       } else {
         $_SESSION['message'] = 'Athlete modified!';
-        header("location: dbSuccess.php");
+        header("location: athleteSuccess.php");
       }
     }
 }
