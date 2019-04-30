@@ -9,7 +9,8 @@
       $_SESSION['message'] = 'Invalid Access';
       header("location: ../Controllers/error.php");
   }
-
+  $message ="";
+  $message2 = "";
   if ($_SERVER['REQUEST_METHOD']=='POST') {
     if (isset($_POST['AddtoSchedule_button'])) {
 
@@ -28,7 +29,24 @@
         $insertQuery1 = "INSERT INTO olympicEvent(name, date, time, location, type, category, ticketPrice)"
         ."VALUES ('$event_SELECTED', '$date_SELECTED', '$time_SELECTED', '$location_SELECTED',  '$type_SELECTED', '$category_SELECTED',  '$price_SELECTED')";
 
-        mysqli_query($mysqli, $insertQuery1);
+        //Check for a duplicate event being entered for the same time date and name.
+        $querycheck = "SELECT * FROM olympicEvent WHERE type = 'comp' AND date = '$date_SELECTED' AND time = '$time_SELECTED' AND name = '$event_SELECTED'";
+        $result = mysqli_query($mysqli, $querycheck);
+        $check = mysqli_num_rows($result);
+
+        //Check the location isn't double booked
+        $querycheck2 = "SELECT * FROM olympicEvent WHERE type = 'comp' AND  date = '$date_SELECTED' AND time = '$time_SELECTED' AND location = '$location_SELECTED'";
+        $result2 = mysqli_query($mysqli, $querycheck2);
+        $check2 = mysqli_num_rows($result2);
+        if ($check > 0){
+          $message =  "Duplicate event detected for that time and date.";
+        }
+        else if ($check2 > 0){
+          $message2 = "That location is being used by another event";
+        }
+        else {
+          mysqli_query($mysqli, $insertQuery1);
+        }
     }else if(isset($_POST['DeletetoSchedule_button'])){
 
       //Store posted vars
@@ -135,6 +153,10 @@
     <button type="button" onclick="toggle_visibility('tog');" class="btn btn-outline-success btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Add</button>
     <button type="button" onclick="toggle_visibility('tog2');" class="btn btn-outline-danger btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Delete</button>
     <button type="button" onclick="toggle_visibility('tog3');" class="btn btn-outline-primary btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off">Modify</button>
+    <?php
+    echo $message;
+    echo $message2;
+    ?>
   </p>
 
   <!--ADD SECTION-->
