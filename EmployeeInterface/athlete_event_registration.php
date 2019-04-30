@@ -16,7 +16,10 @@
       $athleteid = mysqli_real_escape_string($mysqli, $_POST['athleteID']);
       $eventid = mysqli_real_escape_string($mysqli, $_POST['eventID']);
       $placement = mysqli_real_escape_string($mysqli, $_POST['placement']);
-
+      
+      //notify the athlete getting added to the award ceremony
+      $notify_athlete = "UPDATE users SET notify = 1 WHERE id = \"".$athleteid."\"";
+      mysqli_query($mysqli, $notify_athlete);
       //if placement is left as null different sql statement, else do sql statement with placement value
       if ($placement == NULL){
         //query to insert
