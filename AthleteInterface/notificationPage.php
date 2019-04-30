@@ -36,31 +36,91 @@ if ($access != 'A') {
   <div class="notificationPage_container">
     <hr>
     <?php
-    $query1 = "SELECT updatedEvent.name AS oldName, updatedEvent.date AS oldDate, updatedEvent.time AS oldTime, updatedEvent.location AS oldLocation, updatedEvent.type AS oldType, olympicEvent.name, olympicEvent.date, olympicEvent.time, olympicEvent.location, olympicEvent.type, olympicEvent.category, olympicEvent.ticketPrice FROM olympicEvent INNER JOIN updatedEvent ON olympicEvent.id=updatedEvent.olympicEventID";
+    $query0 = "SELECT * FROM olympicEvent WHERE type = \"award\" AND id IN (SELECT eventID FROM athleteEvent WHERE athleteid IN (SELECT id FROM users WHERE email = \"".$_SESSION['email']."\"))";
+    $query0_result = mysqli_query($mysqli, $query0);
+    $query1 = "SELECT updatedEvent.name AS oldName, updatedEvent.date AS oldDate, updatedEvent.time AS oldTime, updatedEvent.location AS oldLocation, updatedEvent.type AS oldType, olympicEvent.id, olympicEvent.name, olympicEvent.date, olympicEvent.time, olympicEvent.location, olympicEvent.type, olympicEvent.category, olympicEvent.ticketPrice FROM olympicEvent INNER JOIN updatedEvent ON olympicEvent.id=updatedEvent.olympicEventID  WHERE olympicEvent.id IN (SELECT eventID FROM athleteEvent WHERE athleteid IN (SELECT id FROM users WHERE email = \"".$_SESSION['email']."\"))";
+    while($row0 = mysqli_fetch_array($query0_result)) {
+        echo "<h3><strong>Award Ceremony</strong></h3><br>";
+        echo "<h3>An award ceremony you are taking part in has been scheduled on ".$row0['date']." at ".$row0['time'].".</h3><br><br>";
+    }
     $query1_result = mysqli_query($mysqli, $query1);
     while($row = mysqli_fetch_array($query1_result)) {
-        if($row['oldDate'] != $row['date'] and $row['oldTime'] != $row['time'] and $row['oldLocation'] != $row['location']) {
-            echo "<p>The event previously taking place at " . $row['oldLocation'] . " at " . $row['oldDate'] . " " . $row['oldTime'] . " is now at " . $row['location'] . " at " . $row['time'] . " " . $row['date'] . ".</p>";
+        if($row['type']=="award"){
+            echo "<h3><strong>Award Ceremony</strong></h3>";
+            if($row['oldDate'] != $row['date'] and $row['oldTime'] != $row['time'] and $row['oldLocation'] != $row['location']) {
+                echo "<h3>The event previously taking place at " . $row['oldLocation'] . " at " . $row['oldDate'] . " " . $row['oldTime'] . " is now at " . $row['location'] . " at " . $row['time'] . " " . $row['date'] . ".</h3>";
+            }
+            elseif($row['oldDate'] != $row['date'] and $row['oldTime'] != $row['time']){
+                echo "<h3>The event previously taking place at " . $row['oldDate'] . " " . $row['oldTime'] . " is now at " . " at " . $row['date'] . " " . $row['time'] . ".</h3>";
+            }
+            elseif($row['oldTime'] != $row['time'] and $row['oldLocation'] != $row['location']){
+                echo "<h3>The event previously taking place at " . $row['oldLocation'] . " at " . $row['oldTime'] . " is now at " . $row['location'] . " at " . $row['time'] . ".</h3>";
+            }
+            elseif($row['oldDate'] != $row['date'] and $row['oldLocation'] != $row['location']){
+                echo "<h3>The event previously taking place at " . $row['oldLocation'] . " " . $row['oldTime'] . " is now at "  . $row['location'] . " " . $row['time'] . ".</h3>";
+            }
+            elseif($row['oldDate'] != $row['date']){
+                echo "<h3>The event previously taking place at " . $row['oldDate'] . " is now at " . $row['date'] . ".</h3>";
+            }
+            elseif($row['oldTime'] != $row['time']){
+                echo "<h3>The event previously taking place at " . $row['oldTime'] . " is now at " . $row['time'] . ".</h3>";
+            }
+            elseif($row['oldLocation'] != $row['location']){
+                echo "<h3>The event previously taking place at " . $row['oldLocation'] . " is now at " . $row['location'] . ".</h3>";
+            }
         }
-        elseif($row['oldDate'] != $row['date'] and $row['oldTime'] != $row['time']){
-            echo "<p>The event previously taking place at " . $row['oldDate'] . " " . $row['oldTime'] . " is now at " . " at " . $row['date'] . " " . $row['time'] . ".<p/>";
+        elseif($row['type']=="comp"){
+            echo "<h3><strong>Competition Event</strong></h3><br>";
+            if($row['oldDate'] != $row['date'] and $row['oldTime'] != $row['time'] and $row['oldLocation'] != $row['location']) {
+                echo "<h3>The event previously taking place at " . $row['oldLocation'] . " at " . $row['oldDate'] . " " . $row['oldTime'] . " is now at " . $row['location'] . " at " . $row['time'] . " " . $row['date'] . ".</h3>";
+            }
+            elseif($row['oldDate'] != $row['date'] and $row['oldTime'] != $row['time']){
+                echo "<h3>The event previously taking place at " . $row['oldDate'] . " " . $row['oldTime'] . " is now at " . " at " . $row['date'] . " " . $row['time'] . ".</h3>";
+            }
+            elseif($row['oldTime'] != $row['time'] and $row['oldLocation'] != $row['location']){
+                echo "<h3>The event previously taking place at " . $row['oldLocation'] . " at " . $row['oldTime'] . " is now at " . $row['location'] . " at " . $row['time'] . ".</h3>";
+            }
+            elseif($row['oldDate'] != $row['date'] and $row['oldLocation'] != $row['location']){
+                echo "<h3>The event previously taking place at " . $row['oldLocation'] . " " . $row['oldTime'] . " is now at "  . $row['location'] . " " . $row['time'] . ".</h3>";
+            }
+            elseif($row['oldDate'] != $row['date']){
+                echo "<h3>The event previously taking place at " . $row['oldDate'] . " is now at " . $row['date'] . ".</h3>";
+            }
+            elseif($row['oldTime'] != $row['time']){
+                echo "<h3>The event previously taking place at " . $row['oldTime'] . " is now at " . $row['time'] . ".</h3>";
+            }
+            elseif($row['oldLocation'] != $row['location']){
+                echo "<h3>The event previously taking place at " . $row['oldLocation'] . " is now at " . $row['location'] . ".</h3>";
+            }
         }
-        elseif($row['oldTime'] != $row['time'] and $row['oldLocation'] != $row['location']){
-            echo "<p>The event previously taking place at " . $row['oldLocation'] . " at " . $row['oldTime'] . " is now at " . $row['location'] . " at " . $row['time'] . ".</p>";
+        elseif($row['type']=="autog"){
+            echo "<h3><strong>Autograph Session</strong></h3><br>";
+            if($row['oldDate'] != $row['date'] and $row['oldTime'] != $row['time'] and $row['oldLocation'] != $row['location']) {
+                echo "<h3>The event previously taking place at " . $row['oldLocation'] . " at " . $row['oldDate'] . " " . $row['oldTime'] . " is now at " . $row['location'] . " at " . $row['time'] . " " . $row['date'] . ".</h3>";
+            }
+            elseif($row['oldDate'] != $row['date'] and $row['oldTime'] != $row['time']){
+                echo "<h3>The event previously taking place at " . $row['oldDate'] . " " . $row['oldTime'] . " is now at " . " at " . $row['date'] . " " . $row['time'] . ".</h3>";
+            }
+            elseif($row['oldTime'] != $row['time'] and $row['oldLocation'] != $row['location']){
+                echo "<h3>The event previously taking place at " . $row['oldLocation'] . " at " . $row['oldTime'] . " is now at " . $row['location'] . " at " . $row['time'] . ".</h3>";
+            }
+            elseif($row['oldDate'] != $row['date'] and $row['oldLocation'] != $row['location']){
+                echo "<h3>The event previously taking place at " . $row['oldLocation'] . " " . $row['oldTime'] . " is now at "  . $row['location'] . " " . $row['time'] . ".</h3>";
+            }
+            elseif($row['oldDate'] != $row['date']){
+                echo "<h3>The event previously taking place at " . $row['oldDate'] . " is now at " . $row['date'] . ".</h3>";
+            }
+            elseif($row['oldTime'] != $row['time']){
+                echo "<h3>The event previously taking place at " . $row['oldTime'] . " is now at " . $row['time'] . ".</h3>";
+            }
+            elseif($row['oldLocation'] != $row['location']){
+                echo "<h3>The event previously taking place at " . $row['oldLocation'] . " is now at " . $row['location'] . ".</h3>";
+            }
         }
-        elseif($row['oldDate'] != $row['date'] and $row['oldLocation'] != $row['location']){
-            echo "<p>The event previously taking place at " . $row['oldLocation'] . " " . $row['oldTime'] . " is now at "  . $row['location'] . " " . $row['time'] . ".</p>";
-        }
-        elseif($row['oldDate'] != $row['date']){
-            echo "<p>The event previously taking place at " . $row['oldDate'] . " is now at " . $row['date'] . ".</p.";
-        }
-        elseif($row['oldTime'] != $row['time']){
-            echo "<p>The event previously taking place at " . $row['oldTime'] . " is now at " . $row['time'] . ".</p>";
-        }
-        elseif($row['oldLocation'] != $row['location']){
-            echo "<p>The event previously taking place at " . $row['oldLocation'] . " is now at " . $row['location'] . ".</p>";
-        }
+        echo "<br><br>";
     }
+      
+    
     echo"</tr>";
     echo "</table>";
       //remove notification from user who viewed this page

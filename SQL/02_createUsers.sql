@@ -253,3 +253,14 @@ VALUES(
     '(987)694-5678',
     0
     );
+    
+INSERT INTO users(firstName, lastName, email, password, access, phone, notify)
+VALUES(
+    'security',
+    'dept',
+    'security@sogs.com',
+    '$2y$10$5ld.DVEncVaaDLI8ViH3xecaA7letUf7XGLrnI9FFsC9dGpNFzJUW',
+    'P',
+    '(987)694-5678',
+    0
+    );
