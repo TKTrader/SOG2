@@ -94,8 +94,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                 $event_is_conflicting = false;
                 $select_check_result = mysqli_query($mysqli, $select_check);
                 while($row = mysqli_fetch_array($select_check_result)){
-                    echo "php".$date_SELECTED.$time_SELECTED;
-                    echo "    sql".$row['date'].$row['time']."<br>";
                     if($date_SELECTED == $row['date'] && $time_SELECTED == $row['time']){
                         $event_is_conflicting = true;
                         break;
