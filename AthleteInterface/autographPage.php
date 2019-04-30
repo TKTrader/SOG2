@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         $full_name = $_SESSION['first_name'] . $_SESSION['last_name'];
         $date_SELECTED = mysqli_real_escape_string($mysqli, $_POST['date']);
         $time_SELECTED = mysqli_real_escape_string($mysqli, $_POST['time']);
-        $time_SELECTED = $time_SELECTED.":00";
+//        $time_SELECTED = $time_SELECTED.":00";  
         $location_SELECTED = mysqli_real_escape_string($mysqli, $_POST['location']);
 //        $price_SELECTED = mysqli_real_escape_string($mysqli, $_POST['price']);          
     }
@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                     echo "<h3>This event conflicts with an event you are scheduled for. Please try again.</h3>";
                 }
                 else{
-                    $insertAutographQuery1 = "INSERT INTO olympicEvent(name, date, time, location, type, category)"."VALUES ('$full_name', '$date_SELECTED', '$time_SELECTED', '$location_SELECTED',  'autog', 'Autograph')";
+                    $insertAutographQuery1 = "INSERT INTO olympicEvent(name, date, time, location, type, category, price)"."VALUES ('$full_name', '$date_SELECTED', '$time_SELECTED', '$location_SELECTED',  'autog', 'Autograph', '0.00')";
                     mysqli_query($mysqli, $insertAutographQuery1);
                     echo "<h3>Autograph session scheduled successfully.</h3>";
                 }
