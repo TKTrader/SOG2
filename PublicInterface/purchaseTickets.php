@@ -2,7 +2,7 @@
 require 'publicHeader.php';
 require '../Controllers/checkAccess.php';
 //Kick anyone not an employee out
-if ($access != 'P') {
+if ($access != 'P' || $_SESSION['email']=='security@sogs.com') {
     $_SESSION['message'] = 'Invalid Access';
     header("location: ../Controllers/error.php");
 }
